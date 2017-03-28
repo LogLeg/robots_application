@@ -138,7 +138,7 @@ add_definitions(-std=c++11)
 target_link_libraries(Robot_Driver_server ${catkin_LIBRARIES})
 add_dependencies(Robot_Driver_server beginner_tutorials_gencpp)
 add_dependencies(Robot_Driver_server serial)
-target_link_libraries(Robot_Driver_server serial)
+#target_link_libraries(Robot_Driver_server serial)
 
 
 add_executable(RobotArmBestuuring src/RobotArmBestuuring.cpp)
