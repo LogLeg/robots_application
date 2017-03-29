@@ -8,7 +8,8 @@
 #include "vision.hpp"
 
 Vision::Vision() : src(Size(640, 480), CV_8UC3),
-				   output(Size(1280, 960), CV_8UC3)
+				   output(Size(1280, 960), CV_8UC3),
+				   binairy_mat_final(Size(640, 480), CV_8UC1)
 {
 	set_colour_values();
 }
@@ -21,10 +22,6 @@ Vision::~Vision()
 void Vision::initialize(const string& a_window_name, uint8_t device, bool test)
 {
 	window_name = a_window_name;
-
-	vector<vector<Point>> red_rectangles;
-	vector<vector<Point>> black_rectangles;
-	uint8_t counter = 0;
 
 	namedWindow(window_name, CV_WINDOW_AUTOSIZE);
 
@@ -51,42 +48,7 @@ void Vision::initialize(const string& a_window_name, uint8_t device, bool test)
 		}
 	}
 
-	take_frame(true);
-	red_rectangles = find_shape(RECTANGLE, filter_colour(src, colours.at(RED)));
-	black_rectangles = find_shape(RECTANGLE, filter_colour(src, colours.at(BLACK)));
-
-
-	for(size_t i = 0; i < red_rectangles.size(); i++)
-	{
-		Properties red_rectangle = get_properties(red_rectangles[i]);
-		Point2d middle_red = red_rectangle.center;
-
-		for(size_t j = 0; j < black_rectangles.size(); j++)
-		{
-			Properties black_rectangle = get_properties(black_rectangles[i]);
-			Point2d middle_black = black_rectangle.center;
-
-			if(middle_black.x < middle_red.x+(red_rectangle.width/2) &&
-			   middle_black.x > middle_red.x-(red_rectangle.width/2) &&
-			   middle_black.y < middle_red.y+(red_rectangle.height/2) &&
-			   middle_black.y > middle_red.y-(red_rectangle.height/2))
-			{
-				counter++;
-			}
-		}
-		if(counter == 2) //if this is true, the red rectangle has the 2 black rectangles in it, and is thus the rectangle for size reference
-		{
-			centimeter_x = get_properties(red_rectangles[i]).width;
-			centimeter_y = get_properties(red_rectangles[i]).height;
-		}
-		else
-		{
-			counter = 0;
-		}
-	}
-
-	cout << "x pixels: " << centimeter_x << endl;
-	cout << "y pixels: " << centimeter_y << endl;
+	get_calibration_square();
 
 }
 
@@ -94,10 +56,12 @@ void Vision::show_image()
 {
 	take_frame(true);
 
-	//cvtColor(colour_recognition_gray, colour_recognition_colour, CV_GRAY2BGR);
+	Mat kaas;
+
+	cvtColor(binairy_mat_final, kaas, CV_GRAY2BGR);
 
 	src.copyTo(output(Rect(0, 0, 640, 480)));
-	//colour_recognition_colour.copyTo(output(Rect(640, 0, 640, 480)));
+	kaas.copyTo(output(Rect(640, 0, 640, 480)));
 	//screenshot_rgb_copy.copyTo(output(Rect(0, 480, 640, 480)));
 	//information.copyTo(output(Rect(640, 480, 640, 480)));
 
@@ -119,18 +83,75 @@ void Vision::take_frame(bool screenshot)
 	}
 }
 
+void Vision::get_calibration_square()
+{
+	vector<vector<Point>> red_rectangles;
+	vector<Properties> red_rectangles_properties;
+	uint8_t rectangle_counter = 0;
+	uint8_t calibration_square_n = 0;
+
+	take_frame(true);
+	binairy_mat_final = filter_colour(src, red);
+	red_rectangles = find_shape(RECTANGLE, filter_colour(src, red));
+
+	for(size_t i = 0; i < red_rectangles.size(); i++)
+	{
+		red_rectangles_properties.push_back(get_properties(red_rectangles[i]));
+	}
+
+	for(size_t i = 0; i < red_rectangles.size(); i++)
+	{
+		for(size_t j = 0; j < red_rectangles.size(); j++)
+		{
+			if(j != i)
+			{
+				size_t point_counter = 0;
+				for(size_t k = 0; k < red_rectangles[j].size(); k++)
+				{
+					if(pointPolygonTest(red_rectangles[i], red_rectangles[j][k], false) > 0)
+					{
+						point_counter++;
+					}
+				}
+				if(point_counter == red_rectangles[j].size())
+				{
+					//shape was inside the red square.
+					rectangle_counter++;
+				}
+			}
+		}
+		if(rectangle_counter == 2)
+		{
+			calibration_square_n = i;
+			i = red_rectangles.size();
+		}
+		else
+		{
+			rectangle_counter = 0;
+		}
+	}
+
+	calibration_square = red_rectangles[calibration_square_n];
+	calibration_square_properties = red_rectangles_properties[calibration_square_n];
+
+	x_factor = red_rectangles_properties[calibration_square_n].width;
+	y_factor = red_rectangles_properties[calibration_square_n].height;
+
+	cout << "x pixels: " << x_factor << endl;
+	cout << "y pixels: " << y_factor << endl;
+}
+
 Mat1b Vision::filter_colour(const Mat& input, const Colour& colour)
 {
-	Mat pyrdown;
-	Mat pyrup;
+	Mat blur_mat;
 	Mat1b binairy_mat;
+	Mat input_hsv(Size(640, 480), CV_8UC3);
 
-	pyrDown(input, pyrdown, Size(320, 240));
+	cvtColor(input, input_hsv, CV_RGB2HSV);
 
-	pyrUp(pyrdown, pyrup, Size(640, 480));
+	blur(input_hsv, blur_mat, Size(1, 1), Size(-1, -1), BORDER_DEFAULT);
 
-
-	inRange(pyrup, Scalar(colour.hue_min, colour.sat_min, colour.val_min),
+	inRange(blur_mat, Scalar(colour.hue_min, colour.sat_min, colour.val_min),
 				   Scalar(colour.hue_max, colour.sat_max, colour.val_max), binairy_mat);
 
 	return binairy_mat;
@@ -146,13 +167,13 @@ vector<vector<Point>> Vision::find_shape(uint8_t shape, const Mat1b& input)
 	}
 	else if(shape == RECTANGLE)
 	{
-		contours = detect_rectangle(input);
+		contours = detect_square(input, RECTANGLE);
 	}
 
 	return contours;
 }
 
-vector<vector<Point>> Vision::detect_rectangle(const Mat1b& input)
+vector<vector<Point>> Vision::detect_square(const Mat1b& input, uint8_t shape)
 {
 	vector<vector<Point>> contours;
 	vector<vector<Point>> contours_to_return;
@@ -166,6 +187,16 @@ vector<vector<Point>> Vision::detect_rectangle(const Mat1b& input)
 	/// Find contours
 	findContours(input, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0));
 
+
+	/**
+	 * TEMP
+	 */
+	for(int i = 0; i < contours.size(); i++)
+	{
+		drawContours(src, contours, i, Scalar(0, 255, 0), 2, 8, hierarchy, 0, Point());
+	}
+
+
 	// These variables are dependent on the size of the contours vector, thats why they are not at the top of the function.
 	vector<Point> contours_approxPoly(contours.size());
 
@@ -178,17 +209,18 @@ vector<vector<Point>> Vision::detect_rectangle(const Mat1b& input)
 		// Only check what a shape is when the contour is fully connected from begin to end and when the area is larger that 100.
 		if(   fabs(contourArea(Mat(contours_approxPoly))) > 100
 		   && isContourConvex(Mat(contours_approxPoly))
-		   && contours_approxPoly.size() == 4
-		   && check_rectangle(contours[i], contours_approxPoly))
+		   && contours_approxPoly.size() == 4)
 		{
-			contours_to_return.push_back(contours.at(i));
-			cout << "been here" << endl;
+			if(check_rectangle(contours[i], contours_approxPoly) == shape)
+			{
+				contours_to_return.push_back(contours.at(i));
+			}
 		}
 	}
 	return contours_to_return;
 }
 
-bool Vision::check_rectangle(const vector<Point>& contour, const vector<Point>& contours_approxPoly)
+uint8_t Vision::check_rectangle(const vector<Point>& contour, const vector<Point>& contours_approxPoly)
 {
 	double max_cos = 0;
 
@@ -218,10 +250,14 @@ bool Vision::check_rectangle(const vector<Point>& contour, const vector<Point>& 
 		// If the aspect ratio of the shape is near zero, it must be a square, if not, must be a bar
 		if(fabs(width/height) - 1 < 0.2)
 		{
-			return true;
+			return RECTANGLE;
+		}
+		else
+		{
+			return BAR;
 		}
 	}
-	return false;
+	return NO_SHAPE;
 }
 
 Properties Vision::get_properties(const vector<Point>& contour)
@@ -308,14 +344,14 @@ void Vision::set_colour_values()
 	black.hue_min = 0;
 	black.sat_min = 0;
 	black.val_min = 0;
-	black.hue_max = 20;
-	black.sat_max = 30;
+	black.hue_max = 180;
+	black.sat_max = 255;
 	black.val_max = 30;
 
-	red.hue_min = 116;
-	red.sat_min = 0;
-	red.val_min = 0;
-	red.hue_max = 124;
+	red.hue_min = 113;
+	red.sat_min = 40;
+	red.val_min = 40;
+	red.hue_max = 118;
 	red.sat_max = 255;
 	red.val_max = 255;
 

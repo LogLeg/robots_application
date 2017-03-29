@@ -17,9 +17,9 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/videoio.hpp>
 
-//#include "interface.hpp"
+#include "interface.hpp"
 //#include "counter.hpp"
-#include "constants.hpp"
+//#include "constants.hpp"
 
 using namespace std;
 using namespace cv;
@@ -78,13 +78,15 @@ public:
 	 */
 	void take_frame(bool screenshot);
 
+	void get_calibration_square();
+
 	Mat1b filter_colour(const Mat& input, const Colour& colour);
 
 	vector<vector<Point>> find_shape(uint8_t shape, const Mat1b& input);
 
-	vector<vector<Point>> detect_rectangle(const Mat1b& input);
+	vector<vector<Point>> detect_square(const Mat1b& input, uint8_t shape);
 
-	bool check_rectangle(const vector<Point>& contour, const vector<Point>& contours_approxPoly);
+	uint8_t check_rectangle(const vector<Point>& contour, const vector<Point>& contours_approxPoly);
 
 	Properties get_properties(const vector<Point>& contour);
 
@@ -184,8 +186,11 @@ private:
 	Colour blue;
 	Colour yellow;
 
-	int centimeter_x;
-	int centimeter_y;
+	int x_factor;
+	int y_factor;
+
+	vector<Point> calibration_square;
+	Properties calibration_square_properties;
 
 	/**
 	 * @brief time variables to return the total time afterwards.
@@ -225,7 +230,7 @@ private:
 	Mat output;
 //	Mat input_gray;
 //	Mat colour_recognition_colour;
-//	Mat1b colour_recognition_gray;
+	Mat1b binairy_mat_final;
 //	Mat information;
 
 	/**
