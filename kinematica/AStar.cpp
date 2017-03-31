@@ -46,50 +46,43 @@ Path ConstructPath(VertexMap& aPredecessorMap, const Vertex& aCurrentNode)
  */
 std::vector<Vertex> GetNeighbours(const Vertex& aVertex, int aFreeRadius /*= 1*/)
 {
-
-
-
 	std::cout << "input: " << aVertex << std::endl;
 
 
 	std::vector<Vertex> neighbours;
 
-	for (uint16_t i = 0; i < Graph::getInstance().e.size(); ++i)
-	{
-		if (Graph::getInstance().e.at(i).vertex2 == aVertex)
-		{
-			neighbours.push_back(Graph::getInstance().e.at(i).vertex1);
-			std::cout << "1: " << Graph::getInstance().e.at(i).vertex1 << std::endl;
-		}
-		if (Graph::getInstance().e.at(i).vertex1 == aVertex)
-		{
-			neighbours.push_back(Graph::getInstance().e.at(i).vertex2);
-			std::cout << "2: " << Graph::getInstance().e.at(i).vertex2 << std::endl;
+
+	for (signed char p1 = -1; p1 < 2; ++p1){
+		for (signed char p2 = -1; p2 < 2; ++p2){
+			double newPhi1 = aVertex.phi1 + p1;
+			double newPhi2 = aVertex.phi2 + p2;
+
+			if (newPhi1 < -30 || newPhi1 > 90) break;
+			if (newPhi2 < 0 || newPhi2 > 135) break;
+			Vertex nbVertex = Vertex(forwardKinematics(0, 0, 146, newPhi1, 187, newPhi2).first,
+					forwardKinematics(0, 0, 146, newPhi1, 187, newPhi2).second, newPhi1, newPhi2);
+
+			if (nbVertex.x < 0) break;
+			if (p1 != 0 && p2 != 0){
+				neighbours.push_back(nbVertex);
+			}
+			//std::cout << Vertex(forwardKinematics(0, 0, 146, aVertex.phi1 + p1, 187, aVertex.phi2 + p2).first,
+			//		forwardKinematics(0, 0, 146, aVertex.phi1 + p1, 187, aVertex.phi2 + p2).second, aVertex.phi1 + p1, aVertex.phi2 + p2) << std::endl;
 		}
 	}
 
-
-//	for (int i = 0; i < 8; ++i)
-//	{
-//		bool addToNeigbours = true;
-//
-//		Vertex vertex(aVertex.x + xOffset[i], aVertex.y + yOffset[i]);
-////			for (Model::WallPtr wall : walls)
-////			{
-////				if (Utils::Shape2DUtils::isOnLine( wall->getPoint1(), wall->getPoint2(), vertex.asPoint(), aFreeRadius))
-////				{
-////					addToNeigbours = false;
-////					break;
-////				}
-////			}
-//		std::cout << vertex << std::endl;
-//		if (addToNeigbours == true)
-//		{
-//			neighbours.push_back(vertex);
-//		}
-//	}
 	return neighbours;
 }
+std::pair<double, double> forwardKinematics(double x0, double y0, double a, double p1, double b, double p2)
+{
+
+	const double PI = 3.141592654;
+	using std::sin;
+	using std::cos;
+
+	return std::pair<double, double>((x0 + a * sin((p1) * PI / 180.0) + b * sin((p1 + p2) * PI / 180.0)), (y0 + a * cos((p1) * PI / 180.0) + b * cos((p1 + p2) * PI / 180.0)));
+}
+
 /**
  *
  */
@@ -110,8 +103,8 @@ std::vector<Edge> GetNeighbourConnections(const Vertex& aVertex, int aFreeRadius
  */
 Path AStar::search(const Point& aStartPoint, const Point& aGoalPoint, const Size& aRobotSize)
 {
-	Vertex start(aStartPoint);
-	Vertex goal(aGoalPoint);
+	Vertex start(aStartPoint, 1,2);
+	Vertex goal(aGoalPoint, 0,0);
 
 	Path path = AStar::search(start, goal, aRobotSize);
 	return path;
@@ -119,50 +112,6 @@ Path AStar::search(const Point& aStartPoint, const Point& aGoalPoint, const Size
 /**
  *
  */
-Path AStar::searchBF(Vertex aStart, const Vertex& aGoal, const Size& aRobotSize)
-{
-	getOS().clear();
-	getCS().clear();
-	getPM().clear();
-
-
-	int radius = std::sqrt((aRobotSize.x / 2.0) * (aRobotSize.x / 2.0) + (aRobotSize.y / 2.0) * (aRobotSize.y / 2.0));
-
-	aStart.actualCost = 0.0; 	// Cost from aStart along the best known path.
-	aStart.heuristicCost = aStart.actualCost + HeuristicCost(aStart, aGoal); // Estimated total cost from aStart to aGoal through y.
-
-	addToOpenSet(aStart);
-
-	Vertex current = *openSet.begin();
-	if (current.equalPoint(aGoal))
-	{
-		return ConstructPath(predecessorMap, current);
-	}
-	else
-	{
-		addToClosedSet(current);
-		removeFirstFromOpenSet();
-		const std::vector<Edge>& connections = GetNeighbourConnections(current, radius);
-
-		for(unsigned long i = 0; i < connections.size(); ++i){
-
-		}
-
-	}
-
-//	1  procedure DFS-iterative(G,v):
-//	2      let S be a stack
-//	3      S.push(v)
-//	4      while S is not empty
-//	5          v = S.pop()
-//	6          if v is not labeled as discovered:
-//	7              label v as discovered
-//	8              for all edges from v to w in G.adjacentEdges(v) do
-//	9                  S.push(w)
-
-
-	return Path();
-}
 
 Path AStar::search(Vertex aStart, const Vertex& aGoal, const Size& aRobotSize)
 {
@@ -183,7 +132,7 @@ Path AStar::search(Vertex aStart, const Vertex& aGoal, const Size& aRobotSize)
 	{
 		Vertex current = *openSet.begin();
 
-		if (current.equalPoint(aGoal))
+		if (current.approxEqualPoint(aGoal, 3))
 		{
 			return ConstructPath(predecessorMap, current);
 		}

@@ -8,30 +8,14 @@
 #ifndef ROBOTICARM_HPP_
 #define ROBOTICARM_HPP_
 #include <vector>
+#include <tuple>
+#include "AStar.hpp"
+#include "Size.hpp"
 
-struct Configuration
-{
-	signed short phi1;
-	signed short phi2;
-	signed short phi3;
-	signed short phi4;
-	signed short phi5;
-	signed short phi6;
-};
 struct Position
 {
 	signed short x;
 	signed short y;
-};
-struct Point
-{
-	Point(int x, int y) :
-			x(x), y(y)
-	{
-	}
-	;
-	int x;
-	int y;
 };
 
 class RoboticArm
@@ -66,23 +50,22 @@ public:
 	 * @param
 	 * @return a path of configurations
 	 */
-	std::vector<Configuration> calculatePath(Configuration inputConf, Point endPoint);
+	std::vector<std::vector<signed short>> calculatePath(std::vector<signed short> inputConf, Point endPoint);
+
+	std::vector<std::vector<signed short>> calculatePath(unsigned char phi, signed short endValue);
+
+	void printPath(std::vector<std::vector<signed short>> confs);
+
+	std::pair<double, double> forwardKinematics(double x0, double y0, double a, double p1, double b, double p2);
 
 
-	std::vector<Configuration> calculatePath(unsigned char phi, signed short endValue);
-
-	void printPath(std::vector<Configuration> confs);
-
-
-
-
-	const Configuration& getConf() const;
-	void setConf(const Configuration& conf);
 	Position getPos() const;
 	void setPos(Position pos);
+	const std::vector<signed short>& getConf() const;
+	void setConf(const std::vector<signed short>& conf);
 
 private:
-	Configuration Conf;
+	std::vector<signed short> Conf;
 	Position pos;
 
 	//lengths in mm

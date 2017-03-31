@@ -7,6 +7,9 @@
 #include <iostream>
 #include <cmath>
 #include "RoboticArm.hpp"
+#include "AStar.hpp"
+#include "Size.hpp"
+#include "Point.hpp"
 
 struct robotInput	{
 	unsigned long x;
@@ -34,7 +37,7 @@ robotInput convertToRobotInput(signed long x, unsigned long y, unsigned short ob
 int main(int argc, char **argv) {
 
 	RoboticArm robotArm(1,146,187,86); //TODO: hoogte a opmeten.
-	robotArm.setConf(Configuration{0,0,0,0,0,0});
+	robotArm.setConf(std::vector<signed short>{0,0,0,0,0,0});
 
 	//(1) vind blokje positie&rotatie
 	robotInput input = convertToRobotInput(-100, 200, 20, 20);
@@ -46,11 +49,12 @@ int main(int argc, char **argv) {
 
 	//(2) base&gripper goed roteren & gripper openen
 	std::cout << "pad naar 6" << std::endl;
-	robotArm.printPath(robotArm.calculatePath(1, 6));
+	robotArm.printPath(robotArm.calculatePath(0, 6));
 
 	std::cout << "pad test" << std::endl;
-	robotArm.printPath(robotArm.calculatePath(Configuration{6,8,1,9,1,4}, Point(1,2)));
-
+	robotArm.printPath(robotArm.calculatePath(std::vector<signed short>{6,20,30,9,1,4}, Point(80,250)));
+	std::vector<std::vector<signed short>> pad = robotArm.calculatePath(std::vector<signed short>{6,20,30,9,1,4}, Point(250,0));
+	std::cout << robotArm.forwardKinematics(0,0,146,pad.back().at(1), 187, pad.back().at(2)).first << std::endl;;
 
 
 	return true;
@@ -75,7 +79,5 @@ int main(int argc, char **argv) {
  * (4) zakken naar grond & gripper loslaten
  * (5) ga naar ready posities
  */
-
-
 
 

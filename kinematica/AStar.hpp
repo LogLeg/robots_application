@@ -13,20 +13,21 @@
 
 namespace PathAlgorithm
 {
+std::pair<double, double> forwardKinematics(double x0, double y0, double a, double p1, double b, double p2);
 struct Vertex
 {
 	/**
 	 *
 	 */
-	Vertex(int anX, int anY) :
-			x(anX), y(anY), actualCost(0.0), heuristicCost(0.0)
+	Vertex(int anX, int anY, int anPhi1, int anPhi2) :
+			x(anX), y(anY), phi1(anPhi1), phi2(anPhi2), actualCost(0.0), heuristicCost(0.0)
 	{
 	}
 	/**
 	 *
 	 */
-	Vertex(const Point& aPoint) :
-			x(aPoint.x), y(aPoint.y), actualCost(0.0), heuristicCost(0.0)
+	Vertex(const Point& aPoint, int anPhi1, int anPhi2) :
+			x(aPoint.x), y(aPoint.y), phi1(anPhi1), phi2(anPhi2), actualCost(0.0), heuristicCost(0.0)
 	{
 	}
 	/**
@@ -66,6 +67,10 @@ struct Vertex
 	{
 		return x == aVertex.x && y == aVertex.y;
 	}
+	bool approxEqualPoint(const Vertex& aVertex, unsigned char precision) const
+	{
+		return (x < aVertex.x + precision) && (x > aVertex.x - precision) && (y < aVertex.y + precision) && (y > aVertex.y - precision);
+	}
 
 	bool operator==(const Vertex& aVertex)
 	{
@@ -79,6 +84,8 @@ struct Vertex
 
 	int x;
 	int y;
+	int phi1;
+	int phi2;
 
 	double actualCost;
 	double heuristicCost;
@@ -159,7 +166,7 @@ struct Edge
  */
 inline std::ostream& operator<<(std::ostream& os, const Vertex & aVertex)
 {
-	return os << "(" << aVertex.x << "," << aVertex.y << "), " << aVertex.actualCost << " " << aVertex.heuristicCost;
+	return os << "(" << aVertex.x << "," << aVertex.y << "), " << "(" << aVertex.phi1 << "," << aVertex.phi2 << "), " << aVertex.actualCost << " " << aVertex.heuristicCost;
 }
 /**
  *
