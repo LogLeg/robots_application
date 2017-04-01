@@ -196,10 +196,6 @@ public:
 	/**
 	 *
 	 */
-	//Path search(const Point& aStartPoint, const Point& aGoalPoint, const Size& aRobotSize);
-	/**
-	 *
-	 */
 	Path search(Vertex aStart, const Vertex& aGoal, const Size& aRobotSize, RoboticArm& robot);
 	/**
 	 *

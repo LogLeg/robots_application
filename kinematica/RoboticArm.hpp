@@ -37,7 +37,6 @@ public:
 	 * @brief constructor
 	 */
 	RoboticArm(unsigned short a, unsigned short b, unsigned short c, unsigned short d, Servo s1, Servo s2, Servo s3, Servo s4, Servo s5, Servo s6);
-
 	/*
 	 * @brief go to xyz position and turn gripper
 	 * @param z z-axis of robotarm X from top down view
@@ -45,11 +44,6 @@ public:
 	 * @param Y y-axis of robotarm no top down view- height of gripper.
 	 */
 	void armGoto(signed long z, unsigned long x, unsigned long y, signed short objectAngle);
-	/*
-	 * @brief set the angle of the base
-	 * @param angle angle to set
-	 */
-	void setBaseAngle(signed short angle);
 	/*
 	 * @brief set the angle of the gripper
 	 * @param angle angle to set
@@ -87,11 +81,38 @@ public:
 	 * @param path path to follow
 	 */
 	void followPath(const std::vector<std::vector<signed short>>& path);
-
+	/*
+	 * @brief forward kinematics, calculate X&Y point for angles & lengths for 2dof
+	 * @param x0 x position of robot base
+	 * @param y0 y position of robot base
+	 * @param a length of shoulder to elbow
+	 * @param p1 angle of first degree
+	 * @param b length of elbow to wrist
+	 * @param p2 angle of first degree
+	 */
 	std::pair<double, double> forwardKinematics(double x0, double y0, double a, double p1, double b, double p2);
+	/*
+	 * @brief forward kinematics, calculate X&Y point for angles & lengths for 3dof
+	 * @param x0 x position of robot base
+	 * @param y0 y position of robot base
+	 * @param a length of shoulder to elbow
+	 * @param p1 angle of first degree
+	 * @param b length of elbow to wrist
+	 * @param p2 angle of second degree
+	 * @param c length of wrist to gripper
+	 * @param p3 angle of 3rd degree
+	 */
+	std::pair<double, double> forwardKinematics(double x0, double y0, double a, double p1, double b, double p2, double c, double p3);
 
-
+	/*
+	 * @brief convert x&y from vision to X&Angle
+	 * @param x x from opencv
+	 * @param y y from opencv
+	 * @return X&angle of robotarm
+	 */
 	std::pair<unsigned long, signed short> convertToXAngle(signed long x, unsigned long y);
+
+	//<<GETTERS && SETTERS>>
 	Position getPos() const;
 	void setPos(Position pos);
 	const std::vector<signed short>& getConf() const;
@@ -110,10 +131,8 @@ public:
 	Servo s6;
 
 private:
-	std::vector<signed short> Conf;
+	std::vector<signed short> configuration;
 	Position pos;
-
-
 
 };
 

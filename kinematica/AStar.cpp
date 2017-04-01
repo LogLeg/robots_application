@@ -57,15 +57,20 @@ std::vector<Vertex> GetNeighbours(const Vertex& aVertex, int aFreeRadius /*= 1*/
 			double newPhi1 = aVertex.phi1 + p1;
 			double newPhi2 = aVertex.phi2 + p2;
 
-			if ((newPhi1 >= robot.s2.min && newPhi1 <= robot.s2.max) && (newPhi2 >= robot.s3.min && newPhi2 <= robot.s3.max))
+			double newPhi3 = 180 - round(newPhi1) - round(newPhi2);
+			newPhi3 = newPhi3 < robot.s4.min ? robot.s4.min : newPhi3;
+			newPhi3 = newPhi3 > robot.s4.max ? robot.s4.max : newPhi3;
+			std::pair<double, double> gripperXY = robot.forwardKinematics(0, robot.a, robot.b, newPhi1, robot.c, newPhi2, robot.d, newPhi3);
+			if (gripperXY.second > 0)
 			{
-				Vertex nbVertex = Vertex(robot.forwardKinematics(0, robot.a, robot.b, newPhi1, robot.c, newPhi2).first, robot.forwardKinematics(0, 0, robot.b, newPhi1, robot.c, newPhi2).second, newPhi1, newPhi2);
+				if ((newPhi1 >= robot.s2.min && newPhi1 <= robot.s2.max) && (newPhi2 >= robot.s3.min && newPhi2 <= robot.s3.max))
+				{
+					Vertex nbVertex = Vertex(robot.forwardKinematics(0, robot.a, robot.b, newPhi1, robot.c, newPhi2).first, robot.forwardKinematics(0, robot.a, robot.b, newPhi1, robot.c, newPhi2).second, newPhi1, newPhi2);
 
-				//std::cout << nbVertex << std::endl;
-				//if (nbVertex.y < 0)
-				//	break;
-				neighbours.push_back(nbVertex);
+					//std::cout << nbVertex << std::endl;
+					neighbours.push_back(nbVertex);
 
+				}
 			}
 		}
 	}
@@ -88,17 +93,6 @@ std::vector<Edge> GetNeighbourConnections(const Vertex& aVertex, int aFreeRadius
 
 	return connections;
 }
-/**
- *
- */
-//Path AStar::search(const Point& aStartPoint, const Point& aGoalPoint, const Size& aRobotSize)
-//{
-//	Vertex start(aStartPoint, 1,2);
-//	Vertex goal(aGoalPoint, 0,0);
-//
-//	Path path = AStar::search(start, goal, aRobotSize);
-//	return path;
-//}
 /**
  *
  */
@@ -397,7 +391,7 @@ VertexMap AStar::getPredecessorMap() const
 /**
  *
  */
-ClosedSet& AStar::getCS()
+ClosedSet & AStar::getCS()
 {
 	std::unique_lock<std::recursive_mutex> lock(closedSetMutex);
 	return closedSet;
@@ -413,7 +407,7 @@ const ClosedSet& AStar::getCS() const
 /**
  *
  */
-OpenSet& AStar::getOS()
+OpenSet & AStar::getOS()
 {
 	std::unique_lock<std::recursive_mutex> lock(openSetMutex);
 	return openSet;
@@ -429,7 +423,7 @@ const OpenSet& AStar::getOS() const
 /**
  *
  */
-VertexMap& AStar::getPM()
+VertexMap & AStar::getPM()
 {
 	std::unique_lock<std::recursive_mutex> lock(predecessorMapMutex);
 	return predecessorMap;
