@@ -44,53 +44,43 @@ Path ConstructPath(VertexMap& aPredecessorMap, const Vertex& aCurrentNode)
 /**
  *
  */
-std::vector<Vertex> GetNeighbours(const Vertex& aVertex, int aFreeRadius /*= 1*/)
+std::vector<Vertex> GetNeighbours(const Vertex& aVertex, int aFreeRadius /*= 1*/, RoboticArm& robot)
 {
-	std::cout << "input: " << aVertex << std::endl;
-
+	//std::cout << "input: " << aVertex << std::endl;
 
 	std::vector<Vertex> neighbours;
 
-
-	for (signed char p1 = -1; p1 < 2; ++p1){
-		for (signed char p2 = -1; p2 < 2; ++p2){
+	for (signed char p1 = -1; p1 < 2; ++p1)
+	{
+		for (signed char p2 = -1; p2 < 2; ++p2)
+		{
 			double newPhi1 = aVertex.phi1 + p1;
 			double newPhi2 = aVertex.phi2 + p2;
 
-			if (newPhi1 < -30 || newPhi1 > 90) break;
-			if (newPhi2 < 0 || newPhi2 > 135) break;
-			Vertex nbVertex = Vertex(forwardKinematics(0, 0, 146, newPhi1, 187, newPhi2).first,
-					forwardKinematics(0, 0, 146, newPhi1, 187, newPhi2).second, newPhi1, newPhi2);
+			if ((newPhi1 >= robot.s2.min && newPhi1 <= robot.s2.max) && (newPhi2 >= robot.s3.min && newPhi2 <= robot.s3.max))
+			{
+				Vertex nbVertex = Vertex(robot.forwardKinematics(0, robot.a, robot.b, newPhi1, robot.c, newPhi2).first, robot.forwardKinematics(0, 0, robot.b, newPhi1, robot.c, newPhi2).second, newPhi1, newPhi2);
 
-			if (nbVertex.x < 0) break;
-			if (p1 != 0 && p2 != 0){
+				//std::cout << nbVertex << std::endl;
+				//if (nbVertex.y < 0)
+				//	break;
 				neighbours.push_back(nbVertex);
+
 			}
-			//std::cout << Vertex(forwardKinematics(0, 0, 146, aVertex.phi1 + p1, 187, aVertex.phi2 + p2).first,
-			//		forwardKinematics(0, 0, 146, aVertex.phi1 + p1, 187, aVertex.phi2 + p2).second, aVertex.phi1 + p1, aVertex.phi2 + p2) << std::endl;
 		}
 	}
 
 	return neighbours;
 }
-std::pair<double, double> forwardKinematics(double x0, double y0, double a, double p1, double b, double p2)
-{
-
-	const double PI = 3.141592654;
-	using std::sin;
-	using std::cos;
-
-	return std::pair<double, double>((x0 + a * sin((p1) * PI / 180.0) + b * sin((p1 + p2) * PI / 180.0)), (y0 + a * cos((p1) * PI / 180.0) + b * cos((p1 + p2) * PI / 180.0)));
-}
 
 /**
  *
  */
-std::vector<Edge> GetNeighbourConnections(const Vertex& aVertex, int aFreeRadius /*= 1*/)
+std::vector<Edge> GetNeighbourConnections(const Vertex& aVertex, int aFreeRadius /*= 1*/, RoboticArm& robot)
 {
 	std::vector<Edge> connections;
 
-	const std::vector<Vertex>& neighbours = GetNeighbours(aVertex, aFreeRadius);
+	const std::vector<Vertex>& neighbours = GetNeighbours(aVertex, aFreeRadius, robot);
 	for (const Vertex& vertex : neighbours)
 	{
 		connections.push_back(Edge(aVertex, vertex));
@@ -101,19 +91,19 @@ std::vector<Edge> GetNeighbourConnections(const Vertex& aVertex, int aFreeRadius
 /**
  *
  */
-Path AStar::search(const Point& aStartPoint, const Point& aGoalPoint, const Size& aRobotSize)
-{
-	Vertex start(aStartPoint, 1,2);
-	Vertex goal(aGoalPoint, 0,0);
-
-	Path path = AStar::search(start, goal, aRobotSize);
-	return path;
-}
+//Path AStar::search(const Point& aStartPoint, const Point& aGoalPoint, const Size& aRobotSize)
+//{
+//	Vertex start(aStartPoint, 1,2);
+//	Vertex goal(aGoalPoint, 0,0);
+//
+//	Path path = AStar::search(start, goal, aRobotSize);
+//	return path;
+//}
 /**
  *
  */
 
-Path AStar::search(Vertex aStart, const Vertex& aGoal, const Size& aRobotSize)
+Path AStar::search(Vertex aStart, const Vertex& aGoal, const Size& aRobotSize, RoboticArm& robot)
 {
 	getOS().clear();
 	getCS().clear();
@@ -126,7 +116,7 @@ Path AStar::search(Vertex aStart, const Vertex& aGoal, const Size& aRobotSize)
 
 	addToOpenSet(aStart);
 
-	//		long long begin = std::clock();
+//		long long begin = std::clock();
 
 	while (!openSet.empty())
 	{
@@ -141,7 +131,7 @@ Path AStar::search(Vertex aStart, const Vertex& aGoal, const Size& aRobotSize)
 			addToClosedSet(current);
 			removeFirstFromOpenSet();
 
-			const std::vector<Edge>& connections = GetNeighbourConnections(current, radius);
+			const std::vector<Edge>& connections = GetNeighbourConnections(current, radius, robot);
 			for (const Edge& connection : connections)
 			{
 				Vertex neighbour = connection.otherSide(current);
@@ -260,7 +250,7 @@ Path AStar::search(Vertex aStart, const Vertex& aGoal, const Size& aRobotSize)
 			std::iter_swap(openSet.begin(), std::min_element(openSet.begin(), openSet.end(), VertexLessCostCompare()));
 		}
 	}
-	// std::cerr << "Duration: " << (std::clock() - begin) << " openSet: " << getOS().size() << " closedSet: " << getCS().size() << " predecessorMap: " << getPM().size() << std::endl;
+// std::cerr << "Duration: " << (std::clock() - begin) << " openSet: " << getOS().size() << " closedSet: " << getCS().size() << " predecessorMap: " << getPM().size() << std::endl;
 
 	std::cerr << "**** No route from " << aStart << " to " << aGoal << std::endl;
 	return Path();
@@ -272,7 +262,7 @@ void AStar::addToOpenSet(const Vertex& aVertex)
 {
 	std::unique_lock<std::recursive_mutex> lock(openSetMutex);
 	openSet.push_back(aVertex);
-	//notifyObservers();
+//notifyObservers();
 }
 /**
  *
@@ -290,7 +280,7 @@ void AStar::removeFromOpenSet(OpenSet::iterator& i)
 {
 	std::unique_lock<std::recursive_mutex> lock(openSetMutex);
 	openSet.erase(i);
-	////notifyObservers();
+////notifyObservers();
 }
 /**
  *
@@ -333,7 +323,7 @@ void AStar::addToClosedSet(const Vertex& aVertex)
 {
 	std::unique_lock<std::recursive_mutex> lock(closedSetMutex);
 	closedSet.insert(aVertex);
-	//notifyObservers();
+//notifyObservers();
 }
 /**
  *
@@ -351,7 +341,7 @@ void AStar::removeFromClosedSet(ClosedSet::iterator& i)
 {
 	std::unique_lock<std::recursive_mutex> lock(closedSetMutex);
 	closedSet.erase(i);
-	//notifyObservers();
+//notifyObservers();
 }
 /**
  *
@@ -359,7 +349,7 @@ void AStar::removeFromClosedSet(ClosedSet::iterator& i)
 ClosedSet::iterator AStar::findInClosedSet(const Vertex& aVertex)
 {
 	std::unique_lock<std::recursive_mutex> lock(closedSetMutex);
-	//return std::find_if(closedSet.begin(),closedSet.end(),[aVertex](const Vertex& rhs){return aVertex.equalPoint(rhs);});
+//return std::find_if(closedSet.begin(),closedSet.end(),[aVertex](const Vertex& rhs){return aVertex.equalPoint(rhs);});
 	return closedSet.find(aVertex);
 }
 /**

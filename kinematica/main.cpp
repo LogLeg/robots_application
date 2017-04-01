@@ -11,50 +11,70 @@
 #include "Size.hpp"
 #include "Point.hpp"
 
-struct robotInput	{
-	unsigned long x;
-	signed short robotAngle;
-	signed short gripperAngle;
-	signed short objectWidth;
-};
-
-/*
- * @brief convert vision data to x & angle
- * @param x x value from base
- * @param y y value from base
- * @param objectAngle angle of the object
- * @param objectWidth width of the object
- */
-robotInput convertToRobotInput(signed long x, unsigned long y, unsigned short objectAngle, unsigned short objectWidth)	{
-	robotInput robot;
-	robot.x = sqrt(pow(x,2) + pow(y,2));
-	robot.robotAngle = round(std::asin(double(x)/double(robot.x)) * 180.0 / M_PI);
-	robot.objectWidth = objectWidth;
-	robot.gripperAngle = -robot.robotAngle + objectAngle + 0; // TODO: evt. +90
-	return robot;
-}
 
 int main(int argc, char **argv) {
 
-	RoboticArm robotArm(1,146,187,86); //TODO: hoogte a opmeten.
+	RoboticArm robotArm(1,146,187,86, Servo{-90,90}, Servo{-30,90}, Servo{0,135}, Servo{-90,90}, Servo{-90,90}, Servo{0,20}); //TODO: hoogte a opmeten.
 	robotArm.setConf(std::vector<signed short>{0,0,0,0,0,0});
 
 	//(1) vind blokje positie&rotatie
-	robotInput input = convertToRobotInput(-100, 200, 20, 20);
-	std::cout << "x: " << input.x << std::endl;
-	std::cout << "robotAngle: " << input.robotAngle << std::endl;
-	std::cout << "gripperAngle: " << input.gripperAngle << std::endl;
-	std::cout << "objectWidth: " << input.objectWidth << std::endl;
+	const int objectX = -100; 	//object X in mm
+	const int objectY = 250;	//object Y in mm
+	const int objectangle = 25;	//object angle in degrees
+	const int objectwidth = 20;	//object windth in mm
+	const int circelX = 100;	//circel center X
+	const int circelY = 150;	//circel center Y
 
-
+	std::cout << "Blokje oppakken: " << std::endl;
 	//(2) base&gripper goed roteren & gripper openen
-	std::cout << "pad naar 6" << std::endl;
-	robotArm.printPath(robotArm.calculatePath(0, 6));
+	robotArm.setGripperValue(30);
 
-	std::cout << "pad test" << std::endl;
-	robotArm.printPath(robotArm.calculatePath(std::vector<signed short>{6,20,30,9,1,4}, Point(80,250)));
-	std::vector<std::vector<signed short>> pad = robotArm.calculatePath(std::vector<signed short>{6,20,30,9,1,4}, Point(250,0));
-	std::cout << robotArm.forwardKinematics(0,0,146,pad.back().at(1), 187, pad.back().at(2)).first << std::endl;;
+
+	//(3) ga naar 2 cm boven blokje & gripper naar beneden richten
+	robotArm.armGoto(objectX, objectY, 50, objectangle);
+
+	//(4) ga naar beneden & gripper dichtknijpen
+	robotArm.armGoto(objectX, objectY, 10, objectangle); //TODO: hoogte van grond afstellen
+	robotArm.setGripperValue(objectwidth - 0); //TODO: knijpkracht afstellen
+
+	//(5) ga naar 2 cm boven grond
+	robotArm.armGoto(objectX, objectY, 50, 0);
+
+
+
+	// Blokje neerleggen:
+	std::cout << "Blokje neerleggen: " << std::endl;
+	//(3) ga naar 2cm boven cirkel
+	robotArm.armGoto(circelX, circelY, 50, 0);
+
+	//(4) zakken naar grond & gripper loslaten
+	robotArm.armGoto(circelX, circelY, 10, 0);
+	robotArm.setGripperValue(30);
+
+	//(3) ga naar 2cm boven cirkel
+	robotArm.armGoto(circelX, circelY, 50, 0);
+
+
+
+
+
+
+
+
+
+//	std::cout << "pad naar 6" << std::endl;
+//	robotArm.printPath(robotArm.calculatePath(0, 6));
+
+//	std::cout << "pad test" << std::endl;
+//	std::vector<std::vector<signed short>> pad = robotArm.calculatePath(robotArm.getConf(), Point(320,30));
+//	robotArm.printPath(pad);
+//	robotArm.followPath(pad);
+//	std::cout << "0: " << robotArm.getConf().at(0) << std::endl;
+//	std::cout << "1: " << robotArm.getConf().at(1) << std::endl;
+//	std::cout << "2: " << robotArm.getConf().at(2) << std::endl;
+//	std::cout << "3: " << robotArm.getConf().at(3) << std::endl;
+//	std::cout << "4: " << robotArm.getConf().at(4) << std::endl;
+//	std::cout << "5: " << robotArm.getConf().at(5) << std::endl;
 
 
 	return true;
@@ -77,7 +97,12 @@ int main(int argc, char **argv) {
  * (2) base roteren
  * (3) ga naar 2cm boven cirkel
  * (4) zakken naar grond & gripper loslaten
- * (5) ga naar ready posities
+ * (5) ga naar ready positie
  */
 
 
+/*
+ * hoogte a opmeten in mm
+ * robot pwm max en min instellen
+ *
+ */

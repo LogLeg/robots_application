@@ -9,8 +9,10 @@
 
 #include "Point.hpp"
 #include "Size.hpp"
+#include "RoboticArm.hpp"
 
 
+class RoboticArm;
 namespace PathAlgorithm
 {
 std::pair<double, double> forwardKinematics(double x0, double y0, double a, double p1, double b, double p2);
@@ -194,12 +196,11 @@ public:
 	/**
 	 *
 	 */
-	Path search(const Point& aStartPoint, const Point& aGoalPoint, const Size& aRobotSize);
+	//Path search(const Point& aStartPoint, const Point& aGoalPoint, const Size& aRobotSize);
 	/**
 	 *
 	 */
-	Path search(Vertex aStart, const Vertex& aGoal, const Size& aRobotSize);
-	Path searchBF(Vertex aStart, const Vertex& aGoal, const Size& aRobotSize);
+	Path search(Vertex aStart, const Vertex& aGoal, const Size& aRobotSize, RoboticArm& robot);
 	/**
 	 *
 	 */
