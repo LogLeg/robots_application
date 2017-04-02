@@ -71,10 +71,12 @@ int8_t Interface::parser(bool first_time)
 		}
 		else
 		{
-			spec = user_input[0];
+			spec = user_input[0] - '0';
 		}
 
 		specification = spec;
+
+		cout << "spec = " << spec << endl;
 
 		//print_specification();
 	}
@@ -89,11 +91,16 @@ int8_t Interface::await_input(bool first_time)
 {
 
 	//TODO edit this text
-	cout << "Please specify the desired shape and colour that needs to be detected." << endl <<
-	"shapes are: 'c' (circle), 'h' (half circle), 'r' (rectangle), 'b' (bar), 't' (triangle)" << endl <<
-	"colours are: 'w'(white), 'd' (black), 'r' (red), 'g' (green), 'b' (blue), 'y' (yellow)" << endl <<
-	"fill in 'e' to exit" << endl <<
-	"format is: [shape][space][colour]" << endl << endl;
+	if(first_time)
+	{
+		cout << "Please choose the colour of the object to grab." << endl <<
+				"colours are: 'd' (black), 'r' (red), 'g' (green), 'b' (blue), 'y' (yellow)" << endl <<
+				"fill in 'e' to exit" << endl << endl;
+	}
+	else
+	{
+		cout << "Please choose the number of the detected objects." << endl << endl;
+	}
 
 
 	if(parser(first_time) == 1)

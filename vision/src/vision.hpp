@@ -18,14 +18,18 @@
 #include <opencv2/videoio.hpp>
 
 #include "interface.hpp"
-//#include "counter.hpp"
-//#include "constants.hpp"
 
 using namespace std;
 using namespace cv;
 
 /**
 * @brief Struct for the colour thresholds
+* @param hue_min the minimal hue
+* @param sat_min the minimal saturation
+* @param val_min the minimal value
+* @param hue_max the maximal hue
+* @param sat_max the maximal saturation
+* @param val_max the maximal value
 */
 struct Colour
 {
@@ -38,6 +42,12 @@ struct Colour
 	string name;
 };
 
+/**
+ * @brief Struct for properties of a certain contour
+ * @param center the center of a contour
+ * @param width the width of a contour
+ * @param height the height of a contour
+ */
 struct Properties
 {
 	Point2d center;
@@ -46,7 +56,7 @@ struct Properties
 };
 
 /**
- * The vision class does all the image recognition work.
+ * The vision class does all the image recognition work. and also translates the pixels to millimeters
  */
 class Vision
 {
@@ -62,13 +72,15 @@ public:
 	~Vision();
 
 	/**
-	 * @brief This function will initialize the camera
+	 * @brief This function will initialize the camera and will set additional parameters that depend on what the camera sees. Like calibrating the pixels per mm
 	 * @param window_name The abaility to set a custom window name
+	 * @param device the webcam that should be used
+	 * @param test parameter to use a screenshot instead for testing
 	 */
 	void initialize(const string& window_name, uint8_t device, bool test);
 
 	/**
-	 * @brief This function will take all the loose ends of this class and combine them into one Mat so that everyting is nice and tidy.
+	 * @brief This function will take all the loose ends of this class and combine them into one Mat so that everything is nice and tidy.
 	 */
 	void show_image();
 
@@ -78,30 +90,141 @@ public:
 	 */
 	void take_frame(bool screenshot);
 
-	void get_calibration_square();
+	/**
+	 * @brief This function will filter a colour out of the @see src Mat.
+	 * @param colour_number This is the colour parameter
+	 * @return Returns a binairy Mat to process further down the road.
+	 */
+	Mat1b filter_colour(uint8_t colour_number);
 
-	Mat1b filter_colour(const Mat& input, const Colour& colour);
+	/**
+	 * @brief This function will find contours that meet the shape that has been given with the function. It will search all contours and then
+	 * check for rectangles, bars or circles.
+	 * @param input This should be the return value of @see filter_colour(uint8_t colour_number).
+	 * @param shape The shape that needs to be searched for
+	 * @return A vector of pairs with contours and nested contours This last one is only used by the @see get_calibration_square() function.
+	 */
+	vector<pair<vector<Point>, vector<vector<Point>>>> detect_shape(const Mat1b& input, uint8_t shape);
 
-	vector<vector<Point>> find_shape(uint8_t shape, const Mat1b& input);
+	/**
+	 * @brief This function will return the properties of a given contour
+	 * @param contour The contour that needs to be documented in properties
+	 * @return The properties of the contour
+	 */
+	Properties get_properties(const vector<Point>& contour);
 
-	vector<vector<Point>> detect_square(const Mat1b& input, uint8_t shape);
+	/**
+	 * @brief This function will transform the x and y coordinate of a shape defined in properties to actual millimeters measured
+	 * from the base of the robotic arm
+	 * @param properties A pointer to a properties object to transform.
+	 */
+	void transform_properties(Properties* properties);
 
+	/**
+	 * @brief This function will put numers on the objects that can be grabbed by the robotic arm.
+	 * @param colour The colour to detect from all the objects.
+	 */
+	uint8_t number_selection(uint8_t colour);
+
+	/**
+	 * @brief This function will return the properties of the selected shape
+	 * @param shape The number from the selection from @see number_selection(uint8_t colour)
+	 * @return The properties of the shape to grab
+	 */
+	Properties shape2grab(uint8_t shape);
+
+private:
+	/**
+	 * @brief This function will search for a specific calibration square in the picture and will adjust the pixel to mm ratio to that. It will
+	 * also serve as a anchor to calculate where the robotic arm is.
+	 * It will fill the @see calibration_square_properties variable.
+	 * @return true if the square was found.
+	 */
+	bool get_calibration_square();
+
+	/**
+	 * @param pt1 point 1 from a rectangle.
+	 * @param pt2 point 2 from a rectangle.
+	 * @param pt1 point 0 from a rectangle. This is the point where the corner is calculated for.
+	 * @return returns the angle of a corner.
+	 */
+	double angle(const Point& pt1, const Point& pt2, const Point& pt0);
+
+	/**
+	 * @brief This function will check if the given contour actually contains corners with 90 degrees and after that it will say if its either a
+	 * rectangle or a square.
+	 * @param contour The contour that needs to be checked
+	 * @param contours_approxPoly The  corners of the contour
+	 * @return returns the found shape.
+	 */
 	uint8_t check_rectangle(const vector<Point>& contour, const vector<Point>& contours_approxPoly);
 
-	Properties get_properties(const vector<Point>& contour);
+	/**
+	 * @brief This function detects circles. Only used to determine the target position of a shape.
+	 * @param contour The contour that has been found by @see detect_shape()
+	 * @return True if circle has been found
+	 */
+	bool detect_circle(const vector<Point>& contour);
 
 	/**
 	 * @brief This function sets all the colour values into their corresponding structs
 	 */
 	void set_colour_values();
 
+
 	/**
-	 * @brief Main function to call to detect a shape and colour. Returns true when found
-	 * @param specification Specification pair. shape (first), colour (second)
-	 * @param batch changes the behaviour of the data stream to the user.
-	 * @return returns true when the object is found
+	 * @brief Colour objects.
 	 */
-	//bool detect(const pair<uint8_t, uint8_t>& specification, bool batch);
+	Colour white;
+	Colour black;
+	Colour red;
+	Colour green;
+	Colour blue;
+	Colour yellow;
+
+	vector<vector<Point>> selection;
+	vector<Point> calibration_square;
+	Properties calibration_square_properties;
+
+	/**
+	 * @brief vector with the colours from above.
+	 */
+	vector<Colour> colours;
+
+	/**
+	 * @brief just the name of the window.
+	 */
+	string window_name;
+
+	/**
+	 * @brief capture object
+	 */
+	VideoCapture cap;
+
+	/*
+	 * @brief Mat objects to manipulate and copy into.
+	 */
+	Mat src;
+	Mat screenshot_rgb;
+	Mat output;
+	Mat drawing;
+	Mat1b binairy_mat_final;
+
+	/**
+	 * @brief Pixels per mm
+	 */
+	double pixels_per_mm;
+
+	/**
+	 * @brief translation to the robotbase in mm
+	 */
+	double distance_to_robotbase_x;
+	double distance_to_robotbase_y;
+
+	/**
+	 * @brief maximal grabbable size in mm
+	 */
+	double max_grabbable_size;
 
 
 
@@ -109,7 +232,10 @@ public:
 
 
 
-private:
+
+
+
+
 
 	/**
 	 * @brief used to calibrate the colour edges
@@ -168,29 +294,8 @@ private:
 	 */
 	//uint8_t hough_circle(const Mat& input);
 
-	/**
-	 * @param pt1 point 1 from a rectangle.
-	 * @param pt2 point 2 from a rectangle.
-	 * @param pt1 point 0 from a rectangle. This is the point where the corner is calculated for.
-	 * @return returns the angle of a corner.
-	 */
-	double angle(const Point& pt1, const Point& pt2, const Point& pt0);
 
-	/**
-	 * @brief Colour objects.
-	 */
-	Colour white;
-	Colour black;
-	Colour red;
-	Colour green;
-	Colour blue;
-	Colour yellow;
 
-	int x_factor;
-	int y_factor;
-
-	vector<Point> calibration_square;
-	Properties calibration_square_properties;
 
 	/**
 	 * @brief time variables to return the total time afterwards.
@@ -198,39 +303,9 @@ private:
 	//clock_t colour_time;
 	//clock_t shape_time;
 
-	/**
-	 * @brief vector with the colours from above.
-	 */
-	vector<Colour> colours;
 
-	/**
-	 * @brief contour & hierarchy vector
-	 */
-	//vector<vector<Point>> contours;
-	//vector<Vec4i> hierarchy;
 
-	/**
-	 * @brief just the name of the window.
-	 */
-	string window_name;
 
-	/**
-	 * @brief capture object
-	 */
-	VideoCapture cap;
-
-	/*
-	 * @brief Mat objects to manipulate and copy into.
-	 */
-	Mat src;
-	Mat screenshot_rgb;
-//	Mat screenshot_rgb_copy;
-//	Mat screenshot_bgr;
-//	Mat screenshot_hsv;
-	Mat output;
-//	Mat input_gray;
-//	Mat colour_recognition_colour;
-	Mat1b binairy_mat_final;
 //	Mat information;
 
 	/**

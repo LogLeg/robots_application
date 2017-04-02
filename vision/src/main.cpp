@@ -5,6 +5,8 @@
  *      Author: sidney
  */
 
+#include <thread>
+
 #include "vision.hpp"
 #include "interface.hpp"
 
@@ -13,35 +15,70 @@ Interface interface = Interface();
 
 bool running = true;
 
+void fn();
+
 int main(int argc,char* argv[])
 {
+	Properties object_properties;
+	Properties target_properties;
 	vision.initialize("robots_application", 0, true);
 
-	/*while(true)
-	{
-		vision.show_image();
-	}*/
+	thread live_feed(fn);
 
 	while(running)
 	{
+
 		if(interface.await_input(true) == 1)
 		{
 			running = false;
 		}
 		else
 		{
-			//vision.take_frame(true);
-			vision.show_image();
+			vision.take_frame(true);
+			uint8_t size = vision.number_selection(interface.get_specification());
 
-			/*
-			if(vision.detect(interface.get_specification(), false))
+			if(size != 0)
 			{
-				cout << "detected the shape!" << endl;
-			}*/
+				if(interface.await_input(false) == 1)
+				{
+					running = false;
+				}
+				else
+				{
+					if(interface.get_specification() <= size)
+					{
+						object_properties = vision.shape2grab(interface.get_specification());
+
+						cout << "height of selected object = " << vision.shape2grab(interface.get_specification()).height << endl;
+
+						target_properties = vision.get_properties(vision.detect_shape(vision.filter_colour(WHITE), CIRCLE).at(0).first);
+
+						vision.transform_properties(&object_properties);
+						vision.transform_properties(&target_properties);
+
+						cout << "object coordinates are: x: " << object_properties.center.x << " - y: " << object_properties.center.y << endl;
+						cout << "target coordinates are: x: " << target_properties.center.x << " - y: " << target_properties.center.y << endl;
+					}
+				}
+			}
+			else
+			{
+				cout << "did not find any grabbable shapes in that colour, please try again" << endl << endl;
+			}
 		}
 	}
 
+	live_feed.join();
+
 	return 0;
+}
+
+void fn()
+{
+	while(running)
+	{
+		vision.show_image();
+	}
 }
 
 
