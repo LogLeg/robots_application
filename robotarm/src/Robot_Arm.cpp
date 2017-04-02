@@ -55,16 +55,16 @@ RobotArm::~RobotArm()
 }
 
 
-bool RobotArm::goTo(beginner_tutorials::Robot_GoTo::Request  &req,
-         beginner_tutorials::Robot_GoTo::Response &res)
+bool RobotArm::goTo(robotarm::Robot_GoTo::Request  &req,
+         robotarm::Robot_GoTo::Response &res)
 {
 	goTo(req.angle1,req.angle2,req.angle3,req.angle4,req.angle5,req.angle6, req.inTime);  	
 
   return true;
 }
 
-bool RobotArm::status(beginner_tutorials::Robot_Status::Request  &req,
-         beginner_tutorials::Robot_Status::Response &res)
+bool RobotArm::status(robotarm::Robot_Status::Request  &req,
+         robotarm::Robot_Status::Response &res)
 {
 	//MyRobot->status();
 	res.angle1=ServoList.at(0).getAngle();
@@ -77,8 +77,8 @@ bool RobotArm::status(beginner_tutorials::Robot_Status::Request  &req,
 	return true;
 }
 
-bool RobotArm::stop(beginner_tutorials::Robot_Stop::Request  &req,
-         beginner_tutorials::Robot_Stop::Response &res)
+bool RobotArm::stop(robotarm::Robot_Stop::Request  &req,
+         robotarm::Robot_Stop::Response &res)
 {
 	stop();
 	ROS_INFO("request: Stop. we might think about it");

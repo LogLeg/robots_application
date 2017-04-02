@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <package>
-  <name>beginner_tutorials</name>
+  <name>robotarm</name>
   <version>0.0.0</version>
-  <description>The beginner_tutorials package</description>
+  <description>The robotarm package</description>
 
   <!-- One maintainer tag required, multiple allowed, one person per tag --> 
   <!-- Example:  -->
   <!-- <maintainer email="jane.doe@example.com">Jane Doe</maintainer> -->
-  <maintainer email="ronald@todo.todo">ronald</maintainer>
+  <maintainer email="stefanhidding1@student.han.nl">stefan</maintainer>
 
 
   <!-- One license tag required, multiple allowed, one license per tag -->
@@ -16,14 +16,14 @@
   <license>TODO</license>
 
 
-  <!-- Url tags are optional, but mutiple are allowed, one per tag -->
+  <!-- Url tags are optional, but multiple are allowed, one per tag -->
   <!-- Optional attribute type can be: website, bugtracker, or repository -->
   <!-- Example: -->
-  <!-- <url type="website">http://wiki.ros.org/beginner_tutorials</url> -->
+  <!-- <url type="website">http://wiki.ros.org/robotarm</url> -->
 
 
-  <!-- Author tags are optional, mutiple are allowed, one per tag -->
-  <!-- Authors do not have to be maintianers, but could be -->
+  <!-- Author tags are optional, multiple are allowed, one per tag -->
+  <!-- Authors do not have to be maintainers, but could be -->
   <!-- Example: -->
   <!-- <author email="jane.doe@example.com">Jane Doe</author> -->
 
@@ -48,6 +48,7 @@
   <run_depend>std_msgs</run_depend>
   <build_depend>message_generation</build_depend>
   <run_depend>message_runtime</run_depend>
+
 
   <!-- The export tag contains other, unspecified, tags -->
   <export>

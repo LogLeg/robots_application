@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(beginner_tutorials)
+project(robotarm)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
@@ -45,16 +45,22 @@ find_package(catkin REQUIRED COMPONENTS
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
- add_message_files(
-   FILES
-   Num.msg
+# add_message_files(
+#   FILES
+#   Num.msg
 #   Message2.msg
- )
+# )
 
 ## Generate services in the 'srv' folder
  add_service_files(
    FILES
-   AddTwoInts.srv
+   Robot_GoTo.srv
+   Robot_Status.srv
+   Robot_Stop.srv
+   Robot_Set_Park.srv
+   Robot_Set_Ready.srv
+   Robot_Set_Straight.srv
+   Robot_Set_Test.srv
 #   Service2.srv
  )
 
@@ -127,13 +133,23 @@ include_directories(
 #target_link_libraries(listener ${catkin_LIBRARIES})
 #add_dependencies(listener beginner_tutorials_generate_messages_cpp)
 
-add_executable(add_two_ints_server src/add_two_ints_server.cpp)
-target_link_libraries(add_two_ints_server ${catkin_LIBRARIES})
-add_dependencies(add_two_ints_server beginner_tutorials_gencpp)
+add_executable(Robot_Driver_server src/Robot_Driver_server.cpp src/Robot-Serial.cpp src/Robot_Arm.cpp src/Servo.cpp)
+add_definitions(-std=c++11)
+target_link_libraries(Robot_Driver_server ${catkin_LIBRARIES})
+add_dependencies(Robot_Driver_server beginner_tutorials_gencpp)
+add_dependencies(Robot_Driver_server serial)
+target_link_libraries(Robot_Driver_server serial)
 
-add_executable(add_two_ints_client src/add_two_ints_client.cpp)
-target_link_libraries(add_two_ints_client ${catkin_LIBRARIES})
-add_dependencies(add_two_ints_client beginner_tutorials_gencpp)
+
+add_executable(RobotArmBestuuring src/RobotArmBestuuring.cpp)
+target_link_libraries(RobotArmBestuuring ${catkin_LIBRARIES})
+add_dependencies(RobotArmBestuuring beginner_tutorials_gencpp)
+
+add_executable(RobotSRVtest src/robotsrvtest.cpp src/RoboticArm.cpp src/AStar.cpp)
+add_definitions(-std=c++11)
+target_link_libraries(RobotSRVtest ${catkin_LIBRARIES})
+add_dependencies(RobotSRVtest beginner_tutorials_gencpp)
+
 
 ## Declare a C++ library
 # add_library(beginner_tutorials

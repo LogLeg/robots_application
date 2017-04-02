@@ -11,9 +11,9 @@
 
 
 #include "ros/ros.h"
-#include "beginner_tutorials/Robot_GoTo.h"
-#include "beginner_tutorials/Robot_Status.h"
-#include "beginner_tutorials/Robot_Stop.h"
+#include "robotarm/Robot_GoTo.h"
+#include "robotarm/Robot_Status.h"
+#include "robotarm/Robot_Stop.h"
 #include "Robot-Serial.hpp"
 #include "Robot_Arm.hpp"
 
@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 {
   
 	ros::init(argc, argv, "Robot_Driver_server");
-	RobotArm MyRobot("/dev/ttyUSB0", 9600);// /dev/ttyUSB0 // /dev/ttyACM0
+        RobotArm MyRobot("/dev/pts/32", 9600);// /dev/ttyUSB0 // /dev/ttyACM0
 
 	ros::NodeHandle n;
 
