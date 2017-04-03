@@ -10,9 +10,9 @@
 #include "Robot-Serial.hpp"
 #include "Servo.hpp"
 #include "ros/ros.h"
-#include "beginner_tutorials/Robot_GoTo.h"
-#include "beginner_tutorials/Robot_Status.h"
-#include "beginner_tutorials/Robot_Stop.h"
+#include "robotarm/Robot_GoTo.h"
+#include "robotarm/Robot_Status.h"
+#include "robotarm/Robot_Stop.h"
 
 #ifndef ROBOTARM_H_
 #define ROBOTARM_H_
@@ -20,14 +20,14 @@ class RobotArm {
 public:
 	RobotArm(std::string port, unsigned long baud);
 	~RobotArm();
-	bool goTo(beginner_tutorials::Robot_GoTo::Request  &req,
-	         beginner_tutorials::Robot_GoTo::Response &res);
+        bool goTo(robotarm::Robot_GoTo::Request  &req,
+                 robotarm::Robot_GoTo::Response &res);
 
-	bool status(beginner_tutorials::Robot_Status::Request  &req,
-         	beginner_tutorials::Robot_Status::Response &res);
+        bool status(robotarm::Robot_Status::Request  &req,
+                robotarm::Robot_Status::Response &res);
 
-	bool stop(beginner_tutorials::Robot_Stop::Request  &req,
-         	beginner_tutorials::Robot_Stop::Response &res);
+        bool stop(robotarm::Robot_Stop::Request  &req,
+                robotarm::Robot_Stop::Response &res);
 private:
 	void goTo(double a1, double a2, double a3, double a4, double a5, double a6, double Time);
 	std::string status();

@@ -1,9 +1,9 @@
 #include "ros/ros.h"
-#include "beginner_tutorials/Robot_GoTo.h"
-#include "beginner_tutorials/Robot_Set_Ready.h"
-#include "beginner_tutorials/Robot_Set_Park.h"
-#include "beginner_tutorials/Robot_Set_Straight.h"
-#include "beginner_tutorials/Robot_Set_Test.h"
+#include "robotarm/Robot_GoTo.h"
+#include "robotarm/Robot_Set_Ready.h"
+#include "robotarm/Robot_Set_Park.h"
+#include "robotarm/Robot_Set_Straight.h"
+#include "robotarm/Robot_Set_Test.h"
 #include <cstdlib>
 
 // OS Specific sleep
@@ -21,12 +21,12 @@ void mySleep(unsigned long milliseconds) {
 #endif
 }
 
-bool Ready(beginner_tutorials::Robot_Set_Ready::Request  &req,
-         beginner_tutorials::Robot_Set_Ready::Response &res)
+bool Ready(robotarm::Robot_Set_Ready::Request  &req,
+         robotarm::Robot_Set_Ready::Response &res)
 {
 	ros::NodeHandle n;
-	ros::ServiceClient client = n.serviceClient<beginner_tutorials::Robot_GoTo>("Robot_GoTo");
-	beginner_tutorials::Robot_GoTo srv;
+        ros::ServiceClient client = n.serviceClient<robotarm::Robot_GoTo>("Robot_GoTo");
+        robotarm::Robot_GoTo srv;
 	srv.request.angle1 = 0;
 	srv.request.angle2 = -40;
 	srv.request.angle3 = 80;
@@ -41,12 +41,12 @@ bool Ready(beginner_tutorials::Robot_Set_Ready::Request  &req,
   return true;
 }
 
-bool Park(beginner_tutorials::Robot_Set_Park::Request  &req,
-         beginner_tutorials::Robot_Set_Park::Response &res)
+bool Park(robotarm::Robot_Set_Park::Request  &req,
+         robotarm::Robot_Set_Park::Response &res)
 {
 	ros::NodeHandle n;
-	ros::ServiceClient client = n.serviceClient<beginner_tutorials::Robot_GoTo>("Robot_GoTo");
-	beginner_tutorials::Robot_GoTo srv;
+        ros::ServiceClient client = n.serviceClient<robotarm::Robot_GoTo>("Robot_GoTo");
+        robotarm::Robot_GoTo srv;
 	srv.request.angle1 = 0;
 	srv.request.angle2 = -45;
 	srv.request.angle3 = 110;
@@ -61,12 +61,12 @@ bool Park(beginner_tutorials::Robot_Set_Park::Request  &req,
   return true;
 }
 
-bool Straight(beginner_tutorials::Robot_Set_Straight::Request  &req,
-         beginner_tutorials::Robot_Set_Straight::Response &res)
+bool Straight(robotarm::Robot_Set_Straight::Request  &req,
+         robotarm::Robot_Set_Straight::Response &res)
 {
 	ros::NodeHandle n;
-	ros::ServiceClient client = n.serviceClient<beginner_tutorials::Robot_GoTo>("Robot_GoTo");
-	beginner_tutorials::Robot_GoTo srv;
+        ros::ServiceClient client = n.serviceClient<robotarm::Robot_GoTo>("Robot_GoTo");
+        robotarm::Robot_GoTo srv;
 	srv.request.angle1 = 0;
 	srv.request.angle2 = 0;
 	srv.request.angle3 = 0;
@@ -82,12 +82,12 @@ bool Straight(beginner_tutorials::Robot_Set_Straight::Request  &req,
   return true;
 }
 
-bool Test(beginner_tutorials::Robot_Set_Test::Request  &req,
-         beginner_tutorials::Robot_Set_Test::Response &res)
+bool Test(robotarm::Robot_Set_Test::Request  &req,
+         robotarm::Robot_Set_Test::Response &res)
 {
 	ros::NodeHandle n;
-	ros::ServiceClient client = n.serviceClient<beginner_tutorials::Robot_GoTo>("Robot_Set_Straight");
-	beginner_tutorials::Robot_Set_Straight srv;
+        ros::ServiceClient client = n.serviceClient<robotarm::Robot_GoTo>("Robot_Set_Straight");
+        robotarm::Robot_Set_Straight srv;
 	srv.request.inTime = 1000;
 	if (client.call(srv))
 	{
@@ -95,8 +95,8 @@ bool Test(beginner_tutorials::Robot_Set_Test::Request  &req,
 	}	
 
 	mySleep(1500);
-	ros::ServiceClient client1 = n.serviceClient<beginner_tutorials::Robot_GoTo>("Robot_Set_Ready");
-	beginner_tutorials::Robot_Set_Ready srv1;
+        ros::ServiceClient client1 = n.serviceClient<robotarm::Robot_GoTo>("Robot_Set_Ready");
+        robotarm::Robot_Set_Ready srv1;
 	srv1.request.inTime = 1000;
 	if (client.call(srv1))
 	{
@@ -104,8 +104,8 @@ bool Test(beginner_tutorials::Robot_Set_Test::Request  &req,
 	}	
 
 	mySleep(1500);
-	ros::ServiceClient client2 = n.serviceClient<beginner_tutorials::Robot_GoTo>("Robot_Set_Straight");
-	beginner_tutorials::Robot_Set_Straight srv2;
+        ros::ServiceClient client2 = n.serviceClient<robotarm::Robot_GoTo>("Robot_Set_Straight");
+        robotarm::Robot_Set_Straight srv2;
 	srv2.request.inTime = 1000;
 	if (client.call(srv2))
 	{
@@ -113,8 +113,8 @@ bool Test(beginner_tutorials::Robot_Set_Test::Request  &req,
 	}	
 
 	mySleep(1500);
-	ros::ServiceClient client3 = n.serviceClient<beginner_tutorials::Robot_GoTo>("Robot_Set_Park");
-	beginner_tutorials::Robot_Set_Park srv3;
+        ros::ServiceClient client3 = n.serviceClient<robotarm::Robot_GoTo>("Robot_Set_Park");
+        robotarm::Robot_Set_Park srv3;
 	srv3.request.inTime = 1000;
 	if (client.call(srv3))
 	{
@@ -122,8 +122,8 @@ bool Test(beginner_tutorials::Robot_Set_Test::Request  &req,
 	}	
 
 	mySleep(1500);
-	ros::ServiceClient client4 = n.serviceClient<beginner_tutorials::Robot_GoTo>("Robot_Set_Straight");
-	beginner_tutorials::Robot_Set_Straight srv5;
+        ros::ServiceClient client4 = n.serviceClient<robotarm::Robot_GoTo>("Robot_Set_Straight");
+        robotarm::Robot_Set_Straight srv5;
 	srv.request.inTime = 1000;
 	if (client.call(srv))
 	{
@@ -131,8 +131,8 @@ bool Test(beginner_tutorials::Robot_Set_Test::Request  &req,
 	}	
 
 	mySleep(1500);
-	ros::ServiceClient client5 = n.serviceClient<beginner_tutorials::Robot_GoTo>("Robot_Set_Park");
-	beginner_tutorials::Robot_GoTo srv6;
+        ros::ServiceClient client5 = n.serviceClient<robotarm::Robot_GoTo>("Robot_Set_Park");
+        robotarm::Robot_GoTo srv6;
 	srv6.request.inTime = 1000;
 	if (client.call(srv6))
 	{
@@ -146,7 +146,7 @@ bool Test(beginner_tutorials::Robot_Set_Test::Request  &req,
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "add_two_ints_client");
+  ros::init(argc, argv, "RotboArmBesturing_client");
 
 
   ros::NodeHandle n;

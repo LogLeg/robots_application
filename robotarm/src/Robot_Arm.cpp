@@ -9,11 +9,11 @@ RobotArm::RobotArm(std::string port, unsigned long baud):
 	
 
 
-	ServoList.push_back(Servo(553, 2425, 180, 0,&robotSerial, 90, false, 10));
-	ServoList.push_back(Servo(700, 2300, 120, 1,&robotSerial, 30, true, 35));
-	ServoList.push_back(Servo(700, 2300, 135, 2,&robotSerial, 0, false, 0));
-	ServoList.push_back(Servo(554, 2520, 180, 3,&robotSerial, 90, false, -5));
-	ServoList.push_back(Servo(553, 2425, 180, 4,&robotSerial, 90, false, 13));
+        ServoList.push_back(Servo(750, 2490, 180, 0,&robotSerial, 90, false, 0));
+        ServoList.push_back(Servo(950, 1770, 85, 1,&robotSerial, 30, true, 0));
+        ServoList.push_back(Servo(700, 1850, 135, 2,&robotSerial, 0, false, 0));
+        ServoList.push_back(Servo(560, 2400, 180, 3,&robotSerial, 90, true, 0));
+        ServoList.push_back(Servo(700, 2400, 145, 4,&robotSerial, 55, true, 0));
 	ServoList.push_back(Servo(700, 2300, 30, 5,&robotSerial, 0, true, 0));
 		
 	
@@ -55,16 +55,16 @@ RobotArm::~RobotArm()
 }
 
 
-bool RobotArm::goTo(beginner_tutorials::Robot_GoTo::Request  &req,
-         beginner_tutorials::Robot_GoTo::Response &res)
+bool RobotArm::goTo(robotarm::Robot_GoTo::Request  &req,
+         robotarm::Robot_GoTo::Response &res)
 {
 	goTo(req.angle1,req.angle2,req.angle3,req.angle4,req.angle5,req.angle6, req.inTime);  	
 
   return true;
 }
 
-bool RobotArm::status(beginner_tutorials::Robot_Status::Request  &req,
-         beginner_tutorials::Robot_Status::Response &res)
+bool RobotArm::status(robotarm::Robot_Status::Request  &req,
+         robotarm::Robot_Status::Response &res)
 {
 	//MyRobot->status();
 	res.angle1=ServoList.at(0).getAngle();
@@ -77,8 +77,8 @@ bool RobotArm::status(beginner_tutorials::Robot_Status::Request  &req,
 	return true;
 }
 
-bool RobotArm::stop(beginner_tutorials::Robot_Stop::Request  &req,
-         beginner_tutorials::Robot_Stop::Response &res)
+bool RobotArm::stop(robotarm::Robot_Stop::Request  &req,
+         robotarm::Robot_Stop::Response &res)
 {
 	stop();
 	ROS_INFO("request: Stop. we might think about it");
