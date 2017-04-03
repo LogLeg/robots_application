@@ -28,7 +28,7 @@ int main(int argc, char **argv)
 {
   
 	ros::init(argc, argv, "Robot_Driver_server");
-        RobotArm MyRobot("/dev/pts/32", 9600);// /dev/ttyUSB0 // /dev/ttyACM0
+        RobotArm MyRobot("/dev/ttyUSB0", 9600);// /dev/ttyUSB0 // /dev/ttyACM0 // /dev/pts/32
 
 	ros::NodeHandle n;
 

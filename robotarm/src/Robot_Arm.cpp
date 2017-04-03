@@ -9,11 +9,11 @@ RobotArm::RobotArm(std::string port, unsigned long baud):
 	
 
 
-	ServoList.push_back(Servo(553, 2425, 180, 0,&robotSerial, 90, false, 10));
-	ServoList.push_back(Servo(700, 2300, 120, 1,&robotSerial, 30, true, 35));
-	ServoList.push_back(Servo(700, 2300, 135, 2,&robotSerial, 0, false, 0));
-	ServoList.push_back(Servo(554, 2520, 180, 3,&robotSerial, 90, false, -5));
-	ServoList.push_back(Servo(553, 2425, 180, 4,&robotSerial, 90, false, 13));
+        ServoList.push_back(Servo(750, 2490, 180, 0,&robotSerial, 90, false, 0));
+        ServoList.push_back(Servo(950, 1770, 85, 1,&robotSerial, 30, true, 0));
+        ServoList.push_back(Servo(700, 1850, 135, 2,&robotSerial, 0, false, 0));
+        ServoList.push_back(Servo(560, 2400, 180, 3,&robotSerial, 90, true, 0));
+        ServoList.push_back(Servo(700, 2400, 145, 4,&robotSerial, 55, true, 0));
 	ServoList.push_back(Servo(700, 2300, 30, 5,&robotSerial, 0, true, 0));
 		
 	

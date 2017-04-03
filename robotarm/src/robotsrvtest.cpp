@@ -34,25 +34,25 @@ int main(int argc, char **argv)
         try
         {
                 ros::init(argc, argv, "RotboArmBesturing_client");
-                const short hoverHeight = 50;
-                const short objectHeight = 10;
-                RoboticArm robotArm(50, 146, 187, 86, Servo
+                const short hoverHeight = 80;
+                const short objectHeight = 0;
+                RoboticArm robotArm(70, 146, 187, 115, Servo
                 { -90, 90 }, Servo
                 { -30, 90 }, Servo
                 { 0, 135 }, Servo
                 { -90, 90 }, Servo
                 { -90, 90 }, Servo
-                { 0, 20 }); //TODO: hoogte a opmeten.
+                { 0, 30 }); //TODO: hoogte a opmeten.
                 robotArm.setConf(std::vector<signed short>
                 { 0, 0, 0, 0, 0, 0 });
 
                 //(1) vind blokje positie&rotatie
-                const int objectX = -150; 	//object X in mm
-                const int objectY = 250;	//object Y in mm
-                const int objectangle = 25;	//object angle in degrees
-                const int objectwidth = 20;	//object windth in mm
-                const int circelX = 50;	//circel center X
-                const int circelY = 150;	//circel center Y
+                const int objectX = -183; 	//object X in mm
+                const int objectY = 0;	//object Y in mm
+                const int objectangle = 0;	//object angle in degrees
+                const int objectwidth = 15;	//object windth in mm
+                const int circelX = 60;	//circel center X
+                const int circelY = 250;	//circel center Y
 
                 std::cout << "\033[1;31mBlokje oppakken: \033[0m\n" << std::endl;
                 //(2) base&gripper goed roteren & gripper openen
@@ -63,7 +63,7 @@ int main(int argc, char **argv)
 
                 //(4) ga naar beneden & gripper dichtknijpen
                 robotArm.armGoto(objectX, objectY, objectHeight, objectangle); //TODO: hoogte van grond afstellen
-                robotArm.setGripperValue(objectwidth - 0); //TODO: knijpkracht afstellen
+                robotArm.setGripperValue(objectwidth - 5); //TODO: knijpkracht afstellen
 
                 //(5) ga naar 2 cm boven grond
                 robotArm.armGoto(objectX, objectY, hoverHeight, 0);
