@@ -1,0 +1,209 @@
+\hypertarget{class_robot_arm}{}\section{Robot\+Arm Class Reference}
+\label{class_robot_arm}\index{Robot\+Arm@{Robot\+Arm}}
+
+
+{\ttfamily \#include $<$Robot\+\_\+\+Arm.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_robot_arm_aa3324f162a64eeb345cb6d2845f3822c}{Robot\+Arm} (std\+::string port, unsigned long baud)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\hyperlink{class_robot_arm_af3cf87fd2b5b060625eb49317632b83c}{$\sim$\+Robot\+Arm} ()
+\begin{DoxyCompactList}\small\item\em destructor \end{DoxyCompactList}\item 
+bool \hyperlink{class_robot_arm_a8b44092b92f889600d3e712c292b9c48}{go\+To} (robotarm\+::\+Robot\+\_\+\+Go\+To\+::\+Request \&req, robotarm\+::\+Robot\+\_\+\+Go\+To\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em go to position \end{DoxyCompactList}\item 
+bool \hyperlink{class_robot_arm_a9bc2cbb9fb6252afffd43ed2a5f6113e}{status} (robotarm\+::\+Robot\+\_\+\+Status\+::\+Request \&req, robotarm\+::\+Robot\+\_\+\+Status\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em robot status \end{DoxyCompactList}\item 
+bool \hyperlink{class_robot_arm_a645e7400a9e29525385d07e0b9552eb4}{stop} (robotarm\+::\+Robot\+\_\+\+Stop\+::\+Request \&req, robotarm\+::\+Robot\+\_\+\+Stop\+::\+Response \&res)
+\begin{DoxyCompactList}\small\item\em stop robot \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 19 of file Robot\+\_\+\+Arm.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Robot\+Arm@{Robot\+Arm}!Robot\+Arm@{Robot\+Arm}}
+\index{Robot\+Arm@{Robot\+Arm}!Robot\+Arm@{Robot\+Arm}}
+\subsubsection[{\texorpdfstring{Robot\+Arm(std\+::string port, unsigned long baud)}{RobotArm(std::string port, unsigned long baud)}}]{\setlength{\rightskip}{0pt plus 5cm}Robot\+Arm\+::\+Robot\+Arm (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{port, }
+\item[{unsigned long}]{baud}
+\end{DoxyParamCaption}
+)}\hypertarget{class_robot_arm_aa3324f162a64eeb345cb6d2845f3822c}{}\label{class_robot_arm_aa3324f162a64eeb345cb6d2845f3822c}
+
+
+constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & port of the serial robot \\
+\hline
+{\em baud} & boudrate of serial comm. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3 of file Robot\+\_\+\+Arm.\+cpp.
+
+\index{Robot\+Arm@{Robot\+Arm}!````~Robot\+Arm@{$\sim$\+Robot\+Arm}}
+\index{````~Robot\+Arm@{$\sim$\+Robot\+Arm}!Robot\+Arm@{Robot\+Arm}}
+\subsubsection[{\texorpdfstring{$\sim$\+Robot\+Arm()}{~RobotArm()}}]{\setlength{\rightskip}{0pt plus 5cm}Robot\+Arm\+::$\sim$\+Robot\+Arm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_robot_arm_af3cf87fd2b5b060625eb49317632b83c}{}\label{class_robot_arm_af3cf87fd2b5b060625eb49317632b83c}
+
+
+destructor 
+
+
+
+Definition at line 46 of file Robot\+\_\+\+Arm.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Robot\+Arm@{Robot\+Arm}!go\+To@{go\+To}}
+\index{go\+To@{go\+To}!Robot\+Arm@{Robot\+Arm}}
+\subsubsection[{\texorpdfstring{go\+To(robotarm\+::\+Robot\+\_\+\+Go\+To\+::\+Request \&req, robotarm\+::\+Robot\+\_\+\+Go\+To\+::\+Response \&res)}{goTo(robotarm::Robot_GoTo::Request &req, robotarm::Robot_GoTo::Response &res)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Robot\+Arm\+::go\+To (
+\begin{DoxyParamCaption}
+\item[{robotarm\+::\+Robot\+\_\+\+Go\+To\+::\+Request \&}]{req, }
+\item[{robotarm\+::\+Robot\+\_\+\+Go\+To\+::\+Response \&}]{res}
+\end{DoxyParamCaption}
+)}\hypertarget{class_robot_arm_a8b44092b92f889600d3e712c292b9c48}{}\label{class_robot_arm_a8b44092b92f889600d3e712c292b9c48}
+
+
+go to position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & request \\
+\hline
+{\em res} & response \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 51 of file Robot\+\_\+\+Arm.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{class_robot_arm_a8b44092b92f889600d3e712c292b9c48_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robot\+Arm@{Robot\+Arm}!status@{status}}
+\index{status@{status}!Robot\+Arm@{Robot\+Arm}}
+\subsubsection[{\texorpdfstring{status(robotarm\+::\+Robot\+\_\+\+Status\+::\+Request \&req, robotarm\+::\+Robot\+\_\+\+Status\+::\+Response \&res)}{status(robotarm::Robot_Status::Request &req, robotarm::Robot_Status::Response &res)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Robot\+Arm\+::status (
+\begin{DoxyParamCaption}
+\item[{robotarm\+::\+Robot\+\_\+\+Status\+::\+Request \&}]{req, }
+\item[{robotarm\+::\+Robot\+\_\+\+Status\+::\+Response \&}]{res}
+\end{DoxyParamCaption}
+)}\hypertarget{class_robot_arm_a9bc2cbb9fb6252afffd43ed2a5f6113e}{}\label{class_robot_arm_a9bc2cbb9fb6252afffd43ed2a5f6113e}
+
+
+robot status 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & request \\
+\hline
+{\em res} & response \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 58 of file Robot\+\_\+\+Arm.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{class_robot_arm_a9bc2cbb9fb6252afffd43ed2a5f6113e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{class_robot_arm_a9bc2cbb9fb6252afffd43ed2a5f6113e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robot\+Arm@{Robot\+Arm}!stop@{stop}}
+\index{stop@{stop}!Robot\+Arm@{Robot\+Arm}}
+\subsubsection[{\texorpdfstring{stop(robotarm\+::\+Robot\+\_\+\+Stop\+::\+Request \&req, robotarm\+::\+Robot\+\_\+\+Stop\+::\+Response \&res)}{stop(robotarm::Robot_Stop::Request &req, robotarm::Robot_Stop::Response &res)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Robot\+Arm\+::stop (
+\begin{DoxyParamCaption}
+\item[{robotarm\+::\+Robot\+\_\+\+Stop\+::\+Request \&}]{req, }
+\item[{robotarm\+::\+Robot\+\_\+\+Stop\+::\+Response \&}]{res}
+\end{DoxyParamCaption}
+)}\hypertarget{class_robot_arm_a645e7400a9e29525385d07e0b9552eb4}{}\label{class_robot_arm_a645e7400a9e29525385d07e0b9552eb4}
+
+
+stop robot 
+
+
+\begin{DoxyParams}{Parameters}
+{\em req} & request \\
+\hline
+{\em res} & response \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+bool 
+\end{DoxyReturn}
+
+
+Definition at line 71 of file Robot\+\_\+\+Arm.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{class_robot_arm_a645e7400a9e29525385d07e0b9552eb4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=166pt]{class_robot_arm_a645e7400a9e29525385d07e0b9552eb4_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_robot___arm_8hpp}{Robot\+\_\+\+Arm.\+hpp}\item 
+src/\hyperlink{_robot___arm_8cpp}{Robot\+\_\+\+Arm.\+cpp}\end{DoxyCompactItemize}

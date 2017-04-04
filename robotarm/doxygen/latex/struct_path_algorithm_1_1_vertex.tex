@@ -1,0 +1,241 @@
+\hypertarget{struct_path_algorithm_1_1_vertex}{}\section{Path\+Algorithm\+:\+:Vertex Struct Reference}
+\label{struct_path_algorithm_1_1_vertex}\index{Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}}
+
+
+{\ttfamily \#include $<$A\+Star.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_path_algorithm_1_1_vertex_af70ec098c542a181f2267be2db00b6c4}{Vertex} (int anX, int anY, int an\+Phi1, int an\+Phi2)
+\item 
+\hyperlink{struct_path_algorithm_1_1_vertex_ae480a024481aa5a9930822e69dd9a11d}{Vertex} (const \hyperlink{structrobot_point_1_1_point}{robot\+Point\+::\+Point} \&a\+Point, int an\+Phi1, int an\+Phi2)
+\item 
+\hyperlink{structrobot_point_1_1_point}{robot\+Point\+::\+Point} \hyperlink{struct_path_algorithm_1_1_vertex_a587c9c56b60eebbd200ee462656b4450}{as\+Point} () const 
+\item 
+bool \hyperlink{struct_path_algorithm_1_1_vertex_afe13add443706b4fb534fbc0af5b0bfc}{less\+Cost} (const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Vertex) const 
+\item 
+bool \hyperlink{struct_path_algorithm_1_1_vertex_aea5063979800ccbd795fed9f33cbb483}{less\+Id} (const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Vertex) const 
+\item 
+bool \hyperlink{struct_path_algorithm_1_1_vertex_a64aa2913bc0e1d1511a452c5d800803a}{equal\+Point} (const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Vertex) const 
+\item 
+bool \hyperlink{struct_path_algorithm_1_1_vertex_a1548704fc5f1f4e829f419c2416667d9}{approx\+Equal\+Point} (const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Vertex, unsigned char precision) const 
+\item 
+bool \hyperlink{struct_path_algorithm_1_1_vertex_a814d676297b497ea2a444e9f6fb0d6bf}{operator==} (const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Vertex)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{struct_path_algorithm_1_1_vertex_afe7ba337aa9af618c18c7ab19da65ea9}{x}
+\item 
+int \hyperlink{struct_path_algorithm_1_1_vertex_ae6428b0c59bbbcd5aad9cf244a38bef2}{y}
+\item 
+int \hyperlink{struct_path_algorithm_1_1_vertex_a7ad47a3f8613026f8e0cd06e4d967bc1}{phi1}
+\item 
+int \hyperlink{struct_path_algorithm_1_1_vertex_af6701fe63c91cea4bc7e25efb276df7c}{phi2}
+\item 
+double \hyperlink{struct_path_algorithm_1_1_vertex_a8bac4752dead7e6f0eb4fe099eae1eaf}{actual\+Cost}
+\item 
+double \hyperlink{struct_path_algorithm_1_1_vertex_a316a72f6d405096010224df1a78b8c4d}{heuristic\+Cost}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 20 of file A\+Star.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{Vertex(int an\+X, int an\+Y, int an\+Phi1, int an\+Phi2)}{Vertex(int anX, int anY, int anPhi1, int anPhi2)}}]{\setlength{\rightskip}{0pt plus 5cm}Path\+Algorithm\+::\+Vertex\+::\+Vertex (
+\begin{DoxyParamCaption}
+\item[{int}]{anX, }
+\item[{int}]{anY, }
+\item[{int}]{an\+Phi1, }
+\item[{int}]{an\+Phi2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{struct_path_algorithm_1_1_vertex_af70ec098c542a181f2267be2db00b6c4}{}\label{struct_path_algorithm_1_1_vertex_af70ec098c542a181f2267be2db00b6c4}
+
+
+Definition at line 25 of file A\+Star.\+hpp.
+
+\index{Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}!Vertex@{Vertex}}
+\index{Vertex@{Vertex}!Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{Vertex(const robot\+Point\+::\+Point \&a\+Point, int an\+Phi1, int an\+Phi2)}{Vertex(const robotPoint::Point &aPoint, int anPhi1, int anPhi2)}}]{\setlength{\rightskip}{0pt plus 5cm}Path\+Algorithm\+::\+Vertex\+::\+Vertex (
+\begin{DoxyParamCaption}
+\item[{const {\bf robot\+Point\+::\+Point} \&}]{a\+Point, }
+\item[{int}]{an\+Phi1, }
+\item[{int}]{an\+Phi2}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{struct_path_algorithm_1_1_vertex_ae480a024481aa5a9930822e69dd9a11d}{}\label{struct_path_algorithm_1_1_vertex_ae480a024481aa5a9930822e69dd9a11d}
+
+
+Definition at line 32 of file A\+Star.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}!approx\+Equal\+Point@{approx\+Equal\+Point}}
+\index{approx\+Equal\+Point@{approx\+Equal\+Point}!Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{approx\+Equal\+Point(const Vertex \&a\+Vertex, unsigned char precision) const }{approxEqualPoint(const Vertex &aVertex, unsigned char precision) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Path\+Algorithm\+::\+Vertex\+::approx\+Equal\+Point (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vertex} \&}]{a\+Vertex, }
+\item[{unsigned char}]{precision}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{struct_path_algorithm_1_1_vertex_a1548704fc5f1f4e829f419c2416667d9}{}\label{struct_path_algorithm_1_1_vertex_a1548704fc5f1f4e829f419c2416667d9}
+
+
+Definition at line 73 of file A\+Star.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_path_algorithm_1_1_vertex_a1548704fc5f1f4e829f419c2416667d9_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}!as\+Point@{as\+Point}}
+\index{as\+Point@{as\+Point}!Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{as\+Point() const }{asPoint() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf robot\+Point\+::\+Point} Path\+Algorithm\+::\+Vertex\+::as\+Point (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{struct_path_algorithm_1_1_vertex_a587c9c56b60eebbd200ee462656b4450}{}\label{struct_path_algorithm_1_1_vertex_a587c9c56b60eebbd200ee462656b4450}
+
+
+Definition at line 39 of file A\+Star.\+hpp.
+
+\index{Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}!equal\+Point@{equal\+Point}}
+\index{equal\+Point@{equal\+Point}!Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{equal\+Point(const Vertex \&a\+Vertex) const }{equalPoint(const Vertex &aVertex) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Path\+Algorithm\+::\+Vertex\+::equal\+Point (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vertex} \&}]{a\+Vertex}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{struct_path_algorithm_1_1_vertex_a64aa2913bc0e1d1511a452c5d800803a}{}\label{struct_path_algorithm_1_1_vertex_a64aa2913bc0e1d1511a452c5d800803a}
+
+
+Definition at line 69 of file A\+Star.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_path_algorithm_1_1_vertex_a64aa2913bc0e1d1511a452c5d800803a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}!less\+Cost@{less\+Cost}}
+\index{less\+Cost@{less\+Cost}!Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{less\+Cost(const Vertex \&a\+Vertex) const }{lessCost(const Vertex &aVertex) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Path\+Algorithm\+::\+Vertex\+::less\+Cost (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vertex} \&}]{a\+Vertex}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{struct_path_algorithm_1_1_vertex_afe13add443706b4fb534fbc0af5b0bfc}{}\label{struct_path_algorithm_1_1_vertex_afe13add443706b4fb534fbc0af5b0bfc}
+
+
+Definition at line 46 of file A\+Star.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_path_algorithm_1_1_vertex_afe13add443706b4fb534fbc0af5b0bfc_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}!less\+Id@{less\+Id}}
+\index{less\+Id@{less\+Id}!Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{less\+Id(const Vertex \&a\+Vertex) const }{lessId(const Vertex &aVertex) const }}]{\setlength{\rightskip}{0pt plus 5cm}bool Path\+Algorithm\+::\+Vertex\+::less\+Id (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vertex} \&}]{a\+Vertex}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{struct_path_algorithm_1_1_vertex_aea5063979800ccbd795fed9f33cbb483}{}\label{struct_path_algorithm_1_1_vertex_aea5063979800ccbd795fed9f33cbb483}
+
+
+Definition at line 58 of file A\+Star.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{struct_path_algorithm_1_1_vertex_aea5063979800ccbd795fed9f33cbb483_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}!operator==@{operator==}}
+\index{operator==@{operator==}!Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{operator==(const Vertex \&a\+Vertex)}{operator==(const Vertex &aVertex)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Path\+Algorithm\+::\+Vertex\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vertex} \&}]{a\+Vertex}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{struct_path_algorithm_1_1_vertex_a814d676297b497ea2a444e9f6fb0d6bf}{}\label{struct_path_algorithm_1_1_vertex_a814d676297b497ea2a444e9f6fb0d6bf}
+
+
+Definition at line 81 of file A\+Star.\+hpp.
+
+
+
+\subsection{Member Data Documentation}
+\index{Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}!actual\+Cost@{actual\+Cost}}
+\index{actual\+Cost@{actual\+Cost}!Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{actual\+Cost}{actualCost}}]{\setlength{\rightskip}{0pt plus 5cm}double Path\+Algorithm\+::\+Vertex\+::actual\+Cost}\hypertarget{struct_path_algorithm_1_1_vertex_a8bac4752dead7e6f0eb4fe099eae1eaf}{}\label{struct_path_algorithm_1_1_vertex_a8bac4752dead7e6f0eb4fe099eae1eaf}
+
+
+Definition at line 96 of file A\+Star.\+hpp.
+
+\index{Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}!heuristic\+Cost@{heuristic\+Cost}}
+\index{heuristic\+Cost@{heuristic\+Cost}!Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{heuristic\+Cost}{heuristicCost}}]{\setlength{\rightskip}{0pt plus 5cm}double Path\+Algorithm\+::\+Vertex\+::heuristic\+Cost}\hypertarget{struct_path_algorithm_1_1_vertex_a316a72f6d405096010224df1a78b8c4d}{}\label{struct_path_algorithm_1_1_vertex_a316a72f6d405096010224df1a78b8c4d}
+
+
+Definition at line 97 of file A\+Star.\+hpp.
+
+\index{Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}!phi1@{phi1}}
+\index{phi1@{phi1}!Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{phi1}{phi1}}]{\setlength{\rightskip}{0pt plus 5cm}int Path\+Algorithm\+::\+Vertex\+::phi1}\hypertarget{struct_path_algorithm_1_1_vertex_a7ad47a3f8613026f8e0cd06e4d967bc1}{}\label{struct_path_algorithm_1_1_vertex_a7ad47a3f8613026f8e0cd06e4d967bc1}
+
+
+Definition at line 93 of file A\+Star.\+hpp.
+
+\index{Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}!phi2@{phi2}}
+\index{phi2@{phi2}!Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{phi2}{phi2}}]{\setlength{\rightskip}{0pt plus 5cm}int Path\+Algorithm\+::\+Vertex\+::phi2}\hypertarget{struct_path_algorithm_1_1_vertex_af6701fe63c91cea4bc7e25efb276df7c}{}\label{struct_path_algorithm_1_1_vertex_af6701fe63c91cea4bc7e25efb276df7c}
+
+
+Definition at line 94 of file A\+Star.\+hpp.
+
+\index{Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}!x@{x}}
+\index{x@{x}!Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{x}{x}}]{\setlength{\rightskip}{0pt plus 5cm}int Path\+Algorithm\+::\+Vertex\+::x}\hypertarget{struct_path_algorithm_1_1_vertex_afe7ba337aa9af618c18c7ab19da65ea9}{}\label{struct_path_algorithm_1_1_vertex_afe7ba337aa9af618c18c7ab19da65ea9}
+
+
+Definition at line 91 of file A\+Star.\+hpp.
+
+\index{Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}!y@{y}}
+\index{y@{y}!Path\+Algorithm\+::\+Vertex@{Path\+Algorithm\+::\+Vertex}}
+\subsubsection[{\texorpdfstring{y}{y}}]{\setlength{\rightskip}{0pt plus 5cm}int Path\+Algorithm\+::\+Vertex\+::y}\hypertarget{struct_path_algorithm_1_1_vertex_ae6428b0c59bbbcd5aad9cf244a38bef2}{}\label{struct_path_algorithm_1_1_vertex_ae6428b0c59bbbcd5aad9cf244a38bef2}
+
+
+Definition at line 92 of file A\+Star.\+hpp.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_a_star_8hpp}{A\+Star.\+hpp}\end{DoxyCompactItemize}

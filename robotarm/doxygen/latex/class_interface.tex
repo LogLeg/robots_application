@@ -1,0 +1,181 @@
+\hypertarget{class_interface}{}\section{Interface Class Reference}
+\label{class_interface}\index{Interface@{Interface}}
+
+
+{\ttfamily \#include $<$interface.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_interface_a4406d74c75bdfe150bf72be1f1cda8b1}{Interface} ()
+\begin{DoxyCompactList}\small\item\em Constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_interface_a19179888f29f18f1be54a3dfe98f68c0}{$\sim$\+Interface} ()
+\begin{DoxyCompactList}\small\item\em Destructor. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{class_interface_a345faa7570aa36a31681ca850d1c283d}{parser} (bool first\+\_\+time)
+\begin{DoxyCompactList}\small\item\em Function that will read the input and will then check if it is correct and translate the input to a pair filled with the choices of the user. It calls. \end{DoxyCompactList}\item 
+int8\+\_\+t \hyperlink{class_interface_a24b944dc66cb79f76ba91192a2a2860e}{await\+\_\+input} (bool first\+\_\+time)
+\begin{DoxyCompactList}\small\item\em This function will serve the user a form to fill in and will call the parser function afterwards. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_interface_adfa71e85801e5bb0e8bc88da902f8133}{get\+\_\+specification} () const 
+\begin{DoxyCompactList}\small\item\em getter for the specification. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class will handle anything related to the console interface. 
+
+Definition at line 22 of file interface.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Interface@{Interface}!Interface@{Interface}}
+\index{Interface@{Interface}!Interface@{Interface}}
+\subsubsection[{\texorpdfstring{Interface()}{Interface()}}]{\setlength{\rightskip}{0pt plus 5cm}Interface\+::\+Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_interface_a4406d74c75bdfe150bf72be1f1cda8b1}{}\label{class_interface_a4406d74c75bdfe150bf72be1f1cda8b1}
+
+
+Constructor. 
+
+
+
+Definition at line 10 of file interface.\+cpp.
+
+\index{Interface@{Interface}!````~Interface@{$\sim$\+Interface}}
+\index{````~Interface@{$\sim$\+Interface}!Interface@{Interface}}
+\subsubsection[{\texorpdfstring{$\sim$\+Interface()}{~Interface()}}]{\setlength{\rightskip}{0pt plus 5cm}Interface\+::$\sim$\+Interface (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_interface_a19179888f29f18f1be54a3dfe98f68c0}{}\label{class_interface_a19179888f29f18f1be54a3dfe98f68c0}
+
+
+Destructor. 
+
+
+
+Definition at line 15 of file interface.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Interface@{Interface}!await\+\_\+input@{await\+\_\+input}}
+\index{await\+\_\+input@{await\+\_\+input}!Interface@{Interface}}
+\subsubsection[{\texorpdfstring{await\+\_\+input(bool first\+\_\+time)}{await_input(bool first_time)}}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t Interface\+::await\+\_\+input (
+\begin{DoxyParamCaption}
+\item[{bool}]{first\+\_\+time}
+\end{DoxyParamCaption}
+)}\hypertarget{class_interface_a24b944dc66cb79f76ba91192a2a2860e}{}\label{class_interface_a24b944dc66cb79f76ba91192a2a2860e}
+
+
+This function will serve the user a form to fill in and will call the parser function afterwards. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_interface_a345faa7570aa36a31681ca850d1c283d}{parser()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+handling code 
+\end{DoxyReturn}
+
+
+Definition at line 90 of file interface.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=314pt]{class_interface_a24b944dc66cb79f76ba91192a2a2860e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=312pt]{class_interface_a24b944dc66cb79f76ba91192a2a2860e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Interface@{Interface}!get\+\_\+specification@{get\+\_\+specification}}
+\index{get\+\_\+specification@{get\+\_\+specification}!Interface@{Interface}}
+\subsubsection[{\texorpdfstring{get\+\_\+specification() const }{get_specification() const }}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Interface\+::get\+\_\+specification (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_interface_adfa71e85801e5bb0e8bc88da902f8133}{}\label{class_interface_adfa71e85801e5bb0e8bc88da902f8133}
+
+
+getter for the specification. 
+
+\begin{DoxyReturn}{Returns}
+specification pair filled with shape and colour 
+\end{DoxyReturn}
+
+
+Definition at line 112 of file interface.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{class_interface_adfa71e85801e5bb0e8bc88da902f8133_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Interface@{Interface}!parser@{parser}}
+\index{parser@{parser}!Interface@{Interface}}
+\subsubsection[{\texorpdfstring{parser(bool first\+\_\+time)}{parser(bool first_time)}}]{\setlength{\rightskip}{0pt plus 5cm}int8\+\_\+t Interface\+::parser (
+\begin{DoxyParamCaption}
+\item[{bool}]{first\+\_\+time}
+\end{DoxyParamCaption}
+)}\hypertarget{class_interface_a345faa7570aa36a31681ca850d1c283d}{}\label{class_interface_a345faa7570aa36a31681ca850d1c283d}
+
+
+Function that will read the input and will then check if it is correct and translate the input to a pair filled with the choices of the user. It calls. 
+
+\begin{DoxySeeAlso}{See also}
+input() first to get the input from the user. This is not passed to the function. When \textquotesingle{}e\textquotesingle{} is put in, it will return 1 It supports a batch mode and accepts a line from a file. 
+
+input() 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em line} & string with the read line \\
+\hline
+{\em batch} & parameter to set batch mode \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+handling code 
+\end{DoxyReturn}
+
+
+Definition at line 28 of file interface.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_interface_a345faa7570aa36a31681ca850d1c283d_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{interface_8hpp}{interface.\+hpp}\item 
+src/\hyperlink{interface_8cpp}{interface.\+cpp}\end{DoxyCompactItemize}

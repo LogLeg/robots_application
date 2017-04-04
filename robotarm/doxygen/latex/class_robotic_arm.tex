@@ -1,0 +1,434 @@
+\hypertarget{class_robotic_arm}{}\section{Robotic\+Arm Class Reference}
+\label{class_robotic_arm}\index{Robotic\+Arm@{Robotic\+Arm}}
+
+
+{\ttfamily \#include $<$Robotic\+Arm.\+hpp$>$}
+
+
+
+Collaboration diagram for Robotic\+Arm\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{class_robotic_arm__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_robotic_arm_acf99461f54580f6ccbafcc891e211037}{Robotic\+Arm} (unsigned short \hyperlink{class_robotic_arm_aaf0461b1cb35da93d2e446f50b9813a4}{a}, unsigned short \hyperlink{class_robotic_arm_a2758a63b85f492abda0e84f32fbfdd98}{b}, unsigned short \hyperlink{class_robotic_arm_a5f6cae6b67db69c97b75970dacc72ea8}{c}, unsigned short \hyperlink{class_robotic_arm_ada1f488e8627fcb18d4b15b70c593be8}{d}, \hyperlink{struct_servo}{Servo} \hyperlink{class_robotic_arm_a405680ac32df6d444683b997b785623f}{s1}, \hyperlink{struct_servo}{Servo} \hyperlink{class_robotic_arm_aeafd57f690026379493f193d94bd8210}{s2}, \hyperlink{struct_servo}{Servo} \hyperlink{class_robotic_arm_a9241e65a54080f2f642bd08a78a12f6f}{s3}, \hyperlink{struct_servo}{Servo} \hyperlink{class_robotic_arm_af0d9eb18ff10b252b79c8a986fe31170}{s4}, \hyperlink{struct_servo}{Servo} \hyperlink{class_robotic_arm_a393711dcc74eb1fba3f9e544cd2bb771}{s5}, \hyperlink{struct_servo}{Servo} \hyperlink{class_robotic_arm_a4816473ed62d262e2a29590769e82f10}{s6})
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+bool \hyperlink{class_robotic_arm_ad9add36d9fad6da469f30d1ffd867e63}{move\+Object} (signed long objectX, unsigned long objectY, signed short object\+Angle, unsigned short object\+Width, signed long desX, unsigned long desY)
+\begin{DoxyCompactList}\small\item\em move object to specified destination \end{DoxyCompactList}\item 
+bool \hyperlink{class_robotic_arm_a6ecfa07487d7c03717be1e5f1fdb1e21}{goto\+Park} ()
+\begin{DoxyCompactList}\small\item\em go to park position \end{DoxyCompactList}\item 
+virtual \hyperlink{class_robotic_arm_aa1e689d9e117cebbc50e8943333851e6}{$\sim$\+Robotic\+Arm} ()
+\begin{DoxyCompactList}\small\item\em copydestructor \end{DoxyCompactList}\item 
+std\+::pair$<$ double, double $>$ \hyperlink{class_robotic_arm_a549f24f349105a6b5130eb237d737132}{forward\+Kinematics} (double x0, double y0, double \hyperlink{class_robotic_arm_aaf0461b1cb35da93d2e446f50b9813a4}{a}, double p1, double \hyperlink{class_robotic_arm_a2758a63b85f492abda0e84f32fbfdd98}{b}, double p2)
+\begin{DoxyCompactList}\small\item\em forward kinematics, calculate X\&Y point for angles \& lengths for 2dof \end{DoxyCompactList}\item 
+std\+::pair$<$ double, double $>$ \hyperlink{class_robotic_arm_ade404a134912096fb363fa90ea0cd927}{forward\+Kinematics} (double x0, double y0, double \hyperlink{class_robotic_arm_aaf0461b1cb35da93d2e446f50b9813a4}{a}, double p1, double \hyperlink{class_robotic_arm_a2758a63b85f492abda0e84f32fbfdd98}{b}, double p2, double \hyperlink{class_robotic_arm_a5f6cae6b67db69c97b75970dacc72ea8}{c}, double p3)
+\begin{DoxyCompactList}\small\item\em forward kinematics, calculate X\&Y point for angles \& lengths for 3dof \end{DoxyCompactList}\item 
+\hyperlink{struct_position}{Position} \hyperlink{class_robotic_arm_a472bb97d5867b86add81326010da2f0f}{get\+Pos} () const 
+\item 
+void \hyperlink{class_robotic_arm_ad3f7fcafa4909fee1db198353434e987}{set\+Pos} (\hyperlink{struct_position}{Position} pos)
+\item 
+const std\+::vector$<$ signed short $>$ \& \hyperlink{class_robotic_arm_a18d2147e468f8026f301f1d96d040ea5}{get\+Conf} () const 
+\item 
+void \hyperlink{class_robotic_arm_ad69cfd597e6e397b88a316ef93b68ece}{set\+Conf} (const std\+::vector$<$ signed short $>$ \&conf)
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned short \hyperlink{class_robotic_arm_aaf0461b1cb35da93d2e446f50b9813a4}{a}
+\item 
+unsigned short \hyperlink{class_robotic_arm_a2758a63b85f492abda0e84f32fbfdd98}{b}
+\item 
+unsigned short \hyperlink{class_robotic_arm_a5f6cae6b67db69c97b75970dacc72ea8}{c}
+\item 
+unsigned short \hyperlink{class_robotic_arm_ada1f488e8627fcb18d4b15b70c593be8}{d}
+\item 
+\hyperlink{struct_servo}{Servo} \hyperlink{class_robotic_arm_a405680ac32df6d444683b997b785623f}{s1}
+\item 
+\hyperlink{struct_servo}{Servo} \hyperlink{class_robotic_arm_aeafd57f690026379493f193d94bd8210}{s2}
+\item 
+\hyperlink{struct_servo}{Servo} \hyperlink{class_robotic_arm_a9241e65a54080f2f642bd08a78a12f6f}{s3}
+\item 
+\hyperlink{struct_servo}{Servo} \hyperlink{class_robotic_arm_af0d9eb18ff10b252b79c8a986fe31170}{s4}
+\item 
+\hyperlink{struct_servo}{Servo} \hyperlink{class_robotic_arm_a393711dcc74eb1fba3f9e544cd2bb771}{s5}
+\item 
+\hyperlink{struct_servo}{Servo} \hyperlink{class_robotic_arm_a4816473ed62d262e2a29590769e82f10}{s6}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 26 of file Robotic\+Arm.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Robotic\+Arm@{Robotic\+Arm}!Robotic\+Arm@{Robotic\+Arm}}
+\index{Robotic\+Arm@{Robotic\+Arm}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{Robotic\+Arm(unsigned short a, unsigned short b, unsigned short c, unsigned short d, Servo s1, Servo s2, Servo s3, Servo s4, Servo s5, Servo s6)}{RoboticArm(unsigned short a, unsigned short b, unsigned short c, unsigned short d, Servo s1, Servo s2, Servo s3, Servo s4, Servo s5, Servo s6)}}]{\setlength{\rightskip}{0pt plus 5cm}Robotic\+Arm\+::\+Robotic\+Arm (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{a, }
+\item[{unsigned short}]{b, }
+\item[{unsigned short}]{c, }
+\item[{unsigned short}]{d, }
+\item[{{\bf Servo}}]{s1, }
+\item[{{\bf Servo}}]{s2, }
+\item[{{\bf Servo}}]{s3, }
+\item[{{\bf Servo}}]{s4, }
+\item[{{\bf Servo}}]{s5, }
+\item[{{\bf Servo}}]{s6}
+\end{DoxyParamCaption}
+)}\hypertarget{class_robotic_arm_acf99461f54580f6ccbafcc891e211037}{}\label{class_robotic_arm_acf99461f54580f6ccbafcc891e211037}
+
+
+constructor 
+
+
+
+Definition at line 18 of file Robotic\+Arm.\+cpp.
+
+\index{Robotic\+Arm@{Robotic\+Arm}!````~Robotic\+Arm@{$\sim$\+Robotic\+Arm}}
+\index{````~Robotic\+Arm@{$\sim$\+Robotic\+Arm}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{$\sim$\+Robotic\+Arm()}{~RoboticArm()}}]{\setlength{\rightskip}{0pt plus 5cm}Robotic\+Arm\+::$\sim$\+Robotic\+Arm (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_robotic_arm_aa1e689d9e117cebbc50e8943333851e6}{}\label{class_robotic_arm_aa1e689d9e117cebbc50e8943333851e6}
+
+
+copydestructor 
+
+
+
+Definition at line 24 of file Robotic\+Arm.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Robotic\+Arm@{Robotic\+Arm}!forward\+Kinematics@{forward\+Kinematics}}
+\index{forward\+Kinematics@{forward\+Kinematics}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{forward\+Kinematics(double x0, double y0, double a, double p1, double b, double p2)}{forwardKinematics(double x0, double y0, double a, double p1, double b, double p2)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::pair$<$ double, double $>$ Robotic\+Arm\+::forward\+Kinematics (
+\begin{DoxyParamCaption}
+\item[{double}]{x0, }
+\item[{double}]{y0, }
+\item[{double}]{a, }
+\item[{double}]{p1, }
+\item[{double}]{b, }
+\item[{double}]{p2}
+\end{DoxyParamCaption}
+)}\hypertarget{class_robotic_arm_a549f24f349105a6b5130eb237d737132}{}\label{class_robotic_arm_a549f24f349105a6b5130eb237d737132}
+
+
+forward kinematics, calculate X\&Y point for angles \& lengths for 2dof 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0} & x position of robot base \\
+\hline
+{\em y0} & y position of robot base \\
+\hline
+{\em a} & length of shoulder to elbow \\
+\hline
+{\em p1} & angle of first degree \\
+\hline
+{\em b} & length of elbow to wrist \\
+\hline
+{\em p2} & angle of first degree \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 187 of file Robotic\+Arm.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_robotic_arm_a549f24f349105a6b5130eb237d737132_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robotic\+Arm@{Robotic\+Arm}!forward\+Kinematics@{forward\+Kinematics}}
+\index{forward\+Kinematics@{forward\+Kinematics}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{forward\+Kinematics(double x0, double y0, double a, double p1, double b, double p2, double c, double p3)}{forwardKinematics(double x0, double y0, double a, double p1, double b, double p2, double c, double p3)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::pair$<$ double, double $>$ Robotic\+Arm\+::forward\+Kinematics (
+\begin{DoxyParamCaption}
+\item[{double}]{x0, }
+\item[{double}]{y0, }
+\item[{double}]{a, }
+\item[{double}]{p1, }
+\item[{double}]{b, }
+\item[{double}]{p2, }
+\item[{double}]{c, }
+\item[{double}]{p3}
+\end{DoxyParamCaption}
+)}\hypertarget{class_robotic_arm_ade404a134912096fb363fa90ea0cd927}{}\label{class_robotic_arm_ade404a134912096fb363fa90ea0cd927}
+
+
+forward kinematics, calculate X\&Y point for angles \& lengths for 3dof 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x0} & x position of robot base \\
+\hline
+{\em y0} & y position of robot base \\
+\hline
+{\em a} & length of shoulder to elbow \\
+\hline
+{\em p1} & angle of first degree \\
+\hline
+{\em b} & length of elbow to wrist \\
+\hline
+{\em p2} & angle of second degree \\
+\hline
+{\em c} & length of wrist to gripper \\
+\hline
+{\em p3} & angle of 3rd degree \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 195 of file Robotic\+Arm.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_robotic_arm_ade404a134912096fb363fa90ea0cd927_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robotic\+Arm@{Robotic\+Arm}!get\+Conf@{get\+Conf}}
+\index{get\+Conf@{get\+Conf}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{get\+Conf() const }{getConf() const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$ signed short $>$ \& Robotic\+Arm\+::get\+Conf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_robotic_arm_a18d2147e468f8026f301f1d96d040ea5}{}\label{class_robotic_arm_a18d2147e468f8026f301f1d96d040ea5}
+
+
+Definition at line 161 of file Robotic\+Arm.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_robotic_arm_a18d2147e468f8026f301f1d96d040ea5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robotic\+Arm@{Robotic\+Arm}!get\+Pos@{get\+Pos}}
+\index{get\+Pos@{get\+Pos}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{get\+Pos() const }{getPos() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Position} Robotic\+Arm\+::get\+Pos (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_robotic_arm_a472bb97d5867b86add81326010da2f0f}{}\label{class_robotic_arm_a472bb97d5867b86add81326010da2f0f}
+
+
+Definition at line 29 of file Robotic\+Arm.\+cpp.
+
+\index{Robotic\+Arm@{Robotic\+Arm}!goto\+Park@{goto\+Park}}
+\index{goto\+Park@{goto\+Park}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{goto\+Park()}{gotoPark()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Robotic\+Arm\+::goto\+Park (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_robotic_arm_a6ecfa07487d7c03717be1e5f1fdb1e21}{}\label{class_robotic_arm_a6ecfa07487d7c03717be1e5f1fdb1e21}
+
+
+go to park position 
+
+\begin{DoxyReturn}{Returns}
+true if done 
+\end{DoxyReturn}
+
+
+Definition at line 258 of file Robotic\+Arm.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_robotic_arm_a6ecfa07487d7c03717be1e5f1fdb1e21_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robotic\+Arm@{Robotic\+Arm}!move\+Object@{move\+Object}}
+\index{move\+Object@{move\+Object}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{move\+Object(signed long object\+X, unsigned long object\+Y, signed short object\+Angle, unsigned short object\+Width, signed long des\+X, unsigned long des\+Y)}{moveObject(signed long objectX, unsigned long objectY, signed short objectAngle, unsigned short objectWidth, signed long desX, unsigned long desY)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Robotic\+Arm\+::move\+Object (
+\begin{DoxyParamCaption}
+\item[{signed long}]{objectX, }
+\item[{unsigned long}]{objectY, }
+\item[{signed short}]{object\+Angle, }
+\item[{unsigned short}]{object\+Width, }
+\item[{signed long}]{desX, }
+\item[{unsigned long}]{desY}
+\end{DoxyParamCaption}
+)}\hypertarget{class_robotic_arm_ad9add36d9fad6da469f30d1ffd867e63}{}\label{class_robotic_arm_ad9add36d9fad6da469f30d1ffd867e63}
+
+
+move object to specified destination 
+
+
+\begin{DoxyParams}{Parameters}
+{\em objectX} & center X in mm of object \\
+\hline
+{\em objectY} & center Y in mm of object \\
+\hline
+{\em angle} & of object in degrees \\
+\hline
+{\em object\+Width} & width of object in mm \\
+\hline
+{\em desX} & destination X in mm of destination \\
+\hline
+{\em desY} & destination Y in mm of destination \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if object was succesfully moved 
+\end{DoxyReturn}
+
+
+Definition at line 39 of file Robotic\+Arm.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_robotic_arm_ad9add36d9fad6da469f30d1ffd867e63_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robotic\+Arm@{Robotic\+Arm}!set\+Conf@{set\+Conf}}
+\index{set\+Conf@{set\+Conf}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{set\+Conf(const std\+::vector$<$ signed short $>$ \&conf)}{setConf(const std::vector< signed short > &conf)}}]{\setlength{\rightskip}{0pt plus 5cm}void Robotic\+Arm\+::set\+Conf (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ signed short $>$ \&}]{conf}
+\end{DoxyParamCaption}
+)}\hypertarget{class_robotic_arm_ad69cfd597e6e397b88a316ef93b68ece}{}\label{class_robotic_arm_ad69cfd597e6e397b88a316ef93b68ece}
+
+
+Definition at line 182 of file Robotic\+Arm.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{class_robotic_arm_ad69cfd597e6e397b88a316ef93b68ece_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robotic\+Arm@{Robotic\+Arm}!set\+Pos@{set\+Pos}}
+\index{set\+Pos@{set\+Pos}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{set\+Pos(\+Position pos)}{setPos(Position pos)}}]{\setlength{\rightskip}{0pt plus 5cm}void Robotic\+Arm\+::set\+Pos (
+\begin{DoxyParamCaption}
+\item[{{\bf Position}}]{pos}
+\end{DoxyParamCaption}
+)}\hypertarget{class_robotic_arm_ad3f7fcafa4909fee1db198353434e987}{}\label{class_robotic_arm_ad3f7fcafa4909fee1db198353434e987}
+
+
+Definition at line 34 of file Robotic\+Arm.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\index{Robotic\+Arm@{Robotic\+Arm}!a@{a}}
+\index{a@{a}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{a}{a}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short Robotic\+Arm\+::a}\hypertarget{class_robotic_arm_aaf0461b1cb35da93d2e446f50b9813a4}{}\label{class_robotic_arm_aaf0461b1cb35da93d2e446f50b9813a4}
+
+
+Definition at line 83 of file Robotic\+Arm.\+hpp.
+
+\index{Robotic\+Arm@{Robotic\+Arm}!b@{b}}
+\index{b@{b}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{b}{b}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short Robotic\+Arm\+::b}\hypertarget{class_robotic_arm_a2758a63b85f492abda0e84f32fbfdd98}{}\label{class_robotic_arm_a2758a63b85f492abda0e84f32fbfdd98}
+
+
+Definition at line 84 of file Robotic\+Arm.\+hpp.
+
+\index{Robotic\+Arm@{Robotic\+Arm}!c@{c}}
+\index{c@{c}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{c}{c}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short Robotic\+Arm\+::c}\hypertarget{class_robotic_arm_a5f6cae6b67db69c97b75970dacc72ea8}{}\label{class_robotic_arm_a5f6cae6b67db69c97b75970dacc72ea8}
+
+
+Definition at line 85 of file Robotic\+Arm.\+hpp.
+
+\index{Robotic\+Arm@{Robotic\+Arm}!d@{d}}
+\index{d@{d}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{d}{d}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short Robotic\+Arm\+::d}\hypertarget{class_robotic_arm_ada1f488e8627fcb18d4b15b70c593be8}{}\label{class_robotic_arm_ada1f488e8627fcb18d4b15b70c593be8}
+
+
+Definition at line 86 of file Robotic\+Arm.\+hpp.
+
+\index{Robotic\+Arm@{Robotic\+Arm}!s1@{s1}}
+\index{s1@{s1}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{s1}{s1}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Servo} Robotic\+Arm\+::s1}\hypertarget{class_robotic_arm_a405680ac32df6d444683b997b785623f}{}\label{class_robotic_arm_a405680ac32df6d444683b997b785623f}
+
+
+Definition at line 87 of file Robotic\+Arm.\+hpp.
+
+\index{Robotic\+Arm@{Robotic\+Arm}!s2@{s2}}
+\index{s2@{s2}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{s2}{s2}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Servo} Robotic\+Arm\+::s2}\hypertarget{class_robotic_arm_aeafd57f690026379493f193d94bd8210}{}\label{class_robotic_arm_aeafd57f690026379493f193d94bd8210}
+
+
+Definition at line 88 of file Robotic\+Arm.\+hpp.
+
+\index{Robotic\+Arm@{Robotic\+Arm}!s3@{s3}}
+\index{s3@{s3}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{s3}{s3}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Servo} Robotic\+Arm\+::s3}\hypertarget{class_robotic_arm_a9241e65a54080f2f642bd08a78a12f6f}{}\label{class_robotic_arm_a9241e65a54080f2f642bd08a78a12f6f}
+
+
+Definition at line 89 of file Robotic\+Arm.\+hpp.
+
+\index{Robotic\+Arm@{Robotic\+Arm}!s4@{s4}}
+\index{s4@{s4}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{s4}{s4}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Servo} Robotic\+Arm\+::s4}\hypertarget{class_robotic_arm_af0d9eb18ff10b252b79c8a986fe31170}{}\label{class_robotic_arm_af0d9eb18ff10b252b79c8a986fe31170}
+
+
+Definition at line 90 of file Robotic\+Arm.\+hpp.
+
+\index{Robotic\+Arm@{Robotic\+Arm}!s5@{s5}}
+\index{s5@{s5}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{s5}{s5}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Servo} Robotic\+Arm\+::s5}\hypertarget{class_robotic_arm_a393711dcc74eb1fba3f9e544cd2bb771}{}\label{class_robotic_arm_a393711dcc74eb1fba3f9e544cd2bb771}
+
+
+Definition at line 91 of file Robotic\+Arm.\+hpp.
+
+\index{Robotic\+Arm@{Robotic\+Arm}!s6@{s6}}
+\index{s6@{s6}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{s6}{s6}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Servo} Robotic\+Arm\+::s6}\hypertarget{class_robotic_arm_a4816473ed62d262e2a29590769e82f10}{}\label{class_robotic_arm_a4816473ed62d262e2a29590769e82f10}
+
+
+Definition at line 92 of file Robotic\+Arm.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_robotic_arm_8hpp}{Robotic\+Arm.\+hpp}\item 
+src/\hyperlink{_robotic_arm_8cpp}{Robotic\+Arm.\+cpp}\end{DoxyCompactItemize}

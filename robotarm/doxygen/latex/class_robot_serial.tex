@@ -1,0 +1,135 @@
+\hypertarget{class_robot_serial}{}\section{Robot\+Serial Class Reference}
+\label{class_robot_serial}\index{Robot\+Serial@{Robot\+Serial}}
+
+
+{\ttfamily \#include $<$Robot-\/\+Serial.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_robot_serial_a3304340db412d4a8e79258c39f908812}{Robot\+Serial} (std\+::string port, unsigned long baud)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+\hyperlink{class_robot_serial_a1a28818f2b86670f0d8591c5d2e80353}{$\sim$\+Robot\+Serial} ()
+\item 
+void \hyperlink{class_robot_serial_a48929a3b47818cf3366b003b121ed539}{send} (std\+::string Message)
+\begin{DoxyCompactList}\small\item\em send message to robot by serial \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_robot_serial_a2bfa4d4a724c81c8f8b06d47a3c747fb}{read} (uint32\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em read message from robot \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 14 of file Robot-\/\+Serial.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Robot\+Serial@{Robot\+Serial}!Robot\+Serial@{Robot\+Serial}}
+\index{Robot\+Serial@{Robot\+Serial}!Robot\+Serial@{Robot\+Serial}}
+\subsubsection[{\texorpdfstring{Robot\+Serial(std\+::string port, unsigned long baud)}{RobotSerial(std::string port, unsigned long baud)}}]{\setlength{\rightskip}{0pt plus 5cm}Robot\+Serial\+::\+Robot\+Serial (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{port, }
+\item[{unsigned long}]{baud}
+\end{DoxyParamCaption}
+)}\hypertarget{class_robot_serial_a3304340db412d4a8e79258c39f908812}{}\label{class_robot_serial_a3304340db412d4a8e79258c39f908812}
+
+
+constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em port} & serial port of robot \\
+\hline
+{\em baud} & serial speed \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 3 of file Robot-\/\+Serial.\+cpp.
+
+\index{Robot\+Serial@{Robot\+Serial}!````~Robot\+Serial@{$\sim$\+Robot\+Serial}}
+\index{````~Robot\+Serial@{$\sim$\+Robot\+Serial}!Robot\+Serial@{Robot\+Serial}}
+\subsubsection[{\texorpdfstring{$\sim$\+Robot\+Serial()}{~RobotSerial()}}]{\setlength{\rightskip}{0pt plus 5cm}Robot\+Serial\+::$\sim$\+Robot\+Serial (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_robot_serial_a1a28818f2b86670f0d8591c5d2e80353}{}\label{class_robot_serial_a1a28818f2b86670f0d8591c5d2e80353}
+
+
+Definition at line 22 of file Robot-\/\+Serial.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Robot\+Serial@{Robot\+Serial}!read@{read}}
+\index{read@{read}!Robot\+Serial@{Robot\+Serial}}
+\subsubsection[{\texorpdfstring{read(uint32\+\_\+t length)}{read(uint32_t length)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Robot\+Serial\+::read (
+\begin{DoxyParamCaption}
+\item[{uint32\+\_\+t}]{length}
+\end{DoxyParamCaption}
+)}\hypertarget{class_robot_serial_a2bfa4d4a724c81c8f8b06d47a3c747fb}{}\label{class_robot_serial_a2bfa4d4a724c81c8f8b06d47a3c747fb}
+
+
+read message from robot 
+
+
+\begin{DoxyParams}{Parameters}
+{\em length} & length of message to read \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+string with text from robot 
+\end{DoxyReturn}
+
+
+Definition at line 34 of file Robot-\/\+Serial.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_robot_serial_a2bfa4d4a724c81c8f8b06d47a3c747fb_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robot\+Serial@{Robot\+Serial}!send@{send}}
+\index{send@{send}!Robot\+Serial@{Robot\+Serial}}
+\subsubsection[{\texorpdfstring{send(std\+::string Message)}{send(std::string Message)}}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\+Serial\+::send (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{Message}
+\end{DoxyParamCaption}
+)}\hypertarget{class_robot_serial_a48929a3b47818cf3366b003b121ed539}{}\label{class_robot_serial_a48929a3b47818cf3366b003b121ed539}
+
+
+send message to robot by serial 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Message} & message understandable by robot \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 28 of file Robot-\/\+Serial.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=313pt]{class_robot_serial_a48929a3b47818cf3366b003b121ed539_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_robot-_serial_8hpp}{Robot-\/\+Serial.\+hpp}\item 
+src/\hyperlink{_robot-_serial_8cpp}{Robot-\/\+Serial.\+cpp}\end{DoxyCompactItemize}

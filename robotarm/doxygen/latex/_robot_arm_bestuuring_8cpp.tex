@@ -1,0 +1,183 @@
+\hypertarget{_robot_arm_bestuuring_8cpp}{}\section{src/\+Robot\+Arm\+Bestuuring.cpp File Reference}
+\label{_robot_arm_bestuuring_8cpp}\index{src/\+Robot\+Arm\+Bestuuring.\+cpp@{src/\+Robot\+Arm\+Bestuuring.\+cpp}}
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}robotarm/\+Robot\+\_\+\+Go\+To.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}robotarm/\+Robot\+\_\+\+Set\+\_\+\+Ready.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}robotarm/\+Robot\+\_\+\+Set\+\_\+\+Park.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}robotarm/\+Robot\+\_\+\+Set\+\_\+\+Straight.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}robotarm/\+Robot\+\_\+\+Set\+\_\+\+Test.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+Include dependency graph for Robot\+Arm\+Bestuuring.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_robot_arm_bestuuring_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_robot_arm_bestuuring_8cpp_a75f289d8b6a2847c9036aa368b25b767}{my\+Sleep} (unsigned long milliseconds)
+\item 
+bool \hyperlink{_robot_arm_bestuuring_8cpp_ac87481d951e244911fc2b65ac928a8fe}{Ready} (robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Ready\+::\+Request \&req, robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Ready\+::\+Response \&res)
+\item 
+bool \hyperlink{_robot_arm_bestuuring_8cpp_a2fd451df0b78be60169bff8b08b9e4b1}{Park} (robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Park\+::\+Request \&req, robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Park\+::\+Response \&res)
+\item 
+bool \hyperlink{_robot_arm_bestuuring_8cpp_aceb6fd8168a5fe2f94cca8c1c11597a3}{Straight} (robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Straight\+::\+Request \&req, robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Straight\+::\+Response \&res)
+\item 
+bool \hyperlink{_robot_arm_bestuuring_8cpp_a66e0acf82188e829235cfa2ba88d5679}{Test} (robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Test\+::\+Request \&req, robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Test\+::\+Response \&res)
+\item 
+int \hyperlink{_robot_arm_bestuuring_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{Robot\+Arm\+Bestuuring.\+cpp@{Robot\+Arm\+Bestuuring.\+cpp}!main@{main}}
+\index{main@{main}!Robot\+Arm\+Bestuuring.\+cpp@{Robot\+Arm\+Bestuuring.\+cpp}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$$\ast$argv)}{main(int argc, char **argv)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\hypertarget{_robot_arm_bestuuring_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{}\label{_robot_arm_bestuuring_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+Definition at line 144 of file Robot\+Arm\+Bestuuring.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{_robot_arm_bestuuring_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robot\+Arm\+Bestuuring.\+cpp@{Robot\+Arm\+Bestuuring.\+cpp}!my\+Sleep@{my\+Sleep}}
+\index{my\+Sleep@{my\+Sleep}!Robot\+Arm\+Bestuuring.\+cpp@{Robot\+Arm\+Bestuuring.\+cpp}}
+\subsubsection[{\texorpdfstring{my\+Sleep(unsigned long milliseconds)}{mySleep(unsigned long milliseconds)}}]{\setlength{\rightskip}{0pt plus 5cm}void my\+Sleep (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{milliseconds}
+\end{DoxyParamCaption}
+)}\hypertarget{_robot_arm_bestuuring_8cpp_a75f289d8b6a2847c9036aa368b25b767}{}\label{_robot_arm_bestuuring_8cpp_a75f289d8b6a2847c9036aa368b25b767}
+
+
+Definition at line 16 of file Robot\+Arm\+Bestuuring.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=281pt]{_robot_arm_bestuuring_8cpp_a75f289d8b6a2847c9036aa368b25b767_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robot\+Arm\+Bestuuring.\+cpp@{Robot\+Arm\+Bestuuring.\+cpp}!Park@{Park}}
+\index{Park@{Park}!Robot\+Arm\+Bestuuring.\+cpp@{Robot\+Arm\+Bestuuring.\+cpp}}
+\subsubsection[{\texorpdfstring{Park(robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Park\+::\+Request \&req, robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Park\+::\+Response \&res)}{Park(robotarm::Robot_Set_Park::Request &req, robotarm::Robot_Set_Park::Response &res)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Park (
+\begin{DoxyParamCaption}
+\item[{robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Park\+::\+Request \&}]{req, }
+\item[{robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Park\+::\+Response \&}]{res}
+\end{DoxyParamCaption}
+)}\hypertarget{_robot_arm_bestuuring_8cpp_a2fd451df0b78be60169bff8b08b9e4b1}{}\label{_robot_arm_bestuuring_8cpp_a2fd451df0b78be60169bff8b08b9e4b1}
+
+
+Definition at line 44 of file Robot\+Arm\+Bestuuring.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=191pt]{_robot_arm_bestuuring_8cpp_a2fd451df0b78be60169bff8b08b9e4b1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robot\+Arm\+Bestuuring.\+cpp@{Robot\+Arm\+Bestuuring.\+cpp}!Ready@{Ready}}
+\index{Ready@{Ready}!Robot\+Arm\+Bestuuring.\+cpp@{Robot\+Arm\+Bestuuring.\+cpp}}
+\subsubsection[{\texorpdfstring{Ready(robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Ready\+::\+Request \&req, robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Ready\+::\+Response \&res)}{Ready(robotarm::Robot_Set_Ready::Request &req, robotarm::Robot_Set_Ready::Response &res)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Ready (
+\begin{DoxyParamCaption}
+\item[{robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Ready\+::\+Request \&}]{req, }
+\item[{robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Ready\+::\+Response \&}]{res}
+\end{DoxyParamCaption}
+)}\hypertarget{_robot_arm_bestuuring_8cpp_ac87481d951e244911fc2b65ac928a8fe}{}\label{_robot_arm_bestuuring_8cpp_ac87481d951e244911fc2b65ac928a8fe}
+
+
+Definition at line 25 of file Robot\+Arm\+Bestuuring.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=199pt]{_robot_arm_bestuuring_8cpp_ac87481d951e244911fc2b65ac928a8fe_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robot\+Arm\+Bestuuring.\+cpp@{Robot\+Arm\+Bestuuring.\+cpp}!Straight@{Straight}}
+\index{Straight@{Straight}!Robot\+Arm\+Bestuuring.\+cpp@{Robot\+Arm\+Bestuuring.\+cpp}}
+\subsubsection[{\texorpdfstring{Straight(robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Straight\+::\+Request \&req, robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Straight\+::\+Response \&res)}{Straight(robotarm::Robot_Set_Straight::Request &req, robotarm::Robot_Set_Straight::Response &res)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Straight (
+\begin{DoxyParamCaption}
+\item[{robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Straight\+::\+Request \&}]{req, }
+\item[{robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Straight\+::\+Response \&}]{res}
+\end{DoxyParamCaption}
+)}\hypertarget{_robot_arm_bestuuring_8cpp_aceb6fd8168a5fe2f94cca8c1c11597a3}{}\label{_robot_arm_bestuuring_8cpp_aceb6fd8168a5fe2f94cca8c1c11597a3}
+
+
+Definition at line 63 of file Robot\+Arm\+Bestuuring.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=204pt]{_robot_arm_bestuuring_8cpp_aceb6fd8168a5fe2f94cca8c1c11597a3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robot\+Arm\+Bestuuring.\+cpp@{Robot\+Arm\+Bestuuring.\+cpp}!Test@{Test}}
+\index{Test@{Test}!Robot\+Arm\+Bestuuring.\+cpp@{Robot\+Arm\+Bestuuring.\+cpp}}
+\subsubsection[{\texorpdfstring{Test(robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Test\+::\+Request \&req, robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Test\+::\+Response \&res)}{Test(robotarm::Robot_Set_Test::Request &req, robotarm::Robot_Set_Test::Response &res)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Test (
+\begin{DoxyParamCaption}
+\item[{robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Test\+::\+Request \&}]{req, }
+\item[{robotarm\+::\+Robot\+\_\+\+Set\+\_\+\+Test\+::\+Response \&}]{res}
+\end{DoxyParamCaption}
+)}\hypertarget{_robot_arm_bestuuring_8cpp_a66e0acf82188e829235cfa2ba88d5679}{}\label{_robot_arm_bestuuring_8cpp_a66e0acf82188e829235cfa2ba88d5679}
+
+
+Definition at line 83 of file Robot\+Arm\+Bestuuring.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=207pt]{_robot_arm_bestuuring_8cpp_a66e0acf82188e829235cfa2ba88d5679_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=190pt]{_robot_arm_bestuuring_8cpp_a66e0acf82188e829235cfa2ba88d5679_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -1,0 +1,235 @@
+\hypertarget{struct_servo}{}\section{Servo Class Reference}
+\label{struct_servo}\index{Servo@{Servo}}
+
+
+{\ttfamily \#include $<$Robotic\+Arm.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_servo_ab662ab5df0c5f665e7eb11508c39f1a7}{Servo} (unsigned short min\+Pwm, unsigned short pwm\+Range, unsigned char d\+Range, unsigned short servo\+Nr, \hyperlink{class_robot_serial}{Robot\+Serial} $\ast$a\+Robot\+Serial, signed short abnormality=0, bool flip=false, signed short servo\+Abnormality=0)
+\begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
+void \hyperlink{struct_servo_aed94c74351c407e550a51ba40215c135}{goto\+Position} (signed short degrees, unsigned short time)
+\begin{DoxyCompactList}\small\item\em go to given position \end{DoxyCompactList}\item 
+unsigned short \hyperlink{struct_servo_a0cfd9bbddac8bb91017569e0812f816a}{degrees\+To\+Pwm} (signed short degrees, unsigned char servo)
+\begin{DoxyCompactList}\small\item\em converts degrees to pwm \end{DoxyCompactList}\item 
+signed short \hyperlink{struct_servo_a293b3a36b2ab449f83d2c1152a6c5115}{pwm\+To\+Degrees} (unsigned short pwm, unsigned char servo)
+\begin{DoxyCompactList}\small\item\em converts degrees to pwm \end{DoxyCompactList}\item 
+signed short \hyperlink{struct_servo_af8a34733daf26ac3fe4bc6002931b7a8}{get\+Angle} ()
+\begin{DoxyCompactList}\small\item\em get the current angle of the servo \end{DoxyCompactList}\item 
+virtual \hyperlink{struct_servo_acb51bf4d970b071741ba76349a431fb0}{$\sim$\+Servo} ()
+\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+signed short \hyperlink{struct_servo_a2fe3506ea048af600250b292275df6e2}{min}
+\item 
+signed short \hyperlink{struct_servo_a20a1e16e912d613a6f7ee07072799f6d}{max}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 20 of file Robotic\+Arm.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Servo@{Servo}!Servo@{Servo}}
+\index{Servo@{Servo}!Servo@{Servo}}
+\subsubsection[{\texorpdfstring{Servo(unsigned short min\+Pwm, unsigned short pwm\+Range, unsigned char d\+Range, unsigned short servo\+Nr, Robot\+Serial $\ast$a\+Robot\+Serial, signed short abnormality=0, bool flip=false, signed short servo\+Abnormality=0)}{Servo(unsigned short minPwm, unsigned short pwmRange, unsigned char dRange, unsigned short servoNr, RobotSerial *aRobotSerial, signed short abnormality=0, bool flip=false, signed short servoAbnormality=0)}}]{\setlength{\rightskip}{0pt plus 5cm}Servo\+::\+Servo (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{min\+Pwm, }
+\item[{unsigned short}]{pwm\+Range, }
+\item[{unsigned char}]{d\+Range, }
+\item[{unsigned short}]{servo\+Nr, }
+\item[{{\bf Robot\+Serial} $\ast$}]{a\+Robot\+Serial, }
+\item[{signed short}]{abnormality = {\ttfamily 0}, }
+\item[{bool}]{flip = {\ttfamily false}, }
+\item[{signed short}]{servo\+Abnormality = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{struct_servo_ab662ab5df0c5f665e7eb11508c39f1a7}{}\label{struct_servo_ab662ab5df0c5f665e7eb11508c39f1a7}
+
+
+constructor 
+
+
+\begin{DoxyParams}{Parameters}
+{\em min\+Pwm} & minimum pwm of the servo \\
+\hline
+{\em d\+Range} & range in degrees of the servo \\
+\hline
+{\em servo\+Nr} & Nr of servo \\
+\hline
+{\em abnormality} & center angle of servo in degrees \\
+\hline
+{\em flip} & angle is flipped if true \\
+\hline
+{\em servo\+Abnormality} & center angle of servo(to correct for different robots \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12 of file Servo.\+cpp.
+
+\index{Servo@{Servo}!````~Servo@{$\sim$\+Servo}}
+\index{````~Servo@{$\sim$\+Servo}!Servo@{Servo}}
+\subsubsection[{\texorpdfstring{$\sim$\+Servo()}{~Servo()}}]{\setlength{\rightskip}{0pt plus 5cm}Servo\+::$\sim$\+Servo (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{struct_servo_acb51bf4d970b071741ba76349a431fb0}{}\label{struct_servo_acb51bf4d970b071741ba76349a431fb0}
+
+
+Definition at line 75 of file Servo.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Servo@{Servo}!degrees\+To\+Pwm@{degrees\+To\+Pwm}}
+\index{degrees\+To\+Pwm@{degrees\+To\+Pwm}!Servo@{Servo}}
+\subsubsection[{\texorpdfstring{degrees\+To\+Pwm(signed short degrees, unsigned char servo)}{degreesToPwm(signed short degrees, unsigned char servo)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short Servo\+::degrees\+To\+Pwm (
+\begin{DoxyParamCaption}
+\item[{signed short}]{degrees, }
+\item[{unsigned char}]{servo}
+\end{DoxyParamCaption}
+)}\hypertarget{struct_servo_a0cfd9bbddac8bb91017569e0812f816a}{}\label{struct_servo_a0cfd9bbddac8bb91017569e0812f816a}
+
+
+converts degrees to pwm 
+
+
+\begin{DoxyParams}{Parameters}
+{\em degrees} & angle of the servo \\
+\hline
+{\em servo} & number of the servo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+servo angle in Pwm 
+\end{DoxyReturn}
+
+
+Definition at line 26 of file Servo.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{struct_servo_a0cfd9bbddac8bb91017569e0812f816a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Servo@{Servo}!get\+Angle@{get\+Angle}}
+\index{get\+Angle@{get\+Angle}!Servo@{Servo}}
+\subsubsection[{\texorpdfstring{get\+Angle()}{getAngle()}}]{\setlength{\rightskip}{0pt plus 5cm}signed short Servo\+::get\+Angle (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{struct_servo_af8a34733daf26ac3fe4bc6002931b7a8}{}\label{struct_servo_af8a34733daf26ac3fe4bc6002931b7a8}
+
+
+get the current angle of the servo 
+
+\begin{DoxyReturn}{Returns}
+the angle of the servo in degrees 
+\end{DoxyReturn}
+
+
+Definition at line 50 of file Servo.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{struct_servo_af8a34733daf26ac3fe4bc6002931b7a8_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Servo@{Servo}!goto\+Position@{goto\+Position}}
+\index{goto\+Position@{goto\+Position}!Servo@{Servo}}
+\subsubsection[{\texorpdfstring{goto\+Position(signed short degrees, unsigned short time)}{gotoPosition(signed short degrees, unsigned short time)}}]{\setlength{\rightskip}{0pt plus 5cm}void Servo\+::goto\+Position (
+\begin{DoxyParamCaption}
+\item[{signed short}]{degrees, }
+\item[{unsigned short}]{time}
+\end{DoxyParamCaption}
+)}\hypertarget{struct_servo_aed94c74351c407e550a51ba40215c135}{}\label{struct_servo_aed94c74351c407e550a51ba40215c135}
+
+
+go to given position 
+
+
+\begin{DoxyParams}{Parameters}
+{\em servo} & number of the servo \\
+\hline
+{\em degrees} & angle of the servo  time in ms \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 19 of file Servo.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{struct_servo_aed94c74351c407e550a51ba40215c135_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Servo@{Servo}!pwm\+To\+Degrees@{pwm\+To\+Degrees}}
+\index{pwm\+To\+Degrees@{pwm\+To\+Degrees}!Servo@{Servo}}
+\subsubsection[{\texorpdfstring{pwm\+To\+Degrees(unsigned short pwm, unsigned char servo)}{pwmToDegrees(unsigned short pwm, unsigned char servo)}}]{\setlength{\rightskip}{0pt plus 5cm}signed short Servo\+::pwm\+To\+Degrees (
+\begin{DoxyParamCaption}
+\item[{unsigned short}]{pwm, }
+\item[{unsigned char}]{servo}
+\end{DoxyParamCaption}
+)}\hypertarget{struct_servo_a293b3a36b2ab449f83d2c1152a6c5115}{}\label{struct_servo_a293b3a36b2ab449f83d2c1152a6c5115}
+
+
+converts degrees to pwm 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pwm} & angle of the servo in pwm \\
+\hline
+{\em servo} & number of the servo \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+servo angle in degrees 
+\end{DoxyReturn}
+
+
+\subsection{Member Data Documentation}
+\index{Servo@{Servo}!max@{max}}
+\index{max@{max}!Servo@{Servo}}
+\subsubsection[{\texorpdfstring{max}{max}}]{\setlength{\rightskip}{0pt plus 5cm}signed short Servo\+::max}\hypertarget{struct_servo_a20a1e16e912d613a6f7ee07072799f6d}{}\label{struct_servo_a20a1e16e912d613a6f7ee07072799f6d}
+
+
+Definition at line 23 of file Robotic\+Arm.\+hpp.
+
+\index{Servo@{Servo}!min@{min}}
+\index{min@{min}!Servo@{Servo}}
+\subsubsection[{\texorpdfstring{min}{min}}]{\setlength{\rightskip}{0pt plus 5cm}signed short Servo\+::min}\hypertarget{struct_servo_a2fe3506ea048af600250b292275df6e2}{}\label{struct_servo_a2fe3506ea048af600250b292275df6e2}
+
+
+Definition at line 22 of file Robotic\+Arm.\+hpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_robotic_arm_8hpp}{Robotic\+Arm.\+hpp}\item 
+src/\hyperlink{_servo_8hpp}{Servo.\+hpp}\item 
+src/\hyperlink{_servo_8cpp}{Servo.\+cpp}\end{DoxyCompactItemize}

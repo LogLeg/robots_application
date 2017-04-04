@@ -1,0 +1,278 @@
+\hypertarget{namespace_path_algorithm}{}\section{Path\+Algorithm Namespace Reference}
+\label{namespace_path_algorithm}\index{Path\+Algorithm@{Path\+Algorithm}}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_path_algorithm_1_1_a_star}{A\+Star}
+\item 
+struct \hyperlink{struct_path_algorithm_1_1_edge}{Edge}
+\item 
+struct \hyperlink{struct_path_algorithm_1_1_graph}{Graph}
+\item 
+struct \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex}
+\item 
+struct \hyperlink{struct_path_algorithm_1_1_vertex_equal_point_compare}{Vertex\+Equal\+Point\+Compare}
+\item 
+struct \hyperlink{struct_path_algorithm_1_1_vertex_less_cost_compare}{Vertex\+Less\+Cost\+Compare}
+\item 
+struct \hyperlink{struct_path_algorithm_1_1_vertex_less_id_compare}{Vertex\+Less\+Id\+Compare}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} $>$ \hyperlink{namespace_path_algorithm_a7f2958a43117506f3cb6dc9409a22c0d}{Path}
+\item 
+typedef std\+::vector$<$ \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} $>$ \hyperlink{namespace_path_algorithm_a999fc5baea7d1f71e42570630a297029}{Open\+Set}
+\item 
+typedef std\+::set$<$ \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex}, \hyperlink{struct_path_algorithm_1_1_vertex_less_id_compare}{Vertex\+Less\+Id\+Compare} $>$ \hyperlink{namespace_path_algorithm_ac027c23e4b4c237b6eb96fc63d79266f}{Closed\+Set}
+\item 
+typedef std\+::map$<$ \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex}, \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex}, \hyperlink{struct_path_algorithm_1_1_vertex_less_id_compare}{Vertex\+Less\+Id\+Compare} $>$ \hyperlink{namespace_path_algorithm_ac8a52a9740a0bfa959810bd92e08d962}{Vertex\+Map}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+double \hyperlink{namespace_path_algorithm_a303daba8d3a083b341d1f4a799c3d5e4}{Actual\+Cost} (const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Start, const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Goal)
+\item 
+double \hyperlink{namespace_path_algorithm_a2e4474691c7ebd46c7238f2c53b0e543}{Heuristic\+Cost} (const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Start, const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Goal)
+\item 
+\hyperlink{namespace_path_algorithm_a7f2958a43117506f3cb6dc9409a22c0d}{Path} \hyperlink{namespace_path_algorithm_a1b72e8125a5f9fa31d3130c816f1a03f}{Construct\+Path} (\hyperlink{namespace_path_algorithm_ac8a52a9740a0bfa959810bd92e08d962}{Vertex\+Map} \&a\+Predecessor\+Map, const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Current\+Node)
+\item 
+std\+::vector$<$ \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} $>$ \hyperlink{namespace_path_algorithm_ae4490c66af669f70064a693a8d7a889e}{Get\+Neighbours} (const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Vertex, int a\+Free\+Radius, \hyperlink{class_robotic_arm}{Robotic\+Arm} \&robot)
+\item 
+std\+::vector$<$ \hyperlink{struct_path_algorithm_1_1_edge}{Edge} $>$ \hyperlink{namespace_path_algorithm_a8f0c4453fa932953ae67e31855f68197}{Get\+Neighbour\+Connections} (const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Vertex, int a\+Free\+Radius, \hyperlink{class_robotic_arm}{Robotic\+Arm} \&robot)
+\item 
+std\+::pair$<$ double, double $>$ \hyperlink{namespace_path_algorithm_aaa1cdbf02ad31d9d9f0161839a1af45d}{forward\+Kinematics} (double x0, double y0, double a, double p1, double b, double p2)
+\item 
+std\+::ostream \& \hyperlink{namespace_path_algorithm_a7570fe9b9ed95b023311d0b9ef75b7ea}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Vertex)
+\item 
+std\+::ostream \& \hyperlink{namespace_path_algorithm_a4d00bd2dacc6db331429deab0d46cbf3}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{struct_path_algorithm_1_1_edge}{Edge} \&an\+Edge)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\index{Path\+Algorithm@{Path\+Algorithm}!Closed\+Set@{Closed\+Set}}
+\index{Closed\+Set@{Closed\+Set}!Path\+Algorithm@{Path\+Algorithm}}
+\subsubsection[{\texorpdfstring{Closed\+Set}{ClosedSet}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::set$<${\bf Vertex}, {\bf Vertex\+Less\+Id\+Compare}$>$ {\bf Path\+Algorithm\+::\+Closed\+Set}}\hypertarget{namespace_path_algorithm_ac027c23e4b4c237b6eb96fc63d79266f}{}\label{namespace_path_algorithm_ac027c23e4b4c237b6eb96fc63d79266f}
+
+
+Definition at line 192 of file A\+Star.\+hpp.
+
+\index{Path\+Algorithm@{Path\+Algorithm}!Open\+Set@{Open\+Set}}
+\index{Open\+Set@{Open\+Set}!Path\+Algorithm@{Path\+Algorithm}}
+\subsubsection[{\texorpdfstring{Open\+Set}{OpenSet}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<${\bf Vertex}$>$ {\bf Path\+Algorithm\+::\+Open\+Set}}\hypertarget{namespace_path_algorithm_a999fc5baea7d1f71e42570630a297029}{}\label{namespace_path_algorithm_a999fc5baea7d1f71e42570630a297029}
+
+
+Definition at line 191 of file A\+Star.\+hpp.
+
+\index{Path\+Algorithm@{Path\+Algorithm}!Path@{Path}}
+\index{Path@{Path}!Path\+Algorithm@{Path\+Algorithm}}
+\subsubsection[{\texorpdfstring{Path}{Path}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::vector$<${\bf Vertex}$>$ {\bf Path\+Algorithm\+::\+Path}}\hypertarget{namespace_path_algorithm_a7f2958a43117506f3cb6dc9409a22c0d}{}\label{namespace_path_algorithm_a7f2958a43117506f3cb6dc9409a22c0d}
+
+
+Definition at line 190 of file A\+Star.\+hpp.
+
+\index{Path\+Algorithm@{Path\+Algorithm}!Vertex\+Map@{Vertex\+Map}}
+\index{Vertex\+Map@{Vertex\+Map}!Path\+Algorithm@{Path\+Algorithm}}
+\subsubsection[{\texorpdfstring{Vertex\+Map}{VertexMap}}]{\setlength{\rightskip}{0pt plus 5cm}typedef std\+::map$<${\bf Vertex}, {\bf Vertex}, {\bf Vertex\+Less\+Id\+Compare}$>$ {\bf Path\+Algorithm\+::\+Vertex\+Map}}\hypertarget{namespace_path_algorithm_ac8a52a9740a0bfa959810bd92e08d962}{}\label{namespace_path_algorithm_ac8a52a9740a0bfa959810bd92e08d962}
+
+
+Definition at line 193 of file A\+Star.\+hpp.
+
+
+
+\subsection{Function Documentation}
+\index{Path\+Algorithm@{Path\+Algorithm}!Actual\+Cost@{Actual\+Cost}}
+\index{Actual\+Cost@{Actual\+Cost}!Path\+Algorithm@{Path\+Algorithm}}
+\subsubsection[{\texorpdfstring{Actual\+Cost(const Vertex \&a\+Start, const Vertex \&a\+Goal)}{ActualCost(const Vertex &aStart, const Vertex &aGoal)}}]{\setlength{\rightskip}{0pt plus 5cm}double Path\+Algorithm\+::\+Actual\+Cost (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vertex} \&}]{a\+Start, }
+\item[{const {\bf Vertex} \&}]{a\+Goal}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_path_algorithm_a303daba8d3a083b341d1f4a799c3d5e4}{}\label{namespace_path_algorithm_a303daba8d3a083b341d1f4a799c3d5e4}
+
+
+Definition at line 14 of file A\+Star.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_path_algorithm_a303daba8d3a083b341d1f4a799c3d5e4_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm@{Path\+Algorithm}!Construct\+Path@{Construct\+Path}}
+\index{Construct\+Path@{Construct\+Path}!Path\+Algorithm@{Path\+Algorithm}}
+\subsubsection[{\texorpdfstring{Construct\+Path(\+Vertex\+Map \&a\+Predecessor\+Map, const Vertex \&a\+Current\+Node)}{ConstructPath(VertexMap &aPredecessorMap, const Vertex &aCurrentNode)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Path} Path\+Algorithm\+::\+Construct\+Path (
+\begin{DoxyParamCaption}
+\item[{{\bf Vertex\+Map} \&}]{a\+Predecessor\+Map, }
+\item[{const {\bf Vertex} \&}]{a\+Current\+Node}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_path_algorithm_a1b72e8125a5f9fa31d3130c816f1a03f}{}\label{namespace_path_algorithm_a1b72e8125a5f9fa31d3130c816f1a03f}
+
+
+Definition at line 28 of file A\+Star.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_path_algorithm_a1b72e8125a5f9fa31d3130c816f1a03f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm@{Path\+Algorithm}!forward\+Kinematics@{forward\+Kinematics}}
+\index{forward\+Kinematics@{forward\+Kinematics}!Path\+Algorithm@{Path\+Algorithm}}
+\subsubsection[{\texorpdfstring{forward\+Kinematics(double x0, double y0, double a, double p1, double b, double p2)}{forwardKinematics(double x0, double y0, double a, double p1, double b, double p2)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::pair$<$double, double$>$ Path\+Algorithm\+::forward\+Kinematics (
+\begin{DoxyParamCaption}
+\item[{double}]{x0, }
+\item[{double}]{y0, }
+\item[{double}]{a, }
+\item[{double}]{p1, }
+\item[{double}]{b, }
+\item[{double}]{p2}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_path_algorithm_aaa1cdbf02ad31d9d9f0161839a1af45d}{}\label{namespace_path_algorithm_aaa1cdbf02ad31d9d9f0161839a1af45d}
+\index{Path\+Algorithm@{Path\+Algorithm}!Get\+Neighbour\+Connections@{Get\+Neighbour\+Connections}}
+\index{Get\+Neighbour\+Connections@{Get\+Neighbour\+Connections}!Path\+Algorithm@{Path\+Algorithm}}
+\subsubsection[{\texorpdfstring{Get\+Neighbour\+Connections(const Vertex \&a\+Vertex, int a\+Free\+Radius, Robotic\+Arm \&robot)}{GetNeighbourConnections(const Vertex &aVertex, int aFreeRadius, RoboticArm &robot)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Edge}$>$ Path\+Algorithm\+::\+Get\+Neighbour\+Connections (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vertex} \&}]{a\+Vertex, }
+\item[{int}]{a\+Free\+Radius, }
+\item[{{\bf Robotic\+Arm} \&}]{robot}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_path_algorithm_a8f0c4453fa932953ae67e31855f68197}{}\label{namespace_path_algorithm_a8f0c4453fa932953ae67e31855f68197}
+
+
+Definition at line 84 of file A\+Star.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_path_algorithm_a8f0c4453fa932953ae67e31855f68197_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_path_algorithm_a8f0c4453fa932953ae67e31855f68197_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm@{Path\+Algorithm}!Get\+Neighbours@{Get\+Neighbours}}
+\index{Get\+Neighbours@{Get\+Neighbours}!Path\+Algorithm@{Path\+Algorithm}}
+\subsubsection[{\texorpdfstring{Get\+Neighbours(const Vertex \&a\+Vertex, int a\+Free\+Radius, Robotic\+Arm \&robot)}{GetNeighbours(const Vertex &aVertex, int aFreeRadius, RoboticArm &robot)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Vertex}$>$ Path\+Algorithm\+::\+Get\+Neighbours (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vertex} \&}]{a\+Vertex, }
+\item[{int}]{a\+Free\+Radius, }
+\item[{{\bf Robotic\+Arm} \&}]{robot}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_path_algorithm_ae4490c66af669f70064a693a8d7a889e}{}\label{namespace_path_algorithm_ae4490c66af669f70064a693a8d7a889e}
+
+
+Definition at line 47 of file A\+Star.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_path_algorithm_ae4490c66af669f70064a693a8d7a889e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_path_algorithm_ae4490c66af669f70064a693a8d7a889e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm@{Path\+Algorithm}!Heuristic\+Cost@{Heuristic\+Cost}}
+\index{Heuristic\+Cost@{Heuristic\+Cost}!Path\+Algorithm@{Path\+Algorithm}}
+\subsubsection[{\texorpdfstring{Heuristic\+Cost(const Vertex \&a\+Start, const Vertex \&a\+Goal)}{HeuristicCost(const Vertex &aStart, const Vertex &aGoal)}}]{\setlength{\rightskip}{0pt plus 5cm}double Path\+Algorithm\+::\+Heuristic\+Cost (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vertex} \&}]{a\+Start, }
+\item[{const {\bf Vertex} \&}]{a\+Goal}
+\end{DoxyParamCaption}
+)}\hypertarget{namespace_path_algorithm_a2e4474691c7ebd46c7238f2c53b0e543}{}\label{namespace_path_algorithm_a2e4474691c7ebd46c7238f2c53b0e543}
+
+
+Definition at line 21 of file A\+Star.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespace_path_algorithm_a2e4474691c7ebd46c7238f2c53b0e543_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm@{Path\+Algorithm}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Path\+Algorithm@{Path\+Algorithm}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&os, const Vertex \&a\+Vertex)}{operator<<(std::ostream &os, const Vertex &aVertex)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& Path\+Algorithm\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{os, }
+\item[{const {\bf Vertex} \&}]{a\+Vertex}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{namespace_path_algorithm_a7570fe9b9ed95b023311d0b9ef75b7ea}{}\label{namespace_path_algorithm_a7570fe9b9ed95b023311d0b9ef75b7ea}
+
+\begin{DoxyParams}{Parameters}
+{\em os} & \\
+\hline
+{\em a\+Vertex} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 173 of file A\+Star.\+hpp.
+
+\index{Path\+Algorithm@{Path\+Algorithm}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Path\+Algorithm@{Path\+Algorithm}}
+\subsubsection[{\texorpdfstring{operator$<$$<$(std\+::ostream \&os, const Edge \&an\+Edge)}{operator<<(std::ostream &os, const Edge &anEdge)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& Path\+Algorithm\+::operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{os, }
+\item[{const {\bf Edge} \&}]{an\+Edge}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{namespace_path_algorithm_a4d00bd2dacc6db331429deab0d46cbf3}{}\label{namespace_path_algorithm_a4d00bd2dacc6db331429deab0d46cbf3}
+
+\begin{DoxyParams}{Parameters}
+{\em os} & \\
+\hline
+{\em an\+Edge} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+
+Definition at line 183 of file A\+Star.\+hpp.
+

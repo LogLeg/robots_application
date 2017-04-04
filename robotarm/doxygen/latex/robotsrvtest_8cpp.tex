@@ -1,0 +1,148 @@
+\hypertarget{robotsrvtest_8cpp}{}\section{src/robotsrvtest.cpp File Reference}
+\label{robotsrvtest_8cpp}\index{src/robotsrvtest.\+cpp@{src/robotsrvtest.\+cpp}}
+{\ttfamily \#include \char`\"{}ros/ros.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}robotarm/\+Robot\+\_\+\+Go\+To.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}robotarm/\+Robot\+\_\+\+Set\+\_\+\+Ready.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$cstdlib$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include $<$thread$>$}\\*
+{\ttfamily \#include \char`\"{}Robotic\+Arm.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}A\+Star.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Size.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Point.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}vision.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}interface.\+hpp\char`\"{}}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+Include dependency graph for robotsrvtest.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{robotsrvtest_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+pair$<$ \hyperlink{struct_properties}{Properties}, \hyperlink{struct_properties}{Properties} $>$ \hyperlink{robotsrvtest_8cpp_a61036826079f5e42d38d450a43f26985}{get\+\_\+coordinates} ()
+\item 
+void \hyperlink{robotsrvtest_8cpp_ad9d0e397081801b3c81f84aef014b9ca}{fn} ()
+\item 
+void \hyperlink{robotsrvtest_8cpp_a75f289d8b6a2847c9036aa368b25b767}{my\+Sleep} (unsigned long milliseconds)
+\item 
+int \hyperlink{robotsrvtest_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_vision}{Vision} \hyperlink{robotsrvtest_8cpp_a2d2bc90af05183be9c53a3cba1191194}{vision} = \hyperlink{class_vision}{Vision}()
+\item 
+\hyperlink{class_interface}{Interface} \hyperlink{robotsrvtest_8cpp_a96d2931b623e8c1d728507b4b4fa035e}{interface} = \hyperlink{class_interface}{Interface}()
+\item 
+bool \hyperlink{robotsrvtest_8cpp_a36f7b6be7108281af77939ceaec42fd6}{running} = true
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{robotsrvtest.\+cpp@{robotsrvtest.\+cpp}!fn@{fn}}
+\index{fn@{fn}!robotsrvtest.\+cpp@{robotsrvtest.\+cpp}}
+\subsubsection[{\texorpdfstring{fn()}{fn()}}]{\setlength{\rightskip}{0pt plus 5cm}void fn (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{robotsrvtest_8cpp_ad9d0e397081801b3c81f84aef014b9ca}{}\label{robotsrvtest_8cpp_ad9d0e397081801b3c81f84aef014b9ca}
+
+
+Definition at line 131 of file robotsrvtest.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{robotsrvtest_8cpp_ad9d0e397081801b3c81f84aef014b9ca_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{robotsrvtest.\+cpp@{robotsrvtest.\+cpp}!get\+\_\+coordinates@{get\+\_\+coordinates}}
+\index{get\+\_\+coordinates@{get\+\_\+coordinates}!robotsrvtest.\+cpp@{robotsrvtest.\+cpp}}
+\subsubsection[{\texorpdfstring{get\+\_\+coordinates()}{get_coordinates()}}]{\setlength{\rightskip}{0pt plus 5cm}pair$<$ {\bf Properties}, {\bf Properties} $>$ get\+\_\+coordinates (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{robotsrvtest_8cpp_a61036826079f5e42d38d450a43f26985}{}\label{robotsrvtest_8cpp_a61036826079f5e42d38d450a43f26985}
+
+
+Definition at line 84 of file robotsrvtest.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{robotsrvtest_8cpp_a61036826079f5e42d38d450a43f26985_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{robotsrvtest.\+cpp@{robotsrvtest.\+cpp}!main@{main}}
+\index{main@{main}!robotsrvtest.\+cpp@{robotsrvtest.\+cpp}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$$\ast$argv)}{main(int argc, char **argv)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\hypertarget{robotsrvtest_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{}\label{robotsrvtest_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+Definition at line 46 of file robotsrvtest.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=263pt]{robotsrvtest_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{robotsrvtest.\+cpp@{robotsrvtest.\+cpp}!my\+Sleep@{my\+Sleep}}
+\index{my\+Sleep@{my\+Sleep}!robotsrvtest.\+cpp@{robotsrvtest.\+cpp}}
+\subsubsection[{\texorpdfstring{my\+Sleep(unsigned long milliseconds)}{mySleep(unsigned long milliseconds)}}]{\setlength{\rightskip}{0pt plus 5cm}void my\+Sleep (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{milliseconds}
+\end{DoxyParamCaption}
+)}\hypertarget{robotsrvtest_8cpp_a75f289d8b6a2847c9036aa368b25b767}{}\label{robotsrvtest_8cpp_a75f289d8b6a2847c9036aa368b25b767}
+
+
+Definition at line 37 of file robotsrvtest.\+cpp.
+
+
+
+\subsection{Variable Documentation}
+\index{robotsrvtest.\+cpp@{robotsrvtest.\+cpp}!interface@{interface}}
+\index{interface@{interface}!robotsrvtest.\+cpp@{robotsrvtest.\+cpp}}
+\subsubsection[{\texorpdfstring{interface}{interface}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Interface} interface = {\bf Interface}()}\hypertarget{robotsrvtest_8cpp_a96d2931b623e8c1d728507b4b4fa035e}{}\label{robotsrvtest_8cpp_a96d2931b623e8c1d728507b4b4fa035e}
+
+
+Definition at line 29 of file robotsrvtest.\+cpp.
+
+\index{robotsrvtest.\+cpp@{robotsrvtest.\+cpp}!running@{running}}
+\index{running@{running}!robotsrvtest.\+cpp@{robotsrvtest.\+cpp}}
+\subsubsection[{\texorpdfstring{running}{running}}]{\setlength{\rightskip}{0pt plus 5cm}bool running = true}\hypertarget{robotsrvtest_8cpp_a36f7b6be7108281af77939ceaec42fd6}{}\label{robotsrvtest_8cpp_a36f7b6be7108281af77939ceaec42fd6}
+
+
+Definition at line 31 of file robotsrvtest.\+cpp.
+
+\index{robotsrvtest.\+cpp@{robotsrvtest.\+cpp}!vision@{vision}}
+\index{vision@{vision}!robotsrvtest.\+cpp@{robotsrvtest.\+cpp}}
+\subsubsection[{\texorpdfstring{vision}{vision}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vision} vision = {\bf Vision}()}\hypertarget{robotsrvtest_8cpp_a2d2bc90af05183be9c53a3cba1191194}{}\label{robotsrvtest_8cpp_a2d2bc90af05183be9c53a3cba1191194}
+
+
+Definition at line 28 of file robotsrvtest.\+cpp.
+

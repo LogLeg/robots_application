@@ -1,0 +1,399 @@
+\hypertarget{class_vision}{}\section{Vision Class Reference}
+\label{class_vision}\index{Vision@{Vision}}
+
+
+{\ttfamily \#include $<$vision.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_vision_ad6899fb359fd485afbd309d6d7b0ae1f}{Vision} ()
+\item 
+\hyperlink{class_vision_a12bc039b4fcdb229e70c55d2660392a8}{$\sim$\+Vision} ()
+\begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
+void \hyperlink{class_vision_afc55887fac6cea0954963cff0429a705}{initialize} (const string \&window\+\_\+name, uint8\+\_\+t device, bool test)
+\begin{DoxyCompactList}\small\item\em This function will initialize the camera and will set additional parameters that depend on what the camera sees. Like calibrating the pixels per mm. \end{DoxyCompactList}\item 
+void \hyperlink{class_vision_aefb980ea81da98b4f5531cd46481ce2d}{show\+\_\+image} ()
+\begin{DoxyCompactList}\small\item\em This function will take all the loose ends of this class and combine them into one Mat so that everything is nice and tidy. \end{DoxyCompactList}\item 
+void \hyperlink{class_vision_afbaa5efe06c5af3d82fb4fc133788b5b}{take\+\_\+frame} (bool screenshot)
+\begin{DoxyCompactList}\small\item\em This function will get the stream from the webcam and put it into the src Mat. \end{DoxyCompactList}\item 
+Mat1b \hyperlink{class_vision_a10439f626238ba3628534e55f80e59b1}{filter\+\_\+colour} (uint8\+\_\+t colour\+\_\+number)
+\begin{DoxyCompactList}\small\item\em This function will filter a colour out of the. \end{DoxyCompactList}\item 
+vector$<$ pair$<$ vector$<$ Point $>$, vector$<$ vector$<$ Point $>$ $>$ $>$ $>$ \hyperlink{class_vision_ac61f35fd2d78031d96986b8db8daf257}{detect\+\_\+shape} (const Mat1b \&input, uint8\+\_\+t shape)
+\begin{DoxyCompactList}\small\item\em This function will find contours that meet the shape that has been given with the function. It will search all contours and then check for rectangles, bars or circles. \end{DoxyCompactList}\item 
+\hyperlink{struct_properties}{Properties} \hyperlink{class_vision_a41e694aef79da35cad92f9e57ecdea4e}{get\+\_\+properties} (const vector$<$ Point $>$ \&contour)
+\begin{DoxyCompactList}\small\item\em This function will return the properties of a given contour. \end{DoxyCompactList}\item 
+void \hyperlink{class_vision_acd6cf5d0e7bba1adfb6f123d76489a6d}{transform\+\_\+properties} (\hyperlink{struct_properties}{Properties} $\ast$properties)
+\begin{DoxyCompactList}\small\item\em This function will transform the x and y coordinate of a shape defined in properties to actual millimeters measured from the base of the robotic arm. \end{DoxyCompactList}\item 
+uint8\+\_\+t \hyperlink{class_vision_a7c9c698f6da2af1773bd0b65ba4bfd34}{number\+\_\+selection} (uint8\+\_\+t colour)
+\begin{DoxyCompactList}\small\item\em This function will put numers on the objects that can be grabbed by the robotic arm. \end{DoxyCompactList}\item 
+\hyperlink{struct_properties}{Properties} \hyperlink{class_vision_a136b9affd9c8fdae0583b9a56d3817e4}{shape2grab} (uint8\+\_\+t shape)
+\begin{DoxyCompactList}\small\item\em This function will return the properties of the selected shape. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The vision class does all the image recognition work. and also translates the pixels to millimeters 
+
+Definition at line 63 of file vision.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Vision@{Vision}!Vision@{Vision}}
+\index{Vision@{Vision}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{Vision()}{Vision()}}]{\setlength{\rightskip}{0pt plus 5cm}Vision\+::\+Vision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_vision_ad6899fb359fd485afbd309d6d7b0ae1f}{}\label{class_vision_ad6899fb359fd485afbd309d6d7b0ae1f}
+@ brief Constructor 
+
+Definition at line 10 of file vision.\+cpp.
+
+\index{Vision@{Vision}!````~Vision@{$\sim$\+Vision}}
+\index{````~Vision@{$\sim$\+Vision}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{$\sim$\+Vision()}{~Vision()}}]{\setlength{\rightskip}{0pt plus 5cm}Vision\+::$\sim$\+Vision (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_vision_a12bc039b4fcdb229e70c55d2660392a8}{}\label{class_vision_a12bc039b4fcdb229e70c55d2660392a8}
+
+
+Deconstructor. 
+
+
+
+Definition at line 21 of file vision.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Vision@{Vision}!detect\+\_\+shape@{detect\+\_\+shape}}
+\index{detect\+\_\+shape@{detect\+\_\+shape}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{detect\+\_\+shape(const Mat1b \&input, uint8\+\_\+t shape)}{detect_shape(const Mat1b &input, uint8_t shape)}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ pair$<$ vector$<$ Point $>$, vector$<$ vector$<$ Point $>$ $>$ $>$ $>$ Vision\+::detect\+\_\+shape (
+\begin{DoxyParamCaption}
+\item[{const Mat1b \&}]{input, }
+\item[{uint8\+\_\+t}]{shape}
+\end{DoxyParamCaption}
+)}\hypertarget{class_vision_ac61f35fd2d78031d96986b8db8daf257}{}\label{class_vision_ac61f35fd2d78031d96986b8db8daf257}
+
+
+This function will find contours that meet the shape that has been given with the function. It will search all contours and then check for rectangles, bars or circles. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & This should be the return value of \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_vision_a10439f626238ba3628534e55f80e59b1}{filter\+\_\+colour(uint8\+\_\+t colour\+\_\+number)}. 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em shape} & The shape that needs to be searched for \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A vector of pairs with contours and nested contours This last one is only used by the 
+\end{DoxyReturn}
+\begin{DoxySeeAlso}{See also}
+get\+\_\+calibration\+\_\+square() function. 
+\end{DoxySeeAlso}
+Find contours
+
+T\+E\+MP
+
+Definition at line 117 of file vision.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_vision_ac61f35fd2d78031d96986b8db8daf257_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Vision@{Vision}!filter\+\_\+colour@{filter\+\_\+colour}}
+\index{filter\+\_\+colour@{filter\+\_\+colour}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{filter\+\_\+colour(uint8\+\_\+t colour\+\_\+number)}{filter_colour(uint8_t colour_number)}}]{\setlength{\rightskip}{0pt plus 5cm}Mat1b Vision\+::filter\+\_\+colour (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{colour\+\_\+number}
+\end{DoxyParamCaption}
+)}\hypertarget{class_vision_a10439f626238ba3628534e55f80e59b1}{}\label{class_vision_a10439f626238ba3628534e55f80e59b1}
+
+
+This function will filter a colour out of the. 
+
+\begin{DoxySeeAlso}{See also}
+src Mat. 
+\end{DoxySeeAlso}
+
+\begin{DoxyParams}{Parameters}
+{\em colour\+\_\+number} & This is the colour parameter \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a binairy Mat to process further down the road. 
+\end{DoxyReturn}
+
+
+Definition at line 97 of file vision.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_vision_a10439f626238ba3628534e55f80e59b1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Vision@{Vision}!get\+\_\+properties@{get\+\_\+properties}}
+\index{get\+\_\+properties@{get\+\_\+properties}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{get\+\_\+properties(const vector$<$ Point $>$ \&contour)}{get_properties(const vector< Point > &contour)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Properties} Vision\+::get\+\_\+properties (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ Point $>$ \&}]{contour}
+\end{DoxyParamCaption}
+)}\hypertarget{class_vision_a41e694aef79da35cad92f9e57ecdea4e}{}\label{class_vision_a41e694aef79da35cad92f9e57ecdea4e}
+
+
+This function will return the properties of a given contour. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contour} & The contour that needs to be documented in properties \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The properties of the contour 
+\end{DoxyReturn}
+
+
+Definition at line 212 of file vision.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_vision_a41e694aef79da35cad92f9e57ecdea4e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Vision@{Vision}!initialize@{initialize}}
+\index{initialize@{initialize}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{initialize(const string \&window\+\_\+name, uint8\+\_\+t device, bool test)}{initialize(const string &window_name, uint8_t device, bool test)}}]{\setlength{\rightskip}{0pt plus 5cm}void Vision\+::initialize (
+\begin{DoxyParamCaption}
+\item[{const string \&}]{window\+\_\+name, }
+\item[{uint8\+\_\+t}]{device, }
+\item[{bool}]{test}
+\end{DoxyParamCaption}
+)}\hypertarget{class_vision_afc55887fac6cea0954963cff0429a705}{}\label{class_vision_afc55887fac6cea0954963cff0429a705}
+
+
+This function will initialize the camera and will set additional parameters that depend on what the camera sees. Like calibrating the pixels per mm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window\+\_\+name} & The abaility to set a custom window name \\
+\hline
+{\em device} & the webcam that should be used \\
+\hline
+{\em test} & parameter to use a screenshot instead for testing \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 26 of file vision.\+cpp.
+
+\index{Vision@{Vision}!number\+\_\+selection@{number\+\_\+selection}}
+\index{number\+\_\+selection@{number\+\_\+selection}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{number\+\_\+selection(uint8\+\_\+t colour)}{number_selection(uint8_t colour)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Vision\+::number\+\_\+selection (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{colour}
+\end{DoxyParamCaption}
+)}\hypertarget{class_vision_a7c9c698f6da2af1773bd0b65ba4bfd34}{}\label{class_vision_a7c9c698f6da2af1773bd0b65ba4bfd34}
+
+
+This function will put numers on the objects that can be grabbed by the robotic arm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em colour} & The colour to detect from all the objects. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 290 of file vision.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_vision_a7c9c698f6da2af1773bd0b65ba4bfd34_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=328pt]{class_vision_a7c9c698f6da2af1773bd0b65ba4bfd34_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Vision@{Vision}!shape2grab@{shape2grab}}
+\index{shape2grab@{shape2grab}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{shape2grab(uint8\+\_\+t shape)}{shape2grab(uint8_t shape)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Properties} Vision\+::shape2grab (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t}]{shape}
+\end{DoxyParamCaption}
+)}\hypertarget{class_vision_a136b9affd9c8fdae0583b9a56d3817e4}{}\label{class_vision_a136b9affd9c8fdae0583b9a56d3817e4}
+
+
+This function will return the properties of the selected shape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em shape} & The number from the selection from \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_vision_a7c9c698f6da2af1773bd0b65ba4bfd34}{number\+\_\+selection(uint8\+\_\+t colour)} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+The properties of the shape to grab 
+\end{DoxyReturn}
+
+
+Definition at line 320 of file vision.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=327pt]{class_vision_a136b9affd9c8fdae0583b9a56d3817e4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{class_vision_a136b9affd9c8fdae0583b9a56d3817e4_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Vision@{Vision}!show\+\_\+image@{show\+\_\+image}}
+\index{show\+\_\+image@{show\+\_\+image}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{show\+\_\+image()}{show_image()}}]{\setlength{\rightskip}{0pt plus 5cm}void Vision\+::show\+\_\+image (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_vision_aefb980ea81da98b4f5531cd46481ce2d}{}\label{class_vision_aefb980ea81da98b4f5531cd46481ce2d}
+
+
+This function will take all the loose ends of this class and combine them into one Mat so that everything is nice and tidy. 
+
+
+
+Definition at line 64 of file vision.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=249pt]{class_vision_aefb980ea81da98b4f5531cd46481ce2d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Vision@{Vision}!take\+\_\+frame@{take\+\_\+frame}}
+\index{take\+\_\+frame@{take\+\_\+frame}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{take\+\_\+frame(bool screenshot)}{take_frame(bool screenshot)}}]{\setlength{\rightskip}{0pt plus 5cm}void Vision\+::take\+\_\+frame (
+\begin{DoxyParamCaption}
+\item[{bool}]{screenshot}
+\end{DoxyParamCaption}
+)}\hypertarget{class_vision_afbaa5efe06c5af3d82fb4fc133788b5b}{}\label{class_vision_afbaa5efe06c5af3d82fb4fc133788b5b}
+
+
+This function will get the stream from the webcam and put it into the src Mat. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em screenshot} & With this parameter you can specify if you want a stream or only one frame \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 85 of file vision.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_vision_afbaa5efe06c5af3d82fb4fc133788b5b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Vision@{Vision}!transform\+\_\+properties@{transform\+\_\+properties}}
+\index{transform\+\_\+properties@{transform\+\_\+properties}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{transform\+\_\+properties(\+Properties $\ast$properties)}{transform_properties(Properties *properties)}}]{\setlength{\rightskip}{0pt plus 5cm}void Vision\+::transform\+\_\+properties (
+\begin{DoxyParamCaption}
+\item[{{\bf Properties} $\ast$}]{properties}
+\end{DoxyParamCaption}
+)}\hypertarget{class_vision_acd6cf5d0e7bba1adfb6f123d76489a6d}{}\label{class_vision_acd6cf5d0e7bba1adfb6f123d76489a6d}
+
+
+This function will transform the x and y coordinate of a shape defined in properties to actual millimeters measured from the base of the robotic arm. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em properties} & A pointer to a properties object to transform. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 237 of file vision.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=341pt]{class_vision_acd6cf5d0e7bba1adfb6f123d76489a6d_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{vision_8hpp}{vision.\+hpp}\item 
+src/\hyperlink{vision_8cpp}{vision.\+cpp}\end{DoxyCompactItemize}

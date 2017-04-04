@@ -1,0 +1,4 @@
+<map id="RoboticArm::gotoPark" name="RoboticArm::gotoPark">
+<area shape="rect" id="node2" href="$class_robotic_arm.html#a18d2147e468f8026f301f1d96d040ea5" title="RoboticArm::getConf" alt="" coords="235,5,380,32"/>
+<area shape="rect" id="node3" href="$class_robotic_arm.html#a549f24f349105a6b5130eb237d737132" title="forward kinematics, calculate X&amp;Y point for angles &amp; lengths for 2dof " alt="" coords="204,56,411,83"/>
+</map>

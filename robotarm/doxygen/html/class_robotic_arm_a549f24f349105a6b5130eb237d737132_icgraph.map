@@ -1,0 +1,8 @@
+<map id="RoboticArm::forwardKinematics" name="RoboticArm::forwardKinematics">
+<area shape="rect" id="node2" href="$namespace_path_algorithm.html#ae4490c66af669f70064a693a8d7a889e" title="PathAlgorithm::GetNeighbours" alt="" coords="264,17,463,43"/>
+<area shape="rect" id="node5" href="$class_robotic_arm.html#ad9add36d9fad6da469f30d1ffd867e63" title="move object to specified destination " alt="" coords="948,42,1117,69"/>
+<area shape="rect" id="node6" href="$class_robotic_arm.html#ade404a134912096fb363fa90ea0cd927" title="forward kinematics, calculate X&amp;Y point for angles &amp; lengths for 3dof " alt="" coords="260,122,467,149"/>
+<area shape="rect" id="node7" href="$class_robotic_arm.html#a6ecfa07487d7c03717be1e5f1fdb1e21" title="go to park position " alt="" coords="288,173,439,199"/>
+<area shape="rect" id="node3" href="$namespace_path_algorithm.html#a8f0c4453fa932953ae67e31855f68197" title="PathAlgorithm::GetNeighbour\lConnections" alt="" coords="515,5,707,47"/>
+<area shape="rect" id="node4" href="$class_path_algorithm_1_1_a_star.html#aee41b31ec44b02f6dc94889d228a3582" title="PathAlgorithm::AStar\l::search" alt="" coords="755,5,900,47"/>
+</map>

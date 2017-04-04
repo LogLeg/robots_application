@@ -1,0 +1,67 @@
+\hypertarget{_a_star_8hpp}{}\section{src/\+A\+Star.hpp File Reference}
+\label{_a_star_8hpp}\index{src/\+A\+Star.\+hpp@{src/\+A\+Star.\+hpp}}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$map$>$}\\*
+{\ttfamily \#include $<$mutex$>$}\\*
+{\ttfamily \#include $<$set$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include $<$cmath$>$}\\*
+{\ttfamily \#include \char`\"{}Point.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Size.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Robotic\+Arm.\+hpp\char`\"{}}\\*
+Include dependency graph for A\+Star.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_star_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_a_star_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_path_algorithm_1_1_vertex}{Path\+Algorithm\+::\+Vertex}
+\item 
+struct \hyperlink{struct_path_algorithm_1_1_vertex_less_cost_compare}{Path\+Algorithm\+::\+Vertex\+Less\+Cost\+Compare}
+\item 
+struct \hyperlink{struct_path_algorithm_1_1_vertex_less_id_compare}{Path\+Algorithm\+::\+Vertex\+Less\+Id\+Compare}
+\item 
+struct \hyperlink{struct_path_algorithm_1_1_vertex_equal_point_compare}{Path\+Algorithm\+::\+Vertex\+Equal\+Point\+Compare}
+\item 
+struct \hyperlink{struct_path_algorithm_1_1_edge}{Path\+Algorithm\+::\+Edge}
+\item 
+class \hyperlink{class_path_algorithm_1_1_a_star}{Path\+Algorithm\+::\+A\+Star}
+\item 
+struct \hyperlink{struct_path_algorithm_1_1_graph}{Path\+Algorithm\+::\+Graph}
+\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_path_algorithm}{Path\+Algorithm}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef std\+::vector$<$ Vertex $>$ \hyperlink{namespace_path_algorithm_a7f2958a43117506f3cb6dc9409a22c0d}{Path\+Algorithm\+::\+Path}
+\item 
+typedef std\+::vector$<$ Vertex $>$ \hyperlink{namespace_path_algorithm_a999fc5baea7d1f71e42570630a297029}{Path\+Algorithm\+::\+Open\+Set}
+\item 
+typedef std\+::set$<$ Vertex, Vertex\+Less\+Id\+Compare $>$ \hyperlink{namespace_path_algorithm_ac027c23e4b4c237b6eb96fc63d79266f}{Path\+Algorithm\+::\+Closed\+Set}
+\item 
+typedef std\+::map$<$ Vertex, Vertex, Vertex\+Less\+Id\+Compare $>$ \hyperlink{namespace_path_algorithm_ac8a52a9740a0bfa959810bd92e08d962}{Path\+Algorithm\+::\+Vertex\+Map}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::pair$<$ double, double $>$ \hyperlink{namespace_path_algorithm_aaa1cdbf02ad31d9d9f0161839a1af45d}{Path\+Algorithm\+::forward\+Kinematics} (double x0, double y0, double a, double p1, double b, double p2)
+\item 
+std\+::ostream \& \hyperlink{namespace_path_algorithm_a7570fe9b9ed95b023311d0b9ef75b7ea}{Path\+Algorithm\+::operator$<$$<$} (std\+::ostream \&os, const Vertex \&a\+Vertex)
+\item 
+std\+::ostream \& \hyperlink{namespace_path_algorithm_a4d00bd2dacc6db331429deab0d46cbf3}{Path\+Algorithm\+::operator$<$$<$} (std\+::ostream \&os, const Edge \&an\+Edge)
+\end{DoxyCompactItemize}
