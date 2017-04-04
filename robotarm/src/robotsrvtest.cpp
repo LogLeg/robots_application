@@ -10,16 +10,29 @@
 #include <cstdlib>
 #include <iostream>
 #include <cmath>
+#include <thread>
 #include "RoboticArm.hpp"
 #include "AStar.hpp"
 #include "Size.hpp"
 #include "Point.hpp"
+#include "vision.hpp"
+#include "interface.hpp"
+
 // OS Specific sleep
 #ifdef _WIN32
 #include <windows.h>
 #else
 #include <unistd.h>
 #endif
+
+Vision vision = Vision();
+Interface interface = Interface();
+
+bool running = true;
+
+pair<Properties, Properties> get_coordinates();
+
+void fn();
 
 void mySleep(unsigned long milliseconds)
 {
@@ -62,6 +75,61 @@ int main(int argc, char **argv)
 		std::cerr << e.what() << std::endl;
 	}
 	return 0;
+}
+
+pair<Properties, Properties> get_coordinates()
+{
+	Properties object_properties;
+	Properties target_properties;
+
+	if(interface.await_input(true) == 1)
+	{
+		running = false;
+	}
+	else
+	{
+		vision.take_frame(true);
+		uint8_t size = vision.number_selection(interface.get_specification());
+
+		if(size != 0)
+		{
+			if(interface.await_input(false) == 1)
+			{
+				running = false;
+			}
+			else
+			{
+				if(interface.get_specification() <= size)
+				{
+					object_properties = vision.shape2grab(interface.get_specification());
+
+					cout << "height of selected object = " << vision.shape2grab(interface.get_specification()).height << endl;
+
+					target_properties = vision.get_properties(vision.detect_shape(vision.filter_colour(WHITE), CIRCLE).at(0).first);
+
+					vision.transform_properties(&object_properties);
+					vision.transform_properties(&target_properties);
+
+					cout << "object coordinates are: x: " << object_properties.center.x << " - y: " << object_properties.center.y << endl;
+					cout << "object orientation = " << object_properties.angle << endl;
+					cout << "target coordinates are: x: " << target_properties.center.x << " - y: " << target_properties.center.y << endl;
+				}
+			}
+		}
+		else
+		{
+			cout << "did not find any grabbable shapes in that colour, please try again" << endl << endl;
+		}
+	}
+	return make_pair(object_properties, target_properties);
+}
+
+void fn()
+{
+	while(running)
+	{
+		vision.show_image();
+	}
 }
 
 /*

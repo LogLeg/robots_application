@@ -9,6 +9,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   message_generation
+  OpenCV
 )
 
 ## System dependencies are found with CMake's conventions
@@ -123,6 +124,7 @@ catkin_package(
 # include_directories(include)
 include_directories(
   ${catkin_INCLUDE_DIRS}
+  ${OpenCV_INCLUDE_DIRS}
 )
 
 #add_executable(talker src/talker.cpp)
@@ -145,9 +147,9 @@ add_executable(RobotArmBestuuring src/RobotArmBestuuring.cpp)
 target_link_libraries(RobotArmBestuuring ${catkin_LIBRARIES})
 add_dependencies(RobotArmBestuuring beginner_tutorials_gencpp)
 
-add_executable(RobotSRVtest src/robotsrvtest.cpp src/RoboticArm.cpp src/AStar.cpp)
+add_executable(RobotSRVtest src/robotsrvtest.cpp src/RoboticArm.cpp src/AStar.cpp src/vision.cpp src/interface.cpp)
 add_definitions(-std=c++11)
-target_link_libraries(RobotSRVtest ${catkin_LIBRARIES})
+target_link_libraries(RobotSRVtest ${catkin_LIBRARIES} ${OpenCV_LIBS})
 add_dependencies(RobotSRVtest beginner_tutorials_gencpp)
 
 
