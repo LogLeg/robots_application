@@ -44,7 +44,7 @@ void Vision::initialize(const string& a_window_name, uint8_t device, bool test)
 	}
 	else
 	{
-		src = imread("tabletop1.jpg", 1);
+		src = imread("../include/tabletop1.jpg", 1);
 
 		if(src.empty())
 		{
