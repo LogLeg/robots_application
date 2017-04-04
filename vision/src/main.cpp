@@ -22,7 +22,7 @@ void fn();
 int main(int argc,char* argv[])
 {
 
-	vision.initialize("robots_application", 0, true);
+	vision.initialize("robots_application", 0, false);
 
 	thread live_feed(fn);
 

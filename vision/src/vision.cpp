@@ -8,7 +8,8 @@
 #include "vision.hpp"
 
 Vision::Vision() : src(Size(640, 480), CV_8UC3),
-				   output(Size(1280, 960), CV_8UC3),
+				   feed_gray(Size(640, 480), CV_8UC1),
+				   output(Size(1280, 480), CV_8UC3),
 				   binairy_mat_final(Size(640, 480), CV_8UC1),
 				   drawing(Size(640, 480), CV_8UC3),
 				   distance_to_robotbase_x(0),
@@ -21,6 +22,57 @@ Vision::Vision() : src(Size(640, 480), CV_8UC3),
 Vision::~Vision()
 {
 
+}
+
+uint8_t Vision::calibrate(const Mat& input)
+{
+	static uint8_t number_of_calibrations = 0;
+	Mat out;
+
+	cout << "please select the " << colours.at(number_of_calibrations).name << " colour" << endl;
+
+	createTrackbar("hmin", window_name, 0, 180);
+	createTrackbar("smin", window_name, 0, 255);
+	createTrackbar("vmin", window_name, 0, 255);
+	createTrackbar("h", window_name, 0, 180);
+	createTrackbar("s", window_name, 0, 255);
+	createTrackbar("v", window_name, 0, 255);
+
+	int hmin = getTrackbarPos("hmin", window_name);
+	int smin = getTrackbarPos("smin", window_name);
+	int vmin = getTrackbarPos("vmin", window_name);
+	int h = getTrackbarPos("h", window_name);
+	int s = getTrackbarPos("s", window_name);
+	int v = getTrackbarPos("v", window_name);
+
+	cvtColor(input, out, CV_RGB2HSV);
+
+	inRange(out, Scalar(hmin, smin, vmin), Scalar(h, s, v), feed_gray);
+
+	if(waitKey(1) == 97) // press a to continue
+	{
+		colours.at(number_of_calibrations).hue_min = hmin;
+		colours.at(number_of_calibrations).sat_min = smin;
+		colours.at(number_of_calibrations).val_min = vmin;
+		colours.at(number_of_calibrations).hue_max = h;
+		colours.at(number_of_calibrations).sat_max = s;
+		colours.at(number_of_calibrations).val_max = v;
+
+		destroyAllWindows();
+		feed_gray = Mat::zeros(src.size(), CV_8UC1);
+		number_of_calibrations++;
+		//this_thread::sleep_for(std::chrono::milliseconds(500)); // <-- change to boost thread!
+	}
+	else if(waitKey(1) == 98) //press a to stop
+	{
+		destroyAllWindows();
+		feed_gray = Mat::zeros(src.size(), CV_8UC1);
+		number_of_calibrations = 7;
+	}
+
+	show_image();
+
+	return number_of_calibrations;
 }
 
 void Vision::initialize(const string& a_window_name, uint8_t device, bool test)
@@ -53,6 +105,9 @@ void Vision::initialize(const string& a_window_name, uint8_t device, bool test)
 		}
 	}
 
+	// Loop through six configurations
+	while(calibrate(src) < 6);
+
 	if(!get_calibration_square())
 	{
 		cout << "the calibration square was not found. Please restart the program" << endl;
@@ -63,18 +118,18 @@ void Vision::initialize(const string& a_window_name, uint8_t device, bool test)
 
 void Vision::show_image()
 {
-	//take_frame(false);
+	take_frame(false);
 
 	//TODO temp!
-	Mat kaas;
+	//Mat kaas;
 
-	cvtColor(binairy_mat_final, kaas, CV_GRAY2BGR);
+	cvtColor(feed_gray, screenshot_rgb, CV_GRAY2BGR);
 
 
 	src.copyTo(output(Rect(0, 0, 640, 480)));
-	kaas.copyTo(output(Rect(640, 0, 640, 480)));
-	drawing.copyTo(output(Rect(0, 480, 640, 480)));
-	screenshot_rgb.copyTo(output(Rect(640, 480, 640, 480)));
+	//kaas.copyTo(output(Rect(640, 0, 640, 480)));
+	//drawing.copyTo(output(Rect(0, 480, 640, 480)));
+	screenshot_rgb.copyTo(output(Rect(640, 0, 640, 480)));
 
 	imshow(window_name, output);
 
@@ -125,7 +180,7 @@ vector<pair<vector<Point>, vector<vector<Point>>>> Vision::detect_shape(const Ma
 	vector<vector<Point>> nested_contours;
 	vector<Vec4i> hierarchy;
 	//Mat canny_output;
-	drawing = Mat::zeros(drawing.size(), CV_8UC3);
+	//drawing = Mat::zeros(drawing.size(), CV_8UC3);
 
 	//Canny(input, canny_output, 100, 200, 3 );
 
@@ -150,7 +205,7 @@ vector<pair<vector<Point>, vector<vector<Point>>>> Vision::detect_shape(const Ma
 
 		for(size_t j = 0; j < contours_approxPoly.size(); j++)
 		{
-			circle(drawing, contours_approxPoly.at(j), 3, Scalar(0, 0, 255));
+			circle(screenshot_rgb, contours_approxPoly.at(j), 3, Scalar(0, 0, 255));
 		}
 
 		// Only check what a shape is when the contour is fully connected from begin to end and when the area is larger that 100.
@@ -202,7 +257,7 @@ vector<pair<vector<Point>, vector<vector<Point>>>> Vision::detect_shape(const Ma
 	 */
 	for(int i = 0; i < contours.size(); i++)
 	{
-		drawContours(drawing, contours, i, Scalar(0, 255, 0), 1, 8, hierarchy, 1, Point());
+		//drawContours(screenshot_rgb, contours, i, Scalar(0, 255, 0), 1, 8, hierarchy, 1, Point());
 
 	}
 //	cout << "size of contours: " << contours.size() << endl;
@@ -322,7 +377,7 @@ uint8_t Vision::number_selection(uint8_t colour)
 		Properties properties;
 		properties = get_properties(selection.at(i));
 		stream << i;
-		putText(drawing, stream.str(), properties.center, FONT_HERSHEY_SIMPLEX, 1, Scalar(0, 255, 0));
+		putText(screenshot_rgb, stream.str(), properties.center, FONT_HERSHEY_SIMPLEX, 1, Scalar(0, 255, 0));
 	}
 	return size;
 }

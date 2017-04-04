@@ -10,6 +10,7 @@
 #include <iostream>
 #include <cstdint>
 #include <cmath>
+#include <chrono>
 
 #include <opencv2/core.hpp>
 #include <opencv2/highgui.hpp>
@@ -72,6 +73,13 @@ public:
 	 * @brief Deconstructor
 	 */
 	~Vision();
+
+	/**
+	 * @brief used to calibrate the colour edges
+	 * @param input Mat object to scan
+	 * @return the number of calibrations done
+	 */
+	uint8_t calibrate(const Mat& input);
 
 	/**
 	 * @brief This function will initialize the camera and will set additional parameters that depend on what the camera sees. Like calibrating the pixels per mm
@@ -207,6 +215,7 @@ private:
 	 * @brief Mat objects to manipulate and copy into.
 	 */
 	Mat src;
+	Mat feed_gray;
 	Mat screenshot_rgb;
 	Mat output;
 	Mat drawing;
