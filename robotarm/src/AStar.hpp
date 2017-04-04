@@ -6,6 +6,7 @@
 #include <mutex>
 #include <set>
 #include <vector>
+#include <cmath>
 
 #include "Point.hpp"
 #include "Size.hpp"
@@ -71,7 +72,10 @@ struct Vertex
 	}
 	bool approxEqualPoint(const Vertex& aVertex, unsigned char precision) const
 	{
-		return (x < aVertex.x + precision) && (x > aVertex.x - precision) && (y < aVertex.y + precision) && (y > aVertex.y - precision);
+		double distance = sqrt(pow(x-aVertex.x, 2) + pow(y-aVertex.y, 2));
+		//std::cout << "distance: " << distance << std::endl;
+		//return (x < aVertex.x + precision) && (x > aVertex.x - precision) && (y < aVertex.y + precision) && (y > aVertex.y - precision);
+		return (precision >= distance);
 	}
 
 	bool operator==(const Vertex& aVertex)

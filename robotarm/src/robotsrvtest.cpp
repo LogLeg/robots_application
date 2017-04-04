@@ -35,17 +35,15 @@ int main(int argc, char **argv)
 	try
 	{
 		ros::init(argc, argv, "RotboArmBesturing_client");
-		const short hoverHeight = 80;
-		const short objectHeight = 0;
 		RoboticArm robotArm(70, 146, 187, 115, Servo
 		{ -90, 90 }, Servo
 		{ -30, 90 }, Servo
 		{ 0, 135 }, Servo
 		{ -90, 90 }, Servo
 		{ -90, 90 }, Servo
-		{ 0, 30 }); //TODO: hoogte a opmeten.
+		{ 0, 30 });
 		robotArm.setConf(std::vector<signed short>
-		{ 0, -30, 110, 90, 0, 5 });
+		{ 0, 0, 0, 0, 0, 0 }); //{ 0, -30, 110, 90, 0, 5 }); //{ 0, 0, 0, 0, 0, 0 });
 
 		//(1) vind blokje positie&rotatie
 		const int objectX = -183; 	//object X in mm
@@ -55,31 +53,9 @@ int main(int argc, char **argv)
 		const int circelX = 60;	//circel center X
 		const int circelY = 250;	//circel center Y
 
-		std::cout << "\033[1;31mBlokje oppakken: \033[0m\n" << std::endl;
-		//(2) base&gripper goed roteren & gripper openen
-		robotArm.setGripperValue(30);
 
-		//(3) ga naar 2 cm boven blokje & gripper naar beneden richten
-		robotArm.armGoto(objectX, objectY, hoverHeight, objectangle);
-
-		//(4) ga naar beneden & gripper dichtknijpen
-		robotArm.armGoto(objectX, objectY, objectHeight, objectangle); //TODO: hoogte van grond afstellen
-		robotArm.setGripperValue(objectwidth - 5); //TODO: knijpkracht afstellen
-
-		//(5) ga naar 2 cm boven grond
-		robotArm.armGoto(objectX, objectY, hoverHeight, 0);
-
-		// Blokje neerleggen:
-		std::cout << "\033[1;31mBlokje neerleggen: \033[0m\n" << std::endl;
-		//(3) ga naar 2cm boven cirkel
-		robotArm.armGoto(circelX, circelY, hoverHeight, 0);
-
-		//(4) zakken naar grond & gripper loslaten
-		robotArm.armGoto(circelX, circelY, objectHeight, 0);
-		robotArm.setGripperValue(30);
-
-		//(3) ga naar 2cm boven cirkel
-		robotArm.armGoto(circelX, circelY, hoverHeight, 0);
+		robotArm.moveObject(objectX, objectY, objectangle, objectwidth, circelX, circelY);
+		robotArm.gotoPark();
 
 	} catch (std::exception& e)
 	{

@@ -34,6 +34,40 @@ void RoboticArm::setPos(Position pos)
 	this->pos = pos;
 }
 
+bool RoboticArm::moveObject(signed long objectX, unsigned long objectY, signed short objectAngle, unsigned short objectWidth, signed long desX, unsigned long desY)
+{
+
+	const short hoverHeight = 80;
+	const short objectHeight = 0;
+
+	std::cout << "\033[1;31mBlokje oppakken: \033[0m\n" << std::endl;
+	//(2) base&gripper goed roteren & gripper openen
+	setGripperValue(30);
+
+	//(3) ga naar 2 cm boven blokje & gripper naar beneden richten
+	armGoto(objectX, objectY, hoverHeight, objectAngle);
+
+	//(4) ga naar beneden & gripper dichtknijpen
+	armGoto(objectX, objectY, objectHeight, objectAngle);
+	setGripperValue(objectWidth - 5); //TODO: knijpkracht afstellen
+
+	//(5) ga naar 2 cm boven grond
+	armGoto(objectX, objectY, hoverHeight, 0);
+
+	// Blokje neerleggen:
+	std::cout << "\033[1;31mBlokje neerleggen: \033[0m\n" << std::endl;
+	//(3) ga naar 2cm boven cirkel
+	armGoto(desX, desY, hoverHeight, 0);
+
+	//(4) zakken naar grond & gripper loslaten
+	armGoto(desX, desY, objectHeight, 0);
+	setGripperValue(30);
+
+	//(3) ga naar 2cm boven cirkel
+	armGoto(desX, desY, hoverHeight, 0);
+	return true;
+}
+
 std::vector<std::vector<signed short>> RoboticArm::calculatePath(std::vector<
 		signed short> inputConf, robotPoint::Point endPoint)
 {
@@ -79,16 +113,12 @@ void RoboticArm::printPath(std::vector<std::vector<signed short>> confs)
 		++c;
 	}
 }
-std::vector<std::vector<signed short>> RoboticArm::concatPath(std::vector<std::vector<signed short>>& path1, std::vector<std::vector<signed short>>& path2)
-{
-
-}
 
 std::vector<std::vector<signed short>> RoboticArm::calculatePath(unsigned char phi, signed short endValue)
 {
 	std::vector<std::vector<signed short>> confs;
 
-	auto editPhi = configuration.at(phi);
+	signed short editPhi = configuration.at(phi);
 	if (endValue > editPhi)
 	{
 		for (unsigned short i = 0; i <= (endValue - editPhi); ++i)
@@ -185,6 +215,7 @@ void RoboticArm::followPath(const std::vector<std::vector<signed short> >& path)
 	}
 }
 
+
 std::pair<unsigned long, signed short> RoboticArm::convertToXAngle(signed long x, unsigned long y)
 {
 	unsigned long rX = sqrt(pow(x, 2) + pow(y, 2));
@@ -197,12 +228,42 @@ void RoboticArm::armGoto(signed long z, unsigned long x, unsigned long y, signed
 
 	std::vector<std::vector<signed short>> pad = calculatePath(configuration, robotPoint::Point(XAngle.first, y));
 	//printPath(pad);
-	followPath(pad);
+	configuration = pad.back();
+	//followPath(pad);
 	pad = calculatePath(0, XAngle.second);
 	//printPath(pad);
-	followPath(pad);
+	//followPath(pad);
+	configuration = pad.back();
 	pad = calculatePath(4, -XAngle.second + objectAngle + 0); // TODO: evt. +90
 	//printPath(pad);
 	followPath(pad);
+
+}
+
+bool RoboticArm::gotoPark()
+{
+	ros::NodeHandle n;
+
+	ros::ServiceClient client = n.serviceClient<robotarm::Robot_GoTo>("Robot_GoTo");
+	robotarm::Robot_GoTo srv;
+	configuration = std::vector<signed short>{0,-30,45,45,0,5};
+	srv.request.angle1 = getConf().at(0);
+	srv.request.angle2 = getConf().at(1);
+	srv.request.angle3 = getConf().at(2);
+	srv.request.angle4 = getConf().at(3);
+	srv.request.angle5 = getConf().at(4);
+	srv.request.angle6 = getConf().at(5);
+	if (client.call(srv))
+	{
+
+	}
+	std::cout << "0: " << getConf().at(0);
+	std::cout << " 1: " << getConf().at(1);
+	std::cout << " 2: " << getConf().at(2);
+	std::cout << " 3: " << getConf().at(3);
+	std::cout << " 4: " << getConf().at(4);
+	std::cout << " 5: " << getConf().at(5) << std::endl;
+	std::cout << "x: " << forwardKinematics(0, a, b, getConf().at(1), c, getConf().at(2), d, getConf().at(3)).first << " y: " << forwardKinematics(0, a, b, getConf().at(1), c, getConf().at(2), d, getConf().at(3)).second << std::endl;
+
 
 }
