@@ -28,16 +28,16 @@ struct Vertex
 	/**
 	 *
 	 */
-	Vertex(const Point& aPoint, int anPhi1, int anPhi2) :
+	Vertex(const robotPoint::Point& aPoint, int anPhi1, int anPhi2) :
 			x(aPoint.x), y(aPoint.y), phi1(anPhi1), phi2(anPhi2), actualCost(0.0), heuristicCost(0.0)
 	{
 	}
 	/**
 	 *
 	 */
-	Point asPoint() const
+	robotPoint::Point asPoint() const
 	{
-		return Point(x, y);
+		return robotPoint::Point(x, y);
 	}
 	/**
 	 *

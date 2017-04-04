@@ -45,7 +45,7 @@ int main(int argc, char **argv)
 		{ -90, 90 }, Servo
 		{ 0, 30 }); //TODO: hoogte a opmeten.
 		robotArm.setConf(std::vector<signed short>
-		{ 0, -45, 110, 68, 0, 5 });
+		{ 0, -30, 110, 90, 0, 5 });
 
 		//(1) vind blokje positie&rotatie
 		const int objectX = -183; 	//object X in mm

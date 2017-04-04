@@ -64,7 +64,7 @@ public:
 	 * @param endpoint point where the arm goes to
 	 * @return a path of configurations
 	 */
-	std::vector<std::vector<signed short>> calculatePath(std::vector<signed short> inputConf, Point endPoint);
+	std::vector<std::vector<signed short>> calculatePath(std::vector<signed short> inputConf, robotPoint::Point endPoint);
 	/*
 	 * @brief make linear path of configurations
 	 * @param phi servo that goes to endValue
@@ -75,6 +75,7 @@ public:
 	 * @brief print path (verctor of configurations)
 	 * @param confs path
 	 */
+	std::vector<std::vector<signed short>> concatPath(std::vector<std::vector<signed short>>& path1, std::vector<std::vector<signed short>>& path2);
 	void printPath(std::vector<std::vector<signed short>> confs);
 	/*
 	 * @brief arm follow path TODO: (go to last configuration of path)

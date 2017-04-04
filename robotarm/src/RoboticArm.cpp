@@ -35,7 +35,7 @@ void RoboticArm::setPos(Position pos)
 }
 
 std::vector<std::vector<signed short>> RoboticArm::calculatePath(std::vector<
-		signed short> inputConf, Point endPoint)
+		signed short> inputConf, robotPoint::Point endPoint)
 {
 	std::vector<std::vector<signed short>> confs;
 
@@ -79,6 +79,10 @@ void RoboticArm::printPath(std::vector<std::vector<signed short>> confs)
 		++c;
 	}
 }
+std::vector<std::vector<signed short>> RoboticArm::concatPath(std::vector<std::vector<signed short>>& path1, std::vector<std::vector<signed short>>& path2)
+{
+
+}
 
 std::vector<std::vector<signed short>> RoboticArm::calculatePath(unsigned char phi, signed short endValue)
 {
@@ -94,7 +98,9 @@ std::vector<std::vector<signed short>> RoboticArm::calculatePath(unsigned char p
 			newConf.at(phi) = editPhi + i;
 			confs.push_back(newConf);
 		}
-	}else{
+	}
+	else
+	{
 		for (unsigned short i = 0; i <= (editPhi - endValue); ++i)
 		{
 			//std::cout << i << std::endl;
@@ -151,7 +157,6 @@ std::pair<double, double> RoboticArm::forwardKinematics(double x0, double y0, do
 void RoboticArm::followPath(const std::vector<std::vector<signed short> >& path)
 {
 
-
 	configuration = path.back();
 	std::cout << "0: " << getConf().at(0);
 	std::cout << " 1: " << getConf().at(1);
@@ -163,24 +168,21 @@ void RoboticArm::followPath(const std::vector<std::vector<signed short> >& path)
 
 	std::cin.ignore();
 
+	ros::NodeHandle n;
 
+	ros::ServiceClient client = n.serviceClient<robotarm::Robot_GoTo>("Robot_GoTo");
+	robotarm::Robot_GoTo srv;
+	srv.request.angle1 = getConf().at(0);
+	srv.request.angle2 = getConf().at(1);
+	srv.request.angle3 = getConf().at(2);
+	srv.request.angle4 = getConf().at(3);
+	srv.request.angle5 = getConf().at(4);
+	srv.request.angle6 = getConf().at(5);
+	srv.request.inTime = 2000;
+	if (client.call(srv))
+	{
 
-        ros::NodeHandle n;
-
-
-        ros::ServiceClient client = n.serviceClient<robotarm::Robot_GoTo>("Robot_GoTo");
-        robotarm::Robot_GoTo srv;
-        srv.request.angle1 = getConf().at(0);
-        srv.request.angle2 = getConf().at(1);
-        srv.request.angle3 = getConf().at(2);
-        srv.request.angle4 = getConf().at(3);
-        srv.request.angle5 = getConf().at(4);
-        srv.request.angle6 = getConf().at(5);
-        srv.request.inTime = 2000;
-        if (client.call(srv))
-        {
-
-        }
+	}
 }
 
 std::pair<unsigned long, signed short> RoboticArm::convertToXAngle(signed long x, unsigned long y)
@@ -193,7 +195,7 @@ void RoboticArm::armGoto(signed long z, unsigned long x, unsigned long y, signed
 {
 	std::pair<unsigned long, signed short> XAngle = convertToXAngle(z, x);
 
-	std::vector<std::vector<signed short>> pad = calculatePath(configuration, Point(XAngle.first, y));
+	std::vector<std::vector<signed short>> pad = calculatePath(configuration, robotPoint::Point(XAngle.first, y));
 	//printPath(pad);
 	followPath(pad);
 	pad = calculatePath(0, XAngle.second);
