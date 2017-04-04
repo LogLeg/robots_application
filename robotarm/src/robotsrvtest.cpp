@@ -43,11 +43,11 @@ int main(int argc, char **argv)
 		{ -90, 90 }, Servo
 		{ 0, 30 });
 		robotArm.setConf(std::vector<signed short>
-		{ 0, 0, 0, 0, 0, 0 }); //{ 0, -30, 110, 90, 0, 5 }); //{ 0, 0, 0, 0, 0, 0 });
+		{ 0, -30, 110, 90, 0, 5 }); //{ 0, -30, 110, 90, 0, 5 }); //{ 0, 0, 0, 0, 0, 0 });
 
 		//(1) vind blokje positie&rotatie
 		const int objectX = -183; 	//object X in mm
-		const int objectY = 0;	//object Y in mm
+		const int objectY = 200;	//object Y in mm
 		const int objectangle = 0;	//object angle in degrees
 		const int objectwidth = 15;	//object windth in mm
 		const int circelX = 60;	//circel center X

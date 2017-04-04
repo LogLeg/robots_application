@@ -12,6 +12,8 @@
 #include "robotarm/Robot_GoTo.h"
 #include "robotarm/Robot_Set_Ready.h"
 #include <cstdlib>
+#include <chrono>
+#include <thread>
 
 RoboticArm::RoboticArm(unsigned short a, unsigned short b, unsigned short c, unsigned short d, Servo s1, Servo s2, Servo s3, Servo s4, Servo s5, Servo s6) :
 		a(a), b(b), c(c), d(d), s1(s1), s2(s2), s3(s3), s4(s4), s5(s5), s6(s6)
@@ -196,8 +198,8 @@ void RoboticArm::followPath(const std::vector<std::vector<signed short> >& path)
 	std::cout << " 5: " << getConf().at(5) << std::endl;
 	std::cout << "x: " << forwardKinematics(0, a, b, getConf().at(1), c, getConf().at(2), d, getConf().at(3)).first << " y: " << forwardKinematics(0, a, b, getConf().at(1), c, getConf().at(2), d, getConf().at(3)).second << std::endl;
 
-	std::cin.ignore();
-
+	//std::cin.ignore();
+	std::this_thread::sleep_for(std::chrono::milliseconds(2000));
 	ros::NodeHandle n;
 
 	ros::ServiceClient client = n.serviceClient<robotarm::Robot_GoTo>("Robot_GoTo");
@@ -246,13 +248,15 @@ bool RoboticArm::gotoPark()
 
 	ros::ServiceClient client = n.serviceClient<robotarm::Robot_GoTo>("Robot_GoTo");
 	robotarm::Robot_GoTo srv;
-	configuration = std::vector<signed short>{0,-30,45,45,0,5};
+	configuration = std::vector<signed short>{0,-30,110,90,0,5};
 	srv.request.angle1 = getConf().at(0);
 	srv.request.angle2 = getConf().at(1);
 	srv.request.angle3 = getConf().at(2);
 	srv.request.angle4 = getConf().at(3);
 	srv.request.angle5 = getConf().at(4);
 	srv.request.angle6 = getConf().at(5);
+	srv.request.inTime = 2000;
+
 	if (client.call(srv))
 	{
 
