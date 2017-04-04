@@ -8,7 +8,7 @@
 #include "vision.hpp"
 
 Vision::Vision() : src(Size(640, 480), CV_8UC3),
-				   output(Size(1280, 960), CV_8UC3),
+				   output(Size(640, 960), CV_8UC3),
 				   binairy_mat_final(Size(640, 480), CV_8UC1),
 				   drawing(Size(640, 480), CV_8UC3),
 				   distance_to_robotbase_x(0),
@@ -66,15 +66,15 @@ void Vision::show_image()
 	take_frame(false);
 
 	//TODO temp!
-	Mat kaas;
+	//Mat kaas;
 
-	cvtColor(binairy_mat_final, kaas, CV_GRAY2BGR);
+	//cvtColor(binairy_mat_final, kaas, CV_GRAY2BGR);
 
 
 	src.copyTo(output(Rect(0, 0, 640, 480)));
-	kaas.copyTo(output(Rect(640, 0, 640, 480)));
-	drawing.copyTo(output(Rect(0, 480, 640, 480)));
-	screenshot_rgb.copyTo(output(Rect(640, 480, 640, 480)));
+	//kaas.copyTo(output(Rect(640, 0, 640, 480)));
+	//drawing.copyTo(output(Rect(0, 480, 640, 480)));
+	screenshot_rgb.copyTo(output(Rect(640, 0, 640, 480)));
 
 	imshow(window_name, output);
 
@@ -125,7 +125,7 @@ vector<pair<vector<Point>, vector<vector<Point>>>> Vision::detect_shape(const Ma
 	vector<vector<Point>> nested_contours;
 	vector<Vec4i> hierarchy;
 	//Mat canny_output;
-	drawing = Mat::zeros(drawing.size(), CV_8UC3);
+	//drawing = Mat::zeros(drawing.size(), CV_8UC3);
 
 	//Canny(input, canny_output, 100, 200, 3 );
 
@@ -150,7 +150,7 @@ vector<pair<vector<Point>, vector<vector<Point>>>> Vision::detect_shape(const Ma
 
 		for(size_t j = 0; j < contours_approxPoly.size(); j++)
 		{
-			circle(drawing, contours_approxPoly.at(j), 3, Scalar(0, 0, 255));
+			circle(screenshot_rgb, contours_approxPoly.at(j), 3, Scalar(0, 0, 255));
 		}
 
 		// Only check what a shape is when the contour is fully connected from begin to end and when the area is larger that 100.
@@ -202,7 +202,7 @@ vector<pair<vector<Point>, vector<vector<Point>>>> Vision::detect_shape(const Ma
 	 */
 	for(int i = 0; i < contours.size(); i++)
 	{
-		drawContours(drawing, contours, i, Scalar(0, 255, 0), 1, 8, hierarchy, 1, Point());
+		drawContours(screenshot_rgb, contours, i, Scalar(0, 255, 0), 1, 8, hierarchy, 1, Point());
 
 	}
 //	cout << "size of contours: " << contours.size() << endl;
@@ -314,7 +314,7 @@ uint8_t Vision::number_selection(uint8_t colour)
 		Properties properties;
 		properties = get_properties(selection.at(i));
 		stream << i;
-		putText(drawing, stream.str(), properties.center, FONT_HERSHEY_SIMPLEX, 1, Scalar(0, 255, 0));
+		putText(screenshot_rgb, stream.str(), properties.center, FONT_HERSHEY_SIMPLEX, 1, Scalar(0, 255, 0));
 	}
 	return size;
 }
