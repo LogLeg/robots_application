@@ -63,7 +63,7 @@ void Vision::initialize(const string& a_window_name, uint8_t device, bool test)
 
 void Vision::show_image()
 {
-	take_frame(false);
+	//take_frame(false);
 
 	//TODO temp!
 	Mat kaas;
@@ -215,7 +215,7 @@ vector<pair<vector<Point>, vector<vector<Point>>>> Vision::detect_shape(const Ma
 Properties Vision::get_properties(const vector<Point>& contour)
 {
 	Properties shape;
-	Moments mu;
+	//Moments mu;
 
 	// Create a rotatedRect around the detected shape
 	RotatedRect rectangle = minAreaRect(contour);
@@ -227,12 +227,19 @@ Properties Vision::get_properties(const vector<Point>& contour)
 
 
 	// Get the width and height of the rotatedRect
-	shape.width = norm(corners[0] - corners[1]);
-	shape.height = norm(corners[0] - corners[3]);
+	//shape.width = norm(corners[0] - corners[1]);
+	//shape.height = norm(corners[0] - corners[3]);
+	shape.width = rectangle.size.width;
+	shape.height = rectangle.size.height;
 
-	mu = moments(contour, false);
+	if(shape.width > shape.height)
+	{
+		shape.angle += 90;
+	}
 
-	shape.center = Point2d(mu.m10/mu.m00, mu.m01/mu.m00);
+	//mu = moments(contour, false);
+
+	shape.center = rectangle.center;//Point2d(mu.m10/mu.m00, mu.m01/mu.m00);
 
 	return shape;
 }
