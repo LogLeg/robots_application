@@ -219,6 +219,10 @@ Properties Vision::get_properties(const vector<Point>& contour)
 	Point2f corners[4];
 	rectangle.points(corners);
 
+	shape.angle = rectangle.angle;
+
+
+
 	// Get the width and height of the rotatedRect
 	shape.width = norm(corners[0] - corners[1]);
 	shape.height = norm(corners[0] - corners[3]);

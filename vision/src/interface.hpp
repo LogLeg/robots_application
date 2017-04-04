@@ -34,7 +34,7 @@ public:
 
 	/**
 	 * @brief Function that will read the input and will then check if it is correct and translate the input to a pair filled with the choices of the user.
-	 * It calls input() first to get the input from the user. This is not passed to the function.
+	 * It calls @see input() first to get the input from the user. This is not passed to the function.
 	 * When 'e' is put in, it will return 1
 	 * It supports a batch mode and accepts a line from a file.
 	 * @see input()
@@ -50,11 +50,6 @@ public:
 	 * @return handling code
 	 */
 	int8_t await_input(bool first_time);
-
-	/**
-	 * @brief Simple function that displays the choice that the user made.
-	 */
-	void print_specification();
 
 	/**
 	 * @brief getter for the specification.

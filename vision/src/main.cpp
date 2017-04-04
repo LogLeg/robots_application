@@ -57,6 +57,7 @@ int main(int argc,char* argv[])
 						vision.transform_properties(&target_properties);
 
 						cout << "object coordinates are: x: " << object_properties.center.x << " - y: " << object_properties.center.y << endl;
+						cout << "object orientation = " << object_properties.angle << endl;
 						cout << "target coordinates are: x: " << target_properties.center.x << " - y: " << target_properties.center.y << endl;
 					}
 				}

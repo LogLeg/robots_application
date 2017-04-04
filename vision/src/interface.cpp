@@ -89,8 +89,6 @@ int8_t Interface::parser(bool first_time)
 
 int8_t Interface::await_input(bool first_time)
 {
-
-	//TODO edit this text
 	if(first_time)
 	{
 		cout << "Please choose the colour of the object to grab." << endl <<
@@ -109,52 +107,6 @@ int8_t Interface::await_input(bool first_time)
 	}
 
 	return 0;
-}
-
-void Interface::print_specification()
-{
-	uint8_t shape_spec = specification;
-	uint8_t colour_spec = specification;
-
-	string shape = "";
-	string colour = "";
-
-	switch(shape_spec)
-		{
-		case CIRCLE:
-			shape = "Circle";
-			break;
-		case RECTANGLE:
-			shape = "Rectangle";
-			break;
-		case BAR:
-			shape = "Bar";
-			break;
-		}
-
-		switch(colour_spec)
-		{
-		case WHITE:
-			colour = "White";
-			break;
-		case BLACK:
-			colour = "Black";
-			break;
-		case RED:
-			colour = "Red";
-			break;
-		case GREEN:
-			colour = "Green";
-			break;
-		case BLUE:
-			colour = "blue";
-			break;
-		case YELLOW:
-			colour = "Yellow";
-			break;
-		}
-
-	cout << "shape is: " << shape << " colour is: " << colour << endl << endl;
 }
 
 uint8_t Interface::get_specification() const

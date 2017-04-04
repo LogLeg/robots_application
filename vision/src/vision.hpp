@@ -47,12 +47,14 @@ struct Colour
  * @param center the center of a contour
  * @param width the width of a contour
  * @param height the height of a contour
+ * @param angle The anfle of the contour in degrees
  */
 struct Properties
 {
 	Point2d center;
 	int width;
 	int height;
+	double angle;
 };
 
 /**
