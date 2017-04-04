@@ -1,0 +1,836 @@
+\hypertarget{class_matrix}{}\section{Matrix$<$ W, H, T $>$ Class Template Reference}
+\label{class_matrix}\index{Matrix$<$ W, H, T $>$@{Matrix$<$ W, H, T $>$}}
+
+
+{\ttfamily \#include $<$Matrix.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_matrix_a26e9ec6ddcde3891596c76e8fd753d04}{Matrix} (T default\+Value=0)
+\item 
+\hyperlink{class_matrix_a304fa7436faff40983551ed2d93b8583}{Matrix} (const std\+::initializer\+\_\+list$<$ T $>$ \&list)
+\item 
+\hyperlink{class_matrix_a266627bf345d07baa56e78c25013a83d}{Matrix} (const std\+::initializer\+\_\+list$<$ std\+::initializer\+\_\+list$<$ T $>$$>$ \&list)
+\item 
+\hyperlink{class_matrix_a94c464f26c4f31ff40674a2432ed9c6e}{Matrix} (const std\+::array$<$ std\+::array$<$ T, W $>$, H $>$ \&array)
+\item 
+\hyperlink{class_matrix_ad8895ac9cc7fc537addf48c1fb9497b9}{Matrix} (const \hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \&other)
+\item 
+std\+::array$<$ T, W $>$ \hyperlink{class_matrix_ab33ffea8cb7e14c82d7ac183a9929198}{at} (std\+::size\+\_\+t height) const 
+\item 
+T \hyperlink{class_matrix_a9454a436ff7c18983b832642cc58b3ff}{at} (std\+::size\+\_\+t height, std\+::size\+\_\+t width) const 
+\item 
+std\+::array$<$ T, W $>$ \& \hyperlink{class_matrix_a5c110971f6c4b6282b937d0e815ab731}{operator\mbox{[}$\,$\mbox{]}} (const std\+::size\+\_\+t idx)
+\item 
+const \hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \& \hyperlink{class_matrix_a20c1001ca220100453e36b15279b6ab7}{operator=} (const \hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \&other)
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t a\+Width, std\+::size\+\_\+t a\+Height, class aT $>$ }\\const \hyperlink{class_matrix}{Matrix} \hyperlink{class_matrix_a1b74e614af59905c38d68eb0daaffec7}{operator=} (const \hyperlink{class_matrix}{Matrix}$<$ a\+Width, a\+Height, aT $>$ \&other)
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t a\+Width, std\+::size\+\_\+t a\+Height, class aT $>$ }\\bool \hyperlink{class_matrix_acb58c98e1e74826d92aee856ffc4a3b4}{operator==} (const \hyperlink{class_matrix}{Matrix}$<$ a\+Width, a\+Height, aT $>$ \&other)
+\item 
+std\+::size\+\_\+t \hyperlink{class_matrix_a7bc543fe8c5920f92aab8a172d963e8c}{size} () const 
+\item 
+std\+::size\+\_\+t \hyperlink{class_matrix_a9259f00c0dc87ef47a0823e4d5ebb429}{get\+Width} () const 
+\item 
+std\+::size\+\_\+t \hyperlink{class_matrix_a67a8079db706e47b4c59b5515bde766a}{get\+Height} () const 
+\item 
+\hyperlink{class_matrix}{Matrix}$<$ H, W, T $>$ \hyperlink{class_matrix_abb5e9bcfad1f5ed025294c599451c738}{transpose} () const 
+\item 
+\hyperlink{class_matrix}{Matrix}$<$ H, W, T $>$ \hyperlink{class_matrix_af079b7d71963122e484a1918351e5b16}{Invert} () const 
+\item 
+\hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \hyperlink{class_matrix_aac7c89f565eca5c6a69bc721be2c7a63}{Swap} (unsigned long row1, unsigned long row2) const 
+\item 
+\hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \hyperlink{class_matrix_aac2fa2441171eebbce6569cd085a9949}{Add} (unsigned long from, unsigned long to, double multiplier) const 
+\item 
+bool \hyperlink{class_matrix_a71d4fede301a6798bf5ea7df3abb0eaa}{appr} (const \hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \&a, const \hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \&b, double precision)
+\item 
+\hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \hyperlink{class_matrix_a1cca7534031201f08afa146565310a98}{Identity} () const 
+\item 
+std\+::size\+\_\+t \hyperlink{class_matrix_a194c3692f1bbb0c80970fc5bae2b01a1}{get\+Highest\+Row} (const unsigned short i)
+\item 
+\hyperlink{class_matrix}{Matrix}$<$ H, W $\ast$2, T $>$ \hyperlink{class_matrix_adb725d9614aa45937766d87668e5e0cc}{h\+Concat} (const \hyperlink{class_matrix}{Matrix}$<$ H, W $\ast$2, T $>$ \&other) const 
+\item 
+{\footnotesize template$<$class aT  = T$>$ }\\\hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \hyperlink{class_matrix_a47377a1da625f943895eec79daefa690}{point\+Wise\+Multiply} (const T value)
+\item 
+std\+::string \hyperlink{class_matrix_aa65e4a9c832a9134de9a2b4d0f7758df}{to\+\_\+string} () const 
+\item 
+\hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \& \hyperlink{class_matrix_ad93704899e6667c756e06377d6e67d48}{operator$\ast$=} (const T \&scalar)
+\item 
+\hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \hyperlink{class_matrix_ad1da3a066ba6d48c2f7952c6cc7b95d2}{operator$\ast$} (const T \&scalar) const 
+\item 
+{\footnotesize template$<$class aT  = T$>$ }\\\hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \& \hyperlink{class_matrix_a162b1b5392a6c838baf43d4765027b3f}{operator/=} (const aT \&scalar)
+\item 
+{\footnotesize template$<$class aT  = T$>$ }\\\hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \hyperlink{class_matrix_a0b62ff512870c79543e5d5e710e5e53b}{operator/} (const aT \&scalar) const 
+\item 
+\hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \& \hyperlink{class_matrix_af1ce2eed120cde67df92e23a7f8b7b00}{operator+=} (const T \&value)
+\item 
+\hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \hyperlink{class_matrix_af225dded660c20974f3a3c29b0360a8a}{operator+} (const T \&value)
+\item 
+{\footnotesize template$<$class aT  = T$>$ }\\\hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \& \hyperlink{class_matrix_a1675e7e5ed541024cbc5fdc66114d23c}{operator-\/=} (const aT \&value)
+\item 
+{\footnotesize template$<$class aT  = T$>$ }\\\hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \hyperlink{class_matrix_a1a3d0d98807ec9146bf0d1d374c10517}{operator-\/} (const aT \&value) const 
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t a\+Width, std\+::size\+\_\+t a\+Height$>$ }\\\hyperlink{class_matrix}{Matrix}$<$ a\+Width, H, T $>$ \hyperlink{class_matrix_a7f339c5605cecdf38f2629ee54acdb4a}{operator$\ast$} (const \hyperlink{class_matrix}{Matrix}$<$ a\+Width, a\+Height, T $>$ \&other) const 
+\item 
+\hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \& \hyperlink{class_matrix_a3fb20993c946d64ba102a4cc28f353f4}{operator+=} (const \hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \&other)
+\item 
+\hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \hyperlink{class_matrix_a5123d4078fb8145eb7c7dd4722b49845}{operator+} (const \hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \&other)
+\item 
+\hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \& \hyperlink{class_matrix_aae3a29e920db3256c1ccc3842ac0b15a}{operator-\/=} (const \hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \&other)
+\item 
+\hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \hyperlink{class_matrix_a2d80e2c5863a05d0917e9e5a02cc575b}{operator-\/} (\hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \&other)
+\item 
+virtual \hyperlink{class_matrix_af9284a0f60b726bdb0e9a473d1e265f7}{$\sim$\+Matrix} ()
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t a\+Width, std\+::size\+\_\+t a\+Height, class aT $>$ }\\const \hyperlink{class_matrix}{Matrix}$<$ W, H, T $>$ \hyperlink{class_matrix_a09e6b5e23cef709c63ce2ec0a0ccce2d}{operator=} (const \hyperlink{class_matrix}{Matrix}$<$ a\+Width, a\+Height, aT $>$ \&other)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T = int$>$\\*
+class Matrix$<$ W, H, T $>$}
+
+
+
+Definition at line 18 of file Matrix.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{Matrix(\+T default\+Value=0)}{Matrix(T defaultValue=0)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ {\bf Matrix}$<$ W, H, T $>$\+::{\bf Matrix} (
+\begin{DoxyParamCaption}
+\item[{T}]{default\+Value = {\ttfamily 0}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_a26e9ec6ddcde3891596c76e8fd753d04}{}\label{class_matrix_a26e9ec6ddcde3891596c76e8fd753d04}
+
+
+Definition at line 150 of file Matrix.\+hpp.
+
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{Matrix(const std\+::initializer\+\_\+list$<$ T $>$ \&list)}{Matrix(const std::initializer_list< T > &list)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ {\bf Matrix}$<$ W, H, T $>$\+::{\bf Matrix} (
+\begin{DoxyParamCaption}
+\item[{const std\+::initializer\+\_\+list$<$ T $>$ \&}]{list}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_a304fa7436faff40983551ed2d93b8583}{}\label{class_matrix_a304fa7436faff40983551ed2d93b8583}
+
+
+Definition at line 159 of file Matrix.\+hpp.
+
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{Matrix(const std\+::initializer\+\_\+list$<$ std\+::initializer\+\_\+list$<$ T $>$$>$ \&list)}{Matrix(const std::initializer_list< std::initializer_list< T >> &list)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ {\bf Matrix}$<$ W, H, T $>$\+::{\bf Matrix} (
+\begin{DoxyParamCaption}
+\item[{const std\+::initializer\+\_\+list$<$ std\+::initializer\+\_\+list$<$ T $>$$>$ \&}]{list}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_a266627bf345d07baa56e78c25013a83d}{}\label{class_matrix_a266627bf345d07baa56e78c25013a83d}
+
+
+Definition at line 181 of file Matrix.\+hpp.
+
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{Matrix(const std\+::array$<$ std\+::array$<$ T, W $>$, H $>$ \&array)}{Matrix(const std::array< std::array< T, W >, H > &array)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ {\bf Matrix}$<$ W, H, T $>$\+::{\bf Matrix} (
+\begin{DoxyParamCaption}
+\item[{const std\+::array$<$ std\+::array$<$ T, W $>$, H $>$ \&}]{array}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_a94c464f26c4f31ff40674a2432ed9c6e}{}\label{class_matrix_a94c464f26c4f31ff40674a2432ed9c6e}
+
+
+Definition at line 211 of file Matrix.\+hpp.
+
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\index{Matrix@{Matrix}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{Matrix(const Matrix$<$ W, H, T $>$ \&other)}{Matrix(const Matrix< W, H, T > &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ {\bf Matrix}$<$ W, H, T $>$\+::{\bf Matrix} (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix}$<$ W, H, T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_ad8895ac9cc7fc537addf48c1fb9497b9}{}\label{class_matrix_ad8895ac9cc7fc537addf48c1fb9497b9}
+
+
+Definition at line 218 of file Matrix.\+hpp.
+
+\index{Matrix@{Matrix}!````~Matrix@{$\sim$\+Matrix}}
+\index{````~Matrix@{$\sim$\+Matrix}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{$\sim$\+Matrix()}{~Matrix()}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ {\bf Matrix}$<$ W, H, T $>$\+::$\sim${\bf Matrix} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{class_matrix_af9284a0f60b726bdb0e9a473d1e265f7}{}\label{class_matrix_af9284a0f60b726bdb0e9a473d1e265f7}
+
+
+Definition at line 649 of file Matrix.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{class_matrix_af9284a0f60b726bdb0e9a473d1e265f7_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\index{Matrix@{Matrix}!Add@{Add}}
+\index{Add@{Add}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{Add(unsigned long from, unsigned long to, double multiplier) const }{Add(unsigned long from, unsigned long to, double multiplier) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ {\bf Matrix}$<$ W, H, T $>$ {\bf Matrix}$<$ W, H, T $>$\+::Add (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{from, }
+\item[{unsigned long}]{to, }
+\item[{double}]{multiplier}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_matrix_aac2fa2441171eebbce6569cd085a9949}{}\label{class_matrix_aac2fa2441171eebbce6569cd085a9949}
+
+
+Definition at line 340 of file Matrix.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_aac2fa2441171eebbce6569cd085a9949_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!appr@{appr}}
+\index{appr@{appr}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{appr(const Matrix$<$ W, H, T $>$ \&a, const Matrix$<$ W, H, T $>$ \&b, double precision)}{appr(const Matrix< W, H, T > &a, const Matrix< W, H, T > &b, double precision)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ bool {\bf Matrix}$<$ W, H, T $>$\+::appr (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix}$<$ W, H, T $>$ \&}]{a, }
+\item[{const {\bf Matrix}$<$ W, H, T $>$ \&}]{b, }
+\item[{double}]{precision}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_a71d4fede301a6798bf5ea7df3abb0eaa}{}\label{class_matrix_a71d4fede301a6798bf5ea7df3abb0eaa}
+
+
+Definition at line 355 of file Matrix.\+hpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=242pt]{class_matrix_a71d4fede301a6798bf5ea7df3abb0eaa_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=276pt]{class_matrix_a71d4fede301a6798bf5ea7df3abb0eaa_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!at@{at}}
+\index{at@{at}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{at(std\+::size\+\_\+t height) const }{at(std::size_t height) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ std\+::array$<$ T, W $>$ {\bf Matrix}$<$ W, H, T $>$\+::at (
+\begin{DoxyParamCaption}
+\item[{std\+::size\+\_\+t}]{height}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_matrix_ab33ffea8cb7e14c82d7ac183a9929198}{}\label{class_matrix_ab33ffea8cb7e14c82d7ac183a9929198}
+
+
+Definition at line 225 of file Matrix.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_ab33ffea8cb7e14c82d7ac183a9929198_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!at@{at}}
+\index{at@{at}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{at(std\+::size\+\_\+t height, std\+::size\+\_\+t width) const }{at(std::size_t height, std::size_t width) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ T {\bf Matrix}$<$ W, H, T $>$\+::at (
+\begin{DoxyParamCaption}
+\item[{std\+::size\+\_\+t}]{height, }
+\item[{std\+::size\+\_\+t}]{width}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_matrix_a9454a436ff7c18983b832642cc58b3ff}{}\label{class_matrix_a9454a436ff7c18983b832642cc58b3ff}
+
+
+Definition at line 231 of file Matrix.\+hpp.
+
+\index{Matrix@{Matrix}!get\+Height@{get\+Height}}
+\index{get\+Height@{get\+Height}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{get\+Height() const }{getHeight() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T = int$>$ std\+::size\+\_\+t {\bf Matrix}$<$ W, H, T $>$\+::get\+Height (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_matrix_a67a8079db706e47b4c59b5515bde766a}{}\label{class_matrix_a67a8079db706e47b4c59b5515bde766a}
+
+
+Definition at line 67 of file Matrix.\+hpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{class_matrix_a67a8079db706e47b4c59b5515bde766a_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!get\+Highest\+Row@{get\+Highest\+Row}}
+\index{get\+Highest\+Row@{get\+Highest\+Row}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{get\+Highest\+Row(const unsigned short i)}{getHighestRow(const unsigned short i)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ std\+::size\+\_\+t {\bf Matrix}$<$ W, H, T $>$\+::get\+Highest\+Row (
+\begin{DoxyParamCaption}
+\item[{const unsigned short}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_a194c3692f1bbb0c80970fc5bae2b01a1}{}\label{class_matrix_a194c3692f1bbb0c80970fc5bae2b01a1}
+
+
+Definition at line 380 of file Matrix.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a194c3692f1bbb0c80970fc5bae2b01a1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!get\+Width@{get\+Width}}
+\index{get\+Width@{get\+Width}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{get\+Width() const }{getWidth() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T = int$>$ std\+::size\+\_\+t {\bf Matrix}$<$ W, H, T $>$\+::get\+Width (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_matrix_a9259f00c0dc87ef47a0823e4d5ebb429}{}\label{class_matrix_a9259f00c0dc87ef47a0823e4d5ebb429}
+
+
+Definition at line 62 of file Matrix.\+hpp.
+
+\index{Matrix@{Matrix}!h\+Concat@{h\+Concat}}
+\index{h\+Concat@{h\+Concat}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{h\+Concat(const Matrix$<$ H, W $\ast$2, T $>$ \&other) const }{hConcat(const Matrix< H, W *2, T > &other) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ {\bf Matrix}$<$ H, W $\ast$2, T $>$ {\bf Matrix}$<$ W, H, T $>$\+::h\+Concat (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix}$<$ H, W $\ast$2, T $>$ \&}]{other}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_matrix_adb725d9614aa45937766d87668e5e0cc}{}\label{class_matrix_adb725d9614aa45937766d87668e5e0cc}
+
+
+Definition at line 407 of file Matrix.\+hpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{class_matrix_adb725d9614aa45937766d87668e5e0cc_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=294pt]{class_matrix_adb725d9614aa45937766d87668e5e0cc_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!Identity@{Identity}}
+\index{Identity@{Identity}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{Identity() const }{Identity() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ {\bf Matrix}$<$ W, H, T $>$ {\bf Matrix}$<$ W, H, T $>$\+::Identity (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_matrix_a1cca7534031201f08afa146565310a98}{}\label{class_matrix_a1cca7534031201f08afa146565310a98}
+
+
+Definition at line 366 of file Matrix.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a1cca7534031201f08afa146565310a98_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!Invert@{Invert}}
+\index{Invert@{Invert}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{Invert() const }{Invert() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ {\bf Matrix}$<$ H, W, T $>$ {\bf Matrix}$<$ W, H, T $>$\+::Invert (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_matrix_af079b7d71963122e484a1918351e5b16}{}\label{class_matrix_af079b7d71963122e484a1918351e5b16}
+
+
+Definition at line 424 of file Matrix.\+hpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=307pt]{class_matrix_af079b7d71963122e484a1918351e5b16_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{class_matrix_af079b7d71963122e484a1918351e5b16_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator$\ast$(const T \&scalar) const }{operator*(const T &scalar) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ {\bf Matrix}$<$ W, H, T $>$ {\bf Matrix}$<$ W, H, T $>$\+::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{scalar}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_matrix_ad1da3a066ba6d48c2f7952c6cc7b95d2}{}\label{class_matrix_ad1da3a066ba6d48c2f7952c6cc7b95d2}
+
+
+Definition at line 511 of file Matrix.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{class_matrix_ad1da3a066ba6d48c2f7952c6cc7b95d2_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!operator$\ast$@{operator$\ast$}}
+\index{operator$\ast$@{operator$\ast$}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator$\ast$(const Matrix$<$ a\+Width, a\+Height, T $>$ \&other) const }{operator*(const Matrix< aWidth, aHeight, T > &other) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ template$<$std\+::size\+\_\+t a\+Width, std\+::size\+\_\+t a\+Height$>$ {\bf Matrix}$<$ a\+Width, H, T $>$ {\bf Matrix}$<$ W, H, T $>$\+::operator$\ast$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix}$<$ a\+Width, a\+Height, T $>$ \&}]{other}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_matrix_a7f339c5605cecdf38f2629ee54acdb4a}{}\label{class_matrix_a7f339c5605cecdf38f2629ee54acdb4a}
+
+
+Definition at line 583 of file Matrix.\+hpp.
+
+\index{Matrix@{Matrix}!operator$\ast$=@{operator$\ast$=}}
+\index{operator$\ast$=@{operator$\ast$=}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator$\ast$=(const T \&scalar)}{operator*=(const T &scalar)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ {\bf Matrix}$<$ W, H, T $>$ \& {\bf Matrix}$<$ W, H, T $>$\+::operator$\ast$= (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{scalar}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_ad93704899e6667c756e06377d6e67d48}{}\label{class_matrix_ad93704899e6667c756e06377d6e67d48}
+
+
+Definition at line 498 of file Matrix.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{class_matrix_ad93704899e6667c756e06377d6e67d48_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!operator+@{operator+}}
+\index{operator+@{operator+}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator+(const T \&value)}{operator+(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ {\bf Matrix}$<$ W, H, T $>$ {\bf Matrix}$<$ W, H, T $>$\+::operator+ (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_af225dded660c20974f3a3c29b0360a8a}{}\label{class_matrix_af225dded660c20974f3a3c29b0360a8a}
+
+
+Definition at line 553 of file Matrix.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=299pt]{class_matrix_af225dded660c20974f3a3c29b0360a8a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!operator+@{operator+}}
+\index{operator+@{operator+}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator+(const Matrix$<$ W, H, T $>$ \&other)}{operator+(const Matrix< W, H, T > &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ {\bf Matrix}$<$ W, H, T $>$ {\bf Matrix}$<$ W, H, T $>$\+::operator+ (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix}$<$ W, H, T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_a5123d4078fb8145eb7c7dd4722b49845}{}\label{class_matrix_a5123d4078fb8145eb7c7dd4722b49845}
+
+
+Definition at line 622 of file Matrix.\+hpp.
+
+\index{Matrix@{Matrix}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator+=(const T \&value)}{operator+=(const T &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ {\bf Matrix}$<$ W, H, T $>$ \& {\bf Matrix}$<$ W, H, T $>$\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{const T \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_af1ce2eed120cde67df92e23a7f8b7b00}{}\label{class_matrix_af1ce2eed120cde67df92e23a7f8b7b00}
+
+
+Definition at line 540 of file Matrix.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{class_matrix_af1ce2eed120cde67df92e23a7f8b7b00_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator+=(const Matrix$<$ W, H, T $>$ \&other)}{operator+=(const Matrix< W, H, T > &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ {\bf Matrix}$<$ W, H, T $>$ \& {\bf Matrix}$<$ W, H, T $>$\+::operator+= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix}$<$ W, H, T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_a3fb20993c946d64ba102a4cc28f353f4}{}\label{class_matrix_a3fb20993c946d64ba102a4cc28f353f4}
+
+
+Definition at line 609 of file Matrix.\+hpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=271pt]{class_matrix_a3fb20993c946d64ba102a4cc28f353f4_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator-\/(const a\+T \&value) const }{operator-(const aT &value) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ template$<$class aT $>$ {\bf Matrix}$<$ W, H, T $>$ {\bf Matrix}$<$ W, H, T $>$\+::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{const aT \&}]{value}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_matrix_a1a3d0d98807ec9146bf0d1d374c10517}{}\label{class_matrix_a1a3d0d98807ec9146bf0d1d374c10517}
+
+
+Definition at line 575 of file Matrix.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{class_matrix_a1a3d0d98807ec9146bf0d1d374c10517_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!operator-\/@{operator-\/}}
+\index{operator-\/@{operator-\/}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator-\/(\+Matrix$<$ W, H, T $>$ \&other)}{operator-(Matrix< W, H, T > &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ {\bf Matrix}$<$ W, H, T $>$ {\bf Matrix}$<$ W, H, T $>$\+::operator-\/ (
+\begin{DoxyParamCaption}
+\item[{{\bf Matrix}$<$ W, H, T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_a2d80e2c5863a05d0917e9e5a02cc575b}{}\label{class_matrix_a2d80e2c5863a05d0917e9e5a02cc575b}
+
+
+Definition at line 642 of file Matrix.\+hpp.
+
+\index{Matrix@{Matrix}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator-\/=(const a\+T \&value)}{operator-=(const aT &value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ template$<$class aT $>$ {\bf Matrix}$<$ W, H, T $>$ \& {\bf Matrix}$<$ W, H, T $>$\+::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{const aT \&}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_a1675e7e5ed541024cbc5fdc66114d23c}{}\label{class_matrix_a1675e7e5ed541024cbc5fdc66114d23c}
+
+
+Definition at line 561 of file Matrix.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{class_matrix_a1675e7e5ed541024cbc5fdc66114d23c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!operator-\/=@{operator-\/=}}
+\index{operator-\/=@{operator-\/=}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator-\/=(const Matrix$<$ W, H, T $>$ \&other)}{operator-=(const Matrix< W, H, T > &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ {\bf Matrix}$<$ W, H, T $>$ \& {\bf Matrix}$<$ W, H, T $>$\+::operator-\/= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix}$<$ W, H, T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_aae3a29e920db3256c1ccc3842ac0b15a}{}\label{class_matrix_aae3a29e920db3256c1ccc3842ac0b15a}
+
+
+Definition at line 629 of file Matrix.\+hpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{class_matrix_aae3a29e920db3256c1ccc3842ac0b15a_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!operator/@{operator/}}
+\index{operator/@{operator/}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator/(const a\+T \&scalar) const }{operator/(const aT &scalar) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ template$<$class aT $>$ {\bf Matrix}$<$ W, H, T $>$ {\bf Matrix}$<$ W, H, T $>$\+::operator/ (
+\begin{DoxyParamCaption}
+\item[{const aT \&}]{scalar}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_matrix_a0b62ff512870c79543e5d5e710e5e53b}{}\label{class_matrix_a0b62ff512870c79543e5d5e710e5e53b}
+
+
+Definition at line 533 of file Matrix.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{class_matrix_a0b62ff512870c79543e5d5e710e5e53b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!operator/=@{operator/=}}
+\index{operator/=@{operator/=}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator/=(const a\+T \&scalar)}{operator/=(const aT &scalar)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ template$<$class aT $>$ {\bf Matrix}$<$ W, H, T $>$ \& {\bf Matrix}$<$ W, H, T $>$\+::operator/= (
+\begin{DoxyParamCaption}
+\item[{const aT \&}]{scalar}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_a162b1b5392a6c838baf43d4765027b3f}{}\label{class_matrix_a162b1b5392a6c838baf43d4765027b3f}
+
+
+Definition at line 519 of file Matrix.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=302pt]{class_matrix_a162b1b5392a6c838baf43d4765027b3f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!operator=@{operator=}}
+\index{operator=@{operator=}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator=(const Matrix$<$ W, H, T $>$ \&other)}{operator=(const Matrix< W, H, T > &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ const {\bf Matrix}$<$ W, H, T $>$ \& {\bf Matrix}$<$ W, H, T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix}$<$ W, H, T $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_a20c1001ca220100453e36b15279b6ab7}{}\label{class_matrix_a20c1001ca220100453e36b15279b6ab7}
+
+
+Definition at line 243 of file Matrix.\+hpp.
+
+\index{Matrix@{Matrix}!operator=@{operator=}}
+\index{operator=@{operator=}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator=(const Matrix$<$ a\+Width, a\+Height, a\+T $>$ \&other)}{operator=(const Matrix< aWidth, aHeight, aT > &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T = int$>$ template$<$std\+::size\+\_\+t a\+Width, std\+::size\+\_\+t a\+Height, class aT $>$ const {\bf Matrix} {\bf Matrix}$<$ W, H, T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix}$<$ a\+Width, a\+Height, aT $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_a1b74e614af59905c38d68eb0daaffec7}{}\label{class_matrix_a1b74e614af59905c38d68eb0daaffec7}
+\index{Matrix@{Matrix}!operator=@{operator=}}
+\index{operator=@{operator=}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator=(const Matrix$<$ a\+Width, a\+Height, a\+T $>$ \&other)}{operator=(const Matrix< aWidth, aHeight, aT > &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T = int$>$ template$<$std\+::size\+\_\+t a\+Width, std\+::size\+\_\+t a\+Height, class aT $>$ const {\bf Matrix}$<$W, H, T$>$ {\bf Matrix}$<$ W, H, T $>$\+::operator= (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix}$<$ a\+Width, a\+Height, aT $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_a09e6b5e23cef709c63ce2ec0a0ccce2d}{}\label{class_matrix_a09e6b5e23cef709c63ce2ec0a0ccce2d}
+
+
+Definition at line 254 of file Matrix.\+hpp.
+
+\index{Matrix@{Matrix}!operator==@{operator==}}
+\index{operator==@{operator==}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator==(const Matrix$<$ a\+Width, a\+Height, a\+T $>$ \&other)}{operator==(const Matrix< aWidth, aHeight, aT > &other)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ template$<$std\+::size\+\_\+t a\+Width, std\+::size\+\_\+t a\+Height, class aT $>$ bool {\bf Matrix}$<$ W, H, T $>$\+::operator== (
+\begin{DoxyParamCaption}
+\item[{const {\bf Matrix}$<$ a\+Width, a\+Height, aT $>$ \&}]{other}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_acb58c98e1e74826d92aee856ffc4a3b4}{}\label{class_matrix_acb58c98e1e74826d92aee856ffc4a3b4}
+
+
+Definition at line 264 of file Matrix.\+hpp.
+
+\index{Matrix@{Matrix}!operator\mbox{[}$\,$\mbox{]}@{operator[]}}
+\index{operator\mbox{[}$\,$\mbox{]}@{operator[]}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{operator[](const std\+::size\+\_\+t idx)}{operator[](const std::size_t idx)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ std\+::array$<$ T, W $>$ \& {\bf Matrix}$<$ W, H, T $>$\+::operator\mbox{[}$\,$\mbox{]} (
+\begin{DoxyParamCaption}
+\item[{const std\+::size\+\_\+t}]{idx}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_a5c110971f6c4b6282b937d0e815ab731}{}\label{class_matrix_a5c110971f6c4b6282b937d0e815ab731}
+
+
+Definition at line 237 of file Matrix.\+hpp.
+
+\index{Matrix@{Matrix}!point\+Wise\+Multiply@{point\+Wise\+Multiply}}
+\index{point\+Wise\+Multiply@{point\+Wise\+Multiply}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{point\+Wise\+Multiply(const T value)}{pointWiseMultiply(const T value)}}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ template$<$class aT $>$ {\bf Matrix}$<$ W, H, T $>$ {\bf Matrix}$<$ W, H, T $>$\+::point\+Wise\+Multiply (
+\begin{DoxyParamCaption}
+\item[{const T}]{value}
+\end{DoxyParamCaption}
+)}\hypertarget{class_matrix_a47377a1da625f943895eec79daefa690}{}\label{class_matrix_a47377a1da625f943895eec79daefa690}
+
+
+Definition at line 297 of file Matrix.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_matrix_a47377a1da625f943895eec79daefa690_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!size@{size}}
+\index{size@{size}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{size() const }{size() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T = int$>$ std\+::size\+\_\+t {\bf Matrix}$<$ W, H, T $>$\+::size (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_matrix_a7bc543fe8c5920f92aab8a172d963e8c}{}\label{class_matrix_a7bc543fe8c5920f92aab8a172d963e8c}
+
+
+Definition at line 57 of file Matrix.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_a7bc543fe8c5920f92aab8a172d963e8c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!Swap@{Swap}}
+\index{Swap@{Swap}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{Swap(unsigned long row1, unsigned long row2) const }{Swap(unsigned long row1, unsigned long row2) const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ {\bf Matrix}$<$ W, H, T $>$ {\bf Matrix}$<$ W, H, T $>$\+::Swap (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{row1, }
+\item[{unsigned long}]{row2}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_matrix_aac7c89f565eca5c6a69bc721be2c7a63}{}\label{class_matrix_aac7c89f565eca5c6a69bc721be2c7a63}
+
+
+Definition at line 327 of file Matrix.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_matrix_aac7c89f565eca5c6a69bc721be2c7a63_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!to\+\_\+string@{to\+\_\+string}}
+\index{to\+\_\+string@{to\+\_\+string}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{to\+\_\+string() const }{to_string() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ std\+::string {\bf Matrix}$<$ W, H, T $>$\+::to\+\_\+string (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_matrix_aa65e4a9c832a9134de9a2b4d0f7758df}{}\label{class_matrix_aa65e4a9c832a9134de9a2b4d0f7758df}
+
+
+Definition at line 310 of file Matrix.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=295pt]{class_matrix_aa65e4a9c832a9134de9a2b4d0f7758df_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Matrix@{Matrix}!transpose@{transpose}}
+\index{transpose@{transpose}!Matrix@{Matrix}}
+\subsubsection[{\texorpdfstring{transpose() const }{transpose() const }}]{\setlength{\rightskip}{0pt plus 5cm}template$<$std\+::size\+\_\+t W, std\+::size\+\_\+t H, class T $>$ {\bf Matrix}$<$ H, W, T $>$ {\bf Matrix}$<$ W, H, T $>$\+::transpose (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_matrix_abb5e9bcfad1f5ed025294c599451c738}{}\label{class_matrix_abb5e9bcfad1f5ed025294c599451c738}
+
+
+Definition at line 282 of file Matrix.\+hpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=300pt]{class_matrix_abb5e9bcfad1f5ed025294c599451c738_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_matrix_8hpp}{Matrix.\+hpp}\end{DoxyCompactItemize}

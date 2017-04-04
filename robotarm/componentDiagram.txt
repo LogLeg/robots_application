@@ -1,0 +1,16 @@
+@startuml
+
+	title Component Diagram
+
+	[Vision] as V
+	[Camera] as C
+	[RobotarmAansturing] as RA
+	[Robotarm] as R
+	[Text User Interface] as TUI
+
+	C -0)- V
+	RA -0)- TUI
+	V -0)- TUI
+	R -0)- RA
+
+@enduml

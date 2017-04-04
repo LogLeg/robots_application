@@ -1,0 +1,5 @@
+<map id="RobotSerial::send" name="RobotSerial::send">
+<area shape="rect" id="node2" href="$class_robot_arm.html#a645e7400a9e29525385d07e0b9552eb4" title="stop robot " alt="" coords="191,29,305,56"/>
+<area shape="rect" id="node3" href="$struct_servo.html#aed94c74351c407e550a51ba40215c135" title="go to given position " alt="" coords="180,80,316,107"/>
+<area shape="rect" id="node4" href="$struct_servo.html#af8a34733daf26ac3fe4bc6002931b7a8" title="get the current angle of the servo " alt="" coords="191,131,305,157"/>
+</map>

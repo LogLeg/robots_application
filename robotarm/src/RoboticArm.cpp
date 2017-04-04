@@ -41,6 +41,20 @@ bool RoboticArm::moveObject(signed long objectX, unsigned long objectY, signed s
 
 	const short hoverHeight = 80;
 	const short objectHeight = 0;
+	const long minMaxDistance[] = {100,320};
+
+	std::pair<unsigned long, signed short> XAngle = convertToXAngle(objectX, objectY);
+	if (XAngle.first < minMaxDistance[0] || XAngle.first > minMaxDistance[1])
+	{
+		std::cerr << "\033[1;31mObject out of reach!\033[0m\n" << std::endl;
+		return false;
+	}
+	XAngle = convertToXAngle(desX, desY);
+	if (XAngle.first < minMaxDistance[0] || XAngle.first > minMaxDistance[1])
+	{
+		std::cerr << "\033[1;31mTarget out of reach!\033[0m\n" << std::endl;
+		return false;
+	}
 
 	std::cout << "\033[1;31mBlokje oppakken: \033[0m\n" << std::endl;
 	//(2) base&gripper goed roteren & gripper openen
@@ -217,7 +231,6 @@ void RoboticArm::followPath(const std::vector<std::vector<signed short> >& path)
 	}
 }
 
-
 std::pair<unsigned long, signed short> RoboticArm::convertToXAngle(signed long x, unsigned long y)
 {
 	unsigned long rX = sqrt(pow(x, 2) + pow(y, 2));
@@ -244,11 +257,21 @@ void RoboticArm::armGoto(signed long z, unsigned long x, unsigned long y, signed
 
 bool RoboticArm::gotoPark()
 {
+	configuration = std::vector<signed short>
+	{ 0, -30, 110, 90, 0, 5 };
+	std::cout << "0: " << getConf().at(0);
+	std::cout << " 1: " << getConf().at(1);
+	std::cout << " 2: " << getConf().at(2);
+	std::cout << " 3: " << getConf().at(3);
+	std::cout << " 4: " << getConf().at(4);
+	std::cout << " 5: " << getConf().at(5) << std::endl;
+	std::cout << "x: " << forwardKinematics(0, a, b, getConf().at(1), c, getConf().at(2), d, getConf().at(3)).first << " y: " << forwardKinematics(0, a, b, getConf().at(1), c, getConf().at(2), d, getConf().at(3)).second << std::endl;
+	std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+
 	ros::NodeHandle n;
 
 	ros::ServiceClient client = n.serviceClient<robotarm::Robot_GoTo>("Robot_GoTo");
 	robotarm::Robot_GoTo srv;
-	configuration = std::vector<signed short>{0,-30,110,90,0,5};
 	srv.request.angle1 = getConf().at(0);
 	srv.request.angle2 = getConf().at(1);
 	srv.request.angle3 = getConf().at(2);
@@ -261,13 +284,4 @@ bool RoboticArm::gotoPark()
 	{
 
 	}
-	std::cout << "0: " << getConf().at(0);
-	std::cout << " 1: " << getConf().at(1);
-	std::cout << " 2: " << getConf().at(2);
-	std::cout << " 3: " << getConf().at(3);
-	std::cout << " 4: " << getConf().at(4);
-	std::cout << " 5: " << getConf().at(5) << std::endl;
-	std::cout << "x: " << forwardKinematics(0, a, b, getConf().at(1), c, getConf().at(2), d, getConf().at(3)).first << " y: " << forwardKinematics(0, a, b, getConf().at(1), c, getConf().at(2), d, getConf().at(3)).second << std::endl;
-
-
 }

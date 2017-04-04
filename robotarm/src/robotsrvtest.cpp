@@ -63,11 +63,15 @@ int main(int argc, char **argv)
 		const int objectY = 200;	//object Y in mm
 		const int objectangle = 0;	//object angle in degrees
 		const int objectwidth = 15;	//object windth in mm
-		const int circelX = 60;	//circel center X
+		const int circelX = 160;	//circel center X
 		const int circelY = 250;	//circel center Y
 
+		if (robotArm.moveObject(objectX, objectY, objectangle, objectwidth, circelX, circelY))
+		{
 
-		robotArm.moveObject(objectX, objectY, objectangle, objectwidth, circelX, circelY);
+		}else{
+			std::cerr << "\033[1;31mMove object failed\033[0m\n" << std::endl;
+		}
 		robotArm.gotoPark();
 
 	} catch (std::exception& e)

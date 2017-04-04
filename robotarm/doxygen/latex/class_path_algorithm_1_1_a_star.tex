@@ -1,0 +1,524 @@
+\hypertarget{class_path_algorithm_1_1_a_star}{}\section{Path\+Algorithm\+:\+:A\+Star Class Reference}
+\label{class_path_algorithm_1_1_a_star}\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+
+
+{\ttfamily \#include $<$A\+Star.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespace_path_algorithm_a7f2958a43117506f3cb6dc9409a22c0d}{Path} \hyperlink{class_path_algorithm_1_1_a_star_aee41b31ec44b02f6dc94889d228a3582}{search} (\hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} a\+Start, const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Goal, const \hyperlink{struct_widgets_1_1_size}{Size} \&a\+Robot\+Size, \hyperlink{class_robotic_arm}{Robotic\+Arm} \&robot)
+\item 
+void \hyperlink{class_path_algorithm_1_1_a_star_a63f88f24acf7bf34cd060051134c9190}{add\+To\+Open\+Set} (const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Vertex)
+\item 
+void \hyperlink{class_path_algorithm_1_1_a_star_afcc23a676145d6e280d1c3430af5380a}{remove\+From\+Open\+Set} (const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Vertex)
+\item 
+void \hyperlink{class_path_algorithm_1_1_a_star_aba29c2585fbf49880cf5e8b9bf6d3eb5}{remove\+From\+Open\+Set} (Open\+Set\+::iterator \&i)
+\item 
+Open\+Set\+::iterator \hyperlink{class_path_algorithm_1_1_a_star_ae78bfebdee31135fdfb2f302347f962f}{find\+In\+Open\+Set} (const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Vertex)
+\item 
+bool \hyperlink{class_path_algorithm_1_1_a_star_a657aaaf577ca25e68e6a5af57214e7d4}{find\+Remove\+In\+Open\+Set} (const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Vertex)
+\item 
+void \hyperlink{class_path_algorithm_1_1_a_star_a5bb18edbbd54833aac9eddfe63ba652d}{remove\+First\+From\+Open\+Set} ()
+\item 
+void \hyperlink{class_path_algorithm_1_1_a_star_a53139e4b3cd3971a2bf85a430e83378f}{add\+To\+Closed\+Set} (const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Vertex)
+\item 
+void \hyperlink{class_path_algorithm_1_1_a_star_a1b6971a9c5878e859cbdb3270dda93b4}{remove\+From\+Closed\+Set} (const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Vertex)
+\item 
+void \hyperlink{class_path_algorithm_1_1_a_star_a799953993c1255f0ce559f7233d3c926}{remove\+From\+Closed\+Set} (Closed\+Set\+::iterator \&i)
+\item 
+Closed\+Set\+::iterator \hyperlink{class_path_algorithm_1_1_a_star_a73d9639e838fd55bb392d01238fc967a}{find\+In\+Closed\+Set} (const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Vertex)
+\item 
+bool \hyperlink{class_path_algorithm_1_1_a_star_a843db81c9950c0184ee31627313f5793}{find\+Remove\+Closed\+Set} (const \hyperlink{struct_path_algorithm_1_1_vertex}{Vertex} \&a\+Vertex)
+\item 
+\hyperlink{namespace_path_algorithm_ac027c23e4b4c237b6eb96fc63d79266f}{Closed\+Set} \hyperlink{class_path_algorithm_1_1_a_star_a94fcc29f04e6398edbd58effbf59b49a}{get\+Closed\+Set} () const 
+\item 
+\hyperlink{namespace_path_algorithm_a999fc5baea7d1f71e42570630a297029}{Open\+Set} \hyperlink{class_path_algorithm_1_1_a_star_ae419f2d019378d9b4435d862b70da72f}{get\+Open\+Set} () const 
+\item 
+\hyperlink{namespace_path_algorithm_ac8a52a9740a0bfa959810bd92e08d962}{Vertex\+Map} \hyperlink{class_path_algorithm_1_1_a_star_ac4ce233712c0f7aac44d029e61888581}{get\+Predecessor\+Map} () const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespace_path_algorithm_ac027c23e4b4c237b6eb96fc63d79266f}{Closed\+Set} \& \hyperlink{class_path_algorithm_1_1_a_star_a4cb2a6c928a01fcac02533500bd8ace5}{get\+CS} ()
+\item 
+const \hyperlink{namespace_path_algorithm_ac027c23e4b4c237b6eb96fc63d79266f}{Closed\+Set} \& \hyperlink{class_path_algorithm_1_1_a_star_a420e1ac8824a265dc2272c7e50899322}{get\+CS} () const 
+\item 
+\hyperlink{namespace_path_algorithm_a999fc5baea7d1f71e42570630a297029}{Open\+Set} \& \hyperlink{class_path_algorithm_1_1_a_star_a48e23107ffca02392bdf2439775baecf}{get\+OS} ()
+\item 
+const \hyperlink{namespace_path_algorithm_a999fc5baea7d1f71e42570630a297029}{Open\+Set} \& \hyperlink{class_path_algorithm_1_1_a_star_af5ea4271f9318edaa68d8030e35d0cf1}{get\+OS} () const 
+\item 
+\hyperlink{namespace_path_algorithm_ac8a52a9740a0bfa959810bd92e08d962}{Vertex\+Map} \& \hyperlink{class_path_algorithm_1_1_a_star_a4bb6718fd07f503ff836c5cdccd74236}{get\+PM} ()
+\item 
+const \hyperlink{namespace_path_algorithm_ac8a52a9740a0bfa959810bd92e08d962}{Vertex\+Map} \& \hyperlink{class_path_algorithm_1_1_a_star_a021ff514f018ce9ec7db705578a210d4}{get\+PM} () const 
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 197 of file A\+Star.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!add\+To\+Closed\+Set@{add\+To\+Closed\+Set}}
+\index{add\+To\+Closed\+Set@{add\+To\+Closed\+Set}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{add\+To\+Closed\+Set(const Vertex \&a\+Vertex)}{addToClosedSet(const Vertex &aVertex)}}]{\setlength{\rightskip}{0pt plus 5cm}void Path\+Algorithm\+::\+A\+Star\+::add\+To\+Closed\+Set (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vertex} \&}]{a\+Vertex}
+\end{DoxyParamCaption}
+)}\hypertarget{class_path_algorithm_1_1_a_star_a53139e4b3cd3971a2bf85a430e83378f}{}\label{class_path_algorithm_1_1_a_star_a53139e4b3cd3971a2bf85a430e83378f}
+
+
+Definition at line 316 of file A\+Star.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_path_algorithm_1_1_a_star_a53139e4b3cd3971a2bf85a430e83378f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!add\+To\+Open\+Set@{add\+To\+Open\+Set}}
+\index{add\+To\+Open\+Set@{add\+To\+Open\+Set}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{add\+To\+Open\+Set(const Vertex \&a\+Vertex)}{addToOpenSet(const Vertex &aVertex)}}]{\setlength{\rightskip}{0pt plus 5cm}void Path\+Algorithm\+::\+A\+Star\+::add\+To\+Open\+Set (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vertex} \&}]{a\+Vertex}
+\end{DoxyParamCaption}
+)}\hypertarget{class_path_algorithm_1_1_a_star_a63f88f24acf7bf34cd060051134c9190}{}\label{class_path_algorithm_1_1_a_star_a63f88f24acf7bf34cd060051134c9190}
+
+
+Definition at line 255 of file A\+Star.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_path_algorithm_1_1_a_star_a63f88f24acf7bf34cd060051134c9190_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!find\+In\+Closed\+Set@{find\+In\+Closed\+Set}}
+\index{find\+In\+Closed\+Set@{find\+In\+Closed\+Set}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{find\+In\+Closed\+Set(const Vertex \&a\+Vertex)}{findInClosedSet(const Vertex &aVertex)}}]{\setlength{\rightskip}{0pt plus 5cm}Closed\+Set\+::iterator Path\+Algorithm\+::\+A\+Star\+::find\+In\+Closed\+Set (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vertex} \&}]{a\+Vertex}
+\end{DoxyParamCaption}
+)}\hypertarget{class_path_algorithm_1_1_a_star_a73d9639e838fd55bb392d01238fc967a}{}\label{class_path_algorithm_1_1_a_star_a73d9639e838fd55bb392d01238fc967a}
+
+
+Definition at line 343 of file A\+Star.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_path_algorithm_1_1_a_star_a73d9639e838fd55bb392d01238fc967a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!find\+In\+Open\+Set@{find\+In\+Open\+Set}}
+\index{find\+In\+Open\+Set@{find\+In\+Open\+Set}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{find\+In\+Open\+Set(const Vertex \&a\+Vertex)}{findInOpenSet(const Vertex &aVertex)}}]{\setlength{\rightskip}{0pt plus 5cm}Open\+Set\+::iterator Path\+Algorithm\+::\+A\+Star\+::find\+In\+Open\+Set (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vertex} \&}]{a\+Vertex}
+\end{DoxyParamCaption}
+)}\hypertarget{class_path_algorithm_1_1_a_star_ae78bfebdee31135fdfb2f302347f962f}{}\label{class_path_algorithm_1_1_a_star_ae78bfebdee31135fdfb2f302347f962f}
+
+
+Definition at line 282 of file A\+Star.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=338pt]{class_path_algorithm_1_1_a_star_ae78bfebdee31135fdfb2f302347f962f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_path_algorithm_1_1_a_star_ae78bfebdee31135fdfb2f302347f962f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!find\+Remove\+Closed\+Set@{find\+Remove\+Closed\+Set}}
+\index{find\+Remove\+Closed\+Set@{find\+Remove\+Closed\+Set}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{find\+Remove\+Closed\+Set(const Vertex \&a\+Vertex)}{findRemoveClosedSet(const Vertex &aVertex)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Path\+Algorithm\+::\+A\+Star\+::find\+Remove\+Closed\+Set (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vertex} \&}]{a\+Vertex}
+\end{DoxyParamCaption}
+)}\hypertarget{class_path_algorithm_1_1_a_star_a843db81c9950c0184ee31627313f5793}{}\label{class_path_algorithm_1_1_a_star_a843db81c9950c0184ee31627313f5793}
+
+
+Definition at line 361 of file A\+Star.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{class_path_algorithm_1_1_a_star_a843db81c9950c0184ee31627313f5793_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!find\+Remove\+In\+Open\+Set@{find\+Remove\+In\+Open\+Set}}
+\index{find\+Remove\+In\+Open\+Set@{find\+Remove\+In\+Open\+Set}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{find\+Remove\+In\+Open\+Set(const Vertex \&a\+Vertex)}{findRemoveInOpenSet(const Vertex &aVertex)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Path\+Algorithm\+::\+A\+Star\+::find\+Remove\+In\+Open\+Set (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vertex} \&}]{a\+Vertex}
+\end{DoxyParamCaption}
+)}\hypertarget{class_path_algorithm_1_1_a_star_a657aaaf577ca25e68e6a5af57214e7d4}{}\label{class_path_algorithm_1_1_a_star_a657aaaf577ca25e68e6a5af57214e7d4}
+
+
+Definition at line 293 of file A\+Star.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_path_algorithm_1_1_a_star_a657aaaf577ca25e68e6a5af57214e7d4_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!get\+Closed\+Set@{get\+Closed\+Set}}
+\index{get\+Closed\+Set@{get\+Closed\+Set}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{get\+Closed\+Set() const }{getClosedSet() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Closed\+Set} Path\+Algorithm\+::\+A\+Star\+::get\+Closed\+Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_path_algorithm_1_1_a_star_a94fcc29f04e6398edbd58effbf59b49a}{}\label{class_path_algorithm_1_1_a_star_a94fcc29f04e6398edbd58effbf59b49a}
+
+
+Definition at line 352 of file A\+Star.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_path_algorithm_1_1_a_star_a94fcc29f04e6398edbd58effbf59b49a_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!get\+CS@{get\+CS}}
+\index{get\+CS@{get\+CS}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{get\+C\+S()}{getCS()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Closed\+Set} \& Path\+Algorithm\+::\+A\+Star\+::get\+CS (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_path_algorithm_1_1_a_star_a4cb2a6c928a01fcac02533500bd8ace5}{}\label{class_path_algorithm_1_1_a_star_a4cb2a6c928a01fcac02533500bd8ace5}
+
+
+Definition at line 394 of file A\+Star.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_path_algorithm_1_1_a_star_a4cb2a6c928a01fcac02533500bd8ace5_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!get\+CS@{get\+CS}}
+\index{get\+CS@{get\+CS}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{get\+C\+S() const }{getCS() const }}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Closed\+Set} \& Path\+Algorithm\+::\+A\+Star\+::get\+CS (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_path_algorithm_1_1_a_star_a420e1ac8824a265dc2272c7e50899322}{}\label{class_path_algorithm_1_1_a_star_a420e1ac8824a265dc2272c7e50899322}
+
+
+Definition at line 402 of file A\+Star.\+cpp.
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!get\+Open\+Set@{get\+Open\+Set}}
+\index{get\+Open\+Set@{get\+Open\+Set}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{get\+Open\+Set() const }{getOpenSet() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Open\+Set} Path\+Algorithm\+::\+A\+Star\+::get\+Open\+Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_path_algorithm_1_1_a_star_ae419f2d019378d9b4435d862b70da72f}{}\label{class_path_algorithm_1_1_a_star_ae419f2d019378d9b4435d862b70da72f}
+
+
+Definition at line 375 of file A\+Star.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_path_algorithm_1_1_a_star_ae419f2d019378d9b4435d862b70da72f_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!get\+OS@{get\+OS}}
+\index{get\+OS@{get\+OS}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{get\+O\+S()}{getOS()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Open\+Set} \& Path\+Algorithm\+::\+A\+Star\+::get\+OS (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_path_algorithm_1_1_a_star_a48e23107ffca02392bdf2439775baecf}{}\label{class_path_algorithm_1_1_a_star_a48e23107ffca02392bdf2439775baecf}
+
+
+Definition at line 410 of file A\+Star.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_path_algorithm_1_1_a_star_a48e23107ffca02392bdf2439775baecf_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!get\+OS@{get\+OS}}
+\index{get\+OS@{get\+OS}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{get\+O\+S() const }{getOS() const }}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Open\+Set} \& Path\+Algorithm\+::\+A\+Star\+::get\+OS (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_path_algorithm_1_1_a_star_af5ea4271f9318edaa68d8030e35d0cf1}{}\label{class_path_algorithm_1_1_a_star_af5ea4271f9318edaa68d8030e35d0cf1}
+
+
+Definition at line 418 of file A\+Star.\+cpp.
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!get\+PM@{get\+PM}}
+\index{get\+PM@{get\+PM}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{get\+P\+M()}{getPM()}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vertex\+Map} \& Path\+Algorithm\+::\+A\+Star\+::get\+PM (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_path_algorithm_1_1_a_star_a4bb6718fd07f503ff836c5cdccd74236}{}\label{class_path_algorithm_1_1_a_star_a4bb6718fd07f503ff836c5cdccd74236}
+
+
+Definition at line 426 of file A\+Star.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_path_algorithm_1_1_a_star_a4bb6718fd07f503ff836c5cdccd74236_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!get\+PM@{get\+PM}}
+\index{get\+PM@{get\+PM}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{get\+P\+M() const }{getPM() const }}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Vertex\+Map} \& Path\+Algorithm\+::\+A\+Star\+::get\+PM (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [protected]}}\hypertarget{class_path_algorithm_1_1_a_star_a021ff514f018ce9ec7db705578a210d4}{}\label{class_path_algorithm_1_1_a_star_a021ff514f018ce9ec7db705578a210d4}
+
+
+Definition at line 434 of file A\+Star.\+cpp.
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!get\+Predecessor\+Map@{get\+Predecessor\+Map}}
+\index{get\+Predecessor\+Map@{get\+Predecessor\+Map}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{get\+Predecessor\+Map() const }{getPredecessorMap() const }}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vertex\+Map} Path\+Algorithm\+::\+A\+Star\+::get\+Predecessor\+Map (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{class_path_algorithm_1_1_a_star_ac4ce233712c0f7aac44d029e61888581}{}\label{class_path_algorithm_1_1_a_star_ac4ce233712c0f7aac44d029e61888581}
+
+
+Definition at line 384 of file A\+Star.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{class_path_algorithm_1_1_a_star_ac4ce233712c0f7aac44d029e61888581_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!remove\+First\+From\+Open\+Set@{remove\+First\+From\+Open\+Set}}
+\index{remove\+First\+From\+Open\+Set@{remove\+First\+From\+Open\+Set}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{remove\+First\+From\+Open\+Set()}{removeFirstFromOpenSet()}}]{\setlength{\rightskip}{0pt plus 5cm}void Path\+Algorithm\+::\+A\+Star\+::remove\+First\+From\+Open\+Set (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_path_algorithm_1_1_a_star_a5bb18edbbd54833aac9eddfe63ba652d}{}\label{class_path_algorithm_1_1_a_star_a5bb18edbbd54833aac9eddfe63ba652d}
+
+
+Definition at line 308 of file A\+Star.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_path_algorithm_1_1_a_star_a5bb18edbbd54833aac9eddfe63ba652d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!remove\+From\+Closed\+Set@{remove\+From\+Closed\+Set}}
+\index{remove\+From\+Closed\+Set@{remove\+From\+Closed\+Set}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{remove\+From\+Closed\+Set(const Vertex \&a\+Vertex)}{removeFromClosedSet(const Vertex &aVertex)}}]{\setlength{\rightskip}{0pt plus 5cm}void Path\+Algorithm\+::\+A\+Star\+::remove\+From\+Closed\+Set (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vertex} \&}]{a\+Vertex}
+\end{DoxyParamCaption}
+)}\hypertarget{class_path_algorithm_1_1_a_star_a1b6971a9c5878e859cbdb3270dda93b4}{}\label{class_path_algorithm_1_1_a_star_a1b6971a9c5878e859cbdb3270dda93b4}
+
+
+Definition at line 325 of file A\+Star.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=348pt]{class_path_algorithm_1_1_a_star_a1b6971a9c5878e859cbdb3270dda93b4_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_path_algorithm_1_1_a_star_a1b6971a9c5878e859cbdb3270dda93b4_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!remove\+From\+Closed\+Set@{remove\+From\+Closed\+Set}}
+\index{remove\+From\+Closed\+Set@{remove\+From\+Closed\+Set}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{remove\+From\+Closed\+Set(\+Closed\+Set\+::iterator \&i)}{removeFromClosedSet(ClosedSet::iterator &i)}}]{\setlength{\rightskip}{0pt plus 5cm}void Path\+Algorithm\+::\+A\+Star\+::remove\+From\+Closed\+Set (
+\begin{DoxyParamCaption}
+\item[{Closed\+Set\+::iterator \&}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{class_path_algorithm_1_1_a_star_a799953993c1255f0ce559f7233d3c926}{}\label{class_path_algorithm_1_1_a_star_a799953993c1255f0ce559f7233d3c926}
+
+
+Definition at line 334 of file A\+Star.\+cpp.
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!remove\+From\+Open\+Set@{remove\+From\+Open\+Set}}
+\index{remove\+From\+Open\+Set@{remove\+From\+Open\+Set}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{remove\+From\+Open\+Set(const Vertex \&a\+Vertex)}{removeFromOpenSet(const Vertex &aVertex)}}]{\setlength{\rightskip}{0pt plus 5cm}void Path\+Algorithm\+::\+A\+Star\+::remove\+From\+Open\+Set (
+\begin{DoxyParamCaption}
+\item[{const {\bf Vertex} \&}]{a\+Vertex}
+\end{DoxyParamCaption}
+)}\hypertarget{class_path_algorithm_1_1_a_star_afcc23a676145d6e280d1c3430af5380a}{}\label{class_path_algorithm_1_1_a_star_afcc23a676145d6e280d1c3430af5380a}
+
+
+Definition at line 264 of file A\+Star.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_path_algorithm_1_1_a_star_afcc23a676145d6e280d1c3430af5380a_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_path_algorithm_1_1_a_star_afcc23a676145d6e280d1c3430af5380a_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!remove\+From\+Open\+Set@{remove\+From\+Open\+Set}}
+\index{remove\+From\+Open\+Set@{remove\+From\+Open\+Set}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{remove\+From\+Open\+Set(\+Open\+Set\+::iterator \&i)}{removeFromOpenSet(OpenSet::iterator &i)}}]{\setlength{\rightskip}{0pt plus 5cm}void Path\+Algorithm\+::\+A\+Star\+::remove\+From\+Open\+Set (
+\begin{DoxyParamCaption}
+\item[{Open\+Set\+::iterator \&}]{i}
+\end{DoxyParamCaption}
+)}\hypertarget{class_path_algorithm_1_1_a_star_aba29c2585fbf49880cf5e8b9bf6d3eb5}{}\label{class_path_algorithm_1_1_a_star_aba29c2585fbf49880cf5e8b9bf6d3eb5}
+
+
+Definition at line 273 of file A\+Star.\+cpp.
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!search@{search}}
+\index{search@{search}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{search(\+Vertex a\+Start, const Vertex \&a\+Goal, const Size \&a\+Robot\+Size, Robotic\+Arm \&robot)}{search(Vertex aStart, const Vertex &aGoal, const Size &aRobotSize, RoboticArm &robot)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Path} Path\+Algorithm\+::\+A\+Star\+::search (
+\begin{DoxyParamCaption}
+\item[{{\bf Vertex}}]{a\+Start, }
+\item[{const {\bf Vertex} \&}]{a\+Goal, }
+\item[{const {\bf Size} \&}]{a\+Robot\+Size, }
+\item[{{\bf Robotic\+Arm} \&}]{robot}
+\end{DoxyParamCaption}
+)}\hypertarget{class_path_algorithm_1_1_a_star_aee41b31ec44b02f6dc94889d228a3582}{}\label{class_path_algorithm_1_1_a_star_aee41b31ec44b02f6dc94889d228a3582}
+
+
+Definition at line 100 of file A\+Star.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_path_algorithm_1_1_a_star_aee41b31ec44b02f6dc94889d228a3582_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_path_algorithm_1_1_a_star_aee41b31ec44b02f6dc94889d228a3582_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/\hyperlink{_a_star_8hpp}{A\+Star.\+hpp}\item 
+src/\hyperlink{_a_star_8cpp}{A\+Star.\+cpp}\end{DoxyCompactItemize}

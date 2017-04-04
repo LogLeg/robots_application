@@ -1,0 +1,7 @@
+<map id="Matrix::Invert" name="Matrix::Invert">
+<area shape="rect" id="node2" href="$class_matrix.html#a7bc543fe8c5920f92aab8a172d963e8c" title="Matrix::size" alt="" coords="185,5,275,32"/>
+<area shape="rect" id="node3" href="$class_matrix.html#a1cca7534031201f08afa146565310a98" title="Matrix::Identity" alt="" coords="175,56,285,83"/>
+<area shape="rect" id="node4" href="$class_matrix.html#a194c3692f1bbb0c80970fc5bae2b01a1" title="Matrix::getHighestRow" alt="" coords="152,107,308,133"/>
+<area shape="rect" id="node5" href="$class_matrix.html#aac7c89f565eca5c6a69bc721be2c7a63" title="Matrix::Swap" alt="" coords="181,157,279,184"/>
+<area shape="rect" id="node6" href="$class_matrix.html#aac2fa2441171eebbce6569cd085a9949" title="Matrix::Add" alt="" coords="185,208,275,235"/>
+</map>

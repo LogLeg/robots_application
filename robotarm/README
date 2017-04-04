@@ -1,0 +1,10 @@
+apt-get install ros-kinetic-serial
+
+apt-get install ros-kinetic-opencv????
+
+## in catkin_ws/src/ 
+git clone https://github.com/ros-perception/vision_opencv
+git clone https://github.com/wjwwood/serial
+
+##in catkin_ws/
+catkin_make

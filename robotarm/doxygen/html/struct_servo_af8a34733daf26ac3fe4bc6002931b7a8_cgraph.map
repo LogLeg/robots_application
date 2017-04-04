@@ -1,0 +1,4 @@
+<map id="Servo::getAngle" name="Servo::getAngle">
+<area shape="rect" id="node2" href="$class_robot_serial.html#a48929a3b47818cf3366b003b121ed539" title="send message to robot by serial " alt="" coords="168,5,295,32"/>
+<area shape="rect" id="node3" href="$class_robot_serial.html#a2bfa4d4a724c81c8f8b06d47a3c747fb" title="read message from robot " alt="" coords="170,56,293,83"/>
+</map>

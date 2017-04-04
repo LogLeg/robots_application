@@ -23,21 +23,14 @@ struct Servo
 	signed short max;
 };
 
-struct robotInput	{
-	unsigned long x;
-	signed short robotAngle;
-	signed short gripperAngle;
-	signed short objectWidth;
-};
-
 class RoboticArm
 {
 public:
-	/*
+	/**
 	 * @brief constructor
 	 */
 	RoboticArm(unsigned short a, unsigned short b, unsigned short c, unsigned short d, Servo s1, Servo s2, Servo s3, Servo s4, Servo s5, Servo s6);
-	/*
+	/**
 	 * @brief move object to specified destination
 	 * @param objectX center X in mm of object
 	 * @param objectY center Y in mm of object
@@ -48,12 +41,16 @@ public:
 	 * @return true if object was succesfully moved
 	 */
 	bool moveObject(signed long objectX, unsigned long objectY, signed short objectAngle, unsigned short objectWidth, signed long desX, unsigned long desY);
+	/**
+	 * @brief go to park position
+	 * @return true if done
+	 */
 	bool gotoPark();
-	/*
+	/**
 	 * @brief copydestructor
 	 */
 	virtual ~RoboticArm();
-	/*
+	/**
 	 * @brief forward kinematics, calculate X&Y point for angles & lengths for 2dof
 	 * @param x0 x position of robot base
 	 * @param y0 y position of robot base
@@ -63,7 +60,7 @@ public:
 	 * @param p2 angle of first degree
 	 */
 	std::pair<double, double> forwardKinematics(double x0, double y0, double a, double p1, double b, double p2);
-	/*
+	/**
 	 * @brief forward kinematics, calculate X&Y point for angles & lengths for 3dof
 	 * @param x0 x position of robot base
 	 * @param y0 y position of robot base
@@ -98,50 +95,49 @@ private:
 	std::vector<signed short> configuration;
 	Position pos;
 
-	/*
+	/**
 	 * @brief go to xyz position and turn gripper
 	 * @param z z-axis of robotarm X from top down view
 	 * @param x x-axis of robotarm Y from top down view
 	 * @param Y y-axis of robotarm no top down view- height of gripper.
 	 */
 	void armGoto(signed long z, unsigned long x, unsigned long y, signed short objectAngle);
-	/*
+	/**
 	 * @brief convert x&y from vision to X&Angle
 	 * @param x x from opencv
 	 * @param y y from opencv
 	 * @return X&angle of robotarm
 	 */
 	std::pair<unsigned long, signed short> convertToXAngle(signed long x, unsigned long y);
-
-	/*
+	/**
 	 * @brief calculate a path of configurations
 	 * @param inputConf start configuration
 	 * @param endpoint point where the arm goes to
 	 * @return a path of configurations
 	 */
 	std::vector<std::vector<signed short>> calculatePath(std::vector<signed short> inputConf, robotPoint::Point endPoint);
-	/*
+	/**
 	 * @brief make linear path of configurations
 	 * @param phi servo that goes to endValue
 	 * @param endValue last value of path
 	 */
 	std::vector<std::vector<signed short>> calculatePath(unsigned char phi, signed short endValue);
-	/*
+	/**
 	 * @brief print path (verctor of configurations)
 	 * @param confs path
 	 */
 	void printPath(std::vector<std::vector<signed short>> confs);
-	/*
+	/**
 	 * @brief arm follow path
 	 * @param path path to follow
 	 */
 	void followPath(const std::vector<std::vector<signed short>>& path);
-	/*
+	/**
 	 * @brief set the angle of the gripper
 	 * @param angle angle to set
 	 */
 	void setGripperAngle(signed short angle);
-	/*
+	/**
 	 * @brief set the size of the gripper
 	 * @param width width of the gripper
 	 */
