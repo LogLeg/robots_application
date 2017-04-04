@@ -44,7 +44,7 @@ void Vision::initialize(const string& a_window_name, uint8_t device, bool test)
 	}
 	else
 	{
-		src = imread("../include/tabletop1.jpg", 1);
+		src = imread("tabletop1.jpg", 1);
 
 		if(src.empty())
 		{
@@ -63,7 +63,7 @@ void Vision::initialize(const string& a_window_name, uint8_t device, bool test)
 
 void Vision::show_image()
 {
-	//take_frame(true);
+	take_frame(false);
 
 	//TODO temp!
 	Mat kaas;
@@ -74,7 +74,7 @@ void Vision::show_image()
 	src.copyTo(output(Rect(0, 0, 640, 480)));
 	kaas.copyTo(output(Rect(640, 0, 640, 480)));
 	drawing.copyTo(output(Rect(0, 480, 640, 480)));
-	//information.copyTo(output(Rect(640, 480, 640, 480)));
+	screenshot_rgb.copyTo(output(Rect(640, 480, 640, 480)));
 
 	imshow(window_name, output);
 
@@ -84,13 +84,16 @@ void Vision::show_image()
 
 void Vision::take_frame(bool screenshot)
 {
+	Mat screenshot_hsv;
+
 	if(!screenshot)
 	{
 		cap >> src;
 	}
 	else
 	{
-		screenshot_rgb = src;
+		cvtColor(src, screenshot_hsv, CV_RGB2HSV);
+		cvtColor(screenshot_hsv, screenshot_rgb, CV_HSV2RGB);
 	}
 }
 
