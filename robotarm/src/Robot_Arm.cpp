@@ -34,7 +34,7 @@ RobotArm::RobotArm(std::string port, unsigned long baud):
 	ServoList.at(0).gotoPosition(0, 1000);
 	ServoList.at(1).gotoPosition(-45, 1000);
 	ServoList.at(2).gotoPosition(110, 1000);
-	ServoList.at(3).gotoPosition(-68, 1000);
+        ServoList.at(3).gotoPosition(68, 1000);
 	ServoList.at(4).gotoPosition(0, 1000);
 	ServoList.at(5).gotoPosition(5, 1000);
 
