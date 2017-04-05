@@ -19,6 +19,12 @@ Vision::Vision() :
 		distance_to_robotbase_y(187),
 		max_grabbable_size(30)
 {
+	calibration_square_properties.center.x = 0;
+	calibration_square_properties.center.y = 0;
+	calibration_square_properties.width = 0;
+	calibration_square_properties.height = 0;
+	calibration_square_properties.angle = 0;
+
 	//This is done so that the colours are already filled in if the user skips the calibration.
 	set_colour_values();
 }
