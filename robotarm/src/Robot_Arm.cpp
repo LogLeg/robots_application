@@ -18,18 +18,18 @@ RobotArm::RobotArm(std::string port, unsigned long baud) :
 	sleep(500);
 	ServoList.at(0).gotoPosition(0, 1000);
 	sleep(500);
-	ServoList.at(3).gotoPosition(0, 1000);
+	ServoList.at(3).gotoPosition(90, 1000);
 	sleep(500);
 	ServoList.at(4).gotoPosition(0, 1000);
 	sleep(500);
 	ServoList.at(5).gotoPosition(15, 1000);
 	sleep(500);
 
-	ServoList.at(0).gotoPosition(0, 1000);
-	ServoList.at(1).gotoPosition(-45, 1000);
+	ServoList.at(0).gotoPosition(-90, 1000);
+	ServoList.at(1).gotoPosition(-30, 1000);
 	ServoList.at(2).gotoPosition(110, 1000);
-	ServoList.at(3).gotoPosition(68, 1000);
-	ServoList.at(4).gotoPosition(0, 1000);
+	ServoList.at(3).gotoPosition(90, 1000);
+	ServoList.at(4).gotoPosition(90, 1000);
 	ServoList.at(5).gotoPosition(5, 1000);
 
 	std::cout << "S0 position: " << ServoList.at(0).getAngle() << std::endl;

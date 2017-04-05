@@ -59,8 +59,8 @@ int main(int argc, char **argv)
 		{ 0, -30, 110, 90, 0, 5 }); //{ 0, -30, 110, 90, 0, 5 }); //{ 0, 0, 0, 0, 0, 0 });
 
 		//(1) vind blokje positie&rotatie
-		const int objectX = -183; 	//object X in mm
-		const int objectY = 200;	//object Y in mm
+		const int objectX = -83; 	//object X in mm
+		const int objectY = 300;	//object Y in mm
 		const int objectangle = 0;	//object angle in degrees
 		const int objectwidth = 15;	//object windth in mm
 		const int circelX = 160;	//circel center X
