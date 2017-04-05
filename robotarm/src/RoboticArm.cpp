@@ -249,7 +249,11 @@ void RoboticArm::armGoto(signed long z, unsigned long x, unsigned long y, signed
 	//printPath(pad);
 	//followPath(pad);
 	configuration = pad.back();
-	pad = calculatePath(4, -XAngle.second + objectAngle + 0); // TODO: evt. +90
+	signed short newGripperAngle = -XAngle.second + objectAngle;
+	if (-XAngle.second + objectAngle > 90) newGripperAngle = -XAngle.second + objectAngle - 180;
+	if (-XAngle.second + objectAngle < -90) newGripperAngle = -XAngle.second + objectAngle + 180;
+
+	pad = calculatePath(4, newGripperAngle); // TODO: evt. +90
 	//printPath(pad);
 	followPath(pad);
 
