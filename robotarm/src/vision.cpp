@@ -53,7 +53,7 @@ uint8_t Vision::calibrate(const Mat& input)
 	s = getTrackbarPos("s", window_name);
 	v = getTrackbarPos("v", window_name);
 
-	cout << "hmin: " << hmin << endl;
+	//cout << "hmin: " << hmin << endl;
 
 	cvtColor(input, out, CV_RGB2HSV);
 
@@ -119,16 +119,16 @@ void Vision::initialize(const string& a_window_name, uint8_t device, bool test)
 	}
 
 	// Loop through six configurations
-	//while (calibrate(src) < 6);
+	while (calibrate(src) < 6);
 
 	if (!get_calibration_square())
 	{
 		cout << "the calibration square was not found. Please restart the program" << endl;
 	}
 
-	cout << "calibrationsquare x: " << calibration_square_properties.center.x << " y: " << calibration_square_properties.center.y << endl;
+	//cout << "calibrationsquare x: " << calibration_square_properties.center.x << " y: " << calibration_square_properties.center.y << endl;
 	//transform_properties(&calibration_square_properties);
-	cout << "calibrationsquare x: " << calibration_square_properties.center.x << " y: " << calibration_square_properties.center.y << endl;
+	//cout << "calibrationsquare x: " << calibration_square_properties.center.x << " y: " << calibration_square_properties.center.y << endl;
 
 
 	max_grabbable_size = 30;
@@ -187,7 +187,7 @@ Mat1b Vision::filter_colour(uint8_t colour_number)
 	return binairy_mat;
 }
 
-vector<pair<vector<Point>, vector<vector<Point>>> > Vision::detect_shape(const Mat1b& input, uint8_t shape)
+vector<pair<vector<Point>, vector<vector<Point>>>> Vision::detect_shape(const Mat1b& input, uint8_t shape)
 {
 	vector<pair<vector<Point>, vector<vector<Point>>>> pairs;
 	vector<vector<Point>> contours;
@@ -225,7 +225,7 @@ vector<pair<vector<Point>, vector<vector<Point>>> > Vision::detect_shape(const M
 				&& isContourConvex(Mat(contours_approxPoly))
 				&& contours_approxPoly.size() == 4)
 		{
-			cout << "i = " << i << endl;
+			//cout << "i = " << i << endl;
 			if(check_rectangle(contours.at(i), contours_approxPoly) == shape)
 			{
 				square_contour = contours.at(i);   //.push_back(contours.at(i));
@@ -324,14 +324,14 @@ void Vision::transform_properties(Properties* properties)
 	{
 
 		properties->center.y = (distance_to_robotbase_y - y_offset_to_calibration_square);
-		cout << "properties object y: " << properties->center.y << endl;
+		//cout << "properties object y: " << properties->center.y << endl;
 
 	}
 	else
 	{
 
 		properties->center.y = (distance_to_robotbase_y + y_offset_to_calibration_square);
-		cout << "properties object y: " << properties->center.y << endl;
+		//cout << "properties object y: " << properties->center.y << endl;
 
 	}
 
@@ -339,7 +339,7 @@ void Vision::transform_properties(Properties* properties)
 	{
 
 		properties->center.x = (distance_to_robotbase_x + x_offset_to_calibration_square);
-		cout << "properties object x: " << properties->center.x << endl;
+		//cout << "properties object x: " << properties->center.x << endl;
 
 	}
 	else
@@ -347,7 +347,7 @@ void Vision::transform_properties(Properties* properties)
 		//properties->center.x = (distance_to_robotbase_x + x_offset_to_calibration_square);
 		//properties->center.y = (distance_to_robotbase_y + y_offset_to_calibration_square);
 		properties->center.x = (distance_to_robotbase_x - x_offset_to_calibration_square);
-		cout << "properties object x: " << properties->center.x << endl;
+		//cout << "properties object x: " << properties->center.x << endl;
 	}
 }
 
@@ -358,11 +358,11 @@ uint8_t Vision::number_selection(uint8_t colour)
 	uint8_t size = 0;
 	selection.clear();
 
-	cout << "got in the number selection" << endl;
+	//cout << "got in the number selection" << endl;
 
 	pairs = detect_shape(filter_colour(colour), BAR);
 
-	cout << "pairs.size = " << pairs.size() << endl;
+	//cout << "pairs.size = " << pairs.size() << endl;
 
 	for(size_t i = 0; i < pairs.size(); i++)
 	{
@@ -415,8 +415,8 @@ bool Vision::get_calibration_square()
 			x_factor = calibration_square_properties.width;
 			y_factor = calibration_square_properties.height;
 
-			cout << "x pixels: " << x_factor << endl;
-			cout << "y pixels: " << y_factor << endl;
+			//cout << "x pixels: " << x_factor << endl;
+			//cout << "y pixels: " << y_factor << endl;
 
 			mm_per_pixel = ((x_factor + y_factor) / 2) / 50;
 
@@ -454,7 +454,7 @@ uint8_t Vision::check_rectangle(const vector<Point>& contour, const vector<Point
 	}
 
 	//if the cosine is small enough, the angle of a corner is near 90 degrees.
-	if (max_cos < 0.2)
+	if (max_cos < 0.3)
 	{
 		// Create a rotatedRect around the detected shape
 		RotatedRect rectangle = minAreaRect(contour);
@@ -487,11 +487,11 @@ uint8_t Vision::check_rectangle(const vector<Point>& contour, const vector<Point
 		}
 		else
 		{
-			cout << "actual outcome of calc: " << fabs((width / height) - 1) << endl;
-			cout << "width of shape: " << width << endl;
-			cout << "height of shape: " << height << endl;
-			cout << "bar found" << endl;
-			cout << "smallest side in mm" << smallest_side << endl;
+			//cout << "actual outcome of calc: " << fabs((width / height) - 1) << endl;
+			//cout << "width of shape: " << width << endl;
+			//cout << "height of shape: " << height << endl;
+			//cout << "bar found" << endl;
+			//cout << "smallest side in mm" << smallest_side << endl;
 			//if(smallest_side <= max_grabbable_size)
 			//{
 			return BAR;

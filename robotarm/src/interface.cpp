@@ -39,6 +39,7 @@ int8_t Interface::parser(bool first_time)
 		if(user_input.length() > 1)
 		{
 			cout << "the input is invalid. Too much information" << endl << endl;
+			spec = NO_COLOUR;
 			return 0;
 		}
 

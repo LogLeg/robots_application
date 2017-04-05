@@ -213,7 +213,7 @@ void RoboticArm::followPath(const std::vector<std::vector<signed short> >& path)
 	std::cout << "x: " << forwardKinematics(0, a, b, getConf().at(1), c, getConf().at(2), d, getConf().at(3)).first << " y: " << forwardKinematics(0, a, b, getConf().at(1), c, getConf().at(2), d, getConf().at(3)).second << std::endl;
 
 	//std::cin.ignore();
-	std::this_thread::sleep_for(std::chrono::milliseconds(2000));
+	std::this_thread::sleep_for(std::chrono::milliseconds(500));
 	ros::NodeHandle n;
 
 	ros::ServiceClient client = n.serviceClient<robotarm::Robot_GoTo>("Robot_GoTo");
@@ -224,7 +224,7 @@ void RoboticArm::followPath(const std::vector<std::vector<signed short> >& path)
 	srv.request.angle4 = getConf().at(3);
 	srv.request.angle5 = getConf().at(4);
 	srv.request.angle6 = getConf().at(5);
-	srv.request.inTime = 2000;
+	srv.request.inTime = 500;
 	if (client.call(srv))
 	{
 

@@ -108,6 +108,10 @@ pair<Properties, Properties> get_coordinates()
 {
 	Properties object_properties;
 	Properties target_properties;
+	uint8_t counter = 0;
+
+	object_properties.height = 999;
+	target_properties.height = 999;
 
 	if(interface.await_input(true) == 1)
 	{
@@ -118,7 +122,16 @@ pair<Properties, Properties> get_coordinates()
 		vision.take_frame(true);
 		uint8_t size = vision.number_selection(interface.get_specification());
 
-		if(size != 0)
+		while(size == 0 && counter < 10)
+		{
+			vision.take_frame(true);
+			vision.number_selection(interface.get_specification());
+			counter++;
+		}
+
+		counter = 0;
+
+		if(size > 0)
 		{
 			if(interface.await_input(false) == 1)
 			{
@@ -126,23 +139,38 @@ pair<Properties, Properties> get_coordinates()
 			}
 			else
 			{
-				if(interface.get_specification() <= size)
+				if(interface.get_specification() < size)
 				{
+					cout << "first after specification" << endl;
 					object_properties = vision.shape2grab(interface.get_specification());
+					cout << "second after specification" << endl;
 
 					cout << "height of selected object = " << vision.shape2grab(interface.get_specification()).height << endl;
 
-					target_properties = vision.get_properties(vision.detect_shape(vision.filter_colour(WHITE), CIRCLE).at(0).first);
+					vector<pair<vector<Point>, vector<vector<Point>>>> circles =  vision.detect_shape(vision.filter_colour(WHITE), CIRCLE);
 
-					vision.transform_properties(&object_properties);
-					//vision.transform_properties(&vision.calibration_square_properties);
-					vision.transform_properties(&target_properties);
+					while(circles.size() == 0 && counter < 10)
+					{
+						vision.take_frame(true);
+						circles = vision.detect_shape(vision.filter_colour(WHITE), CIRCLE);
+						counter++;
+					}
 
-					//object_properties = vision.calibration_square_properties;
+					if(circles.size() != 0)
+					{
+						target_properties = vision.get_properties(circles.at(0).first);
+						cout << "third after specification" << endl;
 
-					cout << "object coordinates are: x: " << object_properties.center.x << " - y: " << object_properties.center.y << endl;
-					cout << "object orientation = " << object_properties.angle << endl;
-					cout << "target coordinates are: x: " << target_properties.center.x << " - y: " << target_properties.center.y << endl;
+						vision.transform_properties(&object_properties);
+						//vision.transform_properties(&vision.calibration_square_properties);
+						vision.transform_properties(&target_properties);
+
+						//object_properties = vision.calibration_square_properties;
+
+						cout << "object coordinates are: x: " << object_properties.center.x << " - y: " << object_properties.center.y << endl;
+						cout << "object orientation = " << object_properties.angle << endl;
+						cout << "target coordinates are: x: " << target_properties.center.x << " - y: " << target_properties.center.y << endl;
+					}
 				}
 			}
 		}
@@ -156,7 +184,7 @@ pair<Properties, Properties> get_coordinates()
 
 void fn()
 {
-	cout << "fn start" << endl;
+	//cout << "fn start" << endl;
 	//while(true)
 	//{
 	//	vision.show_image();
@@ -166,12 +194,18 @@ void fn()
 	//{
 	//	cout << i << endl;
 	//}
+	pair<Properties, Properties> objects;
+
 	while(running)
 	{
-		move(get_coordinates());
+		objects = get_coordinates();
+		if(objects.first.height != 999 || objects.second.height != 999)
+		{
+			move(objects);
+		}
 	}
 	
-	cout << "fn end" << endl;
+	//cout << "fn end" << endl;
 }
 
 /*
