@@ -110,8 +110,8 @@ pair<Properties, Properties> get_coordinates()
 	Properties target_properties;
 	uint8_t counter = 0;
 
-	object_properties.height = 999;
-	target_properties.height = 999;
+	object_properties.height = 0;
+	target_properties.height = 0;
 
 	if(interface.await_input(true) == 1)
 	{
@@ -125,7 +125,7 @@ pair<Properties, Properties> get_coordinates()
 		while(size == 0 && counter < 10)
 		{
 			vision.take_frame(true);
-			vision.number_selection(interface.get_specification());
+			size = vision.number_selection(interface.get_specification());
 			counter++;
 		}
 
@@ -141,9 +141,7 @@ pair<Properties, Properties> get_coordinates()
 			{
 				if(interface.get_specification() < size)
 				{
-					cout << "first after specification" << endl;
 					object_properties = vision.shape2grab(interface.get_specification());
-					cout << "second after specification" << endl;
 
 					cout << "height of selected object = " << vision.shape2grab(interface.get_specification()).height << endl;
 
@@ -162,10 +160,7 @@ pair<Properties, Properties> get_coordinates()
 						cout << "third after specification" << endl;
 
 						vision.transform_properties(&object_properties);
-						//vision.transform_properties(&vision.calibration_square_properties);
 						vision.transform_properties(&target_properties);
-
-						//object_properties = vision.calibration_square_properties;
 
 						cout << "object coordinates are: x: " << object_properties.center.x << " - y: " << object_properties.center.y << endl;
 						cout << "object orientation = " << object_properties.angle << endl;
@@ -184,50 +179,14 @@ pair<Properties, Properties> get_coordinates()
 
 void fn()
 {
-	//cout << "fn start" << endl;
-	//while(true)
-	//{
-	//	vision.show_image();
-		//cout << "dit zou vaak voorbij moeten komen" << endl;
-	//}
-	//for(int i = 0; i < 100; i++)
-	//{
-	//	cout << i << endl;
-	//}
 	pair<Properties, Properties> objects;
 
 	while(running)
 	{
 		objects = get_coordinates();
-		if(objects.first.height != 999 || objects.second.height != 999)
+		if(objects.first.height != 0 || objects.second.height != 0)
 		{
 			move(objects);
 		}
 	}
-	
-	//cout << "fn end" << endl;
 }
-
-/*
- * blokje opppakken:
- * (1) vind blokje positie&rotatie
- * (2) base&gripper goed roteren & gripper openen
- * (3) ga naar 2 cm boven blokje & gripper naar beneden richten
- * (4) ga naar beneden & gripper dichtknijpen
- * (5) ga naar 2 cm boven grond
- */
-
-/*
- * Blokje neerleggen:
- * (1) vind de cirkel
- * (2) base roteren
- * (3) ga naar 2cm boven cirkel
- * (4) zakken naar grond & gripper loslaten
- * (5) ga naar ready positie
- */
-
-/*
- * paden achter elkaar plakken voor concurrency
- * unit-testen
- * controleren of gripper bij blokje kan komen
- */

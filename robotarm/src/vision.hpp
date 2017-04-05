@@ -142,8 +142,6 @@ public:
 	 */
 	Properties shape2grab(uint8_t shape);
 
-	Properties calibration_square_properties;
-
 private:
 	/**
 	 * @brief This function will search for a specific calibration square in the picture and will adjust the pixel to mm ratio to that. It will
@@ -195,7 +193,7 @@ private:
 
 	vector<vector<Point>> selection;
 	vector<Point> calibration_square;
-	//Properties calibration_square_properties;
+	Properties calibration_square_properties;
 
 	/**
 	 * @brief vector with the colours from above.
@@ -212,7 +210,7 @@ private:
 	 */
 	VideoCapture cap;
 
-	/*
+	/**
 	 * @brief Mat objects to manipulate and copy into.
 	 */
 	Mat src;
@@ -237,91 +235,4 @@ private:
 	 * @brief maximal grabbable size in mm
 	 */
 	double max_grabbable_size;
-
-
-
-
-
-
-
-
-
-
-
-
-	/**
-	 * @brief used to calibrate the colour edges
-	 * @param input Mat object to scan
-	 * @return the number of calibrations done
-	 */
-	//uint8_t calibrate(const Mat& input);
-
-	/**
-	 * @brief This function returns the total computing time of the colour and shape detection.
-	 * @return total computation time in ticks
-	 */
-	//clock_t get_total_detection_time();
-
-	/**
-	 * Function dedicated to finding colours
-	 * @param colour parameter to select a colour
-	 * @return return true when the colour is found
-	 */
-	//bool detect_colour(uint8_t colour);
-
-	/**
-	 * Function dedicated to finding shapes
-	 * @param shape parameter to select a colour
-	 * @return return true when the shape is found
-	 */
-	//bool detect_shape(uint8_t shape);
-
-	/**
-	 * @brief This function will draw useful data to a Mat object
-	 * @param batch if batch is true, data will be written to cout instead of the Mat object
-	 */
-	//void draw_data(bool batch);
-
-	/**
-	 * @brief Detect rectangles and bars by checking if the corners of a shape with 4 corners are all ~90 degrees.
-	 * @param contours_approxPoly vector from @see detect_shape()
-	 * @param iterator iterator variable from @see detect_shape()
-	 * @return shape
-	 */
-	//uint8_t detect_rectangles(const vector<Point>& contours_approxPoly, const size_t& iterator);
-
-	/**
-	 * @brief Detect circles and half circles by calculating the difference between the real area and a calculated area. Also uses houghCircles for
-	 * detecting half circles.
-	 * @param input a mat from @see detect_shape()
-	 * @param iterator iterator variable from @see detect_shape()
-	 * @return shape
-	 */
-	//uint8_t detect_circles(const Mat& input, const size_t& iterator);
-
-	/**
-	 * @brief Function dedicated to search for half circles. Calculates how much of a circle is present in a shape.
-	 * @param input mat object from @see detect_shape()
-	 * @return shape
-	 */
-	//uint8_t hough_circle(const Mat& input);
-
-
-
-
-	/**
-	 * @brief time variables to return the total time afterwards.
-	 */
-	//clock_t colour_time;
-	//clock_t shape_time;
-
-
-
-
-//	Mat information;
-
-	/**
-	 * @brief The position at which the desired shape is located in the contours vector
-	 */
-	//int8_t actual_contour;
 };
