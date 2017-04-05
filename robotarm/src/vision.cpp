@@ -314,24 +314,38 @@ void Vision::transform_properties(Properties* properties)
 	x_offset_to_calibration_square *= pixels_per_mm;
 	y_offset_to_calibration_square *= pixels_per_mm;
 
-	if(properties->center.x > calibration_square_properties.center.x)
+	if(properties->center.y > calibration_square_properties.center.y)
 	{
-		if(properties->center.x < 0)
+		if(properties->center.y < 0)
 		{
-			properties->center.x = 0 - (distance_to_robotbase_x - x_offset_to_calibration_square);
+			//properties->center.y = 0 -(distance_to_robotbase_y - y_offset_to_calibration_square);
 		}
 		else
 		{
-			properties->center.x = (distance_to_robotbase_x - x_offset_to_calibration_square);
+			properties->center.y = (distance_to_robotbase_y + y_offset_to_calibration_square);
 		}
-
+	}
+	else
+	{
 		if(properties->center.y < 0)
 		{
-			properties->center.y = 0 -(distance_to_robotbase_y - y_offset_to_calibration_square);
+			//properties->center.y = 0 -(distance_to_robotbase_y + y_offset_to_calibration_square);
 		}
 		else
 		{
 			properties->center.y = (distance_to_robotbase_y - y_offset_to_calibration_square);
+		}
+	}
+
+	if(properties->center.x > calibration_square_properties.center.x)
+	{
+		if(properties->center.x < 0)
+		{
+			//properties->center.x = 0 - (distance_to_robotbase_x - x_offset_to_calibration_square);
+		}
+		else
+		{
+			properties->center.x = (distance_to_robotbase_x + x_offset_to_calibration_square);
 		}
 
 	}
@@ -341,21 +355,14 @@ void Vision::transform_properties(Properties* properties)
 		//properties->center.y = (distance_to_robotbase_y + y_offset_to_calibration_square);
 		if(properties->center.x < 0)
 		{
-			properties->center.x = 0 - (distance_to_robotbase_x + x_offset_to_calibration_square);
+			//properties->center.x = 0 - (distance_to_robotbase_x + x_offset_to_calibration_square);
 		}
 		else
 		{
-			properties->center.x = (distance_to_robotbase_x + x_offset_to_calibration_square);
+			properties->center.x = (distance_to_robotbase_x - x_offset_to_calibration_square);
 		}
 
-		if(properties->center.y < 0)
-		{
-			properties->center.y = 0 -(distance_to_robotbase_y + y_offset_to_calibration_square);
-		}
-		else
-		{
-			properties->center.y = (distance_to_robotbase_y + y_offset_to_calibration_square);
-		}
+
 	}
 }
 
