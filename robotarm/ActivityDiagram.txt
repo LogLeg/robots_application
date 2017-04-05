@@ -1,0 +1,30 @@
+@startuml
+
+title Activity Diagram \n
+
+start
+
+:Kalibreren kleuren;
+
+repeat
+    :Zoeken opgegeven kleur;
+    
+    :Selecteren object;
+    
+    :Verplaatsen object;
+    
+    note left
+        * Open gripper
+        * Ga naar boven object
+        * Ga naar beneden en sluit gripper
+        * Ga weer wat omhoog
+        * Ga naar boven target positie
+        * Zak naar grond en open gripper
+        * Ga naar boven target positie
+        * Ga naar park positie
+    end note
+repeat while(nog een object verplaatsen?)
+
+stop
+
+@enduml
