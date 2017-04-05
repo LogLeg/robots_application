@@ -105,7 +105,7 @@ void Vision::initialize(const string& a_window_name, uint8_t device, bool test)
 	}
 	else
 	{
-		src = imread("tabletop3.jpg", 1);
+		src = imread("tabletop1.jpg", 1);
 
 		if (src.empty())
 		{
@@ -177,6 +177,7 @@ vector<pair<vector<Point>, vector<vector<Point>>>> Vision::detect_shape(const Ma
 	vector<Point> square_contour;
 	vector<vector<Point>> nested_contours;
 	vector<Vec4i> hierarchy;
+	int counter = 0;
 
 	/// Find contours
 	findContours(input, contours, hierarchy, CV_RETR_TREE, CV_CHAIN_APPROX_SIMPLE, Point(0, 0));
@@ -187,6 +188,7 @@ vector<pair<vector<Point>, vector<vector<Point>>>> Vision::detect_shape(const Ma
 	//Loop through all the detected shapes.
 	for(size_t i = 0; i < contours.size(); i++)
 	{
+
 		// Here the count of corners actually happens.
 		approxPolyDP(Mat(contours.at(i)), contours_approxPoly, arcLength(Mat(contours[i]), true)*0.02, true);
 
@@ -194,6 +196,7 @@ vector<pair<vector<Point>, vector<vector<Point>>>> Vision::detect_shape(const Ma
 		{
 			circle(screenshot_rgb, contours_approxPoly.at(j), 3, Scalar(0, 0, 255));
 		}
+		drawContours(screenshot_rgb, contours, counter, Scalar(0, 255, 0), 1, 8, hierarchy, 1, Point());
 
 		// Only check what a shape is when the contour is fully connected from begin to end and when the area is larger that 100.
 		if( fabs(contourArea(Mat(contours_approxPoly))) > 10
@@ -205,7 +208,7 @@ vector<pair<vector<Point>, vector<vector<Point>>>> Vision::detect_shape(const Ma
 				square_contour = contours.at(i);   //.push_back(contours.at(i));
 				for(size_t j = 0; j < hierarchy.size(); j++)
 				{
-					if(hierarchy[j][3] == i)
+					if(hierarchy[j][3] == counter)
 					{
 						if(hierarchy[j][0] == -1 && hierarchy[j][1] != -1)
 						{
@@ -234,12 +237,9 @@ vector<pair<vector<Point>, vector<vector<Point>>>> Vision::detect_shape(const Ma
 				}
 			}
 		}
+		counter++;
 	}
 
-	for(int i = 0; i < contours.size(); i++)
-	{
-		drawContours(screenshot_rgb, contours, i, Scalar(0, 255, 0), 1, 8, hierarchy, 1, Point());
-	}
 	return pairs;
 }
 
@@ -254,8 +254,8 @@ Properties Vision::get_properties(const vector<Point>& contour)
 
 	shape.angle = rectangle.angle;
 
-	shape.width = rectangle.size.width;
-	shape.height = rectangle.size.height;
+	shape.width = (int)rectangle.size.width;
+	shape.height = (int)rectangle.size.height;
 
 	if (shape.width > shape.height)
 	{
@@ -424,15 +424,9 @@ uint8_t Vision::check_rectangle(const vector<Point>& contour, const vector<Point
 
 bool Vision::detect_circle(const vector<Point>& contour)
 {
-	Rect rectangle = boundingRect(contour);
-	int height = rectangle.height;
-	int width = rectangle.width;
-
 	//get the actual area of the shape and also a calculated area of a circle with the same diameter.
 	double contour_area = contourArea(contour);
 	double circle_area = (M_PI * pow(mm_per_pixel * 50, 2));
-
-	Properties props = get_properties(contour);
 
 	// Check if detected shape has almost the same area as a calculated circle with the same diameter.
 	// Also check if the circle is not an ellipse or something like that.

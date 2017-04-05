@@ -7,7 +7,7 @@
 
 #include "interface.hpp"
 
-Interface::Interface()
+Interface::Interface() : specification(0)
 {
 
 }
@@ -28,7 +28,7 @@ string Interface::input()
 int8_t Interface::parser(bool first_time)
 {
 	string user_input = "";
-	uint8_t spec = 0;
+	int spec = 0;
 
 	user_input = input();
 
@@ -75,11 +75,9 @@ int8_t Interface::parser(bool first_time)
 			spec = user_input[0] - '0';
 		}
 
-		specification = spec;
+		specification = (uint8_t)spec;
 
 		cout << "spec = " << spec << endl;
-
-		//print_specification();
 	}
 	else
 	{
