@@ -65,7 +65,7 @@ bool RoboticArm::moveObject(signed long objectX, unsigned long objectY, signed s
 
 	//(4) ga naar beneden & gripper dichtknijpen
 	armGoto(objectX, objectY, objectHeight, objectAngle);
-	setGripperValue(objectWidth - 5); //TODO: knijpkracht afstellen
+	setGripperValue(/*objectWidth - 5*/5); //TODO: knijpkracht afstellen
 
 	//(5) ga naar 2 cm boven grond
 	armGoto(objectX, objectY, hoverHeight, 0);

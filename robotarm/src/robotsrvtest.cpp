@@ -135,7 +135,10 @@ pair<Properties, Properties> get_coordinates()
 					target_properties = vision.get_properties(vision.detect_shape(vision.filter_colour(WHITE), CIRCLE).at(0).first);
 
 					vision.transform_properties(&object_properties);
+					//vision.transform_properties(&vision.calibration_square_properties);
 					vision.transform_properties(&target_properties);
+
+					//object_properties = vision.calibration_square_properties;
 
 					cout << "object coordinates are: x: " << object_properties.center.x << " - y: " << object_properties.center.y << endl;
 					cout << "object orientation = " << object_properties.angle << endl;

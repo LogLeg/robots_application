@@ -142,6 +142,8 @@ public:
 	 */
 	Properties shape2grab(uint8_t shape);
 
+	Properties calibration_square_properties;
+
 private:
 	/**
 	 * @brief This function will search for a specific calibration square in the picture and will adjust the pixel to mm ratio to that. It will
@@ -193,7 +195,7 @@ private:
 
 	vector<vector<Point>> selection;
 	vector<Point> calibration_square;
-	Properties calibration_square_properties;
+	//Properties calibration_square_properties;
 
 	/**
 	 * @brief vector with the colours from above.
@@ -223,7 +225,7 @@ private:
 	/**
 	 * @brief Pixels per mm
 	 */
-	double pixels_per_mm;
+	double mm_per_pixel;
 
 	/**
 	 * @brief translation to the robotbase in mm

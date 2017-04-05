@@ -13,9 +13,9 @@ Vision::Vision() :
 		output(Size(1280, 480), CV_8UC3),
 		binairy_mat_final(Size(640, 480), CV_8UC1),
 		drawing(Size(640, 480), CV_8UC3),
-		distance_to_robotbase_x(187),
-		distance_to_robotbase_y(0),
-		pixels_per_mm(0)
+		distance_to_robotbase_x(0),
+		distance_to_robotbase_y(187),
+		mm_per_pixel(0)
 {
 	set_colour_values();
 }
@@ -308,69 +308,46 @@ void Vision::transform_properties(Properties* properties)
 	double x_offset_to_calibration_square = fabs(calibration_square_properties.center.x - properties->center.x);
 	double y_offset_to_calibration_square = fabs(calibration_square_properties.center.y - properties->center.y);
 
-	cout << "calibration_square_properties.center.x: " << calibration_square_properties.center.x << endl;
-	cout << "properties->center.x: " << properties->center.x << endl;
+//	cout << "calibration_square_properties.center.x: " << calibration_square_properties.center.x << endl;
+//	cout << "properties->center.x: " << properties->center.x << endl;
+//
+//	cout << "x_offset_to_calibration_square: " << x_offset_to_calibration_square << endl;
+//	cout << "y_offset_to_calibration_square: " << y_offset_to_calibration_square << endl;
 
-	cout << "x_offset_to_calibration_square: " << x_offset_to_calibration_square << endl;
-	cout << "y_offset_to_calibration_square: " << y_offset_to_calibration_square << endl;
+	x_offset_to_calibration_square /= mm_per_pixel;
+	y_offset_to_calibration_square /= mm_per_pixel;
 
-	x_offset_to_calibration_square *= pixels_per_mm;
-	y_offset_to_calibration_square *= pixels_per_mm;
-
-	cout << "x_offset_to_calibration_square: " << x_offset_to_calibration_square << endl;
-	cout << "y_offset_to_calibration_square: " << y_offset_to_calibration_square << endl;
+//	cout << "x_offset_to_calibration_square: " << x_offset_to_calibration_square << endl;
+//	cout << "y_offset_to_calibration_square: " << y_offset_to_calibration_square << endl;
 
 	if(properties->center.y > calibration_square_properties.center.y)
 	{
-		if(properties->center.y < 0)
-		{
-			//properties->center.y = 0 -(distance_to_robotbase_y - y_offset_to_calibration_square);
-		}
-		else
-		{
-			properties->center.y = (distance_to_robotbase_y - y_offset_to_calibration_square);
-			cout << "properties object y: " << properties->center.y << endl;
-		}
+
+		properties->center.y = (distance_to_robotbase_y - y_offset_to_calibration_square);
+		cout << "properties object y: " << properties->center.y << endl;
+
 	}
 	else
 	{
-		if (properties->center.y < 0)
-		{
-			//properties->center.y = 0 -(distance_to_robotbase_y + y_offset_to_calibration_square);
-		}
-		else
-		{
-			properties->center.y = (distance_to_robotbase_y + y_offset_to_calibration_square);
-			cout << "properties object y: " << properties->center.y << endl;
-		}
+
+		properties->center.y = (distance_to_robotbase_y + y_offset_to_calibration_square);
+		cout << "properties object y: " << properties->center.y << endl;
+
 	}
 
 	if (properties->center.x > calibration_square_properties.center.x)
 	{
-		if (properties->center.x < 0)
-		{
-			//properties->center.x = 0 - (distance_to_robotbase_x - x_offset_to_calibration_square);
-		}
-		else
-		{
-			properties->center.x = (distance_to_robotbase_x - x_offset_to_calibration_square);
-			cout << "properties object x: " << properties->center.x << endl;
-		}
+
+		properties->center.x = (distance_to_robotbase_x + x_offset_to_calibration_square);
+		cout << "properties object x: " << properties->center.x << endl;
 
 	}
 	else
 	{
 		//properties->center.x = (distance_to_robotbase_x + x_offset_to_calibration_square);
 		//properties->center.y = (distance_to_robotbase_y + y_offset_to_calibration_square);
-		if (properties->center.x < 0)
-		{
-			//properties->center.x = 0 - (distance_to_robotbase_x + x_offset_to_calibration_square);
-		}
-		else
-		{
-			properties->center.x = (distance_to_robotbase_x + x_offset_to_calibration_square);
-			cout << "properties object x: " << properties->center.x << endl;
-		}
+		properties->center.x = (distance_to_robotbase_x - x_offset_to_calibration_square);
+		cout << "properties object x: " << properties->center.x << endl;
 	}
 }
 
@@ -441,7 +418,7 @@ bool Vision::get_calibration_square()
 			cout << "x pixels: " << x_factor << endl;
 			cout << "y pixels: " << y_factor << endl;
 
-			pixels_per_mm = ((x_factor + y_factor) / 2) / 50;
+			mm_per_pixel = ((x_factor + y_factor) / 2) / 50;
 
 			return true;
 		}
@@ -497,7 +474,7 @@ uint8_t Vision::check_rectangle(const vector<Point>& contour, const vector<Point
 			smallest_side = width;
 		}
 
-		smallest_side *= pixels_per_mm;
+		smallest_side /= mm_per_pixel;
 
 		// If the aspect ratio of the shape is near zero, it must be a square, if not, must be a bar
 		if (fabs((width / height) - 1) < 0.1)
@@ -532,7 +509,7 @@ bool Vision::detect_circle(const vector<Point>& contour)
 
 	//get the actual area of the shape and also a calculated area of a circle with the same diameter.
 	double contour_area = contourArea(contour);
-	double circle_area = (M_PI * pow(pixels_per_mm * 50, 2));
+	double circle_area = (M_PI * pow(mm_per_pixel * 50, 2));
 
 	Properties props = get_properties(contour);
 
