@@ -8,7 +8,14 @@
 #include "vision.hpp"
 
 Vision::Vision() :
-		src(Size(640, 480), CV_8UC3), feed_gray(Size(640, 480), CV_8UC1), output(Size(1280, 480), CV_8UC3), binairy_mat_final(Size(640, 480), CV_8UC1), drawing(Size(640, 480), CV_8UC3), distance_to_robotbase_x(0), distance_to_robotbase_y(187), pixels_per_mm(0)
+		src(Size(640, 480), CV_8UC3),
+		feed_gray(Size(640, 480), CV_8UC1),
+		output(Size(1280, 480), CV_8UC3),
+		binairy_mat_final(Size(640, 480), CV_8UC1),
+		drawing(Size(640, 480), CV_8UC3),
+		distance_to_robotbase_x(187),
+		distance_to_robotbase_y(0),
+		pixels_per_mm(0)
 {
 	set_colour_values();
 }
@@ -102,7 +109,7 @@ void Vision::initialize(const string& a_window_name, uint8_t device, bool test)
 	}
 	else
 	{
-		src = imread("home/sidney/catkin_ws/src/robotarm/tabletop1.jpg", 1);
+		src = imread("tabletop3.jpg", 1);
 
 		if (src.empty())
 		{
@@ -112,13 +119,17 @@ void Vision::initialize(const string& a_window_name, uint8_t device, bool test)
 	}
 
 	// Loop through six configurations
-	while (calibrate(src) < 6)
-		;
+	//while (calibrate(src) < 6);
 
 	if (!get_calibration_square())
 	{
 		cout << "the calibration square was not found. Please restart the program" << endl;
 	}
+
+	cout << "calibrationsquare x: " << calibration_square_properties.center.x << " y: " << calibration_square_properties.center.y << endl;
+	//transform_properties(&calibration_square_properties);
+	cout << "calibrationsquare x: " << calibration_square_properties.center.x << " y: " << calibration_square_properties.center.y << endl;
+
 
 	max_grabbable_size = 30;
 }
@@ -297,8 +308,17 @@ void Vision::transform_properties(Properties* properties)
 	double x_offset_to_calibration_square = fabs(calibration_square_properties.center.x - properties->center.x);
 	double y_offset_to_calibration_square = fabs(calibration_square_properties.center.y - properties->center.y);
 
+	cout << "calibration_square_properties.center.x: " << calibration_square_properties.center.x << endl;
+	cout << "properties->center.x: " << properties->center.x << endl;
+
+	cout << "x_offset_to_calibration_square: " << x_offset_to_calibration_square << endl;
+	cout << "y_offset_to_calibration_square: " << y_offset_to_calibration_square << endl;
+
 	x_offset_to_calibration_square *= pixels_per_mm;
 	y_offset_to_calibration_square *= pixels_per_mm;
+
+	cout << "x_offset_to_calibration_square: " << x_offset_to_calibration_square << endl;
+	cout << "y_offset_to_calibration_square: " << y_offset_to_calibration_square << endl;
 
 	if(properties->center.y > calibration_square_properties.center.y)
 	{
@@ -308,7 +328,8 @@ void Vision::transform_properties(Properties* properties)
 		}
 		else
 		{
-			properties->center.y = (distance_to_robotbase_y + y_offset_to_calibration_square);
+			properties->center.y = (distance_to_robotbase_y - y_offset_to_calibration_square);
+			cout << "properties object y: " << properties->center.y << endl;
 		}
 	}
 	else
@@ -319,7 +340,8 @@ void Vision::transform_properties(Properties* properties)
 		}
 		else
 		{
-			properties->center.y = (distance_to_robotbase_y - y_offset_to_calibration_square);
+			properties->center.y = (distance_to_robotbase_y + y_offset_to_calibration_square);
+			cout << "properties object y: " << properties->center.y << endl;
 		}
 	}
 
@@ -331,7 +353,8 @@ void Vision::transform_properties(Properties* properties)
 		}
 		else
 		{
-			properties->center.x = (distance_to_robotbase_x + x_offset_to_calibration_square);
+			properties->center.x = (distance_to_robotbase_x - x_offset_to_calibration_square);
+			cout << "properties object x: " << properties->center.x << endl;
 		}
 
 	}
@@ -345,7 +368,8 @@ void Vision::transform_properties(Properties* properties)
 		}
 		else
 		{
-			properties->center.x = (distance_to_robotbase_x - x_offset_to_calibration_square);
+			properties->center.x = (distance_to_robotbase_x + x_offset_to_calibration_square);
+			cout << "properties object x: " << properties->center.x << endl;
 		}
 	}
 }
