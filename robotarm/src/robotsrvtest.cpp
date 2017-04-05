@@ -11,6 +11,8 @@
 #include <iostream>
 #include <cmath>
 #include <thread>
+#include <boost/thread/thread.hpp>
+
 #include "RoboticArm.hpp"
 #include "AStar.hpp"
 #include "Size.hpp"
@@ -31,7 +33,6 @@ Interface interface = Interface();
 bool running = true;
 
 pair<Properties, Properties> get_coordinates();
-
 void fn();
 
 void mySleep(unsigned long milliseconds)
@@ -47,6 +48,21 @@ int main(int argc, char **argv)
 {
 	try
 	{
+		
+		vision.initialize("something", 0, false);
+		boost::thread thread_b(fn);
+		
+
+		while(running)
+		{
+			vision.show_image();
+			
+			
+		}
+
+		thread_b.join();
+
+
 		ros::init(argc, argv, "RotboArmBesturing_client");
 		RoboticArm robotArm(70, 146, 187, 115, Servo
 		{ -90, 90 }, Servo
@@ -130,10 +146,22 @@ pair<Properties, Properties> get_coordinates()
 
 void fn()
 {
+	cout << "fn start" << endl;
+	//while(true)
+	//{
+	//	vision.show_image();
+		//cout << "dit zou vaak voorbij moeten komen" << endl;
+	//}
+	//for(int i = 0; i < 100; i++)
+	//{
+	//	cout << i << endl;
+	//}
 	while(running)
 	{
-		vision.show_image();
+		get_coordinates();
 	}
+	
+	cout << "fn end" << endl;
 }
 
 /*

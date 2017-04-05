@@ -63,7 +63,7 @@ void Vision::initialize(const string& a_window_name, uint8_t device, bool test)
 
 void Vision::show_image()
 {
-	//take_frame(true);
+	take_frame(false);
 
 	//TODO temp!
 	Mat kaas;
@@ -74,7 +74,7 @@ void Vision::show_image()
 	src.copyTo(output(Rect(0, 0, 640, 480)));
 	kaas.copyTo(output(Rect(640, 0, 640, 480)));
 	drawing.copyTo(output(Rect(0, 480, 640, 480)));
-	//information.copyTo(output(Rect(640, 480, 640, 480)));
+	screenshot_rgb.copyTo(output(Rect(640, 480, 640, 480)));
 
 	imshow(window_name, output);
 
@@ -84,13 +84,16 @@ void Vision::show_image()
 
 void Vision::take_frame(bool screenshot)
 {
+	Mat HSV;
+
 	if(!screenshot)
 	{
 		cap >> src;
 	}
 	else
 	{
-		screenshot_rgb = src;
+		cvtColor(src, HSV, CV_RGB2HSV);
+		cvtColor(HSV, screenshot_rgb, CV_HSV2RGB);
 	}
 }
 
@@ -212,7 +215,6 @@ vector<pair<vector<Point>, vector<vector<Point>>>> Vision::detect_shape(const Ma
 Properties Vision::get_properties(const vector<Point>& contour)
 {
 	Properties shape;
-	Moments mu;
 
 	// Create a rotatedRect around the detected shape
 	RotatedRect rectangle = minAreaRect(contour);
@@ -221,15 +223,15 @@ Properties Vision::get_properties(const vector<Point>& contour)
 
 	shape.angle = rectangle.angle;
 
+	shape.width = rectangle.size.width;
+	shape.height = rectangle.size.height;
 
+	if(shape.width > shape.height)
+	{
+		shape.angle += 90;
+	}
 
-	// Get the width and height of the rotatedRect
-	shape.width = norm(corners[0] - corners[1]);
-	shape.height = norm(corners[0] - corners[3]);
-
-	mu = moments(contour, false);
-
-	shape.center = Point2d(mu.m10/mu.m00, mu.m01/mu.m00);
+	shape.center = rectangle.center;
 
 	return shape;
 }
