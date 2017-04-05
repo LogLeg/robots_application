@@ -29,6 +29,13 @@
 
 Vision vision = Vision();
 Interface interface = Interface();
+RoboticArm robotArm(70, 146, 187, 115, Servo
+		{ -90, 90 }, Servo
+		{ -30, 90 }, Servo
+		{ 0, 135 }, Servo
+		{ -90, 90 }, Servo
+		{ -90, 90 }, Servo
+		{ 0, 30 });
 
 bool running = true;
 
@@ -48,8 +55,11 @@ int main(int argc, char **argv)
 {
 	try
 	{
-		
-		vision.initialize("something", 0, false);
+		ros::init(argc, argv, "RotboArmBesturing_client");
+
+		robotArm.setConf(std::vector<signed short>
+		{ 0, -30, 110, 90, 0, 5 }); //{ 0, -30, 110, 90, 0, 5 }); //{ 0, 0, 0, 0, 0, 0 });
+		vision.initialize("something", 1, false);
 		boost::thread thread_b(fn);
 		
 
@@ -63,38 +73,35 @@ int main(int argc, char **argv)
 		thread_b.join();
 
 
-		ros::init(argc, argv, "RotboArmBesturing_client");
-		RoboticArm robotArm(70, 146, 187, 115, Servo
-		{ -90, 90 }, Servo
-		{ -30, 90 }, Servo
-		{ 0, 135 }, Servo
-		{ -90, 90 }, Servo
-		{ -90, 90 }, Servo
-		{ 0, 30 });
-		robotArm.setConf(std::vector<signed short>
-		{ 0, -30, 110, 90, 0, 5 }); //{ 0, -30, 110, 90, 0, 5 }); //{ 0, 0, 0, 0, 0, 0 });
+
 
 		//(1) vind blokje positie&rotatie
-		const int objectX = -83; 	//object X in mm
-		const int objectY = 300;	//object Y in mm
-		const int objectangle = 0;	//object angle in degrees
-		const int objectwidth = 15;	//object windth in mm
-		const int circelX = 160;	//circel center X
-		const int circelY = 250;	//circel center Y
+//		const int objectX = -83; 	//object X in mm
+//		const int objectY = 300;	//object Y in mm
+//		const int objectangle = 0;	//object angle in degrees
+//		const int objectwidth = 15;	//object windth in mm
+//		const int circelX = 160;	//circel center X
+//		const int circelY = 250;	//circel center Y
 
-		if (robotArm.moveObject(objectX, objectY, objectangle, objectwidth, circelX, circelY))
-		{
 
-		}else{
-			std::cerr << "\033[1;31mMove object failed\033[0m\n" << std::endl;
-		}
-		robotArm.gotoPark();
 
 	} catch (std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
 	}
 	return 0;
+}
+
+void move(pair<Properties, Properties> robotworld)
+{
+	if (robotArm.moveObject(robotworld.first.center.x, robotworld.first.center.y,
+		robotworld.first.angle, robotworld.first.width, robotworld.second.center.x, robotworld.second.center.y))
+	{
+
+	}else{
+		std::cerr << "\033[1;31mMove object failed\033[0m\n" << std::endl;
+	}
+	robotArm.gotoPark();
 }
 
 pair<Properties, Properties> get_coordinates()
@@ -158,7 +165,7 @@ void fn()
 	//}
 	while(running)
 	{
-		get_coordinates();
+		move(get_coordinates());
 	}
 	
 	cout << "fn end" << endl;

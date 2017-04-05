@@ -74,6 +74,13 @@ public:
 	~Vision();
 
 	/**
+	 * @brief used to calibrate the colour edges
+	 * @param input Mat object to scan
+	 * @return the number of calibrations done
+	 */
+	uint8_t calibrate(const Mat& input);
+
+	/**
 	 * @brief This function will initialize the camera and will set additional parameters that depend on what the camera sees. Like calibrating the pixels per mm
 	 * @param window_name The abaility to set a custom window name
 	 * @param device the webcam that should be used
@@ -207,6 +214,7 @@ private:
 	 * @brief Mat objects to manipulate and copy into.
 	 */
 	Mat src;
+	Mat feed_gray;
 	Mat screenshot_rgb;
 	Mat output;
 	Mat drawing;

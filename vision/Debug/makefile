@@ -44,7 +44,7 @@ all: robots_application
 robots_application: $(OBJS) $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: GCC C++ Linker'
-	g++ -L/usr/local/lib -o "robots_application" $(OBJS) $(USER_OBJS) $(LIBS)
+	g++  -o "robots_application" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

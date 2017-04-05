@@ -8,7 +8,8 @@
 #include "vision.hpp"
 
 Vision::Vision() : src(Size(640, 480), CV_8UC3),
-				   output(Size(640, 960), CV_8UC3),
+				   feed_gray(Size(640, 480), CV_8UC1),
+				   output(Size(1280, 480), CV_8UC3),
 				   binairy_mat_final(Size(640, 480), CV_8UC1),
 				   drawing(Size(640, 480), CV_8UC3),
 				   distance_to_robotbase_x(0),
@@ -22,6 +23,70 @@ Vision::~Vision()
 {
 
 }
+
+uint8_t Vision::calibrate(const Mat& input)
+{
+	static uint8_t number_of_calibrations = 0;
+	Mat out;
+
+	int hmin = 0;
+	int smin = 0;
+	int vmin = 0;
+	int h = 0;
+	int s = 0;
+	int v = 0;
+
+	cout << "please select the " << colours.at(number_of_calibrations).name << " colour" << endl;
+
+	createTrackbar("hmin", window_name, &hmin, 180);
+	createTrackbar("smin", window_name, &smin, 255);
+	createTrackbar("vmin", window_name, &vmin, 255);
+	createTrackbar("h", window_name, &h, 180);
+	createTrackbar("s", window_name, &s, 255);
+	createTrackbar("v", window_name, &v, 255);
+
+	hmin = getTrackbarPos("hmin", window_name);
+	smin = getTrackbarPos("smin", window_name);
+	vmin = getTrackbarPos("vmin", window_name);
+	h = getTrackbarPos("h", window_name);
+	s = getTrackbarPos("s", window_name);
+	v = getTrackbarPos("v", window_name);
+
+	cout << "hmin: " << hmin << endl;
+
+	cvtColor(input, out, CV_RGB2HSV);
+
+	inRange(out, Scalar(hmin, smin, vmin), Scalar(h, s, v), feed_gray);
+
+	if(waitKey(1) == 97) // press a to continue
+	{
+		colours.at(number_of_calibrations).hue_min = hmin;
+		colours.at(number_of_calibrations).sat_min = smin;
+		colours.at(number_of_calibrations).val_min = vmin;
+		colours.at(number_of_calibrations).hue_max = h;
+		colours.at(number_of_calibrations).sat_max = s;
+		colours.at(number_of_calibrations).val_max = v;
+
+		destroyAllWindows();
+		feed_gray = Mat::zeros(src.size(), CV_8UC1);
+		number_of_calibrations++;
+		//boost::this_thread::sleep( boost::posix_time::seconds(1) );
+		//this_thread::sleep_for(std::chrono::milliseconds(500)); // <-- change to boost thread!
+	}
+	else if(waitKey(1) == 98) //press a to stop
+	{
+		destroyAllWindows();
+		feed_gray = Mat::zeros(src.size(), CV_8UC1);
+		number_of_calibrations = 7;
+	}
+
+	cvtColor(feed_gray, screenshot_rgb, CV_GRAY2BGR);
+
+	show_image();
+
+	return number_of_calibrations;
+}
+
 
 void Vision::initialize(const string& a_window_name, uint8_t device, bool test)
 {
@@ -53,6 +118,9 @@ void Vision::initialize(const string& a_window_name, uint8_t device, bool test)
 		}
 	}
 
+	// Loop through six configurations
+	while(calibrate(src) < 6);
+
 	if(!get_calibration_square())
 	{
 		cout << "the calibration square was not found. Please restart the program" << endl;
@@ -69,6 +137,8 @@ void Vision::show_image()
 	//Mat kaas;
 
 	//cvtColor(binairy_mat_final, kaas, CV_GRAY2BGR);
+
+
 
 
 	src.copyTo(output(Rect(0, 0, 640, 480)));
