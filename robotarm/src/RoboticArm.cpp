@@ -258,7 +258,7 @@ void RoboticArm::armGoto(signed long z, unsigned long x, unsigned long y, signed
 bool RoboticArm::gotoPark()
 {
 	configuration = std::vector<signed short>
-	{ 0, -30, 110, 90, 0, 5 };
+	{ -90, -30, 110, 90, 90, 5 };
 	std::cout << "0: " << getConf().at(0);
 	std::cout << " 1: " << getConf().at(1);
 	std::cout << " 2: " << getConf().at(2);
