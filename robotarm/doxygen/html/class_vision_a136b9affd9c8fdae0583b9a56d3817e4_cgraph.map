@@ -1,6 +1,3 @@
 <map id="Vision::shape2grab" name="Vision::shape2grab">
 <area shape="rect" id="node2" href="$class_vision.html#a41e694aef79da35cad92f9e57ecdea4e" title="This function will return the properties of a given contour. " alt="" coords="187,5,335,32"/>
-<area shape="rect" id="node3" href="$class_vision.html#afbaa5efe06c5af3d82fb4fc133788b5b" title="This function will get the stream from the webcam and put it into the src Mat. " alt="" coords="195,56,326,83"/>
-<area shape="rect" id="node4" href="$class_vision.html#ac61f35fd2d78031d96986b8db8daf257" title="This function will find contours that meet the shape that has been given with the function..." alt="" coords="189,107,333,133"/>
-<area shape="rect" id="node5" href="$class_vision.html#a10439f626238ba3628534e55f80e59b1" title="This function will filter a colour out of the. " alt="" coords="194,157,327,184"/>
 </map>

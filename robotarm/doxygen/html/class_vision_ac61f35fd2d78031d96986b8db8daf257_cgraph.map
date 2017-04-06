@@ -1,0 +1,6 @@
+<map id="Vision::detect_shape" name="Vision::detect_shape">
+<area shape="rect" id="node2" href="$class_vision.html#a2b78b716ed430b2f9d09ea918e752e6b" title="This function will check if the given contour actually contains corners with 90 degrees and after tha..." alt="" coords="197,5,359,32"/>
+<area shape="rect" id="node4" href="$class_vision.html#a72b289b68ecb074480f27733dff5eab0" title="This function detects circles. Only used to determine the target position of a shape. " alt="" coords="208,56,348,83"/>
+<area shape="rect" id="node3" href="$class_vision.html#a985c230f753e693678b1c808204c746b" title="Vision::angle" alt="" coords="432,5,529,32"/>
+<area shape="rect" id="node5" href="$class_vision.html#a41e694aef79da35cad92f9e57ecdea4e" title="This function will return the properties of a given contour. " alt="" coords="407,56,555,83"/>
+</map>

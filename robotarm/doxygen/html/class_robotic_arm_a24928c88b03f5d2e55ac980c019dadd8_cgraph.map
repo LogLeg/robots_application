@@ -1,0 +1,24 @@
+<map id="RoboticArm::setGripperAngle" name="RoboticArm::setGripperAngle">
+<area shape="rect" id="node2" href="$class_robotic_arm.html#ae925ea4c5ea53ca359399a07d0ef4f76" title="calculate a path of configurations " alt="" coords="245,920,424,947"/>
+<area shape="rect" id="node22" href="$class_robotic_arm.html#a976b1c8a1f85f64818182490073d4c5c" title="arm follow path " alt="" coords="255,971,415,997"/>
+<area shape="rect" id="node3" href="$class_robotic_arm.html#a549f24f349105a6b5130eb237d737132" title="forward kinematics, calculate X&amp;Y point for angles &amp; lengths for 2dof " alt="" coords="1156,920,1363,947"/>
+<area shape="rect" id="node4" href="$class_path_algorithm_1_1_a_star.html#aee41b31ec44b02f6dc94889d228a3582" title="PathAlgorithm::AStar\l::search" alt="" coords="472,457,617,498"/>
+<area shape="rect" id="node5" href="$class_path_algorithm_1_1_a_star.html#a48e23107ffca02392bdf2439775baecf" title="PathAlgorithm::AStar\l::getOS" alt="" coords="691,175,836,217"/>
+<area shape="rect" id="node6" href="$class_path_algorithm_1_1_a_star.html#a4cb2a6c928a01fcac02533500bd8ace5" title="PathAlgorithm::AStar\l::getCS" alt="" coords="691,241,836,282"/>
+<area shape="rect" id="node7" href="$class_path_algorithm_1_1_a_star.html#a4bb6718fd07f503ff836c5cdccd74236" title="PathAlgorithm::AStar\l::getPM" alt="" coords="691,306,836,347"/>
+<area shape="rect" id="node8" href="$namespace_path_algorithm.html#a2e4474691c7ebd46c7238f2c53b0e543" title="PathAlgorithm::HeuristicCost" alt="" coords="667,372,859,399"/>
+<area shape="rect" id="node9" href="$class_path_algorithm_1_1_a_star.html#a63f88f24acf7bf34cd060051134c9190" title="PathAlgorithm::AStar\l::addToOpenSet" alt="" coords="691,423,836,465"/>
+<area shape="rect" id="node10" href="$struct_path_algorithm_1_1_vertex.html#a1548704fc5f1f4e829f419c2416667d9" title="PathAlgorithm::Vertex\l::approxEqualPoint" alt="" coords="688,489,839,530"/>
+<area shape="rect" id="node11" href="$namespace_path_algorithm.html#a1b72e8125a5f9fa31d3130c816f1a03f" title="PathAlgorithm::ConstructPath" alt="" coords="665,555,861,581"/>
+<area shape="rect" id="node12" href="$class_path_algorithm_1_1_a_star.html#a53139e4b3cd3971a2bf85a430e83378f" title="PathAlgorithm::AStar\l::addToClosedSet" alt="" coords="691,606,836,647"/>
+<area shape="rect" id="node13" href="$class_path_algorithm_1_1_a_star.html#a5bb18edbbd54833aac9eddfe63ba652d" title="PathAlgorithm::AStar\l::removeFirstFromOpenSet" alt="" coords="673,671,853,713"/>
+<area shape="rect" id="node14" href="$namespace_path_algorithm.html#a8f0c4453fa932953ae67e31855f68197" title="PathAlgorithm::GetNeighbour\lConnections" alt="" coords="667,854,859,895"/>
+<area shape="rect" id="node16" href="$namespace_path_algorithm.html#a303daba8d3a083b341d1f4a799c3d5e4" title="PathAlgorithm::ActualCost" alt="" coords="675,737,852,764"/>
+<area shape="rect" id="node17" href="$class_path_algorithm_1_1_a_star.html#ae78bfebdee31135fdfb2f302347f962f" title="PathAlgorithm::AStar\l::findInOpenSet" alt="" coords="936,29,1081,70"/>
+<area shape="rect" id="node19" href="$class_path_algorithm_1_1_a_star.html#afcc23a676145d6e280d1c3430af5380a" title="PathAlgorithm::AStar\l::removeFromOpenSet" alt="" coords="686,58,841,99"/>
+<area shape="rect" id="node20" href="$class_path_algorithm_1_1_a_star.html#a73d9639e838fd55bb392d01238fc967a" title="PathAlgorithm::AStar\l::findInClosedSet" alt="" coords="936,453,1081,494"/>
+<area shape="rect" id="node21" href="$class_path_algorithm_1_1_a_star.html#a1b6971a9c5878e859cbdb3270dda93b4" title="PathAlgorithm::AStar\l::removeFromClosedSet" alt="" coords="681,789,845,830"/>
+<area shape="rect" id="node15" href="$namespace_path_algorithm.html#ae4490c66af669f70064a693a8d7a889e" title="PathAlgorithm::GetNeighbours" alt="" coords="909,865,1108,892"/>
+<area shape="rect" id="node18" href="$struct_path_algorithm_1_1_vertex.html#a64aa2913bc0e1d1511a452c5d800803a" title="PathAlgorithm::Vertex\l::equalPoint" alt="" coords="1184,29,1335,70"/>
+<area shape="rect" id="node23" href="$class_robotic_arm.html#a18d2147e468f8026f301f1d96d040ea5" title="RoboticArm::getConf" alt="" coords="472,1021,617,1048"/>
+</map>

@@ -108,6 +108,8 @@ $(document).ready(function(){initNavTree('class_robotic_arm.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_robotic_arm-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">RoboticArm Class Reference</div>  </div>
@@ -120,7 +122,9 @@ Collaboration diagram for RoboticArm:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_robotic_arm__coll__graph.png" border="0" usemap="#_robotic_arm_coll__map" alt="Collaboration graph"/></div>
 <map name="_robotic_arm_coll__map" id="_robotic_arm_coll__map">
-<area shape="rect" id="node2" href="struct_servo.html" title="Servo" alt="" coords="23,5,79,32"/>
+<area shape="rect" id="node2" href="struct_servo.html" title="Servo" alt="" coords="23,184,79,211"/>
+<area shape="rect" id="node3" href="class_robot_serial.html" title="RobotSerial" alt="" coords="5,95,96,121"/>
+<area shape="rect" id="node5" href="struct_position.html" title="Position" alt="" coords="103,184,172,211"/>
 </map>
 <center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
@@ -146,7 +150,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:ade404a134912096fb363fa90ea0cd927"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a472bb97d5867b86add81326010da2f0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_position.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robotic_arm.html#a472bb97d5867b86add81326010da2f0f">getPos</a> () const </td></tr>
 <tr class="separator:a472bb97d5867b86add81326010da2f0f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad3f7fcafa4909fee1db198353434e987"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robotic_arm.html#ad3f7fcafa4909fee1db198353434e987">setPos</a> (<a class="el" href="struct_position.html">Position</a> pos)</td></tr>
+<tr class="memitem:ad3f7fcafa4909fee1db198353434e987"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robotic_arm.html#ad3f7fcafa4909fee1db198353434e987">setPos</a> (<a class="el" href="struct_position.html">Position</a> <a class="el" href="class_robotic_arm.html#a8f6a5bea331874cfae234e6b97f6dec5">pos</a>)</td></tr>
 <tr class="separator:ad3f7fcafa4909fee1db198353434e987"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a18d2147e468f8026f301f1d96d040ea5"><td class="memItemLeft" align="right" valign="top">const std::vector&lt; signed short &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robotic_arm.html#a18d2147e468f8026f301f1d96d040ea5">getConf</a> () const </td></tr>
 <tr class="separator:a18d2147e468f8026f301f1d96d040ea5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,6 +179,40 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a393711dcc74eb1fba3f9e544cd2bb771"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4816473ed62d262e2a29590769e82f10"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_servo.html">Servo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robotic_arm.html#a4816473ed62d262e2a29590769e82f10">s6</a></td></tr>
 <tr class="separator:a4816473ed62d262e2a29590769e82f10"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a0d6a6dce0875c8540e5589c47aab5be3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robotic_arm.html#a0d6a6dce0875c8540e5589c47aab5be3">armGoto</a> (signed long z, unsigned long x, unsigned long y, signed short objectAngle)</td></tr>
+<tr class="memdesc:a0d6a6dce0875c8540e5589c47aab5be3"><td class="mdescLeft">&#160;</td><td class="mdescRight">go to xyz position and turn gripper  <a href="#a0d6a6dce0875c8540e5589c47aab5be3">More...</a><br /></td></tr>
+<tr class="separator:a0d6a6dce0875c8540e5589c47aab5be3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6ca035bd87d2c0cb1a6f7f040ad0ed52"><td class="memItemLeft" align="right" valign="top">std::pair&lt; unsigned long, signed short &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robotic_arm.html#a6ca035bd87d2c0cb1a6f7f040ad0ed52">convertToXAngle</a> (signed long x, unsigned long y)</td></tr>
+<tr class="memdesc:a6ca035bd87d2c0cb1a6f7f040ad0ed52"><td class="mdescLeft">&#160;</td><td class="mdescRight">convert x&amp;y from vision to X&amp;Angle  <a href="#a6ca035bd87d2c0cb1a6f7f040ad0ed52">More...</a><br /></td></tr>
+<tr class="separator:a6ca035bd87d2c0cb1a6f7f040ad0ed52"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae925ea4c5ea53ca359399a07d0ef4f76"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; signed short &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robotic_arm.html#ae925ea4c5ea53ca359399a07d0ef4f76">calculatePath</a> (std::vector&lt; signed short &gt; inputConf, <a class="el" href="structrobot_point_1_1_point.html">robotPoint::Point</a> endPoint)</td></tr>
+<tr class="memdesc:ae925ea4c5ea53ca359399a07d0ef4f76"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculate a path of configurations  <a href="#ae925ea4c5ea53ca359399a07d0ef4f76">More...</a><br /></td></tr>
+<tr class="separator:ae925ea4c5ea53ca359399a07d0ef4f76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71b4a844f3bc02bb36d6c18d808b80ce"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::vector&lt; signed short &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robotic_arm.html#a71b4a844f3bc02bb36d6c18d808b80ce">calculatePath</a> (unsigned char phi, signed short endValue)</td></tr>
+<tr class="memdesc:a71b4a844f3bc02bb36d6c18d808b80ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">make linear path of configurations  <a href="#a71b4a844f3bc02bb36d6c18d808b80ce">More...</a><br /></td></tr>
+<tr class="separator:a71b4a844f3bc02bb36d6c18d808b80ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86204f659fe875af142cc1d817e562bf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robotic_arm.html#a86204f659fe875af142cc1d817e562bf">printPath</a> (std::vector&lt; std::vector&lt; signed short &gt;&gt; confs)</td></tr>
+<tr class="memdesc:a86204f659fe875af142cc1d817e562bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">print path (verctor of configurations)  <a href="#a86204f659fe875af142cc1d817e562bf">More...</a><br /></td></tr>
+<tr class="separator:a86204f659fe875af142cc1d817e562bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a976b1c8a1f85f64818182490073d4c5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robotic_arm.html#a976b1c8a1f85f64818182490073d4c5c">followPath</a> (const std::vector&lt; std::vector&lt; signed short &gt;&gt; &amp;path)</td></tr>
+<tr class="memdesc:a976b1c8a1f85f64818182490073d4c5c"><td class="mdescLeft">&#160;</td><td class="mdescRight">arm follow path  <a href="#a976b1c8a1f85f64818182490073d4c5c">More...</a><br /></td></tr>
+<tr class="separator:a976b1c8a1f85f64818182490073d4c5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24928c88b03f5d2e55ac980c019dadd8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robotic_arm.html#a24928c88b03f5d2e55ac980c019dadd8">setGripperAngle</a> (signed short angle)</td></tr>
+<tr class="memdesc:a24928c88b03f5d2e55ac980c019dadd8"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the angle of the gripper  <a href="#a24928c88b03f5d2e55ac980c019dadd8">More...</a><br /></td></tr>
+<tr class="separator:a24928c88b03f5d2e55ac980c019dadd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b15b0eb40028d3524bae3a52552bd85"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robotic_arm.html#a5b15b0eb40028d3524bae3a52552bd85">setGripperValue</a> (signed short width)</td></tr>
+<tr class="memdesc:a5b15b0eb40028d3524bae3a52552bd85"><td class="mdescLeft">&#160;</td><td class="mdescRight">set the size of the gripper  <a href="#a5b15b0eb40028d3524bae3a52552bd85">More...</a><br /></td></tr>
+<tr class="separator:a5b15b0eb40028d3524bae3a52552bd85"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:af618e34115514462d09020049c7e8ee9"><td class="memItemLeft" align="right" valign="top">std::vector&lt; signed short &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robotic_arm.html#af618e34115514462d09020049c7e8ee9">configuration</a></td></tr>
+<tr class="separator:af618e34115514462d09020049c7e8ee9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8f6a5bea331874cfae234e6b97f6dec5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_position.html">Position</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robotic_arm.html#a8f6a5bea331874cfae234e6b97f6dec5">pos</a></td></tr>
+<tr class="separator:a8f6a5bea331874cfae234e6b97f6dec5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -286,6 +324,365 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a class="anchor" id="a0d6a6dce0875c8540e5589c47aab5be3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RoboticArm::armGoto </td>
+          <td>(</td>
+          <td class="paramtype">signed long&#160;</td>
+          <td class="paramname"><em>z</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">signed short&#160;</td>
+          <td class="paramname"><em>objectAngle</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>go to xyz position and turn gripper </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">z</td><td>z-axis of robotarm X from top down view </td></tr>
+    <tr><td class="paramname">x</td><td>x-axis of robotarm Y from top down view </td></tr>
+    <tr><td class="paramname">Y</td><td>y-axis of robotarm no top down view- height of gripper. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_robotic_arm_8cpp_source.html#l00240">240</a> of file <a class="el" href="_robotic_arm_8cpp_source.html">RoboticArm.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_robotic_arm_a0d6a6dce0875c8540e5589c47aab5be3_cgraph.png" border="0" usemap="#class_robotic_arm_a0d6a6dce0875c8540e5589c47aab5be3_cgraph" alt=""/></div>
+<map name="class_robotic_arm_a0d6a6dce0875c8540e5589c47aab5be3_cgraph" id="class_robotic_arm_a0d6a6dce0875c8540e5589c47aab5be3_cgraph">
+<area shape="rect" id="node2" href="class_robotic_arm.html#a6ca035bd87d2c0cb1a6f7f040ad0ed52" title="convert x&amp;y from vision to X&amp;Angle " alt="" coords="203,869,401,896"/>
+<area shape="rect" id="node3" href="class_robotic_arm.html#ae925ea4c5ea53ca359399a07d0ef4f76" title="calculate a path of configurations " alt="" coords="213,920,391,947"/>
+<area shape="rect" id="node23" href="class_robotic_arm.html#a976b1c8a1f85f64818182490073d4c5c" title="arm follow path " alt="" coords="222,971,382,997"/>
+<area shape="rect" id="node4" href="class_robotic_arm.html#a549f24f349105a6b5130eb237d737132" title="forward kinematics, calculate X&amp;Y point for angles &amp; lengths for 2dof " alt="" coords="1133,920,1340,947"/>
+<area shape="rect" id="node5" href="class_path_algorithm_1_1_a_star.html#aee41b31ec44b02f6dc94889d228a3582" title="PathAlgorithm::AStar\l::search" alt="" coords="449,457,595,498"/>
+<area shape="rect" id="node6" href="class_path_algorithm_1_1_a_star.html#a48e23107ffca02392bdf2439775baecf" title="PathAlgorithm::AStar\l::getOS" alt="" coords="668,175,813,217"/>
+<area shape="rect" id="node7" href="class_path_algorithm_1_1_a_star.html#a4cb2a6c928a01fcac02533500bd8ace5" title="PathAlgorithm::AStar\l::getCS" alt="" coords="668,241,813,282"/>
+<area shape="rect" id="node8" href="class_path_algorithm_1_1_a_star.html#a4bb6718fd07f503ff836c5cdccd74236" title="PathAlgorithm::AStar\l::getPM" alt="" coords="668,306,813,347"/>
+<area shape="rect" id="node9" href="namespace_path_algorithm.html#a2e4474691c7ebd46c7238f2c53b0e543" title="PathAlgorithm::HeuristicCost" alt="" coords="645,372,837,399"/>
+<area shape="rect" id="node10" href="class_path_algorithm_1_1_a_star.html#a63f88f24acf7bf34cd060051134c9190" title="PathAlgorithm::AStar\l::addToOpenSet" alt="" coords="668,423,813,465"/>
+<area shape="rect" id="node11" href="struct_path_algorithm_1_1_vertex.html#a1548704fc5f1f4e829f419c2416667d9" title="PathAlgorithm::Vertex\l::approxEqualPoint" alt="" coords="665,489,816,530"/>
+<area shape="rect" id="node12" href="namespace_path_algorithm.html#a1b72e8125a5f9fa31d3130c816f1a03f" title="PathAlgorithm::ConstructPath" alt="" coords="643,555,839,581"/>
+<area shape="rect" id="node13" href="class_path_algorithm_1_1_a_star.html#a53139e4b3cd3971a2bf85a430e83378f" title="PathAlgorithm::AStar\l::addToClosedSet" alt="" coords="668,606,813,647"/>
+<area shape="rect" id="node14" href="class_path_algorithm_1_1_a_star.html#a5bb18edbbd54833aac9eddfe63ba652d" title="PathAlgorithm::AStar\l::removeFirstFromOpenSet" alt="" coords="651,671,831,713"/>
+<area shape="rect" id="node15" href="namespace_path_algorithm.html#a8f0c4453fa932953ae67e31855f68197" title="PathAlgorithm::GetNeighbour\lConnections" alt="" coords="645,854,837,895"/>
+<area shape="rect" id="node17" href="namespace_path_algorithm.html#a303daba8d3a083b341d1f4a799c3d5e4" title="PathAlgorithm::ActualCost" alt="" coords="652,737,829,764"/>
+<area shape="rect" id="node18" href="class_path_algorithm_1_1_a_star.html#ae78bfebdee31135fdfb2f302347f962f" title="PathAlgorithm::AStar\l::findInOpenSet" alt="" coords="913,29,1059,70"/>
+<area shape="rect" id="node20" href="class_path_algorithm_1_1_a_star.html#afcc23a676145d6e280d1c3430af5380a" title="PathAlgorithm::AStar\l::removeFromOpenSet" alt="" coords="663,58,818,99"/>
+<area shape="rect" id="node21" href="class_path_algorithm_1_1_a_star.html#a73d9639e838fd55bb392d01238fc967a" title="PathAlgorithm::AStar\l::findInClosedSet" alt="" coords="913,453,1059,494"/>
+<area shape="rect" id="node22" href="class_path_algorithm_1_1_a_star.html#a1b6971a9c5878e859cbdb3270dda93b4" title="PathAlgorithm::AStar\l::removeFromClosedSet" alt="" coords="659,789,823,830"/>
+<area shape="rect" id="node16" href="namespace_path_algorithm.html#ae4490c66af669f70064a693a8d7a889e" title="PathAlgorithm::GetNeighbours" alt="" coords="887,865,1085,892"/>
+<area shape="rect" id="node19" href="struct_path_algorithm_1_1_vertex.html#a64aa2913bc0e1d1511a452c5d800803a" title="PathAlgorithm::Vertex\l::equalPoint" alt="" coords="1161,29,1312,70"/>
+<area shape="rect" id="node24" href="class_robotic_arm.html#a18d2147e468f8026f301f1d96d040ea5" title="RoboticArm::getConf" alt="" coords="449,1021,595,1048"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_robotic_arm_a0d6a6dce0875c8540e5589c47aab5be3_icgraph.png" border="0" usemap="#class_robotic_arm_a0d6a6dce0875c8540e5589c47aab5be3_icgraph" alt=""/></div>
+<map name="class_robotic_arm_a0d6a6dce0875c8540e5589c47aab5be3_icgraph" id="class_robotic_arm_a0d6a6dce0875c8540e5589c47aab5be3_icgraph">
+<area shape="rect" id="node2" href="class_robotic_arm.html#ad9add36d9fad6da469f30d1ffd867e63" title="move object to specified destination " alt="" coords="203,5,372,32"/>
+<area shape="rect" id="node3" href="robotsrvtest_8cpp.html#acd84dd8c07feb65438228cb762a437e7" title="move" alt="" coords="420,5,475,32"/>
+<area shape="rect" id="node4" href="robotsrvtest_8cpp.html#ad9d0e397081801b3c81f84aef014b9ca" title="fn" alt="" coords="523,5,561,32"/>
+<area shape="rect" id="node5" href="robotsrvtest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="609,5,660,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ae925ea4c5ea53ca359399a07d0ef4f76"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; signed short &gt; &gt; RoboticArm::calculatePath </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; signed short &gt;&#160;</td>
+          <td class="paramname"><em>inputConf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structrobot_point_1_1_point.html">robotPoint::Point</a>&#160;</td>
+          <td class="paramname"><em>endPoint</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>calculate a path of configurations </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">inputConf</td><td>start configuration </td></tr>
+    <tr><td class="paramname">endpoint</td><td>point where the arm goes to </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>a path of configurations </dd></dl>
+
+<p>Definition at line <a class="el" href="_robotic_arm_8cpp_source.html#l00087">87</a> of file <a class="el" href="_robotic_arm_8cpp_source.html">RoboticArm.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_robotic_arm_ae925ea4c5ea53ca359399a07d0ef4f76_cgraph.png" border="0" usemap="#class_robotic_arm_ae925ea4c5ea53ca359399a07d0ef4f76_cgraph" alt=""/></div>
+<map name="class_robotic_arm_ae925ea4c5ea53ca359399a07d0ef4f76_cgraph" id="class_robotic_arm_ae925ea4c5ea53ca359399a07d0ef4f76_cgraph">
+<area shape="rect" id="node2" href="class_robotic_arm.html#a549f24f349105a6b5130eb237d737132" title="forward kinematics, calculate X&amp;Y point for angles &amp; lengths for 2dof " alt="" coords="916,138,1123,165"/>
+<area shape="rect" id="node3" href="class_path_algorithm_1_1_a_star.html#aee41b31ec44b02f6dc94889d228a3582" title="PathAlgorithm::AStar\l::search" alt="" coords="232,435,377,476"/>
+<area shape="rect" id="node4" href="class_path_algorithm_1_1_a_star.html#a48e23107ffca02392bdf2439775baecf" title="PathAlgorithm::AStar\l::getOS" alt="" coords="451,33,596,75"/>
+<area shape="rect" id="node5" href="class_path_algorithm_1_1_a_star.html#a4cb2a6c928a01fcac02533500bd8ace5" title="PathAlgorithm::AStar\l::getCS" alt="" coords="451,99,596,140"/>
+<area shape="rect" id="node6" href="class_path_algorithm_1_1_a_star.html#a4bb6718fd07f503ff836c5cdccd74236" title="PathAlgorithm::AStar\l::getPM" alt="" coords="451,164,596,205"/>
+<area shape="rect" id="node7" href="namespace_path_algorithm.html#a2e4474691c7ebd46c7238f2c53b0e543" title="PathAlgorithm::HeuristicCost" alt="" coords="427,230,619,257"/>
+<area shape="rect" id="node8" href="class_path_algorithm_1_1_a_star.html#a63f88f24acf7bf34cd060051134c9190" title="PathAlgorithm::AStar\l::addToOpenSet" alt="" coords="451,281,596,323"/>
+<area shape="rect" id="node9" href="struct_path_algorithm_1_1_vertex.html#a1548704fc5f1f4e829f419c2416667d9" title="PathAlgorithm::Vertex\l::approxEqualPoint" alt="" coords="448,347,599,388"/>
+<area shape="rect" id="node10" href="namespace_path_algorithm.html#a1b72e8125a5f9fa31d3130c816f1a03f" title="PathAlgorithm::ConstructPath" alt="" coords="425,413,621,439"/>
+<area shape="rect" id="node11" href="class_path_algorithm_1_1_a_star.html#a53139e4b3cd3971a2bf85a430e83378f" title="PathAlgorithm::AStar\l::addToClosedSet" alt="" coords="451,464,596,505"/>
+<area shape="rect" id="node12" href="class_path_algorithm_1_1_a_star.html#a5bb18edbbd54833aac9eddfe63ba652d" title="PathAlgorithm::AStar\l::removeFirstFromOpenSet" alt="" coords="433,529,613,571"/>
+<area shape="rect" id="node13" href="namespace_path_algorithm.html#a8f0c4453fa932953ae67e31855f68197" title="PathAlgorithm::GetNeighbour\lConnections" alt="" coords="427,595,619,636"/>
+<area shape="rect" id="node15" href="namespace_path_algorithm.html#a303daba8d3a083b341d1f4a799c3d5e4" title="PathAlgorithm::ActualCost" alt="" coords="435,661,612,687"/>
+<area shape="rect" id="node16" href="class_path_algorithm_1_1_a_star.html#ae78bfebdee31135fdfb2f302347f962f" title="PathAlgorithm::AStar\l::findInOpenSet" alt="" coords="696,747,841,788"/>
+<area shape="rect" id="node18" href="class_path_algorithm_1_1_a_star.html#afcc23a676145d6e280d1c3430af5380a" title="PathAlgorithm::AStar\l::removeFromOpenSet" alt="" coords="446,763,601,804"/>
+<area shape="rect" id="node19" href="class_path_algorithm_1_1_a_star.html#a73d9639e838fd55bb392d01238fc967a" title="PathAlgorithm::AStar\l::findInClosedSet" alt="" coords="696,837,841,879"/>
+<area shape="rect" id="node20" href="class_path_algorithm_1_1_a_star.html#a1b6971a9c5878e859cbdb3270dda93b4" title="PathAlgorithm::AStar\l::removeFromClosedSet" alt="" coords="441,880,605,921"/>
+<area shape="rect" id="node14" href="namespace_path_algorithm.html#ae4490c66af669f70064a693a8d7a889e" title="PathAlgorithm::GetNeighbours" alt="" coords="669,447,868,474"/>
+<area shape="rect" id="node17" href="struct_path_algorithm_1_1_vertex.html#a64aa2913bc0e1d1511a452c5d800803a" title="PathAlgorithm::Vertex\l::equalPoint" alt="" coords="944,747,1095,788"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_robotic_arm_ae925ea4c5ea53ca359399a07d0ef4f76_icgraph.png" border="0" usemap="#class_robotic_arm_ae925ea4c5ea53ca359399a07d0ef4f76_icgraph" alt=""/></div>
+<map name="class_robotic_arm_ae925ea4c5ea53ca359399a07d0ef4f76_icgraph" id="class_robotic_arm_ae925ea4c5ea53ca359399a07d0ef4f76_icgraph">
+<area shape="rect" id="node2" href="class_robotic_arm.html#a5b15b0eb40028d3524bae3a52552bd85" title="set the size of the gripper " alt="" coords="232,5,424,32"/>
+<area shape="rect" id="node7" href="class_robotic_arm.html#a24928c88b03f5d2e55ac980c019dadd8" title="set the angle of the gripper " alt="" coords="232,56,424,83"/>
+<area shape="rect" id="node8" href="class_robotic_arm.html#a0d6a6dce0875c8540e5589c47aab5be3" title="go to xyz position and turn gripper " alt="" coords="253,107,403,133"/>
+<area shape="rect" id="node3" href="class_robotic_arm.html#ad9add36d9fad6da469f30d1ffd867e63" title="move object to specified destination " alt="" coords="472,56,641,83"/>
+<area shape="rect" id="node4" href="robotsrvtest_8cpp.html#acd84dd8c07feb65438228cb762a437e7" title="move" alt="" coords="689,56,744,83"/>
+<area shape="rect" id="node5" href="robotsrvtest_8cpp.html#ad9d0e397081801b3c81f84aef014b9ca" title="fn" alt="" coords="792,56,831,83"/>
+<area shape="rect" id="node6" href="robotsrvtest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="879,56,929,83"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a71b4a844f3bc02bb36d6c18d808b80ce"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; std::vector&lt; signed short &gt; &gt; RoboticArm::calculatePath </td>
+          <td>(</td>
+          <td class="paramtype">unsigned char&#160;</td>
+          <td class="paramname"><em>phi</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">signed short&#160;</td>
+          <td class="paramname"><em>endValue</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>make linear path of configurations </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">phi</td><td>servo that goes to endValue </td></tr>
+    <tr><td class="paramname">endValue</td><td>last value of path </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_robotic_arm_8cpp_source.html#l00133">133</a> of file <a class="el" href="_robotic_arm_8cpp_source.html">RoboticArm.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6ca035bd87d2c0cb1a6f7f040ad0ed52"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::pair&lt; unsigned long, signed short &gt; RoboticArm::convertToXAngle </td>
+          <td>(</td>
+          <td class="paramtype">signed long&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>y</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>convert x&amp;y from vision to X&amp;Angle </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">x</td><td>x from opencv </td></tr>
+    <tr><td class="paramname">y</td><td>y from opencv </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>X&amp;angle of robotarm </dd></dl>
+
+<p>Definition at line <a class="el" href="_robotic_arm_8cpp_source.html#l00234">234</a> of file <a class="el" href="_robotic_arm_8cpp_source.html">RoboticArm.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_robotic_arm_a6ca035bd87d2c0cb1a6f7f040ad0ed52_icgraph.png" border="0" usemap="#class_robotic_arm_a6ca035bd87d2c0cb1a6f7f040ad0ed52_icgraph" alt=""/></div>
+<map name="class_robotic_arm_a6ca035bd87d2c0cb1a6f7f040ad0ed52_icgraph" id="class_robotic_arm_a6ca035bd87d2c0cb1a6f7f040ad0ed52_icgraph">
+<area shape="rect" id="node2" href="class_robotic_arm.html#ad9add36d9fad6da469f30d1ffd867e63" title="move object to specified destination " alt="" coords="449,5,619,32"/>
+<area shape="rect" id="node6" href="class_robotic_arm.html#a0d6a6dce0875c8540e5589c47aab5be3" title="go to xyz position and turn gripper " alt="" coords="252,31,401,57"/>
+<area shape="rect" id="node3" href="robotsrvtest_8cpp.html#acd84dd8c07feb65438228cb762a437e7" title="move" alt="" coords="667,5,721,32"/>
+<area shape="rect" id="node4" href="robotsrvtest_8cpp.html#ad9d0e397081801b3c81f84aef014b9ca" title="fn" alt="" coords="769,5,808,32"/>
+<area shape="rect" id="node5" href="robotsrvtest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="856,5,907,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a976b1c8a1f85f64818182490073d4c5c"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RoboticArm::followPath </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::vector&lt; signed short &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>path</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>arm follow path </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">path</td><td>path to follow </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_robotic_arm_8cpp_source.html#l00203">203</a> of file <a class="el" href="_robotic_arm_8cpp_source.html">RoboticArm.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_robotic_arm_a976b1c8a1f85f64818182490073d4c5c_cgraph.png" border="0" usemap="#class_robotic_arm_a976b1c8a1f85f64818182490073d4c5c_cgraph" alt=""/></div>
+<map name="class_robotic_arm_a976b1c8a1f85f64818182490073d4c5c_cgraph" id="class_robotic_arm_a976b1c8a1f85f64818182490073d4c5c_cgraph">
+<area shape="rect" id="node2" href="class_robotic_arm.html#a18d2147e468f8026f301f1d96d040ea5" title="RoboticArm::getConf" alt="" coords="244,5,389,32"/>
+<area shape="rect" id="node3" href="class_robotic_arm.html#a549f24f349105a6b5130eb237d737132" title="forward kinematics, calculate X&amp;Y point for angles &amp; lengths for 2dof " alt="" coords="213,56,420,83"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_robotic_arm_a976b1c8a1f85f64818182490073d4c5c_icgraph.png" border="0" usemap="#class_robotic_arm_a976b1c8a1f85f64818182490073d4c5c_icgraph" alt=""/></div>
+<map name="class_robotic_arm_a976b1c8a1f85f64818182490073d4c5c_icgraph" id="class_robotic_arm_a976b1c8a1f85f64818182490073d4c5c_icgraph">
+<area shape="rect" id="node2" href="class_robotic_arm.html#a5b15b0eb40028d3524bae3a52552bd85" title="set the size of the gripper " alt="" coords="213,5,405,32"/>
+<area shape="rect" id="node7" href="class_robotic_arm.html#a24928c88b03f5d2e55ac980c019dadd8" title="set the angle of the gripper " alt="" coords="213,56,405,83"/>
+<area shape="rect" id="node8" href="class_robotic_arm.html#a0d6a6dce0875c8540e5589c47aab5be3" title="go to xyz position and turn gripper " alt="" coords="235,107,384,133"/>
+<area shape="rect" id="node3" href="class_robotic_arm.html#ad9add36d9fad6da469f30d1ffd867e63" title="move object to specified destination " alt="" coords="453,56,623,83"/>
+<area shape="rect" id="node4" href="robotsrvtest_8cpp.html#acd84dd8c07feb65438228cb762a437e7" title="move" alt="" coords="671,56,725,83"/>
+<area shape="rect" id="node5" href="robotsrvtest_8cpp.html#ad9d0e397081801b3c81f84aef014b9ca" title="fn" alt="" coords="773,56,812,83"/>
+<area shape="rect" id="node6" href="robotsrvtest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="860,56,911,83"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
 <a class="anchor" id="a549f24f349105a6b5130eb237d737132"></a>
 <div class="memitem">
 <div class="memproto">
@@ -354,12 +751,19 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_robotic_arm_a549f24f349105a6b5130eb237d737132_icgraph.png" border="0" usemap="#class_robotic_arm_a549f24f349105a6b5130eb237d737132_icgraph" alt=""/></div>
 <map name="class_robotic_arm_a549f24f349105a6b5130eb237d737132_icgraph" id="class_robotic_arm_a549f24f349105a6b5130eb237d737132_icgraph">
-<area shape="rect" id="node2" href="namespace_path_algorithm.html#ae4490c66af669f70064a693a8d7a889e" title="PathAlgorithm::GetNeighbours" alt="" coords="264,17,463,43"/>
-<area shape="rect" id="node5" href="class_robotic_arm.html#ad9add36d9fad6da469f30d1ffd867e63" title="move object to specified destination " alt="" coords="948,42,1117,69"/>
-<area shape="rect" id="node6" href="class_robotic_arm.html#ade404a134912096fb363fa90ea0cd927" title="forward kinematics, calculate X&amp;Y point for angles &amp; lengths for 3dof " alt="" coords="260,122,467,149"/>
-<area shape="rect" id="node7" href="class_robotic_arm.html#a6ecfa07487d7c03717be1e5f1fdb1e21" title="go to park position " alt="" coords="288,173,439,199"/>
-<area shape="rect" id="node3" href="namespace_path_algorithm.html#a8f0c4453fa932953ae67e31855f68197" title="PathAlgorithm::GetNeighbour\lConnections" alt="" coords="515,5,707,47"/>
-<area shape="rect" id="node4" href="class_path_algorithm_1_1_a_star.html#aee41b31ec44b02f6dc94889d228a3582" title="PathAlgorithm::AStar\l::search" alt="" coords="755,5,900,47"/>
+<area shape="rect" id="node2" href="namespace_path_algorithm.html#ae4490c66af669f70064a693a8d7a889e" title="PathAlgorithm::GetNeighbours" alt="" coords="260,103,459,129"/>
+<area shape="rect" id="node5" href="class_robotic_arm.html#ae925ea4c5ea53ca359399a07d0ef4f76" title="calculate a path of configurations " alt="" coords="940,56,1119,83"/>
+<area shape="rect" id="node13" href="class_robotic_arm.html#a976b1c8a1f85f64818182490073d4c5c" title="arm follow path " alt="" coords="949,5,1109,32"/>
+<area shape="rect" id="node14" href="class_robotic_arm.html#a6ecfa07487d7c03717be1e5f1fdb1e21" title="go to park position " alt="" coords="527,165,678,192"/>
+<area shape="rect" id="node3" href="namespace_path_algorithm.html#a8f0c4453fa932953ae67e31855f68197" title="PathAlgorithm::GetNeighbour\lConnections" alt="" coords="507,99,699,141"/>
+<area shape="rect" id="node4" href="class_path_algorithm_1_1_a_star.html#aee41b31ec44b02f6dc94889d228a3582" title="PathAlgorithm::AStar\l::search" alt="" coords="747,99,892,141"/>
+<area shape="rect" id="node6" href="class_robotic_arm.html#a5b15b0eb40028d3524bae3a52552bd85" title="set the size of the gripper " alt="" coords="1167,5,1359,32"/>
+<area shape="rect" id="node11" href="class_robotic_arm.html#a24928c88b03f5d2e55ac980c019dadd8" title="set the angle of the gripper " alt="" coords="1167,107,1359,133"/>
+<area shape="rect" id="node12" href="class_robotic_arm.html#a0d6a6dce0875c8540e5589c47aab5be3" title="go to xyz position and turn gripper " alt="" coords="1188,56,1337,83"/>
+<area shape="rect" id="node7" href="class_robotic_arm.html#ad9add36d9fad6da469f30d1ffd867e63" title="move object to specified destination " alt="" coords="1407,56,1576,83"/>
+<area shape="rect" id="node8" href="robotsrvtest_8cpp.html#acd84dd8c07feb65438228cb762a437e7" title="move" alt="" coords="1624,111,1679,137"/>
+<area shape="rect" id="node9" href="robotsrvtest_8cpp.html#ad9d0e397081801b3c81f84aef014b9ca" title="fn" alt="" coords="1727,111,1765,137"/>
+<area shape="rect" id="node10" href="robotsrvtest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1813,111,1864,137"/>
 </map>
 </div>
 </p>
@@ -443,17 +847,6 @@ Here is the caller graph for this function:</div>
 
 <p>Definition at line <a class="el" href="_robotic_arm_8cpp_source.html#l00195">195</a> of file <a class="el" href="_robotic_arm_8cpp_source.html">RoboticArm.cpp</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_robotic_arm_ade404a134912096fb363fa90ea0cd927_cgraph.png" border="0" usemap="#class_robotic_arm_ade404a134912096fb363fa90ea0cd927_cgraph" alt=""/></div>
-<map name="class_robotic_arm_ade404a134912096fb363fa90ea0cd927_cgraph" id="class_robotic_arm_ade404a134912096fb363fa90ea0cd927_cgraph">
-<area shape="rect" id="node2" href="class_robotic_arm.html#a18d2147e468f8026f301f1d96d040ea5" title="RoboticArm::getConf" alt="" coords="291,5,436,32"/>
-<area shape="rect" id="node3" href="class_robotic_arm.html#a549f24f349105a6b5130eb237d737132" title="forward kinematics, calculate X&amp;Y point for angles &amp; lengths for 2dof " alt="" coords="260,56,467,83"/>
-</map>
-</div>
-</p>
-
 </div>
 </div>
 <a class="anchor" id="a18d2147e468f8026f301f1d96d040ea5"></a>
@@ -476,8 +869,15 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_robotic_arm_a18d2147e468f8026f301f1d96d040ea5_icgraph.png" border="0" usemap="#class_robotic_arm_a18d2147e468f8026f301f1d96d040ea5_icgraph" alt=""/></div>
 <map name="class_robotic_arm_a18d2147e468f8026f301f1d96d040ea5_icgraph" id="class_robotic_arm_a18d2147e468f8026f301f1d96d040ea5_icgraph">
-<area shape="rect" id="node2" href="class_robotic_arm.html#ade404a134912096fb363fa90ea0cd927" title="forward kinematics, calculate X&amp;Y point for angles &amp; lengths for 3dof " alt="" coords="199,5,405,32"/>
-<area shape="rect" id="node3" href="class_robotic_arm.html#a6ecfa07487d7c03717be1e5f1fdb1e21" title="go to park position " alt="" coords="227,56,377,83"/>
+<area shape="rect" id="node2" href="class_robotic_arm.html#a976b1c8a1f85f64818182490073d4c5c" title="arm follow path " alt="" coords="199,81,359,108"/>
+<area shape="rect" id="node10" href="class_robotic_arm.html#a6ecfa07487d7c03717be1e5f1fdb1e21" title="go to park position " alt="" coords="656,157,807,184"/>
+<area shape="rect" id="node3" href="class_robotic_arm.html#a5b15b0eb40028d3524bae3a52552bd85" title="set the size of the gripper " alt="" coords="407,5,599,32"/>
+<area shape="rect" id="node8" href="class_robotic_arm.html#a24928c88b03f5d2e55ac980c019dadd8" title="set the angle of the gripper " alt="" coords="407,56,599,83"/>
+<area shape="rect" id="node9" href="class_robotic_arm.html#a0d6a6dce0875c8540e5589c47aab5be3" title="go to xyz position and turn gripper " alt="" coords="428,107,577,133"/>
+<area shape="rect" id="node4" href="class_robotic_arm.html#ad9add36d9fad6da469f30d1ffd867e63" title="move object to specified destination " alt="" coords="647,107,816,133"/>
+<area shape="rect" id="node5" href="robotsrvtest_8cpp.html#acd84dd8c07feb65438228cb762a437e7" title="move" alt="" coords="864,132,919,159"/>
+<area shape="rect" id="node6" href="robotsrvtest_8cpp.html#ad9d0e397081801b3c81f84aef014b9ca" title="fn" alt="" coords="967,132,1005,159"/>
+<area shape="rect" id="node7" href="robotsrvtest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1053,132,1104,159"/>
 </map>
 </div>
 </p>
@@ -517,7 +917,7 @@ Here is the caller graph for this function:</div>
 <p>go to park position </p>
 <dl class="section return"><dt>Returns</dt><dd>true if done </dd></dl>
 
-<p>Definition at line <a class="el" href="_robotic_arm_8cpp_source.html#l00258">258</a> of file <a class="el" href="_robotic_arm_8cpp_source.html">RoboticArm.cpp</a>.</p>
+<p>Definition at line <a class="el" href="_robotic_arm_8cpp_source.html#l00262">262</a> of file <a class="el" href="_robotic_arm_8cpp_source.html">RoboticArm.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -526,6 +926,18 @@ Here is the call graph for this function:</div>
 <map name="class_robotic_arm_a6ecfa07487d7c03717be1e5f1fdb1e21_cgraph" id="class_robotic_arm_a6ecfa07487d7c03717be1e5f1fdb1e21_cgraph">
 <area shape="rect" id="node2" href="class_robotic_arm.html#a18d2147e468f8026f301f1d96d040ea5" title="RoboticArm::getConf" alt="" coords="235,5,380,32"/>
 <area shape="rect" id="node3" href="class_robotic_arm.html#a549f24f349105a6b5130eb237d737132" title="forward kinematics, calculate X&amp;Y point for angles &amp; lengths for 2dof " alt="" coords="204,56,411,83"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_robotic_arm_a6ecfa07487d7c03717be1e5f1fdb1e21_icgraph.png" border="0" usemap="#class_robotic_arm_a6ecfa07487d7c03717be1e5f1fdb1e21_icgraph" alt=""/></div>
+<map name="class_robotic_arm_a6ecfa07487d7c03717be1e5f1fdb1e21_icgraph" id="class_robotic_arm_a6ecfa07487d7c03717be1e5f1fdb1e21_icgraph">
+<area shape="rect" id="node2" href="robotsrvtest_8cpp.html#acd84dd8c07feb65438228cb762a437e7" title="move" alt="" coords="204,5,259,32"/>
+<area shape="rect" id="node3" href="robotsrvtest_8cpp.html#ad9d0e397081801b3c81f84aef014b9ca" title="fn" alt="" coords="307,5,345,32"/>
+<area shape="rect" id="node4" href="robotsrvtest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="393,5,444,32"/>
 </map>
 </div>
 </p>
@@ -601,28 +1013,80 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_robotic_arm_ad9add36d9fad6da469f30d1ffd867e63_cgraph.png" border="0" usemap="#class_robotic_arm_ad9add36d9fad6da469f30d1ffd867e63_cgraph" alt=""/></div>
 <map name="class_robotic_arm_ad9add36d9fad6da469f30d1ffd867e63_cgraph" id="class_robotic_arm_ad9add36d9fad6da469f30d1ffd867e63_cgraph">
-<area shape="rect" id="node2" href="class_robotic_arm.html#a549f24f349105a6b5130eb237d737132" title="forward kinematics, calculate X&amp;Y point for angles &amp; lengths for 2dof " alt="" coords="907,138,1113,165"/>
-<area shape="rect" id="node3" href="class_path_algorithm_1_1_a_star.html#aee41b31ec44b02f6dc94889d228a3582" title="PathAlgorithm::AStar\l::search" alt="" coords="223,435,368,476"/>
-<area shape="rect" id="node4" href="class_path_algorithm_1_1_a_star.html#a48e23107ffca02392bdf2439775baecf" title="PathAlgorithm::AStar\l::getOS" alt="" coords="441,34,587,75"/>
-<area shape="rect" id="node5" href="class_path_algorithm_1_1_a_star.html#a4cb2a6c928a01fcac02533500bd8ace5" title="PathAlgorithm::AStar\l::getCS" alt="" coords="441,99,587,140"/>
-<area shape="rect" id="node6" href="class_path_algorithm_1_1_a_star.html#a4bb6718fd07f503ff836c5cdccd74236" title="PathAlgorithm::AStar\l::getPM" alt="" coords="441,164,587,206"/>
-<area shape="rect" id="node7" href="namespace_path_algorithm.html#a2e4474691c7ebd46c7238f2c53b0e543" title="PathAlgorithm::HeuristicCost" alt="" coords="418,230,610,257"/>
-<area shape="rect" id="node8" href="class_path_algorithm_1_1_a_star.html#a63f88f24acf7bf34cd060051134c9190" title="PathAlgorithm::AStar\l::addToOpenSet" alt="" coords="441,282,587,323"/>
-<area shape="rect" id="node9" href="struct_path_algorithm_1_1_vertex.html#a1548704fc5f1f4e829f419c2416667d9" title="PathAlgorithm::Vertex\l::approxEqualPoint" alt="" coords="439,347,589,388"/>
-<area shape="rect" id="node10" href="namespace_path_algorithm.html#a1b72e8125a5f9fa31d3130c816f1a03f" title="PathAlgorithm::ConstructPath" alt="" coords="416,413,612,440"/>
-<area shape="rect" id="node11" href="class_path_algorithm_1_1_a_star.html#a53139e4b3cd3971a2bf85a430e83378f" title="PathAlgorithm::AStar\l::addToClosedSet" alt="" coords="441,464,587,506"/>
-<area shape="rect" id="node12" href="class_path_algorithm_1_1_a_star.html#a5bb18edbbd54833aac9eddfe63ba652d" title="PathAlgorithm::AStar\l::removeFirstFromOpenSet" alt="" coords="424,530,604,571"/>
-<area shape="rect" id="node13" href="namespace_path_algorithm.html#a8f0c4453fa932953ae67e31855f68197" title="PathAlgorithm::GetNeighbour\lConnections" alt="" coords="418,595,610,636"/>
-<area shape="rect" id="node15" href="namespace_path_algorithm.html#a303daba8d3a083b341d1f4a799c3d5e4" title="PathAlgorithm::ActualCost" alt="" coords="425,661,603,688"/>
-<area shape="rect" id="node16" href="class_path_algorithm_1_1_a_star.html#ae78bfebdee31135fdfb2f302347f962f" title="PathAlgorithm::AStar\l::findInOpenSet" alt="" coords="687,747,832,788"/>
-<area shape="rect" id="node18" href="class_path_algorithm_1_1_a_star.html#afcc23a676145d6e280d1c3430af5380a" title="PathAlgorithm::AStar\l::removeFromOpenSet" alt="" coords="437,763,591,804"/>
-<area shape="rect" id="node19" href="class_path_algorithm_1_1_a_star.html#a73d9639e838fd55bb392d01238fc967a" title="PathAlgorithm::AStar\l::findInClosedSet" alt="" coords="687,838,832,879"/>
-<area shape="rect" id="node20" href="class_path_algorithm_1_1_a_star.html#a1b6971a9c5878e859cbdb3270dda93b4" title="PathAlgorithm::AStar\l::removeFromClosedSet" alt="" coords="432,880,596,922"/>
-<area shape="rect" id="node14" href="namespace_path_algorithm.html#ae4490c66af669f70064a693a8d7a889e" title="PathAlgorithm::GetNeighbours" alt="" coords="660,448,859,474"/>
-<area shape="rect" id="node17" href="struct_path_algorithm_1_1_vertex.html#a64aa2913bc0e1d1511a452c5d800803a" title="PathAlgorithm::Vertex\l::equalPoint" alt="" coords="935,747,1085,788"/>
+<area shape="rect" id="node2" href="class_robotic_arm.html#a6ca035bd87d2c0cb1a6f7f040ad0ed52" title="convert x&amp;y from vision to X&amp;Angle " alt="" coords="463,5,661,32"/>
+<area shape="rect" id="node3" href="class_robotic_arm.html#a5b15b0eb40028d3524bae3a52552bd85" title="set the size of the gripper " alt="" coords="223,107,415,133"/>
+<area shape="rect" id="node26" href="class_robotic_arm.html#a0d6a6dce0875c8540e5589c47aab5be3" title="go to xyz position and turn gripper " alt="" coords="244,56,393,83"/>
+<area shape="rect" id="node4" href="class_robotic_arm.html#ae925ea4c5ea53ca359399a07d0ef4f76" title="calculate a path of configurations " alt="" coords="473,107,651,133"/>
+<area shape="rect" id="node24" href="class_robotic_arm.html#a976b1c8a1f85f64818182490073d4c5c" title="arm follow path " alt="" coords="482,56,642,83"/>
+<area shape="rect" id="node5" href="class_robotic_arm.html#a549f24f349105a6b5130eb237d737132" title="forward kinematics, calculate X&amp;Y point for angles &amp; lengths for 2dof " alt="" coords="1393,107,1600,133"/>
+<area shape="rect" id="node6" href="class_path_algorithm_1_1_a_star.html#aee41b31ec44b02f6dc94889d228a3582" title="PathAlgorithm::AStar\l::search" alt="" coords="709,554,855,595"/>
+<area shape="rect" id="node7" href="class_path_algorithm_1_1_a_star.html#a48e23107ffca02392bdf2439775baecf" title="PathAlgorithm::AStar\l::getOS" alt="" coords="928,457,1073,498"/>
+<area shape="rect" id="node8" href="class_path_algorithm_1_1_a_star.html#a4cb2a6c928a01fcac02533500bd8ace5" title="PathAlgorithm::AStar\l::getCS" alt="" coords="928,522,1073,563"/>
+<area shape="rect" id="node9" href="class_path_algorithm_1_1_a_star.html#a4bb6718fd07f503ff836c5cdccd74236" title="PathAlgorithm::AStar\l::getPM" alt="" coords="928,587,1073,629"/>
+<area shape="rect" id="node10" href="namespace_path_algorithm.html#a2e4474691c7ebd46c7238f2c53b0e543" title="PathAlgorithm::HeuristicCost" alt="" coords="905,653,1097,680"/>
+<area shape="rect" id="node11" href="class_path_algorithm_1_1_a_star.html#a63f88f24acf7bf34cd060051134c9190" title="PathAlgorithm::AStar\l::addToOpenSet" alt="" coords="928,705,1073,746"/>
+<area shape="rect" id="node12" href="struct_path_algorithm_1_1_vertex.html#a1548704fc5f1f4e829f419c2416667d9" title="PathAlgorithm::Vertex\l::approxEqualPoint" alt="" coords="925,770,1076,811"/>
+<area shape="rect" id="node13" href="namespace_path_algorithm.html#a1b72e8125a5f9fa31d3130c816f1a03f" title="PathAlgorithm::ConstructPath" alt="" coords="903,836,1099,863"/>
+<area shape="rect" id="node14" href="class_path_algorithm_1_1_a_star.html#a53139e4b3cd3971a2bf85a430e83378f" title="PathAlgorithm::AStar\l::addToClosedSet" alt="" coords="928,887,1073,929"/>
+<area shape="rect" id="node15" href="class_path_algorithm_1_1_a_star.html#a5bb18edbbd54833aac9eddfe63ba652d" title="PathAlgorithm::AStar\l::removeFirstFromOpenSet" alt="" coords="911,953,1091,994"/>
+<area shape="rect" id="node16" href="namespace_path_algorithm.html#a8f0c4453fa932953ae67e31855f68197" title="PathAlgorithm::GetNeighbour\lConnections" alt="" coords="905,158,1097,199"/>
+<area shape="rect" id="node18" href="namespace_path_algorithm.html#a303daba8d3a083b341d1f4a799c3d5e4" title="PathAlgorithm::ActualCost" alt="" coords="912,224,1089,251"/>
+<area shape="rect" id="node19" href="class_path_algorithm_1_1_a_star.html#ae78bfebdee31135fdfb2f302347f962f" title="PathAlgorithm::AStar\l::findInOpenSet" alt="" coords="1173,701,1319,742"/>
+<area shape="rect" id="node21" href="class_path_algorithm_1_1_a_star.html#afcc23a676145d6e280d1c3430af5380a" title="PathAlgorithm::AStar\l::removeFromOpenSet" alt="" coords="923,391,1078,433"/>
+<area shape="rect" id="node22" href="class_path_algorithm_1_1_a_star.html#a73d9639e838fd55bb392d01238fc967a" title="PathAlgorithm::AStar\l::findInClosedSet" alt="" coords="1173,297,1319,338"/>
+<area shape="rect" id="node23" href="class_path_algorithm_1_1_a_star.html#a1b6971a9c5878e859cbdb3270dda93b4" title="PathAlgorithm::AStar\l::removeFromClosedSet" alt="" coords="919,326,1083,367"/>
+<area shape="rect" id="node17" href="namespace_path_algorithm.html#ae4490c66af669f70064a693a8d7a889e" title="PathAlgorithm::GetNeighbours" alt="" coords="1147,161,1345,188"/>
+<area shape="rect" id="node20" href="struct_path_algorithm_1_1_vertex.html#a64aa2913bc0e1d1511a452c5d800803a" title="PathAlgorithm::Vertex\l::equalPoint" alt="" coords="1421,701,1572,742"/>
+<area shape="rect" id="node25" href="class_robotic_arm.html#a18d2147e468f8026f301f1d96d040ea5" title="RoboticArm::getConf" alt="" coords="709,56,855,83"/>
 </map>
 </div>
 </p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_robotic_arm_ad9add36d9fad6da469f30d1ffd867e63_icgraph.png" border="0" usemap="#class_robotic_arm_ad9add36d9fad6da469f30d1ffd867e63_icgraph" alt=""/></div>
+<map name="class_robotic_arm_ad9add36d9fad6da469f30d1ffd867e63_icgraph" id="class_robotic_arm_ad9add36d9fad6da469f30d1ffd867e63_icgraph">
+<area shape="rect" id="node2" href="robotsrvtest_8cpp.html#acd84dd8c07feb65438228cb762a437e7" title="move" alt="" coords="223,5,277,32"/>
+<area shape="rect" id="node3" href="robotsrvtest_8cpp.html#ad9d0e397081801b3c81f84aef014b9ca" title="fn" alt="" coords="325,5,364,32"/>
+<area shape="rect" id="node4" href="robotsrvtest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="412,5,463,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a86204f659fe875af142cc1d817e562bf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RoboticArm::printPath </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::vector&lt; signed short &gt;&gt;&#160;</td>
+          <td class="paramname"><em>confs</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>print path (verctor of configurations) </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">confs</td><td>path </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_robotic_arm_8cpp_source.html#l00117">117</a> of file <a class="el" href="_robotic_arm_8cpp_source.html">RoboticArm.cpp</a>.</p>
 
 </div>
 </div>
@@ -648,6 +1112,149 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="class_robotic_arm_ad69cfd597e6e397b88a316ef93b68ece_icgraph.png" border="0" usemap="#class_robotic_arm_ad69cfd597e6e397b88a316ef93b68ece_icgraph" alt=""/></div>
 <map name="class_robotic_arm_ad69cfd597e6e397b88a316ef93b68ece_icgraph" id="class_robotic_arm_ad69cfd597e6e397b88a316ef93b68ece_icgraph">
 <area shape="rect" id="node2" href="robotsrvtest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="199,5,249,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a24928c88b03f5d2e55ac980c019dadd8"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RoboticArm::setGripperAngle </td>
+          <td>(</td>
+          <td class="paramtype">signed short&#160;</td>
+          <td class="paramname"><em>angle</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>set the angle of the gripper </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">angle</td><td>angle to set </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_robotic_arm_8cpp_source.html#l00173">173</a> of file <a class="el" href="_robotic_arm_8cpp_source.html">RoboticArm.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_robotic_arm_a24928c88b03f5d2e55ac980c019dadd8_cgraph.png" border="0" usemap="#class_robotic_arm_a24928c88b03f5d2e55ac980c019dadd8_cgraph" alt=""/></div>
+<map name="class_robotic_arm_a24928c88b03f5d2e55ac980c019dadd8_cgraph" id="class_robotic_arm_a24928c88b03f5d2e55ac980c019dadd8_cgraph">
+<area shape="rect" id="node2" href="class_robotic_arm.html#ae925ea4c5ea53ca359399a07d0ef4f76" title="calculate a path of configurations " alt="" coords="245,920,424,947"/>
+<area shape="rect" id="node22" href="class_robotic_arm.html#a976b1c8a1f85f64818182490073d4c5c" title="arm follow path " alt="" coords="255,971,415,997"/>
+<area shape="rect" id="node3" href="class_robotic_arm.html#a549f24f349105a6b5130eb237d737132" title="forward kinematics, calculate X&amp;Y point for angles &amp; lengths for 2dof " alt="" coords="1156,920,1363,947"/>
+<area shape="rect" id="node4" href="class_path_algorithm_1_1_a_star.html#aee41b31ec44b02f6dc94889d228a3582" title="PathAlgorithm::AStar\l::search" alt="" coords="472,457,617,498"/>
+<area shape="rect" id="node5" href="class_path_algorithm_1_1_a_star.html#a48e23107ffca02392bdf2439775baecf" title="PathAlgorithm::AStar\l::getOS" alt="" coords="691,175,836,217"/>
+<area shape="rect" id="node6" href="class_path_algorithm_1_1_a_star.html#a4cb2a6c928a01fcac02533500bd8ace5" title="PathAlgorithm::AStar\l::getCS" alt="" coords="691,241,836,282"/>
+<area shape="rect" id="node7" href="class_path_algorithm_1_1_a_star.html#a4bb6718fd07f503ff836c5cdccd74236" title="PathAlgorithm::AStar\l::getPM" alt="" coords="691,306,836,347"/>
+<area shape="rect" id="node8" href="namespace_path_algorithm.html#a2e4474691c7ebd46c7238f2c53b0e543" title="PathAlgorithm::HeuristicCost" alt="" coords="667,372,859,399"/>
+<area shape="rect" id="node9" href="class_path_algorithm_1_1_a_star.html#a63f88f24acf7bf34cd060051134c9190" title="PathAlgorithm::AStar\l::addToOpenSet" alt="" coords="691,423,836,465"/>
+<area shape="rect" id="node10" href="struct_path_algorithm_1_1_vertex.html#a1548704fc5f1f4e829f419c2416667d9" title="PathAlgorithm::Vertex\l::approxEqualPoint" alt="" coords="688,489,839,530"/>
+<area shape="rect" id="node11" href="namespace_path_algorithm.html#a1b72e8125a5f9fa31d3130c816f1a03f" title="PathAlgorithm::ConstructPath" alt="" coords="665,555,861,581"/>
+<area shape="rect" id="node12" href="class_path_algorithm_1_1_a_star.html#a53139e4b3cd3971a2bf85a430e83378f" title="PathAlgorithm::AStar\l::addToClosedSet" alt="" coords="691,606,836,647"/>
+<area shape="rect" id="node13" href="class_path_algorithm_1_1_a_star.html#a5bb18edbbd54833aac9eddfe63ba652d" title="PathAlgorithm::AStar\l::removeFirstFromOpenSet" alt="" coords="673,671,853,713"/>
+<area shape="rect" id="node14" href="namespace_path_algorithm.html#a8f0c4453fa932953ae67e31855f68197" title="PathAlgorithm::GetNeighbour\lConnections" alt="" coords="667,854,859,895"/>
+<area shape="rect" id="node16" href="namespace_path_algorithm.html#a303daba8d3a083b341d1f4a799c3d5e4" title="PathAlgorithm::ActualCost" alt="" coords="675,737,852,764"/>
+<area shape="rect" id="node17" href="class_path_algorithm_1_1_a_star.html#ae78bfebdee31135fdfb2f302347f962f" title="PathAlgorithm::AStar\l::findInOpenSet" alt="" coords="936,29,1081,70"/>
+<area shape="rect" id="node19" href="class_path_algorithm_1_1_a_star.html#afcc23a676145d6e280d1c3430af5380a" title="PathAlgorithm::AStar\l::removeFromOpenSet" alt="" coords="686,58,841,99"/>
+<area shape="rect" id="node20" href="class_path_algorithm_1_1_a_star.html#a73d9639e838fd55bb392d01238fc967a" title="PathAlgorithm::AStar\l::findInClosedSet" alt="" coords="936,453,1081,494"/>
+<area shape="rect" id="node21" href="class_path_algorithm_1_1_a_star.html#a1b6971a9c5878e859cbdb3270dda93b4" title="PathAlgorithm::AStar\l::removeFromClosedSet" alt="" coords="681,789,845,830"/>
+<area shape="rect" id="node15" href="namespace_path_algorithm.html#ae4490c66af669f70064a693a8d7a889e" title="PathAlgorithm::GetNeighbours" alt="" coords="909,865,1108,892"/>
+<area shape="rect" id="node18" href="struct_path_algorithm_1_1_vertex.html#a64aa2913bc0e1d1511a452c5d800803a" title="PathAlgorithm::Vertex\l::equalPoint" alt="" coords="1184,29,1335,70"/>
+<area shape="rect" id="node23" href="class_robotic_arm.html#a18d2147e468f8026f301f1d96d040ea5" title="RoboticArm::getConf" alt="" coords="472,1021,617,1048"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a5b15b0eb40028d3524bae3a52552bd85"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RoboticArm::setGripperValue </td>
+          <td>(</td>
+          <td class="paramtype">signed short&#160;</td>
+          <td class="paramname"><em>width</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>set the size of the gripper </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">width</td><td>width of the gripper </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_robotic_arm_8cpp_source.html#l00166">166</a> of file <a class="el" href="_robotic_arm_8cpp_source.html">RoboticArm.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_robotic_arm_a5b15b0eb40028d3524bae3a52552bd85_cgraph.png" border="0" usemap="#class_robotic_arm_a5b15b0eb40028d3524bae3a52552bd85_cgraph" alt=""/></div>
+<map name="class_robotic_arm_a5b15b0eb40028d3524bae3a52552bd85_cgraph" id="class_robotic_arm_a5b15b0eb40028d3524bae3a52552bd85_cgraph">
+<area shape="rect" id="node2" href="class_robotic_arm.html#ae925ea4c5ea53ca359399a07d0ef4f76" title="calculate a path of configurations " alt="" coords="245,920,424,947"/>
+<area shape="rect" id="node22" href="class_robotic_arm.html#a976b1c8a1f85f64818182490073d4c5c" title="arm follow path " alt="" coords="255,971,415,997"/>
+<area shape="rect" id="node3" href="class_robotic_arm.html#a549f24f349105a6b5130eb237d737132" title="forward kinematics, calculate X&amp;Y point for angles &amp; lengths for 2dof " alt="" coords="1156,920,1363,947"/>
+<area shape="rect" id="node4" href="class_path_algorithm_1_1_a_star.html#aee41b31ec44b02f6dc94889d228a3582" title="PathAlgorithm::AStar\l::search" alt="" coords="472,457,617,498"/>
+<area shape="rect" id="node5" href="class_path_algorithm_1_1_a_star.html#a48e23107ffca02392bdf2439775baecf" title="PathAlgorithm::AStar\l::getOS" alt="" coords="691,175,836,217"/>
+<area shape="rect" id="node6" href="class_path_algorithm_1_1_a_star.html#a4cb2a6c928a01fcac02533500bd8ace5" title="PathAlgorithm::AStar\l::getCS" alt="" coords="691,241,836,282"/>
+<area shape="rect" id="node7" href="class_path_algorithm_1_1_a_star.html#a4bb6718fd07f503ff836c5cdccd74236" title="PathAlgorithm::AStar\l::getPM" alt="" coords="691,306,836,347"/>
+<area shape="rect" id="node8" href="namespace_path_algorithm.html#a2e4474691c7ebd46c7238f2c53b0e543" title="PathAlgorithm::HeuristicCost" alt="" coords="667,372,859,399"/>
+<area shape="rect" id="node9" href="class_path_algorithm_1_1_a_star.html#a63f88f24acf7bf34cd060051134c9190" title="PathAlgorithm::AStar\l::addToOpenSet" alt="" coords="691,423,836,465"/>
+<area shape="rect" id="node10" href="struct_path_algorithm_1_1_vertex.html#a1548704fc5f1f4e829f419c2416667d9" title="PathAlgorithm::Vertex\l::approxEqualPoint" alt="" coords="688,489,839,530"/>
+<area shape="rect" id="node11" href="namespace_path_algorithm.html#a1b72e8125a5f9fa31d3130c816f1a03f" title="PathAlgorithm::ConstructPath" alt="" coords="665,555,861,581"/>
+<area shape="rect" id="node12" href="class_path_algorithm_1_1_a_star.html#a53139e4b3cd3971a2bf85a430e83378f" title="PathAlgorithm::AStar\l::addToClosedSet" alt="" coords="691,606,836,647"/>
+<area shape="rect" id="node13" href="class_path_algorithm_1_1_a_star.html#a5bb18edbbd54833aac9eddfe63ba652d" title="PathAlgorithm::AStar\l::removeFirstFromOpenSet" alt="" coords="673,671,853,713"/>
+<area shape="rect" id="node14" href="namespace_path_algorithm.html#a8f0c4453fa932953ae67e31855f68197" title="PathAlgorithm::GetNeighbour\lConnections" alt="" coords="667,854,859,895"/>
+<area shape="rect" id="node16" href="namespace_path_algorithm.html#a303daba8d3a083b341d1f4a799c3d5e4" title="PathAlgorithm::ActualCost" alt="" coords="675,737,852,764"/>
+<area shape="rect" id="node17" href="class_path_algorithm_1_1_a_star.html#ae78bfebdee31135fdfb2f302347f962f" title="PathAlgorithm::AStar\l::findInOpenSet" alt="" coords="936,29,1081,70"/>
+<area shape="rect" id="node19" href="class_path_algorithm_1_1_a_star.html#afcc23a676145d6e280d1c3430af5380a" title="PathAlgorithm::AStar\l::removeFromOpenSet" alt="" coords="686,58,841,99"/>
+<area shape="rect" id="node20" href="class_path_algorithm_1_1_a_star.html#a73d9639e838fd55bb392d01238fc967a" title="PathAlgorithm::AStar\l::findInClosedSet" alt="" coords="936,453,1081,494"/>
+<area shape="rect" id="node21" href="class_path_algorithm_1_1_a_star.html#a1b6971a9c5878e859cbdb3270dda93b4" title="PathAlgorithm::AStar\l::removeFromClosedSet" alt="" coords="681,789,845,830"/>
+<area shape="rect" id="node15" href="namespace_path_algorithm.html#ae4490c66af669f70064a693a8d7a889e" title="PathAlgorithm::GetNeighbours" alt="" coords="909,865,1108,892"/>
+<area shape="rect" id="node18" href="struct_path_algorithm_1_1_vertex.html#a64aa2913bc0e1d1511a452c5d800803a" title="PathAlgorithm::Vertex\l::equalPoint" alt="" coords="1184,29,1335,70"/>
+<area shape="rect" id="node23" href="class_robotic_arm.html#a18d2147e468f8026f301f1d96d040ea5" title="RoboticArm::getConf" alt="" coords="472,1021,617,1048"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_robotic_arm_a5b15b0eb40028d3524bae3a52552bd85_icgraph.png" border="0" usemap="#class_robotic_arm_a5b15b0eb40028d3524bae3a52552bd85_icgraph" alt=""/></div>
+<map name="class_robotic_arm_a5b15b0eb40028d3524bae3a52552bd85_icgraph" id="class_robotic_arm_a5b15b0eb40028d3524bae3a52552bd85_icgraph">
+<area shape="rect" id="node2" href="class_robotic_arm.html#ad9add36d9fad6da469f30d1ffd867e63" title="move object to specified destination " alt="" coords="245,5,415,32"/>
+<area shape="rect" id="node3" href="robotsrvtest_8cpp.html#acd84dd8c07feb65438228cb762a437e7" title="move" alt="" coords="463,5,517,32"/>
+<area shape="rect" id="node4" href="robotsrvtest_8cpp.html#ad9d0e397081801b3c81f84aef014b9ca" title="fn" alt="" coords="565,5,604,32"/>
+<area shape="rect" id="node5" href="robotsrvtest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="652,5,703,32"/>
 </map>
 </div>
 </p>
@@ -715,6 +1322,28 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
+<a class="anchor" id="af618e34115514462d09020049c7e8ee9"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;signed short&gt; RoboticArm::configuration</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_robotic_arm_8hpp_source.html#l00095">95</a> of file <a class="el" href="_robotic_arm_8hpp_source.html">RoboticArm.hpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="ada1f488e8627fcb18d4b15b70c593be8"></a>
 <div class="memitem">
 <div class="memproto">
@@ -726,6 +1355,28 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="_robotic_arm_8hpp_source.html#l00086">86</a> of file <a class="el" href="_robotic_arm_8hpp_source.html">RoboticArm.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a8f6a5bea331874cfae234e6b97f6dec5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_position.html">Position</a> RoboticArm::pos</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_robotic_arm_8hpp_source.html#l00096">96</a> of file <a class="el" href="_robotic_arm_8hpp_source.html">RoboticArm.hpp</a>.</p>
 
 </div>
 </div>

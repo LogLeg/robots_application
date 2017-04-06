@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['s1',['s1',['../class_robotic_arm.html#a405680ac32df6d444683b997b785623f',1,'RoboticArm']]],
-  ['s2',['s2',['../class_robotic_arm.html#aeafd57f690026379493f193d94bd8210',1,'RoboticArm']]],
-  ['s3',['s3',['../class_robotic_arm.html#a9241e65a54080f2f642bd08a78a12f6f',1,'RoboticArm']]],
-  ['s4',['s4',['../class_robotic_arm.html#af0d9eb18ff10b252b79c8a986fe31170',1,'RoboticArm']]],
-  ['s5',['s5',['../class_robotic_arm.html#a393711dcc74eb1fba3f9e544cd2bb771',1,'RoboticArm']]],
-  ['s6',['s6',['../class_robotic_arm.html#a4816473ed62d262e2a29590769e82f10',1,'RoboticArm']]],
-  ['sat_5fmax',['sat_max',['../struct_colour.html#afe350ccf1ecf2dbf5f414ba869878d65',1,'Colour']]],
-  ['sat_5fmin',['sat_min',['../struct_colour.html#a060d31cb0c6cd91881d3b194878ecc9c',1,'Colour']]]
+  ['phi1',['phi1',['../struct_path_algorithm_1_1_vertex.html#a7ad47a3f8613026f8e0cd06e4d967bc1',1,'PathAlgorithm::Vertex']]],
+  ['phi2',['phi2',['../struct_path_algorithm_1_1_vertex.html#af6701fe63c91cea4bc7e25efb276df7c',1,'PathAlgorithm::Vertex']]],
+  ['pimpl_5f',['pimpl_',['../class_serial_1_1_scoped_read_lock.html#ae2220f73a557b57a5349d75282b4bcc6',1,'serial::Serial::ScopedReadLock::pimpl_()'],['../class_serial_1_1_scoped_write_lock.html#aa7d7430d81f824316afdc2338685ec34',1,'serial::Serial::ScopedWriteLock::pimpl_()']]],
+  ['port',['port',['../class_robot_serial.html#a6e9f213298488ef6699c3797f7d39a9d',1,'RobotSerial']]],
+  ['pos',['pos',['../class_robotic_arm.html#a8f6a5bea331874cfae234e6b97f6dec5',1,'RoboticArm']]],
+  ['predecessormap',['predecessorMap',['../class_path_algorithm_1_1_a_star.html#a0fb8d0d9ad9822987926c815c9d4353d',1,'PathAlgorithm::AStar']]],
+  ['predecessormapmutex',['predecessorMapMutex',['../class_path_algorithm_1_1_a_star.html#ac69b08a85dfe16b7571b33fb9231f9c1',1,'PathAlgorithm::AStar']]],
+  ['pwmrange',['pwmRange',['../struct_servo.html#ad3b5b2cb998a334baeb520cecc24be48',1,'Servo']]]
 ];

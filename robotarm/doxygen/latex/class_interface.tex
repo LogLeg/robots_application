@@ -17,6 +17,16 @@ int8\+\_\+t \hyperlink{class_interface_a24b944dc66cb79f76ba91192a2a2860e}{await\
 \begin{DoxyCompactList}\small\item\em This function will serve the user a form to fill in and will call the parser function afterwards. \end{DoxyCompactList}\item 
 uint8\+\_\+t \hyperlink{class_interface_adfa71e85801e5bb0e8bc88da902f8133}{get\+\_\+specification} () const 
 \begin{DoxyCompactList}\small\item\em getter for the specification. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+string \hyperlink{class_interface_ab6e3210b017ae87be6ecf3b0fdd29d89}{input} ()
+\begin{DoxyCompactList}\small\item\em Function to wait and extract input data from user through the console. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \hyperlink{class_interface_a8a5e47e57ef555ebbf54f345686e34cf}{specification}
+\begin{DoxyCompactList}\small\item\em Pair contains info about the chosen shape (first value) and the colour (second value). \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -79,7 +89,7 @@ handling code
 \end{DoxyReturn}
 
 
-Definition at line 90 of file interface.\+cpp.
+Definition at line 91 of file interface.\+cpp.
 
 
 
@@ -87,7 +97,7 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=314pt]{class_interface_a24b944dc66cb79f76ba91192a2a2860e_cgraph}
+\includegraphics[width=350pt]{class_interface_a24b944dc66cb79f76ba91192a2a2860e_cgraph}
 \end{center}
 \end{figure}
 
@@ -98,7 +108,7 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=312pt]{class_interface_a24b944dc66cb79f76ba91192a2a2860e_icgraph}
+\includegraphics[width=350pt]{class_interface_a24b944dc66cb79f76ba91192a2a2860e_icgraph}
 \end{center}
 \end{figure}
 
@@ -119,7 +129,7 @@ specification pair filled with shape and colour
 \end{DoxyReturn}
 
 
-Definition at line 112 of file interface.\+cpp.
+Definition at line 113 of file interface.\+cpp.
 
 
 
@@ -127,7 +137,36 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=336pt]{class_interface_adfa71e85801e5bb0e8bc88da902f8133_icgraph}
+\includegraphics[width=350pt]{class_interface_adfa71e85801e5bb0e8bc88da902f8133_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Interface@{Interface}!input@{input}}
+\index{input@{input}!Interface@{Interface}}
+\subsubsection[{\texorpdfstring{input()}{input()}}]{\setlength{\rightskip}{0pt plus 5cm}string Interface\+::input (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_interface_ab6e3210b017ae87be6ecf3b0fdd29d89}{}\label{class_interface_ab6e3210b017ae87be6ecf3b0fdd29d89}
+
+
+Function to wait and extract input data from user through the console. 
+
+\begin{DoxyReturn}{Returns}
+string of input characters 
+\end{DoxyReturn}
+
+
+Definition at line 20 of file interface.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_interface_ab6e3210b017ae87be6ecf3b0fdd29d89_icgraph}
 \end{center}
 \end{figure}
 
@@ -144,9 +183,9 @@ Here is the caller graph for this function\+:\nopagebreak
 Function that will read the input and will then check if it is correct and translate the input to a pair filled with the choices of the user. It calls. 
 
 \begin{DoxySeeAlso}{See also}
-input() first to get the input from the user. This is not passed to the function. When \textquotesingle{}e\textquotesingle{} is put in, it will return 1 It supports a batch mode and accepts a line from a file. 
+\hyperlink{class_interface_ab6e3210b017ae87be6ecf3b0fdd29d89}{input()} first to get the \hyperlink{class_interface_ab6e3210b017ae87be6ecf3b0fdd29d89}{input} from the user. This is not passed to the function. When \textquotesingle{}e\textquotesingle{} is put in, it will return 1 It supports a batch mode and accepts a line from a file. 
 
-input() 
+\hyperlink{class_interface_ab6e3210b017ae87be6ecf3b0fdd29d89}{input()} 
 \end{DoxySeeAlso}
 
 \begin{DoxyParams}{Parameters}
@@ -164,6 +203,17 @@ Definition at line 28 of file interface.\+cpp.
 
 
 
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{class_interface_a345faa7570aa36a31681ca850d1c283d_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
 Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
@@ -172,6 +222,20 @@ Here is the caller graph for this function\+:\nopagebreak
 \end{center}
 \end{figure}
 
+
+
+
+\subsection{Member Data Documentation}
+\index{Interface@{Interface}!specification@{specification}}
+\index{specification@{specification}!Interface@{Interface}}
+\subsubsection[{\texorpdfstring{specification}{specification}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Interface\+::specification\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_interface_a8a5e47e57ef555ebbf54f345686e34cf}{}\label{class_interface_a8a5e47e57ef555ebbf54f345686e34cf}
+
+
+Pair contains info about the chosen shape (first value) and the colour (second value). 
+
+
+
+Definition at line 70 of file interface.\+hpp.
 
 
 

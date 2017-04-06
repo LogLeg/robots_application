@@ -1,3 +1,10 @@
 <map id="PathAlgorithm::AStar::search" name="PathAlgorithm::AStar::search">
-<area shape="rect" id="node2" href="$class_robotic_arm.html#ad9add36d9fad6da469f30d1ffd867e63" title="move object to specified destination " alt="" coords="199,13,368,39"/>
+<area shape="rect" id="node2" href="$class_robotic_arm.html#ae925ea4c5ea53ca359399a07d0ef4f76" title="calculate a path of configurations " alt="" coords="199,56,377,83"/>
+<area shape="rect" id="node3" href="$class_robotic_arm.html#a5b15b0eb40028d3524bae3a52552bd85" title="set the size of the gripper " alt="" coords="425,5,617,32"/>
+<area shape="rect" id="node8" href="$class_robotic_arm.html#a24928c88b03f5d2e55ac980c019dadd8" title="set the angle of the gripper " alt="" coords="425,56,617,83"/>
+<area shape="rect" id="node9" href="$class_robotic_arm.html#a0d6a6dce0875c8540e5589c47aab5be3" title="go to xyz position and turn gripper " alt="" coords="447,107,596,133"/>
+<area shape="rect" id="node4" href="$class_robotic_arm.html#ad9add36d9fad6da469f30d1ffd867e63" title="move object to specified destination " alt="" coords="665,56,835,83"/>
+<area shape="rect" id="node5" href="$robotsrvtest_8cpp.html#acd84dd8c07feb65438228cb762a437e7" title="move" alt="" coords="883,56,937,83"/>
+<area shape="rect" id="node6" href="$robotsrvtest_8cpp.html#ad9d0e397081801b3c81f84aef014b9ca" title="fn" alt="" coords="985,56,1024,83"/>
+<area shape="rect" id="node7" href="$robotsrvtest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1072,56,1123,83"/>
 </map>

@@ -20,5 +20,11 @@ var class_path_algorithm_1_1_a_star =
     [ "removeFromClosedSet", "class_path_algorithm_1_1_a_star.html#a799953993c1255f0ce559f7233d3c926", null ],
     [ "removeFromOpenSet", "class_path_algorithm_1_1_a_star.html#afcc23a676145d6e280d1c3430af5380a", null ],
     [ "removeFromOpenSet", "class_path_algorithm_1_1_a_star.html#aba29c2585fbf49880cf5e8b9bf6d3eb5", null ],
-    [ "search", "class_path_algorithm_1_1_a_star.html#aee41b31ec44b02f6dc94889d228a3582", null ]
+    [ "search", "class_path_algorithm_1_1_a_star.html#aee41b31ec44b02f6dc94889d228a3582", null ],
+    [ "closedSet", "class_path_algorithm_1_1_a_star.html#ac30f7714d07594a6b75516daa0a26da7", null ],
+    [ "closedSetMutex", "class_path_algorithm_1_1_a_star.html#a1c8d2da0af60b0857bfd0abd3fa057ac", null ],
+    [ "openSet", "class_path_algorithm_1_1_a_star.html#a51ac9d9ef516c2317c2c77a919b64532", null ],
+    [ "openSetMutex", "class_path_algorithm_1_1_a_star.html#a2352488a734c820b77410b1ed7914a49", null ],
+    [ "predecessorMap", "class_path_algorithm_1_1_a_star.html#a0fb8d0d9ad9822987926c815c9d4353d", null ],
+    [ "predecessorMapMutex", "class_path_algorithm_1_1_a_star.html#ac69b08a85dfe16b7571b33fb9231f9c1", null ]
 ];

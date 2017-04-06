@@ -4,6 +4,15 @@
 
 {\ttfamily \#include $<$Robot\+\_\+\+Arm.\+hpp$>$}
 
+
+
+Collaboration diagram for Robot\+Arm\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{class_robot_arm__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -17,6 +26,24 @@ bool \hyperlink{class_robot_arm_a9bc2cbb9fb6252afffd43ed2a5f6113e}{status} (robo
 \begin{DoxyCompactList}\small\item\em robot status \end{DoxyCompactList}\item 
 bool \hyperlink{class_robot_arm_a645e7400a9e29525385d07e0b9552eb4}{stop} (robotarm\+::\+Robot\+\_\+\+Stop\+::\+Request \&req, robotarm\+::\+Robot\+\_\+\+Stop\+::\+Response \&res)
 \begin{DoxyCompactList}\small\item\em stop robot \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_robot_arm_a71fb5e56bdc1ec60d8f769226e80dc28}{go\+To} (double a1, double a2, double a3, double a4, double a5, double a6, double Time)
+\begin{DoxyCompactList}\small\item\em go to configuration \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_robot_arm_a19ee5ffdc095ee2771353372fce03252}{status} ()
+\begin{DoxyCompactList}\small\item\em get the status of the robot \end{DoxyCompactList}\item 
+void \hyperlink{class_robot_arm_abd7be4339ad5fe6c65b07b4930f52e69}{stop} ()
+\begin{DoxyCompactList}\small\item\em emergency stop \end{DoxyCompactList}\item 
+void \hyperlink{class_robot_arm_afa693a670ce5c4fc705fd0b9b75d516b}{sleep} (unsigned long milliseconds)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_robot_serial}{Robot\+Serial} \hyperlink{class_robot_arm_aa1be826408c3c876e2227095bba1cd17}{robot\+Serial}
+\item 
+std\+::vector$<$ \hyperlink{struct_servo}{Servo} $>$ \hyperlink{class_robot_arm_a2fd2d1c096f1b147b7882d7bfd202eaf}{Servo\+List}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -49,6 +76,17 @@ constructor
 
 
 Definition at line 3 of file Robot\+\_\+\+Arm.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_robot_arm_aa3324f162a64eeb345cb6d2845f3822c_cgraph}
+\end{center}
+\end{figure}
+
 
 \index{Robot\+Arm@{Robot\+Arm}!````~Robot\+Arm@{$\sim$\+Robot\+Arm}}
 \index{````~Robot\+Arm@{$\sim$\+Robot\+Arm}!Robot\+Arm@{Robot\+Arm}}
@@ -100,7 +138,67 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=291pt]{class_robot_arm_a8b44092b92f889600d3e712c292b9c48_icgraph}
+\includegraphics[width=243pt]{class_robot_arm_a8b44092b92f889600d3e712c292b9c48_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robot\+Arm@{Robot\+Arm}!go\+To@{go\+To}}
+\index{go\+To@{go\+To}!Robot\+Arm@{Robot\+Arm}}
+\subsubsection[{\texorpdfstring{go\+To(double a1, double a2, double a3, double a4, double a5, double a6, double Time)}{goTo(double a1, double a2, double a3, double a4, double a5, double a6, double Time)}}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\+Arm\+::go\+To (
+\begin{DoxyParamCaption}
+\item[{double}]{a1, }
+\item[{double}]{a2, }
+\item[{double}]{a3, }
+\item[{double}]{a4, }
+\item[{double}]{a5, }
+\item[{double}]{a6, }
+\item[{double}]{Time}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_robot_arm_a71fb5e56bdc1ec60d8f769226e80dc28}{}\label{class_robot_arm_a71fb5e56bdc1ec60d8f769226e80dc28}
+
+
+go to configuration 
+
+
+\begin{DoxyParams}{Parameters}
+{\em a1} & angle of 1st servo \\
+\hline
+{\em a2} & angle of 2st servo \\
+\hline
+{\em a3} & angle of 3st servo \\
+\hline
+{\em a4} & angle of 4st servo \\
+\hline
+{\em a5} & angle of 5st servo \\
+\hline
+{\em a6} & angle of 6st servo \\
+\hline
+{\em Time} & time to arrive \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 78 of file Robot\+\_\+\+Arm.\+cpp.
+
+\index{Robot\+Arm@{Robot\+Arm}!sleep@{sleep}}
+\index{sleep@{sleep}!Robot\+Arm@{Robot\+Arm}}
+\subsubsection[{\texorpdfstring{sleep(unsigned long milliseconds)}{sleep(unsigned long milliseconds)}}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\+Arm\+::sleep (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{milliseconds}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_robot_arm_afa693a670ce5c4fc705fd0b9b75d516b}{}\label{class_robot_arm_afa693a670ce5c4fc705fd0b9b75d516b}
+
+
+Definition at line 101 of file Robot\+\_\+\+Arm.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=317pt]{class_robot_arm_afa693a670ce5c4fc705fd0b9b75d516b_icgraph}
 \end{center}
 \end{figure}
 
@@ -131,16 +229,23 @@ bool
 
 Definition at line 58 of file Robot\+\_\+\+Arm.\+cpp.
 
+\index{Robot\+Arm@{Robot\+Arm}!status@{status}}
+\index{status@{status}!Robot\+Arm@{Robot\+Arm}}
+\subsubsection[{\texorpdfstring{status()}{status()}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Robot\+Arm\+::status (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_robot_arm_a19ee5ffdc095ee2771353372fce03252}{}\label{class_robot_arm_a19ee5ffdc095ee2771353372fce03252}
 
 
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=174pt]{class_robot_arm_a9bc2cbb9fb6252afffd43ed2a5f6113e_cgraph}
-\end{center}
-\end{figure}
+get the status of the robot 
 
+\begin{DoxyReturn}{Returns}
+string with config angles 
+\end{DoxyReturn}
+
+
+Definition at line 88 of file Robot\+\_\+\+Arm.\+cpp.
 
 
 
@@ -148,7 +253,7 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=296pt]{class_robot_arm_a9bc2cbb9fb6252afffd43ed2a5f6113e_icgraph}
+\includegraphics[width=248pt]{class_robot_arm_a19ee5ffdc095ee2771353372fce03252_icgraph}
 \end{center}
 \end{figure}
 
@@ -185,7 +290,33 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=297pt]{class_robot_arm_a645e7400a9e29525385d07e0b9552eb4_cgraph}
+\includegraphics[width=350pt]{class_robot_arm_a645e7400a9e29525385d07e0b9552eb4_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robot\+Arm@{Robot\+Arm}!stop@{stop}}
+\index{stop@{stop}!Robot\+Arm@{Robot\+Arm}}
+\subsubsection[{\texorpdfstring{stop()}{stop()}}]{\setlength{\rightskip}{0pt plus 5cm}void Robot\+Arm\+::stop (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_robot_arm_abd7be4339ad5fe6c65b07b4930f52e69}{}\label{class_robot_arm_abd7be4339ad5fe6c65b07b4930f52e69}
+
+
+emergency stop 
+
+
+
+Definition at line 93 of file Robot\+\_\+\+Arm.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{class_robot_arm_abd7be4339ad5fe6c65b07b4930f52e69_cgraph}
 \end{center}
 \end{figure}
 
@@ -196,10 +327,27 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=166pt]{class_robot_arm_a645e7400a9e29525385d07e0b9552eb4_icgraph}
+\includegraphics[width=288pt]{class_robot_arm_abd7be4339ad5fe6c65b07b4930f52e69_icgraph}
 \end{center}
 \end{figure}
 
+
+
+
+\subsection{Member Data Documentation}
+\index{Robot\+Arm@{Robot\+Arm}!robot\+Serial@{robot\+Serial}}
+\index{robot\+Serial@{robot\+Serial}!Robot\+Arm@{Robot\+Arm}}
+\subsubsection[{\texorpdfstring{robot\+Serial}{robotSerial}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Robot\+Serial} Robot\+Arm\+::robot\+Serial\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_robot_arm_aa1be826408c3c876e2227095bba1cd17}{}\label{class_robot_arm_aa1be826408c3c876e2227095bba1cd17}
+
+
+Definition at line 74 of file Robot\+\_\+\+Arm.\+hpp.
+
+\index{Robot\+Arm@{Robot\+Arm}!Servo\+List@{Servo\+List}}
+\index{Servo\+List@{Servo\+List}!Robot\+Arm@{Robot\+Arm}}
+\subsubsection[{\texorpdfstring{Servo\+List}{ServoList}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf Servo}$>$ Robot\+Arm\+::\+Servo\+List\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_robot_arm_a2fd2d1c096f1b147b7882d7bfd202eaf}{}\label{class_robot_arm_a2fd2d1c096f1b147b7882d7bfd202eaf}
+
+
+Definition at line 75 of file Robot\+\_\+\+Arm.\+hpp.
 
 
 

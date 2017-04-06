@@ -1,0 +1,3 @@
+<map id="Vision::show_image" name="Vision::show_image">
+<area shape="rect" id="node2" href="$class_vision.html#afbaa5efe06c5af3d82fb4fc133788b5b" title="This function will get the stream from the webcam and put it into the src Mat. " alt="" coords="192,5,323,32"/>
+</map>

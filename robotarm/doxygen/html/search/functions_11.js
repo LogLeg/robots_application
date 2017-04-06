@@ -1,7 +1,6 @@
 var searchData=
 [
   ['_7einterface',['~Interface',['../class_interface.html#a19179888f29f18f1be54a3dfe98f68c0',1,'Interface']]],
-  ['_7ematrix',['~Matrix',['../class_matrix.html#af9284a0f60b726bdb0e9a473d1e265f7',1,'Matrix']]],
   ['_7erobotarm',['~RobotArm',['../class_robot_arm.html#af3cf87fd2b5b060625eb49317632b83c',1,'RobotArm']]],
   ['_7eroboticarm',['~RoboticArm',['../class_robotic_arm.html#aa1e689d9e117cebbc50e8943333851e6',1,'RoboticArm']]],
   ['_7erobotserial',['~RobotSerial',['../class_robot_serial.html#a1a28818f2b86670f0d8591c5d2e80353',1,'RobotSerial']]],

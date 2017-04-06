@@ -1,0 +1,4 @@
+<map id="serial::Serial::ScopedReadLock::operator=" name="serial::Serial::ScopedReadLock::operator=">
+<area shape="rect" id="node2" href="$class_serial_1_1_scoped_read_lock.html#a5c061909b95231cec776c40094c878b4" title="serial::Serial::ScopedRead\lLock::~ScopedReadLock" alt="" coords="231,5,408,47"/>
+<area shape="rect" id="node3" href="$class_serial_1_1_scoped_write_lock.html#aebeef5b2d16f409b60094cfac092ada2" title="serial::Serial::ScopedWrite\lLock::~ScopedWriteLock" alt="" coords="231,71,408,112"/>
+</map>

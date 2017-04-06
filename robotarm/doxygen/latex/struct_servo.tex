@@ -4,10 +4,19 @@
 
 {\ttfamily \#include $<$Robotic\+Arm.\+hpp$>$}
 
+
+
+Collaboration diagram for Servo\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=164pt]{struct_servo__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{struct_servo_ab662ab5df0c5f665e7eb11508c39f1a7}{Servo} (unsigned short min\+Pwm, unsigned short pwm\+Range, unsigned char d\+Range, unsigned short servo\+Nr, \hyperlink{class_robot_serial}{Robot\+Serial} $\ast$a\+Robot\+Serial, signed short abnormality=0, bool flip=false, signed short servo\+Abnormality=0)
+\hyperlink{struct_servo_ab662ab5df0c5f665e7eb11508c39f1a7}{Servo} (unsigned short \hyperlink{struct_servo_a209ccc691c719c1442f77a0c0ee08fbb}{min\+Pwm}, unsigned short \hyperlink{struct_servo_ad3b5b2cb998a334baeb520cecc24be48}{pwm\+Range}, unsigned char \hyperlink{struct_servo_a534d23b4cf1dcdd677dfa503101c50a0}{d\+Range}, unsigned short \hyperlink{struct_servo_a0795bd3f3c8d44e1818ffd653a7484d5}{servo\+Nr}, \hyperlink{class_robot_serial}{Robot\+Serial} $\ast$a\+Robot\+Serial, signed short \hyperlink{struct_servo_a65a5e86b2f31ec2a9c115e818a1ea703}{abnormality}=0, bool \hyperlink{struct_servo_a4b94c914128a9965e264f0be608fb6a7}{flip}=false, signed short \hyperlink{struct_servo_a0876d7d53f6e32cd75fa8ead3c274ead}{servo\+Abnormality}=0)
 \begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
 void \hyperlink{struct_servo_aed94c74351c407e550a51ba40215c135}{goto\+Position} (signed short degrees, unsigned short time)
 \begin{DoxyCompactList}\small\item\em go to given position \end{DoxyCompactList}\item 
@@ -25,6 +34,25 @@ virtual \hyperlink{struct_servo_acb51bf4d970b071741ba76349a431fb0}{$\sim$\+Servo
 signed short \hyperlink{struct_servo_a2fe3506ea048af600250b292275df6e2}{min}
 \item 
 signed short \hyperlink{struct_servo_a20a1e16e912d613a6f7ee07072799f6d}{max}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned short \hyperlink{struct_servo_a209ccc691c719c1442f77a0c0ee08fbb}{min\+Pwm}
+\item 
+unsigned short \hyperlink{struct_servo_ad3b5b2cb998a334baeb520cecc24be48}{pwm\+Range}
+\item 
+unsigned char \hyperlink{struct_servo_a534d23b4cf1dcdd677dfa503101c50a0}{d\+Range}
+\item 
+unsigned char \hyperlink{struct_servo_a0795bd3f3c8d44e1818ffd653a7484d5}{servo\+Nr}
+\item 
+signed short \hyperlink{struct_servo_a65a5e86b2f31ec2a9c115e818a1ea703}{abnormality}
+\item 
+bool \hyperlink{struct_servo_a4b94c914128a9965e264f0be608fb6a7}{flip}
+\item 
+signed short \hyperlink{struct_servo_a0876d7d53f6e32cd75fa8ead3c274ead}{servo\+Abnormality}
+\item 
+\hyperlink{class_robot_serial}{Robot\+Serial} $\ast$ \hyperlink{struct_servo_a07e75a2dc8f979d2d91308da2ae96053}{robot\+Serial}
 \end{DoxyCompactItemize}
 
 
@@ -212,6 +240,27 @@ servo angle in degrees
 
 
 \subsection{Member Data Documentation}
+\index{Servo@{Servo}!abnormality@{abnormality}}
+\index{abnormality@{abnormality}!Servo@{Servo}}
+\subsubsection[{\texorpdfstring{abnormality}{abnormality}}]{\setlength{\rightskip}{0pt plus 5cm}signed short Servo\+::abnormality\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{struct_servo_a65a5e86b2f31ec2a9c115e818a1ea703}{}\label{struct_servo_a65a5e86b2f31ec2a9c115e818a1ea703}
+
+
+Definition at line 57 of file Servo.\+hpp.
+
+\index{Servo@{Servo}!d\+Range@{d\+Range}}
+\index{d\+Range@{d\+Range}!Servo@{Servo}}
+\subsubsection[{\texorpdfstring{d\+Range}{dRange}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char Servo\+::d\+Range\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{struct_servo_a534d23b4cf1dcdd677dfa503101c50a0}{}\label{struct_servo_a534d23b4cf1dcdd677dfa503101c50a0}
+
+
+Definition at line 55 of file Servo.\+hpp.
+
+\index{Servo@{Servo}!flip@{flip}}
+\index{flip@{flip}!Servo@{Servo}}
+\subsubsection[{\texorpdfstring{flip}{flip}}]{\setlength{\rightskip}{0pt plus 5cm}bool Servo\+::flip\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{struct_servo_a4b94c914128a9965e264f0be608fb6a7}{}\label{struct_servo_a4b94c914128a9965e264f0be608fb6a7}
+
+
+Definition at line 58 of file Servo.\+hpp.
+
 \index{Servo@{Servo}!max@{max}}
 \index{max@{max}!Servo@{Servo}}
 \subsubsection[{\texorpdfstring{max}{max}}]{\setlength{\rightskip}{0pt plus 5cm}signed short Servo\+::max}\hypertarget{struct_servo_a20a1e16e912d613a6f7ee07072799f6d}{}\label{struct_servo_a20a1e16e912d613a6f7ee07072799f6d}
@@ -225,6 +274,41 @@ Definition at line 23 of file Robotic\+Arm.\+hpp.
 
 
 Definition at line 22 of file Robotic\+Arm.\+hpp.
+
+\index{Servo@{Servo}!min\+Pwm@{min\+Pwm}}
+\index{min\+Pwm@{min\+Pwm}!Servo@{Servo}}
+\subsubsection[{\texorpdfstring{min\+Pwm}{minPwm}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short Servo\+::min\+Pwm\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{struct_servo_a209ccc691c719c1442f77a0c0ee08fbb}{}\label{struct_servo_a209ccc691c719c1442f77a0c0ee08fbb}
+
+
+Definition at line 53 of file Servo.\+hpp.
+
+\index{Servo@{Servo}!pwm\+Range@{pwm\+Range}}
+\index{pwm\+Range@{pwm\+Range}!Servo@{Servo}}
+\subsubsection[{\texorpdfstring{pwm\+Range}{pwmRange}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short Servo\+::pwm\+Range\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{struct_servo_ad3b5b2cb998a334baeb520cecc24be48}{}\label{struct_servo_ad3b5b2cb998a334baeb520cecc24be48}
+
+
+Definition at line 54 of file Servo.\+hpp.
+
+\index{Servo@{Servo}!robot\+Serial@{robot\+Serial}}
+\index{robot\+Serial@{robot\+Serial}!Servo@{Servo}}
+\subsubsection[{\texorpdfstring{robot\+Serial}{robotSerial}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Robot\+Serial}$\ast$ Servo\+::robot\+Serial\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{struct_servo_a07e75a2dc8f979d2d91308da2ae96053}{}\label{struct_servo_a07e75a2dc8f979d2d91308da2ae96053}
+
+
+Definition at line 60 of file Servo.\+hpp.
+
+\index{Servo@{Servo}!servo\+Abnormality@{servo\+Abnormality}}
+\index{servo\+Abnormality@{servo\+Abnormality}!Servo@{Servo}}
+\subsubsection[{\texorpdfstring{servo\+Abnormality}{servoAbnormality}}]{\setlength{\rightskip}{0pt plus 5cm}signed short Servo\+::servo\+Abnormality\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{struct_servo_a0876d7d53f6e32cd75fa8ead3c274ead}{}\label{struct_servo_a0876d7d53f6e32cd75fa8ead3c274ead}
+
+
+Definition at line 59 of file Servo.\+hpp.
+
+\index{Servo@{Servo}!servo\+Nr@{servo\+Nr}}
+\index{servo\+Nr@{servo\+Nr}!Servo@{Servo}}
+\subsubsection[{\texorpdfstring{servo\+Nr}{servoNr}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned char Servo\+::servo\+Nr\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{struct_servo_a0795bd3f3c8d44e1818ffd653a7484d5}{}\label{struct_servo_a0795bd3f3c8d44e1818ffd653a7484d5}
+
+
+Definition at line 56 of file Servo.\+hpp.
 
 
 

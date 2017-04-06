@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['max',['max',['../struct_servo.html#a20a1e16e912d613a6f7ee07072799f6d',1,'Servo']]],
-  ['min',['min',['../struct_servo.html#a2fe3506ea048af600250b292275df6e2',1,'Servo']]]
+  ['interface',['interface',['../robotsrvtest_8cpp.html#a96d2931b623e8c1d728507b4b4fa035e',1,'robotsrvtest.cpp']]]
 ];

@@ -107,6 +107,8 @@ $(document).ready(function(){initNavTree('class_robot_arm.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_robot_arm-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">RobotArm Class Reference</div>  </div>
@@ -114,6 +116,14 @@ $(document).ready(function(){initNavTree('class_robot_arm.html','');});
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_robot___arm_8hpp_source.html">Robot_Arm.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for RobotArm:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_robot_arm__coll__graph.png" border="0" usemap="#_robot_arm_coll__map" alt="Collaboration graph"/></div>
+<map name="_robot_arm_coll__map" id="_robot_arm_coll__map">
+<area shape="rect" id="node2" href="class_robot_serial.html" title="RobotSerial" alt="" coords="5,95,96,121"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -132,6 +142,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a645e7400a9e29525385d07e0b9552eb4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot_arm.html#a645e7400a9e29525385d07e0b9552eb4">stop</a> (robotarm::Robot_Stop::Request &amp;req, robotarm::Robot_Stop::Response &amp;res)</td></tr>
 <tr class="memdesc:a645e7400a9e29525385d07e0b9552eb4"><td class="mdescLeft">&#160;</td><td class="mdescRight">stop robot  <a href="#a645e7400a9e29525385d07e0b9552eb4">More...</a><br /></td></tr>
 <tr class="separator:a645e7400a9e29525385d07e0b9552eb4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:a71fb5e56bdc1ec60d8f769226e80dc28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot_arm.html#a71fb5e56bdc1ec60d8f769226e80dc28">goTo</a> (double a1, double a2, double a3, double a4, double a5, double a6, double Time)</td></tr>
+<tr class="memdesc:a71fb5e56bdc1ec60d8f769226e80dc28"><td class="mdescLeft">&#160;</td><td class="mdescRight">go to configuration  <a href="#a71fb5e56bdc1ec60d8f769226e80dc28">More...</a><br /></td></tr>
+<tr class="separator:a71fb5e56bdc1ec60d8f769226e80dc28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19ee5ffdc095ee2771353372fce03252"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot_arm.html#a19ee5ffdc095ee2771353372fce03252">status</a> ()</td></tr>
+<tr class="memdesc:a19ee5ffdc095ee2771353372fce03252"><td class="mdescLeft">&#160;</td><td class="mdescRight">get the status of the robot  <a href="#a19ee5ffdc095ee2771353372fce03252">More...</a><br /></td></tr>
+<tr class="separator:a19ee5ffdc095ee2771353372fce03252"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd7be4339ad5fe6c65b07b4930f52e69"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot_arm.html#abd7be4339ad5fe6c65b07b4930f52e69">stop</a> ()</td></tr>
+<tr class="memdesc:abd7be4339ad5fe6c65b07b4930f52e69"><td class="mdescLeft">&#160;</td><td class="mdescRight">emergency stop  <a href="#abd7be4339ad5fe6c65b07b4930f52e69">More...</a><br /></td></tr>
+<tr class="separator:abd7be4339ad5fe6c65b07b4930f52e69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afa693a670ce5c4fc705fd0b9b75d516b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot_arm.html#afa693a670ce5c4fc705fd0b9b75d516b">sleep</a> (unsigned long milliseconds)</td></tr>
+<tr class="separator:afa693a670ce5c4fc705fd0b9b75d516b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:aa1be826408c3c876e2227095bba1cd17"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_robot_serial.html">RobotSerial</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot_arm.html#aa1be826408c3c876e2227095bba1cd17">robotSerial</a></td></tr>
+<tr class="separator:aa1be826408c3c876e2227095bba1cd17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2fd2d1c096f1b147b7882d7bfd202eaf"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="struct_servo.html">Servo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot_arm.html#a2fd2d1c096f1b147b7882d7bfd202eaf">ServoList</a></td></tr>
+<tr class="separator:a2fd2d1c096f1b147b7882d7bfd202eaf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -171,6 +202,16 @@ Public Member Functions</h2></td></tr>
 </dl>
 
 <p>Definition at line <a class="el" href="_robot___arm_8cpp_source.html#l00003">3</a> of file <a class="el" href="_robot___arm_8cpp_source.html">Robot_Arm.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_robot_arm_aa3324f162a64eeb345cb6d2845f3822c_cgraph.png" border="0" usemap="#class_robot_arm_aa3324f162a64eeb345cb6d2845f3822c_cgraph" alt=""/></div>
+<map name="class_robot_arm_aa3324f162a64eeb345cb6d2845f3822c_cgraph" id="class_robot_arm_aa3324f162a64eeb345cb6d2845f3822c_cgraph">
+<area shape="rect" id="node2" href="class_robot_arm.html#afa693a670ce5c4fc705fd0b9b75d516b" title="RobotArm::sleep" alt="" coords="201,5,321,32"/>
+</map>
+</div>
+</p>
 
 </div>
 </div>
@@ -235,8 +276,123 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_robot_arm_a8b44092b92f889600d3e712c292b9c48_icgraph.png" border="0" usemap="#class_robot_arm_a8b44092b92f889600d3e712c292b9c48_icgraph" alt=""/></div>
 <map name="class_robot_arm_a8b44092b92f889600d3e712c292b9c48_icgraph" id="class_robot_arm_a8b44092b92f889600d3e712c292b9c48_icgraph">
-<area shape="rect" id="node2" href="class_robot_arm.html#a645e7400a9e29525385d07e0b9552eb4" title="stop robot " alt="" coords="172,29,287,56"/>
-<area shape="rect" id="node3" href="_robot___driver__server_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="204,80,255,107"/>
+<area shape="rect" id="node2" href="_robot___driver__server_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="172,5,223,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="a71fb5e56bdc1ec60d8f769226e80dc28"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RobotArm::goTo </td>
+          <td>(</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a2</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a3</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a4</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a5</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>a6</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>Time</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>go to configuration </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">a1</td><td>angle of 1st servo </td></tr>
+    <tr><td class="paramname">a2</td><td>angle of 2st servo </td></tr>
+    <tr><td class="paramname">a3</td><td>angle of 3st servo </td></tr>
+    <tr><td class="paramname">a4</td><td>angle of 4st servo </td></tr>
+    <tr><td class="paramname">a5</td><td>angle of 5st servo </td></tr>
+    <tr><td class="paramname">a6</td><td>angle of 6st servo </td></tr>
+    <tr><td class="paramname">Time</td><td>time to arrive </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Definition at line <a class="el" href="_robot___arm_8cpp_source.html#l00078">78</a> of file <a class="el" href="_robot___arm_8cpp_source.html">Robot_Arm.cpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="afa693a670ce5c4fc705fd0b9b75d516b"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RobotArm::sleep </td>
+          <td>(</td>
+          <td class="paramtype">unsigned long&#160;</td>
+          <td class="paramname"><em>milliseconds</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_robot___arm_8cpp_source.html#l00101">101</a> of file <a class="el" href="_robot___arm_8cpp_source.html">Robot_Arm.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_robot_arm_afa693a670ce5c4fc705fd0b9b75d516b_icgraph.png" border="0" usemap="#class_robot_arm_afa693a670ce5c4fc705fd0b9b75d516b_icgraph" alt=""/></div>
+<map name="class_robot_arm_afa693a670ce5c4fc705fd0b9b75d516b_icgraph" id="class_robot_arm_afa693a670ce5c4fc705fd0b9b75d516b_icgraph">
+<area shape="rect" id="node2" href="class_robot_arm.html#aa3324f162a64eeb345cb6d2845f3822c" title="constructor " alt="" coords="173,5,321,32"/>
 </map>
 </div>
 </p>
@@ -279,19 +435,40 @@ Here is the caller graph for this function:</div>
 
 <p>Definition at line <a class="el" href="_robot___arm_8cpp_source.html#l00058">58</a> of file <a class="el" href="_robot___arm_8cpp_source.html">Robot_Arm.cpp</a>.</p>
 
-<p><div class="dynheader">
-Here is the call graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="class_robot_arm_a9bc2cbb9fb6252afffd43ed2a5f6113e_cgraph.png" border="0" usemap="#class_robot_arm_a9bc2cbb9fb6252afffd43ed2a5f6113e_cgraph" alt=""/></div>
 </div>
-</p>
+</div>
+<a class="anchor" id="a19ee5ffdc095ee2771353372fce03252"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string RobotArm::status </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>get the status of the robot </p>
+<dl class="section return"><dt>Returns</dt><dd>string with config angles </dd></dl>
+
+<p>Definition at line <a class="el" href="_robot___arm_8cpp_source.html#l00088">88</a> of file <a class="el" href="_robot___arm_8cpp_source.html">Robot_Arm.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_robot_arm_a9bc2cbb9fb6252afffd43ed2a5f6113e_icgraph.png" border="0" usemap="#class_robot_arm_a9bc2cbb9fb6252afffd43ed2a5f6113e_icgraph" alt=""/></div>
-<map name="class_robot_arm_a9bc2cbb9fb6252afffd43ed2a5f6113e_icgraph" id="class_robot_arm_a9bc2cbb9fb6252afffd43ed2a5f6113e_icgraph">
-<area shape="rect" id="node2" href="class_robot_arm.html#a645e7400a9e29525385d07e0b9552eb4" title="stop robot " alt="" coords="179,29,293,56"/>
+<div class="center"><img src="class_robot_arm_a19ee5ffdc095ee2771353372fce03252_icgraph.png" border="0" usemap="#class_robot_arm_a19ee5ffdc095ee2771353372fce03252_icgraph" alt=""/></div>
+<map name="class_robot_arm_a19ee5ffdc095ee2771353372fce03252_icgraph" id="class_robot_arm_a19ee5ffdc095ee2771353372fce03252_icgraph">
+<area shape="rect" id="node2" href="_robot___driver__server_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="179,5,229,32"/>
 </map>
 </div>
 </p>
@@ -339,9 +516,45 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_robot_arm_a645e7400a9e29525385d07e0b9552eb4_cgraph.png" border="0" usemap="#class_robot_arm_a645e7400a9e29525385d07e0b9552eb4_cgraph" alt=""/></div>
 <map name="class_robot_arm_a645e7400a9e29525385d07e0b9552eb4_cgraph" id="class_robot_arm_a645e7400a9e29525385d07e0b9552eb4_cgraph">
-<area shape="rect" id="node2" href="class_robot_arm.html#a8b44092b92f889600d3e712c292b9c48" title="go to position " alt="" coords="172,5,291,32"/>
-<area shape="rect" id="node3" href="class_robot_arm.html#a9bc2cbb9fb6252afffd43ed2a5f6113e" title="robot status " alt="" coords="169,80,294,107"/>
-<area shape="rect" id="node4" href="class_robot_serial.html#a48929a3b47818cf3366b003b121ed539" title="send message to robot by serial " alt="" coords="168,131,295,157"/>
+<area shape="rect" id="node2" href="class_robot_arm.html#abd7be4339ad5fe6c65b07b4930f52e69" title="emergency stop " alt="" coords="168,5,283,32"/>
+<area shape="rect" id="node3" href="class_robot_serial.html#a48929a3b47818cf3366b003b121ed539" title="send message to robot by serial " alt="" coords="331,5,457,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="abd7be4339ad5fe6c65b07b4930f52e69"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void RobotArm::stop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>emergency stop </p>
+
+<p>Definition at line <a class="el" href="_robot___arm_8cpp_source.html#l00093">93</a> of file <a class="el" href="_robot___arm_8cpp_source.html">Robot_Arm.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_robot_arm_abd7be4339ad5fe6c65b07b4930f52e69_cgraph.png" border="0" usemap="#class_robot_arm_abd7be4339ad5fe6c65b07b4930f52e69_cgraph" alt=""/></div>
+<map name="class_robot_arm_abd7be4339ad5fe6c65b07b4930f52e69_cgraph" id="class_robot_arm_abd7be4339ad5fe6c65b07b4930f52e69_cgraph">
+<area shape="rect" id="node2" href="class_robot_serial.html#a48929a3b47818cf3366b003b121ed539" title="send message to robot by serial " alt="" coords="168,5,295,32"/>
 </map>
 </div>
 </p>
@@ -349,9 +562,58 @@ Here is the call graph for this function:</div>
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><img src="class_robot_arm_a645e7400a9e29525385d07e0b9552eb4_icgraph.png" border="0" usemap="#class_robot_arm_a645e7400a9e29525385d07e0b9552eb4_icgraph" alt=""/></div>
+<div class="center"><img src="class_robot_arm_abd7be4339ad5fe6c65b07b4930f52e69_icgraph.png" border="0" usemap="#class_robot_arm_abd7be4339ad5fe6c65b07b4930f52e69_icgraph" alt=""/></div>
+<map name="class_robot_arm_abd7be4339ad5fe6c65b07b4930f52e69_icgraph" id="class_robot_arm_abd7be4339ad5fe6c65b07b4930f52e69_icgraph">
+<area shape="rect" id="node2" href="class_robot_arm.html#a645e7400a9e29525385d07e0b9552eb4" title="stop robot " alt="" coords="168,5,283,32"/>
+<area shape="rect" id="node3" href="_robot___driver__server_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="200,56,251,83"/>
+</map>
 </div>
 </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="aa1be826408c3c876e2227095bba1cd17"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_robot_serial.html">RobotSerial</a> RobotArm::robotSerial</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_robot___arm_8hpp_source.html#l00074">74</a> of file <a class="el" href="_robot___arm_8hpp_source.html">Robot_Arm.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a2fd2d1c096f1b147b7882d7bfd202eaf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="struct_servo.html">Servo</a>&gt; RobotArm::ServoList</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_robot___arm_8hpp_source.html#l00075">75</a> of file <a class="el" href="_robot___arm_8hpp_source.html">Robot_Arm.hpp</a>.</p>
 
 </div>
 </div>

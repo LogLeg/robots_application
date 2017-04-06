@@ -4,6 +4,15 @@
 
 {\ttfamily \#include $<$vision.\+hpp$>$}
 
+
+
+Collaboration diagram for Vision\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_vision__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -11,7 +20,9 @@
 \item 
 \hyperlink{class_vision_a12bc039b4fcdb229e70c55d2660392a8}{$\sim$\+Vision} ()
 \begin{DoxyCompactList}\small\item\em Deconstructor. \end{DoxyCompactList}\item 
-void \hyperlink{class_vision_afc55887fac6cea0954963cff0429a705}{initialize} (const string \&window\+\_\+name, uint8\+\_\+t device, bool test)
+uint8\+\_\+t \hyperlink{class_vision_af6f5c8e7c020e44d4f88789c3b8e123f}{calibrate} (const Mat \&input)
+\begin{DoxyCompactList}\small\item\em used to calibrate the colour edges \end{DoxyCompactList}\item 
+void \hyperlink{class_vision_afc55887fac6cea0954963cff0429a705}{initialize} (const string \&\hyperlink{class_vision_aefa7b216c7f6dac43438e0f9df163dae}{window\+\_\+name}, uint8\+\_\+t device, bool test)
 \begin{DoxyCompactList}\small\item\em This function will initialize the camera and will set additional parameters that depend on what the camera sees. Like calibrating the pixels per mm. \end{DoxyCompactList}\item 
 void \hyperlink{class_vision_aefb980ea81da98b4f5531cd46481ce2d}{show\+\_\+image} ()
 \begin{DoxyCompactList}\small\item\em This function will take all the loose ends of this class and combine them into one Mat so that everything is nice and tidy. \end{DoxyCompactList}\item 
@@ -29,6 +40,66 @@ uint8\+\_\+t \hyperlink{class_vision_a7c9c698f6da2af1773bd0b65ba4bfd34}{number\+
 \begin{DoxyCompactList}\small\item\em This function will put numers on the objects that can be grabbed by the robotic arm. \end{DoxyCompactList}\item 
 \hyperlink{struct_properties}{Properties} \hyperlink{class_vision_a136b9affd9c8fdae0583b9a56d3817e4}{shape2grab} (uint8\+\_\+t shape)
 \begin{DoxyCompactList}\small\item\em This function will return the properties of the selected shape. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{class_vision_aef09b275d4c09a766fc01e92a8e2e774}{get\+\_\+calibration\+\_\+square} ()
+\begin{DoxyCompactList}\small\item\em This function will search for a specific calibration square in the picture and will adjust the pixel to mm ratio to that. It will also serve as a anchor to calculate where the robotic arm is. It will fill the. \end{DoxyCompactList}\item 
+double \hyperlink{class_vision_a985c230f753e693678b1c808204c746b}{angle} (const Point \&pt1, const Point \&pt2, const Point \&pt0)
+\item 
+uint8\+\_\+t \hyperlink{class_vision_a2b78b716ed430b2f9d09ea918e752e6b}{check\+\_\+rectangle} (const vector$<$ Point $>$ \&contour, const vector$<$ Point $>$ \&contours\+\_\+approx\+Poly)
+\begin{DoxyCompactList}\small\item\em This function will check if the given contour actually contains corners with 90 degrees and after that it will say if its either a rectangle or a square. \end{DoxyCompactList}\item 
+bool \hyperlink{class_vision_a72b289b68ecb074480f27733dff5eab0}{detect\+\_\+circle} (const vector$<$ Point $>$ \&contour)
+\begin{DoxyCompactList}\small\item\em This function detects circles. Only used to determine the target position of a shape. \end{DoxyCompactList}\item 
+void \hyperlink{class_vision_ae3f60088ee2306eb73f6f76aea46cdae}{set\+\_\+colour\+\_\+values} ()
+\begin{DoxyCompactList}\small\item\em This function sets all the colour values into their corresponding structs. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{struct_colour}{Colour} \hyperlink{class_vision_a3c6321608149b7d3967fa83d7548d6eb}{white}
+\begin{DoxyCompactList}\small\item\em \hyperlink{struct_colour}{Colour} objects. \end{DoxyCompactList}\item 
+\hyperlink{struct_colour}{Colour} \hyperlink{class_vision_adc52ed0340e54fb14c8a3f397ec0bbc0}{black}
+\item 
+\hyperlink{struct_colour}{Colour} \hyperlink{class_vision_ad38a66e586f5d654be18ec7b292e73a7}{red}
+\item 
+\hyperlink{struct_colour}{Colour} \hyperlink{class_vision_aa05293fea4a19c7e1dce56d317ddd589}{green}
+\item 
+\hyperlink{struct_colour}{Colour} \hyperlink{class_vision_ae1f06c70a9065ce9daa2e6a8a8a828cb}{blue}
+\item 
+\hyperlink{struct_colour}{Colour} \hyperlink{class_vision_ad0e403eecfd6f309dbb94f2dd7c4696a}{yellow}
+\item 
+vector$<$ vector$<$ Point $>$ $>$ \hyperlink{class_vision_ad6bcc0c75d2ec3d3af8863f797d47493}{selection}
+\item 
+vector$<$ Point $>$ \hyperlink{class_vision_adfd3934ada55ba839129af775429bda0}{calibration\+\_\+square}
+\item 
+\hyperlink{struct_properties}{Properties} \hyperlink{class_vision_a2a950746f88058af9260fd7ec5cddb5a}{calibration\+\_\+square\+\_\+properties}
+\item 
+vector$<$ \hyperlink{struct_colour}{Colour} $>$ \hyperlink{class_vision_a6496f699a73a71319e02ed239c640478}{colours}
+\begin{DoxyCompactList}\small\item\em vector with the colours from above. \end{DoxyCompactList}\item 
+string \hyperlink{class_vision_aefa7b216c7f6dac43438e0f9df163dae}{window\+\_\+name}
+\begin{DoxyCompactList}\small\item\em just the name of the window. \end{DoxyCompactList}\item 
+Video\+Capture \hyperlink{class_vision_a464b62371814a56a653a16641cbb80d2}{cap}
+\begin{DoxyCompactList}\small\item\em capture object \end{DoxyCompactList}\item 
+Mat \hyperlink{class_vision_a20dae61ff0f80e5d4bfb9042a9e268a9}{src}
+\begin{DoxyCompactList}\small\item\em Mat objects to manipulate and copy into. \end{DoxyCompactList}\item 
+Mat \hyperlink{class_vision_a8840c3a4be531ca9c80055d5aae6408b}{feed\+\_\+gray}
+\item 
+Mat \hyperlink{class_vision_ad8af9d726d385407fa2b5a58af014bb6}{screenshot\+\_\+rgb}
+\item 
+Mat \hyperlink{class_vision_af7343aec964f7367e29f3534c2a4e8a8}{output}
+\item 
+Mat \hyperlink{class_vision_a8b8b8f5c0bac3e7cad105ae44c794f8c}{drawing}
+\item 
+Mat1b \hyperlink{class_vision_a6509080d46e25f85776c843c08ef4f76}{binairy\+\_\+mat\+\_\+final}
+\item 
+double \hyperlink{class_vision_a8f96f153fed9e8805a471852ca66e92b}{mm\+\_\+per\+\_\+pixel}
+\begin{DoxyCompactList}\small\item\em Pixels per mm. \end{DoxyCompactList}\item 
+double \hyperlink{class_vision_a313acf0b614275c6adfcda8e20040837}{distance\+\_\+to\+\_\+robotbase\+\_\+x}
+\begin{DoxyCompactList}\small\item\em translation to the robotbase in mm \end{DoxyCompactList}\item 
+double \hyperlink{class_vision_a2d250c93ba3590a87bb19113cf4d25c1}{distance\+\_\+to\+\_\+robotbase\+\_\+y}
+\item 
+double \hyperlink{class_vision_af3643289d7252e6a3ad292f739c898a7}{max\+\_\+grabbable\+\_\+size}
+\begin{DoxyCompactList}\small\item\em maximal grabbable size in mm \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -50,6 +121,17 @@ Definition at line 63 of file vision.\+hpp.
 
 Definition at line 10 of file vision.\+cpp.
 
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_vision_ad6899fb359fd485afbd309d6d7b0ae1f_cgraph}
+\end{center}
+\end{figure}
+
+
 \index{Vision@{Vision}!````~Vision@{$\sim$\+Vision}}
 \index{````~Vision@{$\sim$\+Vision}!Vision@{Vision}}
 \subsubsection[{\texorpdfstring{$\sim$\+Vision()}{~Vision()}}]{\setlength{\rightskip}{0pt plus 5cm}Vision\+::$\sim$\+Vision (
@@ -63,11 +145,188 @@ Deconstructor.
 
 
 
-Definition at line 21 of file vision.\+cpp.
+Definition at line 26 of file vision.\+cpp.
 
 
 
 \subsection{Member Function Documentation}
+\index{Vision@{Vision}!angle@{angle}}
+\index{angle@{angle}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{angle(const Point \&pt1, const Point \&pt2, const Point \&pt0)}{angle(const Point &pt1, const Point &pt2, const Point &pt0)}}]{\setlength{\rightskip}{0pt plus 5cm}double Vision\+::angle (
+\begin{DoxyParamCaption}
+\item[{const Point \&}]{pt1, }
+\item[{const Point \&}]{pt2, }
+\item[{const Point \&}]{pt0}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_a985c230f753e693678b1c808204c746b}{}\label{class_vision_a985c230f753e693678b1c808204c746b}
+
+\begin{DoxyParams}{Parameters}
+{\em pt1} & point 1 from a rectangle. \\
+\hline
+{\em pt2} & point 2 from a rectangle. \\
+\hline
+{\em pt1} & point 0 from a rectangle. This is the point where the corner is calculated for. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the angle of a corner. 
+\end{DoxyReturn}
+
+
+Definition at line 360 of file vision.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_vision_a985c230f753e693678b1c808204c746b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Vision@{Vision}!calibrate@{calibrate}}
+\index{calibrate@{calibrate}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{calibrate(const Mat \&input)}{calibrate(const Mat &input)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Vision\+::calibrate (
+\begin{DoxyParamCaption}
+\item[{const Mat \&}]{input}
+\end{DoxyParamCaption}
+)}\hypertarget{class_vision_af6f5c8e7c020e44d4f88789c3b8e123f}{}\label{class_vision_af6f5c8e7c020e44d4f88789c3b8e123f}
+
+
+used to calibrate the colour edges 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & Mat object to scan \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the number of calibrations done 
+\end{DoxyReturn}
+
+
+Definition at line 31 of file vision.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_vision_af6f5c8e7c020e44d4f88789c3b8e123f_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_vision_af6f5c8e7c020e44d4f88789c3b8e123f_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Vision@{Vision}!check\+\_\+rectangle@{check\+\_\+rectangle}}
+\index{check\+\_\+rectangle@{check\+\_\+rectangle}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{check\+\_\+rectangle(const vector$<$ Point $>$ \&contour, const vector$<$ Point $>$ \&contours\+\_\+approx\+Poly)}{check_rectangle(const vector< Point > &contour, const vector< Point > &contours_approxPoly)}}]{\setlength{\rightskip}{0pt plus 5cm}uint8\+\_\+t Vision\+::check\+\_\+rectangle (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ Point $>$ \&}]{contour, }
+\item[{const vector$<$ Point $>$ \&}]{contours\+\_\+approx\+Poly}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_a2b78b716ed430b2f9d09ea918e752e6b}{}\label{class_vision_a2b78b716ed430b2f9d09ea918e752e6b}
+
+
+This function will check if the given contour actually contains corners with 90 degrees and after that it will say if its either a rectangle or a square. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contour} & The contour that needs to be checked \\
+\hline
+{\em contours\+\_\+approx\+Poly} & The corners of the contour \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the found shape. 
+\end{DoxyReturn}
+
+
+Definition at line 370 of file vision.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{class_vision_a2b78b716ed430b2f9d09ea918e752e6b_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_vision_a2b78b716ed430b2f9d09ea918e752e6b_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Vision@{Vision}!detect\+\_\+circle@{detect\+\_\+circle}}
+\index{detect\+\_\+circle@{detect\+\_\+circle}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{detect\+\_\+circle(const vector$<$ Point $>$ \&contour)}{detect_circle(const vector< Point > &contour)}}]{\setlength{\rightskip}{0pt plus 5cm}bool Vision\+::detect\+\_\+circle (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ Point $>$ \&}]{contour}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_a72b289b68ecb074480f27733dff5eab0}{}\label{class_vision_a72b289b68ecb074480f27733dff5eab0}
+
+
+This function detects circles. Only used to determine the target position of a shape. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em contour} & The contour that has been found by \\
+\hline
+\end{DoxyParams}
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_vision_ac61f35fd2d78031d96986b8db8daf257}{detect\+\_\+shape()} 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+True if circle has been found 
+\end{DoxyReturn}
+
+
+Definition at line 425 of file vision.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=332pt]{class_vision_a72b289b68ecb074480f27733dff5eab0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_vision_a72b289b68ecb074480f27733dff5eab0_icgraph}
+\end{center}
+\end{figure}
+
+
 \index{Vision@{Vision}!detect\+\_\+shape@{detect\+\_\+shape}}
 \index{detect\+\_\+shape@{detect\+\_\+shape}!Vision@{Vision}}
 \subsubsection[{\texorpdfstring{detect\+\_\+shape(const Mat1b \&input, uint8\+\_\+t shape)}{detect_shape(const Mat1b &input, uint8_t shape)}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ pair$<$ vector$<$ Point $>$, vector$<$ vector$<$ Point $>$ $>$ $>$ $>$ Vision\+::detect\+\_\+shape (
@@ -97,13 +356,22 @@ This function will find contours that meet the shape that has been given with th
 A vector of pairs with contours and nested contours This last one is only used by the 
 \end{DoxyReturn}
 \begin{DoxySeeAlso}{See also}
-get\+\_\+calibration\+\_\+square() function. 
+\hyperlink{class_vision_aef09b275d4c09a766fc01e92a8e2e774}{get\+\_\+calibration\+\_\+square()} function. 
 \end{DoxySeeAlso}
-Find contours
+Find contours 
 
-T\+E\+MP
+Definition at line 173 of file vision.\+cpp.
 
-Definition at line 117 of file vision.\+cpp.
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_vision_ac61f35fd2d78031d96986b8db8daf257_cgraph}
+\end{center}
+\end{figure}
+
 
 
 
@@ -128,7 +396,7 @@ Here is the caller graph for this function\+:\nopagebreak
 This function will filter a colour out of the. 
 
 \begin{DoxySeeAlso}{See also}
-src Mat. 
+\hyperlink{class_vision_a20dae61ff0f80e5d4bfb9042a9e268a9}{src} Mat. 
 \end{DoxySeeAlso}
 
 \begin{DoxyParams}{Parameters}
@@ -140,7 +408,7 @@ Returns a binairy Mat to process further down the road.
 \end{DoxyReturn}
 
 
-Definition at line 97 of file vision.\+cpp.
+Definition at line 153 of file vision.\+cpp.
 
 
 
@@ -149,6 +417,49 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_vision_a10439f626238ba3628534e55f80e59b1_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Vision@{Vision}!get\+\_\+calibration\+\_\+square@{get\+\_\+calibration\+\_\+square}}
+\index{get\+\_\+calibration\+\_\+square@{get\+\_\+calibration\+\_\+square}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{get\+\_\+calibration\+\_\+square()}{get_calibration_square()}}]{\setlength{\rightskip}{0pt plus 5cm}bool Vision\+::get\+\_\+calibration\+\_\+square (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_aef09b275d4c09a766fc01e92a8e2e774}{}\label{class_vision_aef09b275d4c09a766fc01e92a8e2e774}
+
+
+This function will search for a specific calibration square in the picture and will adjust the pixel to mm ratio to that. It will also serve as a anchor to calculate where the robotic arm is. It will fill the. 
+
+\begin{DoxySeeAlso}{See also}
+\hyperlink{class_vision_a2a950746f88058af9260fd7ec5cddb5a}{calibration\+\_\+square\+\_\+properties} variable. 
+\end{DoxySeeAlso}
+\begin{DoxyReturn}{Returns}
+true if the square was found. 
+\end{DoxyReturn}
+
+
+Definition at line 328 of file vision.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_vision_aef09b275d4c09a766fc01e92a8e2e774_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_vision_aef09b275d4c09a766fc01e92a8e2e774_icgraph}
 \end{center}
 \end{figure}
 
@@ -174,7 +485,7 @@ The properties of the contour
 \end{DoxyReturn}
 
 
-Definition at line 212 of file vision.\+cpp.
+Definition at line 246 of file vision.\+cpp.
 
 
 
@@ -211,7 +522,29 @@ This function will initialize the camera and will set additional parameters that
 \end{DoxyParams}
 
 
-Definition at line 26 of file vision.\+cpp.
+Definition at line 90 of file vision.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_vision_afc55887fac6cea0954963cff0429a705_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=239pt]{class_vision_afc55887fac6cea0954963cff0429a705_icgraph}
+\end{center}
+\end{figure}
+
 
 \index{Vision@{Vision}!number\+\_\+selection@{number\+\_\+selection}}
 \index{number\+\_\+selection@{number\+\_\+selection}!Vision@{Vision}}
@@ -231,7 +564,7 @@ This function will put numers on the objects that can be grabbed by the robotic 
 \end{DoxyParams}
 
 
-Definition at line 290 of file vision.\+cpp.
+Definition at line 297 of file vision.\+cpp.
 
 
 
@@ -250,7 +583,33 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=328pt]{class_vision_a7c9c698f6da2af1773bd0b65ba4bfd34_icgraph}
+\includegraphics[width=350pt]{class_vision_a7c9c698f6da2af1773bd0b65ba4bfd34_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Vision@{Vision}!set\+\_\+colour\+\_\+values@{set\+\_\+colour\+\_\+values}}
+\index{set\+\_\+colour\+\_\+values@{set\+\_\+colour\+\_\+values}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{set\+\_\+colour\+\_\+values()}{set_colour_values()}}]{\setlength{\rightskip}{0pt plus 5cm}void Vision\+::set\+\_\+colour\+\_\+values (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_ae3f60088ee2306eb73f6f76aea46cdae}{}\label{class_vision_ae3f60088ee2306eb73f6f76aea46cdae}
+
+
+This function sets all the colour values into their corresponding structs. 
+
+
+
+Definition at line 446 of file vision.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=288pt]{class_vision_ae3f60088ee2306eb73f6f76aea46cdae_icgraph}
 \end{center}
 \end{figure}
 
@@ -279,7 +638,7 @@ The properties of the shape to grab
 \end{DoxyReturn}
 
 
-Definition at line 320 of file vision.\+cpp.
+Definition at line 323 of file vision.\+cpp.
 
 
 
@@ -298,7 +657,7 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=302pt]{class_vision_a136b9affd9c8fdae0583b9a56d3817e4_icgraph}
+\includegraphics[width=350pt]{class_vision_a136b9affd9c8fdae0583b9a56d3817e4_icgraph}
 \end{center}
 \end{figure}
 
@@ -316,7 +675,18 @@ This function will take all the loose ends of this class and combine them into o
 
 
 
-Definition at line 64 of file vision.\+cpp.
+Definition at line 126 of file vision.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{class_vision_aefb980ea81da98b4f5531cd46481ce2d_cgraph}
+\end{center}
+\end{figure}
+
 
 
 
@@ -324,7 +694,7 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=249pt]{class_vision_aefb980ea81da98b4f5531cd46481ce2d_icgraph}
+\includegraphics[width=350pt]{class_vision_aefb980ea81da98b4f5531cd46481ce2d_icgraph}
 \end{center}
 \end{figure}
 
@@ -347,7 +717,7 @@ This function will get the stream from the webcam and put it into the src Mat.
 \end{DoxyParams}
 
 
-Definition at line 85 of file vision.\+cpp.
+Definition at line 138 of file vision.\+cpp.
 
 
 
@@ -378,7 +748,7 @@ This function will transform the x and y coordinate of a shape defined in proper
 \end{DoxyParams}
 
 
-Definition at line 237 of file vision.\+cpp.
+Definition at line 270 of file vision.\+cpp.
 
 
 
@@ -386,10 +756,199 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=341pt]{class_vision_acd6cf5d0e7bba1adfb6f123d76489a6d_icgraph}
+\includegraphics[width=350pt]{class_vision_acd6cf5d0e7bba1adfb6f123d76489a6d_icgraph}
 \end{center}
 \end{figure}
 
+
+
+
+\subsection{Member Data Documentation}
+\index{Vision@{Vision}!binairy\+\_\+mat\+\_\+final@{binairy\+\_\+mat\+\_\+final}}
+\index{binairy\+\_\+mat\+\_\+final@{binairy\+\_\+mat\+\_\+final}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{binairy\+\_\+mat\+\_\+final}{binairy_mat_final}}]{\setlength{\rightskip}{0pt plus 5cm}Mat1b Vision\+::binairy\+\_\+mat\+\_\+final\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_a6509080d46e25f85776c843c08ef4f76}{}\label{class_vision_a6509080d46e25f85776c843c08ef4f76}
+
+
+Definition at line 221 of file vision.\+hpp.
+
+\index{Vision@{Vision}!black@{black}}
+\index{black@{black}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{black}{black}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Colour} Vision\+::black\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_adc52ed0340e54fb14c8a3f397ec0bbc0}{}\label{class_vision_adc52ed0340e54fb14c8a3f397ec0bbc0}
+
+
+Definition at line 188 of file vision.\+hpp.
+
+\index{Vision@{Vision}!blue@{blue}}
+\index{blue@{blue}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{blue}{blue}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Colour} Vision\+::blue\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_ae1f06c70a9065ce9daa2e6a8a8a828cb}{}\label{class_vision_ae1f06c70a9065ce9daa2e6a8a8a828cb}
+
+
+Definition at line 191 of file vision.\+hpp.
+
+\index{Vision@{Vision}!calibration\+\_\+square@{calibration\+\_\+square}}
+\index{calibration\+\_\+square@{calibration\+\_\+square}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{calibration\+\_\+square}{calibration_square}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$Point$>$ Vision\+::calibration\+\_\+square\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_adfd3934ada55ba839129af775429bda0}{}\label{class_vision_adfd3934ada55ba839129af775429bda0}
+
+
+Definition at line 195 of file vision.\+hpp.
+
+\index{Vision@{Vision}!calibration\+\_\+square\+\_\+properties@{calibration\+\_\+square\+\_\+properties}}
+\index{calibration\+\_\+square\+\_\+properties@{calibration\+\_\+square\+\_\+properties}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{calibration\+\_\+square\+\_\+properties}{calibration_square_properties}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Properties} Vision\+::calibration\+\_\+square\+\_\+properties\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_a2a950746f88058af9260fd7ec5cddb5a}{}\label{class_vision_a2a950746f88058af9260fd7ec5cddb5a}
+
+
+Definition at line 196 of file vision.\+hpp.
+
+\index{Vision@{Vision}!cap@{cap}}
+\index{cap@{cap}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{cap}{cap}}]{\setlength{\rightskip}{0pt plus 5cm}Video\+Capture Vision\+::cap\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_a464b62371814a56a653a16641cbb80d2}{}\label{class_vision_a464b62371814a56a653a16641cbb80d2}
+
+
+capture object 
+
+
+
+Definition at line 211 of file vision.\+hpp.
+
+\index{Vision@{Vision}!colours@{colours}}
+\index{colours@{colours}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{colours}{colours}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<${\bf Colour}$>$ Vision\+::colours\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_a6496f699a73a71319e02ed239c640478}{}\label{class_vision_a6496f699a73a71319e02ed239c640478}
+
+
+vector with the colours from above. 
+
+
+
+Definition at line 201 of file vision.\+hpp.
+
+\index{Vision@{Vision}!distance\+\_\+to\+\_\+robotbase\+\_\+x@{distance\+\_\+to\+\_\+robotbase\+\_\+x}}
+\index{distance\+\_\+to\+\_\+robotbase\+\_\+x@{distance\+\_\+to\+\_\+robotbase\+\_\+x}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{distance\+\_\+to\+\_\+robotbase\+\_\+x}{distance_to_robotbase_x}}]{\setlength{\rightskip}{0pt plus 5cm}double Vision\+::distance\+\_\+to\+\_\+robotbase\+\_\+x\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_a313acf0b614275c6adfcda8e20040837}{}\label{class_vision_a313acf0b614275c6adfcda8e20040837}
+
+
+translation to the robotbase in mm 
+
+
+
+Definition at line 231 of file vision.\+hpp.
+
+\index{Vision@{Vision}!distance\+\_\+to\+\_\+robotbase\+\_\+y@{distance\+\_\+to\+\_\+robotbase\+\_\+y}}
+\index{distance\+\_\+to\+\_\+robotbase\+\_\+y@{distance\+\_\+to\+\_\+robotbase\+\_\+y}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{distance\+\_\+to\+\_\+robotbase\+\_\+y}{distance_to_robotbase_y}}]{\setlength{\rightskip}{0pt plus 5cm}double Vision\+::distance\+\_\+to\+\_\+robotbase\+\_\+y\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_a2d250c93ba3590a87bb19113cf4d25c1}{}\label{class_vision_a2d250c93ba3590a87bb19113cf4d25c1}
+
+
+Definition at line 232 of file vision.\+hpp.
+
+\index{Vision@{Vision}!drawing@{drawing}}
+\index{drawing@{drawing}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{drawing}{drawing}}]{\setlength{\rightskip}{0pt plus 5cm}Mat Vision\+::drawing\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_a8b8b8f5c0bac3e7cad105ae44c794f8c}{}\label{class_vision_a8b8b8f5c0bac3e7cad105ae44c794f8c}
+
+
+Definition at line 220 of file vision.\+hpp.
+
+\index{Vision@{Vision}!feed\+\_\+gray@{feed\+\_\+gray}}
+\index{feed\+\_\+gray@{feed\+\_\+gray}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{feed\+\_\+gray}{feed_gray}}]{\setlength{\rightskip}{0pt plus 5cm}Mat Vision\+::feed\+\_\+gray\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_a8840c3a4be531ca9c80055d5aae6408b}{}\label{class_vision_a8840c3a4be531ca9c80055d5aae6408b}
+
+
+Definition at line 217 of file vision.\+hpp.
+
+\index{Vision@{Vision}!green@{green}}
+\index{green@{green}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{green}{green}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Colour} Vision\+::green\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_aa05293fea4a19c7e1dce56d317ddd589}{}\label{class_vision_aa05293fea4a19c7e1dce56d317ddd589}
+
+
+Definition at line 190 of file vision.\+hpp.
+
+\index{Vision@{Vision}!max\+\_\+grabbable\+\_\+size@{max\+\_\+grabbable\+\_\+size}}
+\index{max\+\_\+grabbable\+\_\+size@{max\+\_\+grabbable\+\_\+size}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{max\+\_\+grabbable\+\_\+size}{max_grabbable_size}}]{\setlength{\rightskip}{0pt plus 5cm}double Vision\+::max\+\_\+grabbable\+\_\+size\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_af3643289d7252e6a3ad292f739c898a7}{}\label{class_vision_af3643289d7252e6a3ad292f739c898a7}
+
+
+maximal grabbable size in mm 
+
+
+
+Definition at line 237 of file vision.\+hpp.
+
+\index{Vision@{Vision}!mm\+\_\+per\+\_\+pixel@{mm\+\_\+per\+\_\+pixel}}
+\index{mm\+\_\+per\+\_\+pixel@{mm\+\_\+per\+\_\+pixel}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{mm\+\_\+per\+\_\+pixel}{mm_per_pixel}}]{\setlength{\rightskip}{0pt plus 5cm}double Vision\+::mm\+\_\+per\+\_\+pixel\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_a8f96f153fed9e8805a471852ca66e92b}{}\label{class_vision_a8f96f153fed9e8805a471852ca66e92b}
+
+
+Pixels per mm. 
+
+
+
+Definition at line 226 of file vision.\+hpp.
+
+\index{Vision@{Vision}!output@{output}}
+\index{output@{output}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{output}{output}}]{\setlength{\rightskip}{0pt plus 5cm}Mat Vision\+::output\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_af7343aec964f7367e29f3534c2a4e8a8}{}\label{class_vision_af7343aec964f7367e29f3534c2a4e8a8}
+
+
+Definition at line 219 of file vision.\+hpp.
+
+\index{Vision@{Vision}!red@{red}}
+\index{red@{red}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{red}{red}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Colour} Vision\+::red\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_ad38a66e586f5d654be18ec7b292e73a7}{}\label{class_vision_ad38a66e586f5d654be18ec7b292e73a7}
+
+
+Definition at line 189 of file vision.\+hpp.
+
+\index{Vision@{Vision}!screenshot\+\_\+rgb@{screenshot\+\_\+rgb}}
+\index{screenshot\+\_\+rgb@{screenshot\+\_\+rgb}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{screenshot\+\_\+rgb}{screenshot_rgb}}]{\setlength{\rightskip}{0pt plus 5cm}Mat Vision\+::screenshot\+\_\+rgb\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_ad8af9d726d385407fa2b5a58af014bb6}{}\label{class_vision_ad8af9d726d385407fa2b5a58af014bb6}
+
+
+Definition at line 218 of file vision.\+hpp.
+
+\index{Vision@{Vision}!selection@{selection}}
+\index{selection@{selection}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{selection}{selection}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$vector$<$Point$>$ $>$ Vision\+::selection\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_ad6bcc0c75d2ec3d3af8863f797d47493}{}\label{class_vision_ad6bcc0c75d2ec3d3af8863f797d47493}
+
+
+Definition at line 194 of file vision.\+hpp.
+
+\index{Vision@{Vision}!src@{src}}
+\index{src@{src}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{src}{src}}]{\setlength{\rightskip}{0pt plus 5cm}Mat Vision\+::src\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_a20dae61ff0f80e5d4bfb9042a9e268a9}{}\label{class_vision_a20dae61ff0f80e5d4bfb9042a9e268a9}
+
+
+Mat objects to manipulate and copy into. 
+
+
+
+Definition at line 216 of file vision.\+hpp.
+
+\index{Vision@{Vision}!white@{white}}
+\index{white@{white}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{white}{white}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Colour} Vision\+::white\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_a3c6321608149b7d3967fa83d7548d6eb}{}\label{class_vision_a3c6321608149b7d3967fa83d7548d6eb}
+
+
+\hyperlink{struct_colour}{Colour} objects. 
+
+
+
+Definition at line 187 of file vision.\+hpp.
+
+\index{Vision@{Vision}!window\+\_\+name@{window\+\_\+name}}
+\index{window\+\_\+name@{window\+\_\+name}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{window\+\_\+name}{window_name}}]{\setlength{\rightskip}{0pt plus 5cm}string Vision\+::window\+\_\+name\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_aefa7b216c7f6dac43438e0f9df163dae}{}\label{class_vision_aefa7b216c7f6dac43438e0f9df163dae}
+
+
+just the name of the window. 
+
+
+
+Definition at line 206 of file vision.\+hpp.
+
+\index{Vision@{Vision}!yellow@{yellow}}
+\index{yellow@{yellow}!Vision@{Vision}}
+\subsubsection[{\texorpdfstring{yellow}{yellow}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Colour} Vision\+::yellow\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_vision_ad0e403eecfd6f309dbb94f2dd7c4696a}{}\label{class_vision_ad0e403eecfd6f309dbb94f2dd7c4696a}
+
+
+Definition at line 192 of file vision.\+hpp.
 
 
 

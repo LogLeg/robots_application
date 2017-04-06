@@ -1,0 +1,7 @@
+<map id="Interface::input" name="Interface::input">
+<area shape="rect" id="node2" href="$class_interface.html#a345faa7570aa36a31681ca850d1c283d" title="Function that will read the input and will then check if it is correct and translate the input to a p..." alt="" coords="163,5,280,32"/>
+<area shape="rect" id="node3" href="$class_interface.html#a24b944dc66cb79f76ba91192a2a2860e" title="This function will serve the user a form to fill in and will call the parser function afterwards..." alt="" coords="328,5,475,32"/>
+<area shape="rect" id="node4" href="$robotsrvtest_8cpp.html#a61036826079f5e42d38d450a43f26985" title="get_coordinates" alt="" coords="523,5,637,32"/>
+<area shape="rect" id="node5" href="$robotsrvtest_8cpp.html#ad9d0e397081801b3c81f84aef014b9ca" title="fn" alt="" coords="685,5,724,32"/>
+<area shape="rect" id="node6" href="$robotsrvtest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="772,5,823,32"/>
+</map>

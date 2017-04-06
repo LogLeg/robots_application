@@ -1,12 +1,16 @@
 <map id="get_coordinates" name="get_coordinates">
 <area shape="rect" id="node2" href="$class_interface.html#a24b944dc66cb79f76ba91192a2a2860e" title="This function will serve the user a form to fill in and will call the parser function afterwards..." alt="" coords="187,5,334,32"/>
-<area shape="rect" id="node4" href="$class_vision.html#afbaa5efe06c5af3d82fb4fc133788b5b" title="This function will get the stream from the webcam and put it into the src Mat. " alt="" coords="410,81,541,108"/>
-<area shape="rect" id="node5" href="$class_vision.html#a7c9c698f6da2af1773bd0b65ba4bfd34" title="This function will put numers on the objects that can be grabbed by the robotic arm. " alt="" coords="177,259,345,285"/>
-<area shape="rect" id="node6" href="$class_vision.html#ac61f35fd2d78031d96986b8db8daf257" title="This function will find contours that meet the shape that has been given with the function..." alt="" coords="403,157,547,184"/>
-<area shape="rect" id="node7" href="$class_vision.html#a10439f626238ba3628534e55f80e59b1" title="This function will filter a colour out of the. " alt="" coords="409,208,542,235"/>
-<area shape="rect" id="node8" href="$class_vision.html#a41e694aef79da35cad92f9e57ecdea4e" title="This function will return the properties of a given contour. " alt="" coords="401,259,549,285"/>
-<area shape="rect" id="node9" href="$class_interface.html#adfa71e85801e5bb0e8bc88da902f8133" title="getter for the specification. " alt="" coords="171,360,350,387"/>
-<area shape="rect" id="node10" href="$class_vision.html#a136b9affd9c8fdae0583b9a56d3817e4" title="This function will return the properties of the selected shape. " alt="" coords="194,157,327,184"/>
-<area shape="rect" id="node11" href="$class_vision.html#acd6cf5d0e7bba1adfb6f123d76489a6d" title="This function will transform the x and y coordinate of a shape defined in properties to actual millim..." alt="" coords="168,411,353,437"/>
-<area shape="rect" id="node3" href="$class_interface.html#a345faa7570aa36a31681ca850d1c283d" title="Function that will read the input and will then check if it is correct and translate the input to a p..." alt="" coords="417,5,534,32"/>
+<area shape="rect" id="node5" href="$class_vision.html#afbaa5efe06c5af3d82fb4fc133788b5b" title="This function will get the stream from the webcam and put it into the src Mat. " alt="" coords="195,56,326,83"/>
+<area shape="rect" id="node6" href="$class_vision.html#a7c9c698f6da2af1773bd0b65ba4bfd34" title="This function will put numers on the objects that can be grabbed by the robotic arm. " alt="" coords="177,157,345,184"/>
+<area shape="rect" id="node7" href="$class_vision.html#ac61f35fd2d78031d96986b8db8daf257" title="This function will find contours that meet the shape that has been given with the function..." alt="" coords="401,107,545,133"/>
+<area shape="rect" id="node11" href="$class_vision.html#a41e694aef79da35cad92f9e57ecdea4e" title="This function will return the properties of a given contour. " alt="" coords="803,208,951,235"/>
+<area shape="rect" id="node12" href="$class_vision.html#a10439f626238ba3628534e55f80e59b1" title="This function will filter a colour out of the. " alt="" coords="407,208,540,235"/>
+<area shape="rect" id="node13" href="$class_interface.html#adfa71e85801e5bb0e8bc88da902f8133" title="getter for the specification. " alt="" coords="171,309,350,336"/>
+<area shape="rect" id="node14" href="$class_vision.html#a136b9affd9c8fdae0583b9a56d3817e4" title="This function will return the properties of the selected shape. " alt="" coords="407,348,540,375"/>
+<area shape="rect" id="node15" href="$class_vision.html#acd6cf5d0e7bba1adfb6f123d76489a6d" title="This function will transform the x and y coordinate of a shape defined in properties to actual millim..." alt="" coords="168,411,353,437"/>
+<area shape="rect" id="node3" href="$class_interface.html#a345faa7570aa36a31681ca850d1c283d" title="Function that will read the input and will then check if it is correct and translate the input to a p..." alt="" coords="415,5,532,32"/>
+<area shape="rect" id="node4" href="$class_interface.html#ab6e3210b017ae87be6ecf3b0fdd29d89" title="Function to wait and extract input data from user through the console. " alt="" coords="619,5,729,32"/>
+<area shape="rect" id="node8" href="$class_vision.html#a2b78b716ed430b2f9d09ea918e752e6b" title="This function will check if the given contour actually contains corners with 90 degrees and after tha..." alt="" coords="593,56,755,83"/>
+<area shape="rect" id="node10" href="$class_vision.html#a72b289b68ecb074480f27733dff5eab0" title="This function detects circles. Only used to determine the target position of a shape. " alt="" coords="604,107,744,133"/>
+<area shape="rect" id="node9" href="$class_vision.html#a985c230f753e693678b1c808204c746b" title="Vision::angle" alt="" coords="828,56,925,83"/>
 </map>

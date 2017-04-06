@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['y',['y',['../struct_path_algorithm_1_1_vertex.html#ae6428b0c59bbbcd5aad9cf244a38bef2',1,'PathAlgorithm::Vertex::y()'],['../structrobot_point_1_1_point.html#a402c118e3769d8cdf72e209f9cab3546',1,'robotPoint::Point::y()'],['../struct_position.html#aa5bf8323a4761d97b7fdd9011df71f85',1,'Position::y()'],['../struct_widgets_1_1_size.html#adf38e2f9f1cdf5b919a03004fe02c59d',1,'Widgets::Size::y()']]],
-  ['yellow',['YELLOW',['../constants_8hpp.html#a6f6a1b7876b7dd00438d7d7a5d03b4dd',1,'constants.hpp']]]
+  ['white',['white',['../class_vision.html#a3c6321608149b7d3967fa83d7548d6eb',1,'Vision::white()'],['../constants_8hpp.html#ac7395dbaa98f4fcfcea852d27e2967ab',1,'WHITE():&#160;constants.hpp']]],
+  ['width',['width',['../struct_properties.html#a0295d49b05722ec51b1525816e607b8c',1,'Properties']]],
+  ['window_5fname',['window_name',['../class_vision.html#aefa7b216c7f6dac43438e0f9df163dae',1,'Vision']]]
 ];

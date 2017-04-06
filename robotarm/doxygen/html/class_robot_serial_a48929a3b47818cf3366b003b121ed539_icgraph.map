@@ -1,5 +1,7 @@
 <map id="RobotSerial::send" name="RobotSerial::send">
-<area shape="rect" id="node2" href="$class_robot_arm.html#a645e7400a9e29525385d07e0b9552eb4" title="stop robot " alt="" coords="191,29,305,56"/>
-<area shape="rect" id="node3" href="$struct_servo.html#aed94c74351c407e550a51ba40215c135" title="go to given position " alt="" coords="180,80,316,107"/>
-<area shape="rect" id="node4" href="$struct_servo.html#af8a34733daf26ac3fe4bc6002931b7a8" title="get the current angle of the servo " alt="" coords="191,131,305,157"/>
+<area shape="rect" id="node2" href="$class_robot_arm.html#abd7be4339ad5fe6c65b07b4930f52e69" title="emergency stop " alt="" coords="191,31,305,57"/>
+<area shape="rect" id="node5" href="$struct_servo.html#aed94c74351c407e550a51ba40215c135" title="go to given position " alt="" coords="180,81,316,108"/>
+<area shape="rect" id="node6" href="$struct_servo.html#af8a34733daf26ac3fe4bc6002931b7a8" title="get the current angle of the servo " alt="" coords="191,132,305,159"/>
+<area shape="rect" id="node3" href="$class_robot_arm.html#a645e7400a9e29525385d07e0b9552eb4" title="stop robot " alt="" coords="364,5,479,32"/>
+<area shape="rect" id="node4" href="$_robot___driver__server_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="396,56,447,83"/>
 </map>

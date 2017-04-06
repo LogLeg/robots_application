@@ -1,0 +1,4 @@
+<map id="Vision::calibrate" name="Vision::calibrate">
+<area shape="rect" id="node2" href="$class_vision.html#aefb980ea81da98b4f5531cd46481ce2d" title="This function will take all the loose ends of this class and combine them into one Mat so that everyt..." alt="" coords="168,5,307,32"/>
+<area shape="rect" id="node3" href="$class_vision.html#afbaa5efe06c5af3d82fb4fc133788b5b" title="This function will get the stream from the webcam and put it into the src Mat. " alt="" coords="355,5,485,32"/>
+</map>

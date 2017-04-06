@@ -1,0 +1,10 @@
+<map id="Vision::angle" name="Vision::angle">
+<area shape="rect" id="node2" href="$class_vision.html#a2b78b716ed430b2f9d09ea918e752e6b" title="This function will check if the given contour actually contains corners with 90 degrees and after tha..." alt="" coords="151,23,312,49"/>
+<area shape="rect" id="node3" href="$class_vision.html#ac61f35fd2d78031d96986b8db8daf257" title="This function will find contours that meet the shape that has been given with the function..." alt="" coords="360,23,504,49"/>
+<area shape="rect" id="node4" href="$robotsrvtest_8cpp.html#a61036826079f5e42d38d450a43f26985" title="get_coordinates" alt="" coords="786,15,901,41"/>
+<area shape="rect" id="node7" href="$class_vision.html#a7c9c698f6da2af1773bd0b65ba4bfd34" title="This function will put numers on the objects that can be grabbed by the robotic arm. " alt="" coords="552,23,720,49"/>
+<area shape="rect" id="node8" href="$class_vision.html#aef09b275d4c09a766fc01e92a8e2e774" title="This function will search for a specific calibration square in the picture and will adjust the pixel ..." alt="" coords="768,66,919,107"/>
+<area shape="rect" id="node5" href="$robotsrvtest_8cpp.html#ad9d0e397081801b3c81f84aef014b9ca" title="fn" alt="" coords="1004,17,1043,44"/>
+<area shape="rect" id="node6" href="$robotsrvtest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1128,44,1179,71"/>
+<area shape="rect" id="node9" href="$class_vision.html#afc55887fac6cea0954963cff0429a705" title="This function will initialize the camera and will set additional parameters that depend on what the c..." alt="" coords="967,69,1080,96"/>
+</map>

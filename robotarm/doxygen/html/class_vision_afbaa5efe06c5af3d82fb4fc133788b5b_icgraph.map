@@ -1,4 +1,9 @@
 <map id="Vision::take_frame" name="Vision::take_frame">
-<area shape="rect" id="node2" href="$robotsrvtest_8cpp.html#a61036826079f5e42d38d450a43f26985" title="get_coordinates" alt="" coords="365,5,480,32"/>
-<area shape="rect" id="node3" href="$class_vision.html#a136b9affd9c8fdae0583b9a56d3817e4" title="This function will return the properties of the selected shape. " alt="" coords="184,31,317,57"/>
+<area shape="rect" id="node2" href="$robotsrvtest_8cpp.html#a61036826079f5e42d38d450a43f26985" title="get_coordinates" alt="" coords="196,19,311,45"/>
+<area shape="rect" id="node5" href="$class_vision.html#aefb980ea81da98b4f5531cd46481ce2d" title="This function will take all the loose ends of this class and combine them into one Mat so that everyt..." alt="" coords="184,95,323,121"/>
+<area shape="rect" id="node8" href="$class_vision.html#aef09b275d4c09a766fc01e92a8e2e774" title="This function will search for a specific calibration square in the picture and will adjust the pixel ..." alt="" coords="371,158,521,199"/>
+<area shape="rect" id="node3" href="$robotsrvtest_8cpp.html#ad9d0e397081801b3c81f84aef014b9ca" title="fn" alt="" coords="607,5,645,32"/>
+<area shape="rect" id="node4" href="$robotsrvtest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="731,56,781,83"/>
+<area shape="rect" id="node6" href="$class_vision.html#af6f5c8e7c020e44d4f88789c3b8e123f" title="used to calibrate the colour edges " alt="" coords="389,107,503,133"/>
+<area shape="rect" id="node7" href="$class_vision.html#afc55887fac6cea0954963cff0429a705" title="This function will initialize the camera and will set additional parameters that depend on what the c..." alt="" coords="569,107,683,133"/>
 </map>

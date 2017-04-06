@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['height',['height',['../struct_properties.html#a26cfb21bae7a36d08ae4ee73cda4f8bb',1,'Properties']]],
-  ['heuristiccost',['heuristicCost',['../struct_path_algorithm_1_1_vertex.html#a316a72f6d405096010224df1a78b8c4d',1,'PathAlgorithm::Vertex']]],
-  ['hue_5fmax',['hue_max',['../struct_colour.html#ad5bb23b460d5d34079ae34e7e1c0940c',1,'Colour']]],
-  ['hue_5fmin',['hue_min',['../struct_colour.html#ad80795d6cb069ebb1ba58d21dc431a1f',1,'Colour']]]
+  ['green',['green',['../class_vision.html#aa05293fea4a19c7e1dce56d317ddd589',1,'Vision::green()'],['../constants_8hpp.html#a2d9f47f9c221b922820936d9bf10ae43',1,'GREEN():&#160;constants.hpp']]]
 ];

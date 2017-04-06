@@ -85,11 +85,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   <div id="navrow4" class="tabs3">
     <ul class="tablist">
       <li><a href="#index_a"><span>a</span></a></li>
+      <li><a href="#index_c"><span>c</span></a></li>
       <li><a href="#index_d"><span>d</span></a></li>
       <li><a href="#index_e"><span>e</span></a></li>
       <li><a href="#index_f"><span>f</span></a></li>
       <li><a href="#index_g"><span>g</span></a></li>
-      <li><a href="#index_h"><span>h</span></a></li>
       <li><a href="#index_i"><span>i</span></a></li>
       <li><a href="#index_l"><span>l</span></a></li>
       <li><a href="#index_m"><span>m</span></a></li>
@@ -136,26 +136,23 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 &#160;
 
 <h3><a class="anchor" id="index_a"></a>- a -</h3><ul>
-<li>Add()
-: <a class="el" href="class_matrix.html#aac2fa2441171eebbce6569cd085a9949">Matrix&lt; W, H, T &gt;</a>
-</li>
 <li>addToClosedSet()
 : <a class="el" href="class_path_algorithm_1_1_a_star.html#a53139e4b3cd3971a2bf85a430e83378f">PathAlgorithm::AStar</a>
 </li>
 <li>addToOpenSet()
 : <a class="el" href="class_path_algorithm_1_1_a_star.html#a63f88f24acf7bf34cd060051134c9190">PathAlgorithm::AStar</a>
 </li>
-<li>appr()
-: <a class="el" href="class_matrix.html#a71d4fede301a6798bf5ea7df3abb0eaa">Matrix&lt; W, H, T &gt;</a>
+<li>angle()
+: <a class="el" href="class_vision.html#a985c230f753e693678b1c808204c746b">Vision</a>
 </li>
 <li>approxEqualPoint()
 : <a class="el" href="struct_path_algorithm_1_1_vertex.html#a1548704fc5f1f4e829f419c2416667d9">PathAlgorithm::Vertex</a>
 </li>
+<li>armGoto()
+: <a class="el" href="class_robotic_arm.html#a0d6a6dce0875c8540e5589c47aab5be3">RoboticArm</a>
+</li>
 <li>asPoint()
 : <a class="el" href="struct_path_algorithm_1_1_vertex.html#a587c9c56b60eebbd200ee462656b4450">PathAlgorithm::Vertex</a>
-</li>
-<li>at()
-: <a class="el" href="class_matrix.html#a9454a436ff7c18983b832642cc58b3ff">Matrix&lt; W, H, T &gt;</a>
 </li>
 <li>await_input()
 : <a class="el" href="class_interface.html#a24b944dc66cb79f76ba91192a2a2860e">Interface</a>
@@ -163,9 +160,28 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </ul>
 
 
+<h3><a class="anchor" id="index_c"></a>- c -</h3><ul>
+<li>calculatePath()
+: <a class="el" href="class_robotic_arm.html#ae925ea4c5ea53ca359399a07d0ef4f76">RoboticArm</a>
+</li>
+<li>calibrate()
+: <a class="el" href="class_vision.html#af6f5c8e7c020e44d4f88789c3b8e123f">Vision</a>
+</li>
+<li>check_rectangle()
+: <a class="el" href="class_vision.html#a2b78b716ed430b2f9d09ea918e752e6b">Vision</a>
+</li>
+<li>convertToXAngle()
+: <a class="el" href="class_robotic_arm.html#a6ca035bd87d2c0cb1a6f7f040ad0ed52">RoboticArm</a>
+</li>
+</ul>
+
+
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
 <li>degreesToPwm()
 : <a class="el" href="struct_servo.html#a0cfd9bbddac8bb91017569e0812f816a">Servo</a>
+</li>
+<li>detect_circle()
+: <a class="el" href="class_vision.html#a72b289b68ecb074480f27733dff5eab0">Vision</a>
 </li>
 <li>detect_shape()
 : <a class="el" href="class_vision.html#ac61f35fd2d78031d96986b8db8daf257">Vision</a>
@@ -199,13 +215,19 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>findRemoveInOpenSet()
 : <a class="el" href="class_path_algorithm_1_1_a_star.html#a657aaaf577ca25e68e6a5af57214e7d4">PathAlgorithm::AStar</a>
 </li>
+<li>followPath()
+: <a class="el" href="class_robotic_arm.html#a976b1c8a1f85f64818182490073d4c5c">RoboticArm</a>
+</li>
 <li>forwardKinematics()
-: <a class="el" href="class_robotic_arm.html#a549f24f349105a6b5130eb237d737132">RoboticArm</a>
+: <a class="el" href="class_robotic_arm.html#ade404a134912096fb363fa90ea0cd927">RoboticArm</a>
 </li>
 </ul>
 
 
 <h3><a class="anchor" id="index_g"></a>- g -</h3><ul>
+<li>get_calibration_square()
+: <a class="el" href="class_vision.html#aef09b275d4c09a766fc01e92a8e2e774">Vision</a>
+</li>
 <li>get_properties()
 : <a class="el" href="class_vision.html#a41e694aef79da35cad92f9e57ecdea4e">Vision</a>
 </li>
@@ -222,13 +244,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="class_robotic_arm.html#a18d2147e468f8026f301f1d96d040ea5">RoboticArm</a>
 </li>
 <li>getCS()
-: <a class="el" href="class_path_algorithm_1_1_a_star.html#a4cb2a6c928a01fcac02533500bd8ace5">PathAlgorithm::AStar</a>
-</li>
-<li>getHeight()
-: <a class="el" href="class_matrix.html#a67a8079db706e47b4c59b5515bde766a">Matrix&lt; W, H, T &gt;</a>
-</li>
-<li>getHighestRow()
-: <a class="el" href="class_matrix.html#a194c3692f1bbb0c80970fc5bae2b01a1">Matrix&lt; W, H, T &gt;</a>
+: <a class="el" href="class_path_algorithm_1_1_a_star.html#a420e1ac8824a265dc2272c7e50899322">PathAlgorithm::AStar</a>
 </li>
 <li>getInstance()
 : <a class="el" href="struct_path_algorithm_1_1_graph.html#ab9015f34eac8789354a91091630fbbe9">PathAlgorithm::Graph</a>
@@ -240,7 +256,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="class_path_algorithm_1_1_a_star.html#a48e23107ffca02392bdf2439775baecf">PathAlgorithm::AStar</a>
 </li>
 <li>getPM()
-: <a class="el" href="class_path_algorithm_1_1_a_star.html#a021ff514f018ce9ec7db705578a210d4">PathAlgorithm::AStar</a>
+: <a class="el" href="class_path_algorithm_1_1_a_star.html#a4bb6718fd07f503ff836c5cdccd74236">PathAlgorithm::AStar</a>
 </li>
 <li>getPos()
 : <a class="el" href="class_robotic_arm.html#a472bb97d5867b86add81326010da2f0f">RoboticArm</a>
@@ -248,11 +264,8 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>getPredecessorMap()
 : <a class="el" href="class_path_algorithm_1_1_a_star.html#ac4ce233712c0f7aac44d029e61888581">PathAlgorithm::AStar</a>
 </li>
-<li>getWidth()
-: <a class="el" href="class_matrix.html#a9259f00c0dc87ef47a0823e4d5ebb429">Matrix&lt; W, H, T &gt;</a>
-</li>
 <li>goTo()
-: <a class="el" href="class_robot_arm.html#a8b44092b92f889600d3e712c292b9c48">RobotArm</a>
+: <a class="el" href="class_robot_arm.html#a71fb5e56bdc1ec60d8f769226e80dc28">RobotArm</a>
 </li>
 <li>gotoPark()
 : <a class="el" href="class_robotic_arm.html#a6ecfa07487d7c03717be1e5f1fdb1e21">RoboticArm</a>
@@ -263,25 +276,15 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 </ul>
 
 
-<h3><a class="anchor" id="index_h"></a>- h -</h3><ul>
-<li>hConcat()
-: <a class="el" href="class_matrix.html#adb725d9614aa45937766d87668e5e0cc">Matrix&lt; W, H, T &gt;</a>
-</li>
-</ul>
-
-
 <h3><a class="anchor" id="index_i"></a>- i -</h3><ul>
-<li>Identity()
-: <a class="el" href="class_matrix.html#a1cca7534031201f08afa146565310a98">Matrix&lt; W, H, T &gt;</a>
-</li>
 <li>initialize()
 : <a class="el" href="class_vision.html#afc55887fac6cea0954963cff0429a705">Vision</a>
 </li>
+<li>input()
+: <a class="el" href="class_interface.html#ab6e3210b017ae87be6ecf3b0fdd29d89">Interface</a>
+</li>
 <li>Interface()
 : <a class="el" href="class_interface.html#a4406d74c75bdfe150bf72be1f1cda8b1">Interface</a>
-</li>
-<li>Invert()
-: <a class="el" href="class_matrix.html#af079b7d71963122e484a1918351e5b16">Matrix&lt; W, H, T &gt;</a>
 </li>
 </ul>
 
@@ -297,9 +300,6 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 
 
 <h3><a class="anchor" id="index_m"></a>- m -</h3><ul>
-<li>Matrix()
-: <a class="el" href="class_matrix.html#a26e9ec6ddcde3891596c76e8fd753d04">Matrix&lt; W, H, T &gt;</a>
-</li>
 <li>moveObject()
 : <a class="el" href="class_robotic_arm.html#ad9add36d9fad6da469f30d1ffd867e63">RoboticArm</a>
 </li>
@@ -319,39 +319,12 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 , <a class="el" href="struct_path_algorithm_1_1_vertex_less_cost_compare.html#a3fc58f67297b1342d575dde2c275dd48">PathAlgorithm::VertexLessCostCompare</a>
 , <a class="el" href="struct_path_algorithm_1_1_vertex_less_id_compare.html#adb205b9c837c7e884ccc2ec32cc69cfc">PathAlgorithm::VertexLessIdCompare</a>
 </li>
-<li>operator*()
-: <a class="el" href="class_matrix.html#ad1da3a066ba6d48c2f7952c6cc7b95d2">Matrix&lt; W, H, T &gt;</a>
-</li>
-<li>operator*=()
-: <a class="el" href="class_matrix.html#ad93704899e6667c756e06377d6e67d48">Matrix&lt; W, H, T &gt;</a>
-</li>
-<li>operator+()
-: <a class="el" href="class_matrix.html#a5123d4078fb8145eb7c7dd4722b49845">Matrix&lt; W, H, T &gt;</a>
-</li>
-<li>operator+=()
-: <a class="el" href="class_matrix.html#af1ce2eed120cde67df92e23a7f8b7b00">Matrix&lt; W, H, T &gt;</a>
-</li>
-<li>operator-()
-: <a class="el" href="class_matrix.html#a1a3d0d98807ec9146bf0d1d374c10517">Matrix&lt; W, H, T &gt;</a>
-</li>
-<li>operator-=()
-: <a class="el" href="class_matrix.html#a1675e7e5ed541024cbc5fdc66114d23c">Matrix&lt; W, H, T &gt;</a>
-</li>
-<li>operator/()
-: <a class="el" href="class_matrix.html#a0b62ff512870c79543e5d5e710e5e53b">Matrix&lt; W, H, T &gt;</a>
-</li>
-<li>operator/=()
-: <a class="el" href="class_matrix.html#a162b1b5392a6c838baf43d4765027b3f">Matrix&lt; W, H, T &gt;</a>
-</li>
 <li>operator=()
-: <a class="el" href="class_matrix.html#a1b74e614af59905c38d68eb0daaffec7">Matrix&lt; W, H, T &gt;</a>
+: <a class="el" href="class_serial_1_1_scoped_read_lock.html#a7588a583d445b0c06f79cf7bbf503883">serial::Serial::ScopedReadLock</a>
+, <a class="el" href="class_serial_1_1_scoped_write_lock.html#a16ffd1b9e01afd3ceedcc51f29d76f28">serial::Serial::ScopedWriteLock</a>
 </li>
 <li>operator==()
-: <a class="el" href="class_matrix.html#acb58c98e1e74826d92aee856ffc4a3b4">Matrix&lt; W, H, T &gt;</a>
-, <a class="el" href="struct_path_algorithm_1_1_vertex.html#a814d676297b497ea2a444e9f6fb0d6bf">PathAlgorithm::Vertex</a>
-</li>
-<li>operator[]()
-: <a class="el" href="class_matrix.html#a5c110971f6c4b6282b937d0e815ab731">Matrix&lt; W, H, T &gt;</a>
+: <a class="el" href="struct_path_algorithm_1_1_vertex.html#a814d676297b497ea2a444e9f6fb0d6bf">PathAlgorithm::Vertex</a>
 </li>
 <li>otherSide()
 : <a class="el" href="struct_path_algorithm_1_1_edge.html#a204de7bc294af2cd5df73c29b2587345">PathAlgorithm::Edge</a>
@@ -366,8 +339,8 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>Point()
 : <a class="el" href="structrobot_point_1_1_point.html#a8b6fed933a89ad727d9fc6288eafba28">robotPoint::Point</a>
 </li>
-<li>pointWiseMultiply()
-: <a class="el" href="class_matrix.html#a47377a1da625f943895eec79daefa690">Matrix&lt; W, H, T &gt;</a>
+<li>printPath()
+: <a class="el" href="class_robotic_arm.html#a86204f659fe875af142cc1d817e562bf">RoboticArm</a>
 </li>
 <li>pwmToDegrees()
 : <a class="el" href="struct_servo.html#a293b3a36b2ab449f83d2c1152a6c5115">Servo</a>
@@ -405,7 +378,7 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 : <a class="el" href="class_serial_1_1_scoped_read_lock.html#a54f59663807d8adfe6db712ee6103503">serial::Serial::ScopedReadLock</a>
 </li>
 <li>ScopedWriteLock()
-: <a class="el" href="class_serial_1_1_scoped_write_lock.html#a662173968431aee3d6f204c354b20225">serial::Serial::ScopedWriteLock</a>
+: <a class="el" href="class_serial_1_1_scoped_write_lock.html#a12456e5d57c963e04b1a8503b3db5cf3">serial::Serial::ScopedWriteLock</a>
 </li>
 <li>search()
 : <a class="el" href="class_path_algorithm_1_1_a_star.html#aee41b31ec44b02f6dc94889d228a3582">PathAlgorithm::AStar</a>
@@ -416,11 +389,20 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>Servo()
 : <a class="el" href="struct_servo.html#ab662ab5df0c5f665e7eb11508c39f1a7">Servo</a>
 </li>
+<li>set_colour_values()
+: <a class="el" href="class_vision.html#ae3f60088ee2306eb73f6f76aea46cdae">Vision</a>
+</li>
 <li>setConf()
 : <a class="el" href="class_robotic_arm.html#ad69cfd597e6e397b88a316ef93b68ece">RoboticArm</a>
 </li>
 <li>setE()
 : <a class="el" href="struct_path_algorithm_1_1_graph.html#a185d5e83f65e20c5549169a1f8c2c6e6">PathAlgorithm::Graph</a>
+</li>
+<li>setGripperAngle()
+: <a class="el" href="class_robotic_arm.html#a24928c88b03f5d2e55ac980c019dadd8">RoboticArm</a>
+</li>
+<li>setGripperValue()
+: <a class="el" href="class_robotic_arm.html#a5b15b0eb40028d3524bae3a52552bd85">RoboticArm</a>
 </li>
 <li>setPos()
 : <a class="el" href="class_robotic_arm.html#ad3f7fcafa4909fee1db198353434e987">RoboticArm</a>
@@ -434,20 +416,17 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>show_image()
 : <a class="el" href="class_vision.html#aefb980ea81da98b4f5531cd46481ce2d">Vision</a>
 </li>
-<li>size()
-: <a class="el" href="class_matrix.html#a7bc543fe8c5920f92aab8a172d963e8c">Matrix&lt; W, H, T &gt;</a>
-</li>
 <li>Size()
 : <a class="el" href="struct_widgets_1_1_size.html#adbe84b848a3f80680f7b6e716691b83a">Widgets::Size</a>
+</li>
+<li>sleep()
+: <a class="el" href="class_robot_arm.html#afa693a670ce5c4fc705fd0b9b75d516b">RobotArm</a>
 </li>
 <li>status()
 : <a class="el" href="class_robot_arm.html#a9bc2cbb9fb6252afffd43ed2a5f6113e">RobotArm</a>
 </li>
 <li>stop()
 : <a class="el" href="class_robot_arm.html#a645e7400a9e29525385d07e0b9552eb4">RobotArm</a>
-</li>
-<li>Swap()
-: <a class="el" href="class_matrix.html#aac7c89f565eca5c6a69bc721be2c7a63">Matrix&lt; W, H, T &gt;</a>
 </li>
 </ul>
 
@@ -459,14 +438,8 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <li>thisSide()
 : <a class="el" href="struct_path_algorithm_1_1_edge.html#a0a987c8705e5e41f890fb4f222243af8">PathAlgorithm::Edge</a>
 </li>
-<li>to_string()
-: <a class="el" href="class_matrix.html#aa65e4a9c832a9134de9a2b4d0f7758df">Matrix&lt; W, H, T &gt;</a>
-</li>
 <li>transform_properties()
 : <a class="el" href="class_vision.html#acd6cf5d0e7bba1adfb6f123d76489a6d">Vision</a>
-</li>
-<li>transpose()
-: <a class="el" href="class_matrix.html#abb5e9bcfad1f5ed025294c599451c738">Matrix&lt; W, H, T &gt;</a>
 </li>
 </ul>
 
@@ -484,9 +457,6 @@ $(document).ready(function(){initNavTree('functions_func.html','');});
 <h3><a class="anchor" id="index_0x7e"></a>- ~ -</h3><ul>
 <li>~Interface()
 : <a class="el" href="class_interface.html#a19179888f29f18f1be54a3dfe98f68c0">Interface</a>
-</li>
-<li>~Matrix()
-: <a class="el" href="class_matrix.html#af9284a0f60b726bdb0e9a473d1e265f7">Matrix&lt; W, H, T &gt;</a>
 </li>
 <li>~RobotArm()
 : <a class="el" href="class_robot_arm.html#af3cf87fd2b5b060625eb49317632b83c">RobotArm</a>

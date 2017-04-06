@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['scopedreadlock',['ScopedReadLock',['../class_serial_1_1_scoped_read_lock.html',1,'serial::Serial']]],
-  ['scopedwritelock',['ScopedWriteLock',['../class_serial_1_1_scoped_write_lock.html',1,'serial::Serial']]],
-  ['servo',['Servo',['../struct_servo.html',1,'']]],
-  ['size',['Size',['../struct_widgets_1_1_size.html',1,'Widgets']]]
+  ['vertex',['Vertex',['../struct_path_algorithm_1_1_vertex.html',1,'PathAlgorithm']]],
+  ['vertexequalpointcompare',['VertexEqualPointCompare',['../struct_path_algorithm_1_1_vertex_equal_point_compare.html',1,'PathAlgorithm']]],
+  ['vertexlesscostcompare',['VertexLessCostCompare',['../struct_path_algorithm_1_1_vertex_less_cost_compare.html',1,'PathAlgorithm']]],
+  ['vertexlessidcompare',['VertexLessIdCompare',['../struct_path_algorithm_1_1_vertex_less_id_compare.html',1,'PathAlgorithm']]],
+  ['vision',['Vision',['../class_vision.html',1,'']]]
 ];

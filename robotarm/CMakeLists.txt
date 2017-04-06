@@ -138,20 +138,16 @@ include_directories(
 add_executable(Robot_Driver_server src/Robot_Driver_server.cpp src/Robot-Serial.cpp src/Robot_Arm.cpp src/Servo.cpp)
 add_definitions(-std=c++11)
 target_link_libraries(Robot_Driver_server ${catkin_LIBRARIES})
-add_dependencies(Robot_Driver_server beginner_tutorials_gencpp)
 add_dependencies(Robot_Driver_server serial)
 target_link_libraries(Robot_Driver_server serial)
 
 
 add_executable(RobotArmBestuuring src/RobotArmBestuuring.cpp)
 target_link_libraries(RobotArmBestuuring ${catkin_LIBRARIES})
-add_dependencies(RobotArmBestuuring beginner_tutorials_gencpp)
 
 add_executable(RobotSRVtest src/robotsrvtest.cpp src/RoboticArm.cpp src/AStar.cpp src/vision.cpp src/interface.cpp)
-add_definitions(-std=c++11)
+add_definitions(-std=c++11 -Wall -Wextra -Wconversion)
 target_link_libraries(RobotSRVtest ${catkin_LIBRARIES} ${OpenCV_LIBS})
-add_dependencies(RobotSRVtest beginner_tutorials_gencpp)
-
 
 ## Declare a C++ library
 # add_library(beginner_tutorials

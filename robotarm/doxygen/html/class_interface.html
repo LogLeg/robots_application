@@ -107,6 +107,8 @@ $(document).ready(function(){initNavTree('class_interface.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_interface-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Interface Class Reference</div>  </div>
@@ -132,6 +134,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:adfa71e85801e5bb0e8bc88da902f8133"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface.html#adfa71e85801e5bb0e8bc88da902f8133">get_specification</a> () const </td></tr>
 <tr class="memdesc:adfa71e85801e5bb0e8bc88da902f8133"><td class="mdescLeft">&#160;</td><td class="mdescRight">getter for the specification.  <a href="#adfa71e85801e5bb0e8bc88da902f8133">More...</a><br /></td></tr>
 <tr class="separator:adfa71e85801e5bb0e8bc88da902f8133"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:ab6e3210b017ae87be6ecf3b0fdd29d89"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface.html#ab6e3210b017ae87be6ecf3b0fdd29d89">input</a> ()</td></tr>
+<tr class="memdesc:ab6e3210b017ae87be6ecf3b0fdd29d89"><td class="mdescLeft">&#160;</td><td class="mdescRight">Function to wait and extract input data from user through the console.  <a href="#ab6e3210b017ae87be6ecf3b0fdd29d89">More...</a><br /></td></tr>
+<tr class="separator:ab6e3210b017ae87be6ecf3b0fdd29d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a8a5e47e57ef555ebbf54f345686e34cf"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_interface.html#a8a5e47e57ef555ebbf54f345686e34cf">specification</a></td></tr>
+<tr class="memdesc:a8a5e47e57ef555ebbf54f345686e34cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Pair contains info about the chosen shape (first value) and the colour (second value).  <a href="#a8a5e47e57ef555ebbf54f345686e34cf">More...</a><br /></td></tr>
+<tr class="separator:a8a5e47e57ef555ebbf54f345686e34cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class will handle anything related to the console interface. </p>
@@ -195,7 +209,7 @@ Public Member Functions</h2></td></tr>
 <dl class="section see"><dt>See also</dt><dd><a class="el" href="class_interface.html#a345faa7570aa36a31681ca850d1c283d" title="Function that will read the input and will then check if it is correct and translate the input to a p...">parser()</a> </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd>handling code </dd></dl>
 
-<p>Definition at line <a class="el" href="interface_8cpp_source.html#l00090">90</a> of file <a class="el" href="interface_8cpp_source.html">interface.cpp</a>.</p>
+<p>Definition at line <a class="el" href="interface_8cpp_source.html#l00091">91</a> of file <a class="el" href="interface_8cpp_source.html">interface.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -203,6 +217,7 @@ Here is the call graph for this function:</div>
 <div class="center"><img src="class_interface_a24b944dc66cb79f76ba91192a2a2860e_cgraph.png" border="0" usemap="#class_interface_a24b944dc66cb79f76ba91192a2a2860e_cgraph" alt=""/></div>
 <map name="class_interface_a24b944dc66cb79f76ba91192a2a2860e_cgraph" id="class_interface_a24b944dc66cb79f76ba91192a2a2860e_cgraph">
 <area shape="rect" id="node2" href="class_interface.html#a345faa7570aa36a31681ca850d1c283d" title="Function that will read the input and will then check if it is correct and translate the input to a p..." alt="" coords="200,5,317,32"/>
+<area shape="rect" id="node3" href="class_interface.html#ab6e3210b017ae87be6ecf3b0fdd29d89" title="Function to wait and extract input data from user through the console. " alt="" coords="365,5,475,32"/>
 </map>
 </div>
 </p>
@@ -213,6 +228,8 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="class_interface_a24b944dc66cb79f76ba91192a2a2860e_icgraph.png" border="0" usemap="#class_interface_a24b944dc66cb79f76ba91192a2a2860e_icgraph" alt=""/></div>
 <map name="class_interface_a24b944dc66cb79f76ba91192a2a2860e_icgraph" id="class_interface_a24b944dc66cb79f76ba91192a2a2860e_icgraph">
 <area shape="rect" id="node2" href="robotsrvtest_8cpp.html#a61036826079f5e42d38d450a43f26985" title="get_coordinates" alt="" coords="200,5,315,32"/>
+<area shape="rect" id="node3" href="robotsrvtest_8cpp.html#ad9d0e397081801b3c81f84aef014b9ca" title="fn" alt="" coords="363,5,401,32"/>
+<area shape="rect" id="node4" href="robotsrvtest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="449,5,500,32"/>
 </map>
 </div>
 </p>
@@ -235,7 +252,7 @@ Here is the caller graph for this function:</div>
 <p>getter for the specification. </p>
 <dl class="section return"><dt>Returns</dt><dd>specification pair filled with shape and colour </dd></dl>
 
-<p>Definition at line <a class="el" href="interface_8cpp_source.html#l00112">112</a> of file <a class="el" href="interface_8cpp_source.html">interface.cpp</a>.</p>
+<p>Definition at line <a class="el" href="interface_8cpp_source.html#l00113">113</a> of file <a class="el" href="interface_8cpp_source.html">interface.cpp</a>.</p>
 
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -243,6 +260,50 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="class_interface_adfa71e85801e5bb0e8bc88da902f8133_icgraph.png" border="0" usemap="#class_interface_adfa71e85801e5bb0e8bc88da902f8133_icgraph" alt=""/></div>
 <map name="class_interface_adfa71e85801e5bb0e8bc88da902f8133_icgraph" id="class_interface_adfa71e85801e5bb0e8bc88da902f8133_icgraph">
 <area shape="rect" id="node2" href="robotsrvtest_8cpp.html#a61036826079f5e42d38d450a43f26985" title="get_coordinates" alt="" coords="232,5,347,32"/>
+<area shape="rect" id="node3" href="robotsrvtest_8cpp.html#ad9d0e397081801b3c81f84aef014b9ca" title="fn" alt="" coords="395,5,433,32"/>
+<area shape="rect" id="node4" href="robotsrvtest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="481,5,532,32"/>
+</map>
+</div>
+</p>
+
+</div>
+</div>
+<a class="anchor" id="ab6e3210b017ae87be6ecf3b0fdd29d89"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">string Interface::input </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Function to wait and extract input data from user through the console. </p>
+<dl class="section return"><dt>Returns</dt><dd>string of input characters </dd></dl>
+
+<p>Definition at line <a class="el" href="interface_8cpp_source.html#l00020">20</a> of file <a class="el" href="interface_8cpp_source.html">interface.cpp</a>.</p>
+
+<p><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_interface_ab6e3210b017ae87be6ecf3b0fdd29d89_icgraph.png" border="0" usemap="#class_interface_ab6e3210b017ae87be6ecf3b0fdd29d89_icgraph" alt=""/></div>
+<map name="class_interface_ab6e3210b017ae87be6ecf3b0fdd29d89_icgraph" id="class_interface_ab6e3210b017ae87be6ecf3b0fdd29d89_icgraph">
+<area shape="rect" id="node2" href="class_interface.html#a345faa7570aa36a31681ca850d1c283d" title="Function that will read the input and will then check if it is correct and translate the input to a p..." alt="" coords="163,5,280,32"/>
+<area shape="rect" id="node3" href="class_interface.html#a24b944dc66cb79f76ba91192a2a2860e" title="This function will serve the user a form to fill in and will call the parser function afterwards..." alt="" coords="328,5,475,32"/>
+<area shape="rect" id="node4" href="robotsrvtest_8cpp.html#a61036826079f5e42d38d450a43f26985" title="get_coordinates" alt="" coords="523,5,637,32"/>
+<area shape="rect" id="node5" href="robotsrvtest_8cpp.html#ad9d0e397081801b3c81f84aef014b9ca" title="fn" alt="" coords="685,5,724,32"/>
+<area shape="rect" id="node6" href="robotsrvtest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="772,5,823,32"/>
 </map>
 </div>
 </p>
@@ -264,9 +325,9 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Function that will read the input and will then check if it is correct and translate the input to a pair filled with the choices of the user. It calls. </p>
-<dl class="section see"><dt>See also</dt><dd>input() first to get the input from the user. This is not passed to the function. When 'e' is put in, it will return 1 It supports a batch mode and accepts a line from a file. </dd>
+<dl class="section see"><dt>See also</dt><dd><a class="el" href="class_interface.html#ab6e3210b017ae87be6ecf3b0fdd29d89" title="Function to wait and extract input data from user through the console. ">input()</a> first to get the <a class="el" href="class_interface.html#ab6e3210b017ae87be6ecf3b0fdd29d89" title="Function to wait and extract input data from user through the console. ">input</a> from the user. This is not passed to the function. When 'e' is put in, it will return 1 It supports a batch mode and accepts a line from a file. </dd>
 <dd>
-input() </dd></dl>
+<a class="el" href="class_interface.html#ab6e3210b017ae87be6ecf3b0fdd29d89" title="Function to wait and extract input data from user through the console. ">input()</a> </dd></dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">line</td><td>string with the read line </td></tr>
@@ -279,15 +340,52 @@ input() </dd></dl>
 <p>Definition at line <a class="el" href="interface_8cpp_source.html#l00028">28</a> of file <a class="el" href="interface_8cpp_source.html">interface.cpp</a>.</p>
 
 <p><div class="dynheader">
+Here is the call graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_interface_a345faa7570aa36a31681ca850d1c283d_cgraph.png" border="0" usemap="#class_interface_a345faa7570aa36a31681ca850d1c283d_cgraph" alt=""/></div>
+<map name="class_interface_a345faa7570aa36a31681ca850d1c283d_cgraph" id="class_interface_a345faa7570aa36a31681ca850d1c283d_cgraph">
+<area shape="rect" id="node2" href="class_interface.html#ab6e3210b017ae87be6ecf3b0fdd29d89" title="Function to wait and extract input data from user through the console. " alt="" coords="171,5,280,32"/>
+</map>
+</div>
+</p>
+
+<p><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_interface_a345faa7570aa36a31681ca850d1c283d_icgraph.png" border="0" usemap="#class_interface_a345faa7570aa36a31681ca850d1c283d_icgraph" alt=""/></div>
 <map name="class_interface_a345faa7570aa36a31681ca850d1c283d_icgraph" id="class_interface_a345faa7570aa36a31681ca850d1c283d_icgraph">
 <area shape="rect" id="node2" href="class_interface.html#a24b944dc66cb79f76ba91192a2a2860e" title="This function will serve the user a form to fill in and will call the parser function afterwards..." alt="" coords="171,5,317,32"/>
 <area shape="rect" id="node3" href="robotsrvtest_8cpp.html#a61036826079f5e42d38d450a43f26985" title="get_coordinates" alt="" coords="365,5,480,32"/>
+<area shape="rect" id="node4" href="robotsrvtest_8cpp.html#ad9d0e397081801b3c81f84aef014b9ca" title="fn" alt="" coords="528,5,567,32"/>
+<area shape="rect" id="node5" href="robotsrvtest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="615,5,665,32"/>
 </map>
 </div>
 </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a8a5e47e57ef555ebbf54f345686e34cf"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t Interface::specification</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Pair contains info about the chosen shape (first value) and the colour (second value). </p>
+
+<p>Definition at line <a class="el" href="interface_8hpp_source.html#l00070">70</a> of file <a class="el" href="interface_8hpp_source.html">interface.hpp</a>.</p>
 
 </div>
 </div>

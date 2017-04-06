@@ -7,6 +7,7 @@
 {\ttfamily \#include $<$iostream$>$}\\*
 {\ttfamily \#include $<$cmath$>$}\\*
 {\ttfamily \#include $<$thread$>$}\\*
+{\ttfamily \#include $<$boost/thread/thread.\+hpp$>$}\\*
 {\ttfamily \#include \char`\"{}Robotic\+Arm.\+hpp\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}A\+Star.\+hpp\char`\"{}}\\*
 {\ttfamily \#include \char`\"{}Size.\+hpp\char`\"{}}\\*
@@ -31,6 +32,8 @@ void \hyperlink{robotsrvtest_8cpp_ad9d0e397081801b3c81f84aef014b9ca}{fn} ()
 void \hyperlink{robotsrvtest_8cpp_a75f289d8b6a2847c9036aa368b25b767}{my\+Sleep} (unsigned long milliseconds)
 \item 
 int \hyperlink{robotsrvtest_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\item 
+void \hyperlink{robotsrvtest_8cpp_acd84dd8c07feb65438228cb762a437e7}{move} (pair$<$ \hyperlink{struct_properties}{Properties}, \hyperlink{struct_properties}{Properties} $>$ robotworld)
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
@@ -38,6 +41,8 @@ int \hyperlink{robotsrvtest_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int a
 \hyperlink{class_vision}{Vision} \hyperlink{robotsrvtest_8cpp_a2d2bc90af05183be9c53a3cba1191194}{vision} = \hyperlink{class_vision}{Vision}()
 \item 
 \hyperlink{class_interface}{Interface} \hyperlink{robotsrvtest_8cpp_a96d2931b623e8c1d728507b4b4fa035e}{interface} = \hyperlink{class_interface}{Interface}()
+\item 
+\hyperlink{class_robotic_arm}{Robotic\+Arm} \hyperlink{robotsrvtest_8cpp_acb3f561fe4886fe08c8433737b38619b}{robot\+Arm} (70, 146, 187, 115, \hyperlink{struct_servo}{Servo}\{-\/90, 90\}, \hyperlink{struct_servo}{Servo}\{-\/30, 90\}, \hyperlink{struct_servo}{Servo}\{0, 135\}, \hyperlink{struct_servo}{Servo}\{-\/90, 90\}, \hyperlink{struct_servo}{Servo}\{-\/90, 90\}, \hyperlink{struct_servo}{Servo}\{0, 30\})
 \item 
 bool \hyperlink{robotsrvtest_8cpp_a36f7b6be7108281af77939ceaec42fd6}{running} = true
 \end{DoxyCompactItemize}
@@ -53,7 +58,7 @@ bool \hyperlink{robotsrvtest_8cpp_a36f7b6be7108281af77939ceaec42fd6}{running} = 
 )}\hypertarget{robotsrvtest_8cpp_ad9d0e397081801b3c81f84aef014b9ca}{}\label{robotsrvtest_8cpp_ad9d0e397081801b3c81f84aef014b9ca}
 
 
-Definition at line 131 of file robotsrvtest.\+cpp.
+Definition at line 180 of file robotsrvtest.\+cpp.
 
 
 
@@ -61,7 +66,18 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=249pt]{robotsrvtest_8cpp_ad9d0e397081801b3c81f84aef014b9ca_cgraph}
+\includegraphics[width=350pt]{robotsrvtest_8cpp_ad9d0e397081801b3c81f84aef014b9ca_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=183pt]{robotsrvtest_8cpp_ad9d0e397081801b3c81f84aef014b9ca_icgraph}
 \end{center}
 \end{figure}
 
@@ -75,7 +91,7 @@ Here is the call graph for this function\+:\nopagebreak
 )}\hypertarget{robotsrvtest_8cpp_a61036826079f5e42d38d450a43f26985}{}\label{robotsrvtest_8cpp_a61036826079f5e42d38d450a43f26985}
 
 
-Definition at line 84 of file robotsrvtest.\+cpp.
+Definition at line 107 of file robotsrvtest.\+cpp.
 
 
 
@@ -84,6 +100,17 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{robotsrvtest_8cpp_a61036826079f5e42d38d450a43f26985_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=305pt]{robotsrvtest_8cpp_a61036826079f5e42d38d450a43f26985_icgraph}
 \end{center}
 \end{figure}
 
@@ -98,7 +125,7 @@ Here is the call graph for this function\+:\nopagebreak
 )}\hypertarget{robotsrvtest_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{}\label{robotsrvtest_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
 
 
-Definition at line 46 of file robotsrvtest.\+cpp.
+Definition at line 54 of file robotsrvtest.\+cpp.
 
 
 
@@ -106,7 +133,40 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=263pt]{robotsrvtest_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\includegraphics[width=350pt]{robotsrvtest_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{robotsrvtest.\+cpp@{robotsrvtest.\+cpp}!move@{move}}
+\index{move@{move}!robotsrvtest.\+cpp@{robotsrvtest.\+cpp}}
+\subsubsection[{\texorpdfstring{move(pair$<$ Properties, Properties $>$ robotworld)}{move(pair< Properties, Properties > robotworld)}}]{\setlength{\rightskip}{0pt plus 5cm}void move (
+\begin{DoxyParamCaption}
+\item[{pair$<$ {\bf Properties}, {\bf Properties} $>$}]{robotworld}
+\end{DoxyParamCaption}
+)}\hypertarget{robotsrvtest_8cpp_acd84dd8c07feb65438228cb762a437e7}{}\label{robotsrvtest_8cpp_acd84dd8c07feb65438228cb762a437e7}
+
+
+Definition at line 95 of file robotsrvtest.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{robotsrvtest_8cpp_acd84dd8c07feb65438228cb762a437e7_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{robotsrvtest_8cpp_acd84dd8c07feb65438228cb762a437e7_icgraph}
 \end{center}
 \end{figure}
 
@@ -120,7 +180,7 @@ Here is the call graph for this function\+:\nopagebreak
 )}\hypertarget{robotsrvtest_8cpp_a75f289d8b6a2847c9036aa368b25b767}{}\label{robotsrvtest_8cpp_a75f289d8b6a2847c9036aa368b25b767}
 
 
-Definition at line 37 of file robotsrvtest.\+cpp.
+Definition at line 45 of file robotsrvtest.\+cpp.
 
 
 
@@ -130,19 +190,22 @@ Definition at line 37 of file robotsrvtest.\+cpp.
 \subsubsection[{\texorpdfstring{interface}{interface}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Interface} interface = {\bf Interface}()}\hypertarget{robotsrvtest_8cpp_a96d2931b623e8c1d728507b4b4fa035e}{}\label{robotsrvtest_8cpp_a96d2931b623e8c1d728507b4b4fa035e}
 
 
-Definition at line 29 of file robotsrvtest.\+cpp.
+Definition at line 31 of file robotsrvtest.\+cpp.
 
+\index{robotsrvtest.\+cpp@{robotsrvtest.\+cpp}!robot\+Arm@{robot\+Arm}}
+\index{robot\+Arm@{robot\+Arm}!robotsrvtest.\+cpp@{robotsrvtest.\+cpp}}
+\subsubsection[{\texorpdfstring{robot\+Arm}{robotArm}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Robotic\+Arm} robot\+Arm(70, 146, 187, 115, {\bf Servo}\{-\/90, 90\}, {\bf Servo}\{-\/30, 90\}, {\bf Servo}\{0, 135\}, {\bf Servo}\{-\/90, 90\}, {\bf Servo}\{-\/90, 90\}, {\bf Servo}\{0, 30\})}\hypertarget{robotsrvtest_8cpp_acb3f561fe4886fe08c8433737b38619b}{}\label{robotsrvtest_8cpp_acb3f561fe4886fe08c8433737b38619b}
 \index{robotsrvtest.\+cpp@{robotsrvtest.\+cpp}!running@{running}}
 \index{running@{running}!robotsrvtest.\+cpp@{robotsrvtest.\+cpp}}
 \subsubsection[{\texorpdfstring{running}{running}}]{\setlength{\rightskip}{0pt plus 5cm}bool running = true}\hypertarget{robotsrvtest_8cpp_a36f7b6be7108281af77939ceaec42fd6}{}\label{robotsrvtest_8cpp_a36f7b6be7108281af77939ceaec42fd6}
 
 
-Definition at line 31 of file robotsrvtest.\+cpp.
+Definition at line 40 of file robotsrvtest.\+cpp.
 
 \index{robotsrvtest.\+cpp@{robotsrvtest.\+cpp}!vision@{vision}}
 \index{vision@{vision}!robotsrvtest.\+cpp@{robotsrvtest.\+cpp}}
 \subsubsection[{\texorpdfstring{vision}{vision}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vision} vision = {\bf Vision}()}\hypertarget{robotsrvtest_8cpp_a2d2bc90af05183be9c53a3cba1191194}{}\label{robotsrvtest_8cpp_a2d2bc90af05183be9c53a3cba1191194}
 
 
-Definition at line 28 of file robotsrvtest.\+cpp.
+Definition at line 30 of file robotsrvtest.\+cpp.
 

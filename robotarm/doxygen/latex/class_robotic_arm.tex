@@ -10,7 +10,7 @@ Collaboration diagram for Robotic\+Arm\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=148pt]{class_robotic_arm__coll__graph}
+\includegraphics[width=205pt]{class_robotic_arm__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
@@ -30,7 +30,7 @@ std\+::pair$<$ double, double $>$ \hyperlink{class_robotic_arm_ade404a134912096f
 \begin{DoxyCompactList}\small\item\em forward kinematics, calculate X\&Y point for angles \& lengths for 3dof \end{DoxyCompactList}\item 
 \hyperlink{struct_position}{Position} \hyperlink{class_robotic_arm_a472bb97d5867b86add81326010da2f0f}{get\+Pos} () const 
 \item 
-void \hyperlink{class_robotic_arm_ad3f7fcafa4909fee1db198353434e987}{set\+Pos} (\hyperlink{struct_position}{Position} pos)
+void \hyperlink{class_robotic_arm_ad3f7fcafa4909fee1db198353434e987}{set\+Pos} (\hyperlink{struct_position}{Position} \hyperlink{class_robotic_arm_a8f6a5bea331874cfae234e6b97f6dec5}{pos})
 \item 
 const std\+::vector$<$ signed short $>$ \& \hyperlink{class_robotic_arm_a18d2147e468f8026f301f1d96d040ea5}{get\+Conf} () const 
 \item 
@@ -58,6 +58,32 @@ unsigned short \hyperlink{class_robotic_arm_ada1f488e8627fcb18d4b15b70c593be8}{d
 \hyperlink{struct_servo}{Servo} \hyperlink{class_robotic_arm_a393711dcc74eb1fba3f9e544cd2bb771}{s5}
 \item 
 \hyperlink{struct_servo}{Servo} \hyperlink{class_robotic_arm_a4816473ed62d262e2a29590769e82f10}{s6}
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{class_robotic_arm_a0d6a6dce0875c8540e5589c47aab5be3}{arm\+Goto} (signed long z, unsigned long x, unsigned long y, signed short object\+Angle)
+\begin{DoxyCompactList}\small\item\em go to xyz position and turn gripper \end{DoxyCompactList}\item 
+std\+::pair$<$ unsigned long, signed short $>$ \hyperlink{class_robotic_arm_a6ca035bd87d2c0cb1a6f7f040ad0ed52}{convert\+To\+X\+Angle} (signed long x, unsigned long y)
+\begin{DoxyCompactList}\small\item\em convert x\&y from vision to X\&Angle \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ signed short $>$ $>$ \hyperlink{class_robotic_arm_ae925ea4c5ea53ca359399a07d0ef4f76}{calculate\+Path} (std\+::vector$<$ signed short $>$ input\+Conf, \hyperlink{structrobot_point_1_1_point}{robot\+Point\+::\+Point} end\+Point)
+\begin{DoxyCompactList}\small\item\em calculate a path of configurations \end{DoxyCompactList}\item 
+std\+::vector$<$ std\+::vector$<$ signed short $>$ $>$ \hyperlink{class_robotic_arm_a71b4a844f3bc02bb36d6c18d808b80ce}{calculate\+Path} (unsigned char phi, signed short end\+Value)
+\begin{DoxyCompactList}\small\item\em make linear path of configurations \end{DoxyCompactList}\item 
+void \hyperlink{class_robotic_arm_a86204f659fe875af142cc1d817e562bf}{print\+Path} (std\+::vector$<$ std\+::vector$<$ signed short $>$$>$ confs)
+\begin{DoxyCompactList}\small\item\em print path (verctor of configurations) \end{DoxyCompactList}\item 
+void \hyperlink{class_robotic_arm_a976b1c8a1f85f64818182490073d4c5c}{follow\+Path} (const std\+::vector$<$ std\+::vector$<$ signed short $>$$>$ \&path)
+\begin{DoxyCompactList}\small\item\em arm follow path \end{DoxyCompactList}\item 
+void \hyperlink{class_robotic_arm_a24928c88b03f5d2e55ac980c019dadd8}{set\+Gripper\+Angle} (signed short angle)
+\begin{DoxyCompactList}\small\item\em set the angle of the gripper \end{DoxyCompactList}\item 
+void \hyperlink{class_robotic_arm_a5b15b0eb40028d3524bae3a52552bd85}{set\+Gripper\+Value} (signed short width)
+\begin{DoxyCompactList}\small\item\em set the size of the gripper \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ signed short $>$ \hyperlink{class_robotic_arm_af618e34115514462d09020049c7e8ee9}{configuration}
+\item 
+\hyperlink{struct_position}{Position} \hyperlink{class_robotic_arm_a8f6a5bea331874cfae234e6b97f6dec5}{pos}
 \end{DoxyCompactItemize}
 
 
@@ -111,6 +137,205 @@ Definition at line 24 of file Robotic\+Arm.\+cpp.
 
 
 \subsection{Member Function Documentation}
+\index{Robotic\+Arm@{Robotic\+Arm}!arm\+Goto@{arm\+Goto}}
+\index{arm\+Goto@{arm\+Goto}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{arm\+Goto(signed long z, unsigned long x, unsigned long y, signed short object\+Angle)}{armGoto(signed long z, unsigned long x, unsigned long y, signed short objectAngle)}}]{\setlength{\rightskip}{0pt plus 5cm}void Robotic\+Arm\+::arm\+Goto (
+\begin{DoxyParamCaption}
+\item[{signed long}]{z, }
+\item[{unsigned long}]{x, }
+\item[{unsigned long}]{y, }
+\item[{signed short}]{object\+Angle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_robotic_arm_a0d6a6dce0875c8540e5589c47aab5be3}{}\label{class_robotic_arm_a0d6a6dce0875c8540e5589c47aab5be3}
+
+
+go to xyz position and turn gripper 
+
+
+\begin{DoxyParams}{Parameters}
+{\em z} & z-\/axis of robotarm X from top down view \\
+\hline
+{\em x} & x-\/axis of robotarm Y from top down view \\
+\hline
+{\em Y} & y-\/axis of robotarm no top down view-\/ height of gripper. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 240 of file Robotic\+Arm.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_robotic_arm_a0d6a6dce0875c8540e5589c47aab5be3_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_robotic_arm_a0d6a6dce0875c8540e5589c47aab5be3_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robotic\+Arm@{Robotic\+Arm}!calculate\+Path@{calculate\+Path}}
+\index{calculate\+Path@{calculate\+Path}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{calculate\+Path(std\+::vector$<$ signed short $>$ input\+Conf, robot\+Point\+::\+Point end\+Point)}{calculatePath(std::vector< signed short > inputConf, robotPoint::Point endPoint)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::vector$<$ signed short $>$ $>$ Robotic\+Arm\+::calculate\+Path (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ signed short $>$}]{input\+Conf, }
+\item[{{\bf robot\+Point\+::\+Point}}]{end\+Point}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_robotic_arm_ae925ea4c5ea53ca359399a07d0ef4f76}{}\label{class_robotic_arm_ae925ea4c5ea53ca359399a07d0ef4f76}
+
+
+calculate a path of configurations 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Conf} & start configuration \\
+\hline
+{\em endpoint} & point where the arm goes to \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a path of configurations 
+\end{DoxyReturn}
+
+
+Definition at line 87 of file Robotic\+Arm.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_robotic_arm_ae925ea4c5ea53ca359399a07d0ef4f76_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_robotic_arm_ae925ea4c5ea53ca359399a07d0ef4f76_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robotic\+Arm@{Robotic\+Arm}!calculate\+Path@{calculate\+Path}}
+\index{calculate\+Path@{calculate\+Path}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{calculate\+Path(unsigned char phi, signed short end\+Value)}{calculatePath(unsigned char phi, signed short endValue)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$ std\+::vector$<$ signed short $>$ $>$ Robotic\+Arm\+::calculate\+Path (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{phi, }
+\item[{signed short}]{end\+Value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_robotic_arm_a71b4a844f3bc02bb36d6c18d808b80ce}{}\label{class_robotic_arm_a71b4a844f3bc02bb36d6c18d808b80ce}
+
+
+make linear path of configurations 
+
+
+\begin{DoxyParams}{Parameters}
+{\em phi} & servo that goes to end\+Value \\
+\hline
+{\em end\+Value} & last value of path \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 133 of file Robotic\+Arm.\+cpp.
+
+\index{Robotic\+Arm@{Robotic\+Arm}!convert\+To\+X\+Angle@{convert\+To\+X\+Angle}}
+\index{convert\+To\+X\+Angle@{convert\+To\+X\+Angle}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{convert\+To\+X\+Angle(signed long x, unsigned long y)}{convertToXAngle(signed long x, unsigned long y)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::pair$<$ unsigned long, signed short $>$ Robotic\+Arm\+::convert\+To\+X\+Angle (
+\begin{DoxyParamCaption}
+\item[{signed long}]{x, }
+\item[{unsigned long}]{y}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_robotic_arm_a6ca035bd87d2c0cb1a6f7f040ad0ed52}{}\label{class_robotic_arm_a6ca035bd87d2c0cb1a6f7f040ad0ed52}
+
+
+convert x\&y from vision to X\&Angle 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & x from opencv \\
+\hline
+{\em y} & y from opencv \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+X\&angle of robotarm 
+\end{DoxyReturn}
+
+
+Definition at line 234 of file Robotic\+Arm.\+cpp.
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_robotic_arm_a6ca035bd87d2c0cb1a6f7f040ad0ed52_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robotic\+Arm@{Robotic\+Arm}!follow\+Path@{follow\+Path}}
+\index{follow\+Path@{follow\+Path}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{follow\+Path(const std\+::vector$<$ std\+::vector$<$ signed short $>$$>$ \&path)}{followPath(const std::vector< std::vector< signed short >> &path)}}]{\setlength{\rightskip}{0pt plus 5cm}void Robotic\+Arm\+::follow\+Path (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ std\+::vector$<$ signed short $>$$>$ \&}]{path}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_robotic_arm_a976b1c8a1f85f64818182490073d4c5c}{}\label{class_robotic_arm_a976b1c8a1f85f64818182490073d4c5c}
+
+
+arm follow path 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & path to follow \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 203 of file Robotic\+Arm.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_robotic_arm_a976b1c8a1f85f64818182490073d4c5c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_robotic_arm_a976b1c8a1f85f64818182490073d4c5c_icgraph}
+\end{center}
+\end{figure}
+
+
 \index{Robotic\+Arm@{Robotic\+Arm}!forward\+Kinematics@{forward\+Kinematics}}
 \index{forward\+Kinematics@{forward\+Kinematics}!Robotic\+Arm@{Robotic\+Arm}}
 \subsubsection[{\texorpdfstring{forward\+Kinematics(double x0, double y0, double a, double p1, double b, double p2)}{forwardKinematics(double x0, double y0, double a, double p1, double b, double p2)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::pair$<$ double, double $>$ Robotic\+Arm\+::forward\+Kinematics (
@@ -198,17 +423,6 @@ forward kinematics, calculate X\&Y point for angles \& lengths for 3dof
 
 Definition at line 195 of file Robotic\+Arm.\+cpp.
 
-
-
-Here is the call graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{class_robotic_arm_ade404a134912096fb363fa90ea0cd927_cgraph}
-\end{center}
-\end{figure}
-
-
 \index{Robotic\+Arm@{Robotic\+Arm}!get\+Conf@{get\+Conf}}
 \index{get\+Conf@{get\+Conf}!Robotic\+Arm@{Robotic\+Arm}}
 \subsubsection[{\texorpdfstring{get\+Conf() const }{getConf() const }}]{\setlength{\rightskip}{0pt plus 5cm}const std\+::vector$<$ signed short $>$ \& Robotic\+Arm\+::get\+Conf (
@@ -258,7 +472,7 @@ true if done
 \end{DoxyReturn}
 
 
-Definition at line 258 of file Robotic\+Arm.\+cpp.
+Definition at line 262 of file Robotic\+Arm.\+cpp.
 
 
 
@@ -267,6 +481,17 @@ Here is the call graph for this function\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{class_robotic_arm_a6ecfa07487d7c03717be1e5f1fdb1e21_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_robotic_arm_a6ecfa07487d7c03717be1e5f1fdb1e21_icgraph}
 \end{center}
 \end{figure}
 
@@ -320,6 +545,37 @@ Here is the call graph for this function\+:\nopagebreak
 \end{figure}
 
 
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_robotic_arm_ad9add36d9fad6da469f30d1ffd867e63_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robotic\+Arm@{Robotic\+Arm}!print\+Path@{print\+Path}}
+\index{print\+Path@{print\+Path}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{print\+Path(std\+::vector$<$ std\+::vector$<$ signed short $>$$>$ confs)}{printPath(std::vector< std::vector< signed short >> confs)}}]{\setlength{\rightskip}{0pt plus 5cm}void Robotic\+Arm\+::print\+Path (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ std\+::vector$<$ signed short $>$$>$}]{confs}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_robotic_arm_a86204f659fe875af142cc1d817e562bf}{}\label{class_robotic_arm_a86204f659fe875af142cc1d817e562bf}
+
+
+print path (verctor of configurations) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em confs} & path \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 117 of file Robotic\+Arm.\+cpp.
+
 \index{Robotic\+Arm@{Robotic\+Arm}!set\+Conf@{set\+Conf}}
 \index{set\+Conf@{set\+Conf}!Robotic\+Arm@{Robotic\+Arm}}
 \subsubsection[{\texorpdfstring{set\+Conf(const std\+::vector$<$ signed short $>$ \&conf)}{setConf(const std::vector< signed short > &conf)}}]{\setlength{\rightskip}{0pt plus 5cm}void Robotic\+Arm\+::set\+Conf (
@@ -338,6 +594,79 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{center}
 \leavevmode
 \includegraphics[width=263pt]{class_robotic_arm_ad69cfd597e6e397b88a316ef93b68ece_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robotic\+Arm@{Robotic\+Arm}!set\+Gripper\+Angle@{set\+Gripper\+Angle}}
+\index{set\+Gripper\+Angle@{set\+Gripper\+Angle}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{set\+Gripper\+Angle(signed short angle)}{setGripperAngle(signed short angle)}}]{\setlength{\rightskip}{0pt plus 5cm}void Robotic\+Arm\+::set\+Gripper\+Angle (
+\begin{DoxyParamCaption}
+\item[{signed short}]{angle}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_robotic_arm_a24928c88b03f5d2e55ac980c019dadd8}{}\label{class_robotic_arm_a24928c88b03f5d2e55ac980c019dadd8}
+
+
+set the angle of the gripper 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & angle to set \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 173 of file Robotic\+Arm.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_robotic_arm_a24928c88b03f5d2e55ac980c019dadd8_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Robotic\+Arm@{Robotic\+Arm}!set\+Gripper\+Value@{set\+Gripper\+Value}}
+\index{set\+Gripper\+Value@{set\+Gripper\+Value}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{set\+Gripper\+Value(signed short width)}{setGripperValue(signed short width)}}]{\setlength{\rightskip}{0pt plus 5cm}void Robotic\+Arm\+::set\+Gripper\+Value (
+\begin{DoxyParamCaption}
+\item[{signed short}]{width}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_robotic_arm_a5b15b0eb40028d3524bae3a52552bd85}{}\label{class_robotic_arm_a5b15b0eb40028d3524bae3a52552bd85}
+
+
+set the size of the gripper 
+
+
+\begin{DoxyParams}{Parameters}
+{\em width} & width of the gripper \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 166 of file Robotic\+Arm.\+cpp.
+
+
+
+Here is the call graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_robotic_arm_a5b15b0eb40028d3524bae3a52552bd85_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_robotic_arm_a5b15b0eb40028d3524bae3a52552bd85_icgraph}
 \end{center}
 \end{figure}
 
@@ -377,12 +706,26 @@ Definition at line 84 of file Robotic\+Arm.\+hpp.
 
 Definition at line 85 of file Robotic\+Arm.\+hpp.
 
+\index{Robotic\+Arm@{Robotic\+Arm}!configuration@{configuration}}
+\index{configuration@{configuration}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{configuration}{configuration}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$signed short$>$ Robotic\+Arm\+::configuration\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_robotic_arm_af618e34115514462d09020049c7e8ee9}{}\label{class_robotic_arm_af618e34115514462d09020049c7e8ee9}
+
+
+Definition at line 95 of file Robotic\+Arm.\+hpp.
+
 \index{Robotic\+Arm@{Robotic\+Arm}!d@{d}}
 \index{d@{d}!Robotic\+Arm@{Robotic\+Arm}}
 \subsubsection[{\texorpdfstring{d}{d}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short Robotic\+Arm\+::d}\hypertarget{class_robotic_arm_ada1f488e8627fcb18d4b15b70c593be8}{}\label{class_robotic_arm_ada1f488e8627fcb18d4b15b70c593be8}
 
 
 Definition at line 86 of file Robotic\+Arm.\+hpp.
+
+\index{Robotic\+Arm@{Robotic\+Arm}!pos@{pos}}
+\index{pos@{pos}!Robotic\+Arm@{Robotic\+Arm}}
+\subsubsection[{\texorpdfstring{pos}{pos}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Position} Robotic\+Arm\+::pos\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_robotic_arm_a8f6a5bea331874cfae234e6b97f6dec5}{}\label{class_robotic_arm_a8f6a5bea331874cfae234e6b97f6dec5}
+
+
+Definition at line 96 of file Robotic\+Arm.\+hpp.
 
 \index{Robotic\+Arm@{Robotic\+Arm}!s1@{s1}}
 \index{s1@{s1}!Robotic\+Arm@{Robotic\+Arm}}

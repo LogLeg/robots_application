@@ -107,6 +107,7 @@ $(document).ready(function(){initNavTree('class_robot_serial.html','');});
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_robot_serial-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">RobotSerial Class Reference</div>  </div>
@@ -114,10 +115,15 @@ $(document).ready(function(){initNavTree('class_robot_serial.html','');});
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_robot-_serial_8hpp_source.html">Robot-Serial.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for RobotSerial:</div>
+<div class="dyncontent">
+<div class="center"><img src="class_robot_serial__coll__graph.png" border="0" usemap="#_robot_serial_coll__map" alt="Collaboration graph"/></div>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3304340db412d4a8e79258c39f908812"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot_serial.html#a3304340db412d4a8e79258c39f908812">RobotSerial</a> (std::string port, unsigned long baud)</td></tr>
+<tr class="memitem:a3304340db412d4a8e79258c39f908812"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot_serial.html#a3304340db412d4a8e79258c39f908812">RobotSerial</a> (std::string <a class="el" href="class_robot_serial.html#a6e9f213298488ef6699c3797f7d39a9d">port</a>, unsigned long <a class="el" href="class_robot_serial.html#a43213d6b68c48365cbe869097fd84a84">baud</a>)</td></tr>
 <tr class="memdesc:a3304340db412d4a8e79258c39f908812"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor  <a href="#a3304340db412d4a8e79258c39f908812">More...</a><br /></td></tr>
 <tr class="separator:a3304340db412d4a8e79258c39f908812"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1a28818f2b86670f0d8591c5d2e80353"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot_serial.html#a1a28818f2b86670f0d8591c5d2e80353">~RobotSerial</a> ()</td></tr>
@@ -128,6 +134,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2bfa4d4a724c81c8f8b06d47a3c747fb"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot_serial.html#a2bfa4d4a724c81c8f8b06d47a3c747fb">read</a> (uint32_t length)</td></tr>
 <tr class="memdesc:a2bfa4d4a724c81c8f8b06d47a3c747fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">read message from robot  <a href="#a2bfa4d4a724c81c8f8b06d47a3c747fb">More...</a><br /></td></tr>
 <tr class="separator:a2bfa4d4a724c81c8f8b06d47a3c747fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a9341530abe93c48919dce7cd8cbc4312"><td class="memItemLeft" align="right" valign="top">serial::Serial *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot_serial.html#a9341530abe93c48919dce7cd8cbc4312">my_serial</a></td></tr>
+<tr class="separator:a9341530abe93c48919dce7cd8cbc4312"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e9f213298488ef6699c3797f7d39a9d"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot_serial.html#a6e9f213298488ef6699c3797f7d39a9d">port</a></td></tr>
+<tr class="separator:a6e9f213298488ef6699c3797f7d39a9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43213d6b68c48365cbe869097fd84a84"><td class="memItemLeft" align="right" valign="top">unsigned long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_robot_serial.html#a43213d6b68c48365cbe869097fd84a84">baud</a></td></tr>
+<tr class="separator:a43213d6b68c48365cbe869097fd84a84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -254,12 +269,81 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="class_robot_serial_a48929a3b47818cf3366b003b121ed539_icgraph.png" border="0" usemap="#class_robot_serial_a48929a3b47818cf3366b003b121ed539_icgraph" alt=""/></div>
 <map name="class_robot_serial_a48929a3b47818cf3366b003b121ed539_icgraph" id="class_robot_serial_a48929a3b47818cf3366b003b121ed539_icgraph">
-<area shape="rect" id="node2" href="class_robot_arm.html#a645e7400a9e29525385d07e0b9552eb4" title="stop robot " alt="" coords="191,29,305,56"/>
-<area shape="rect" id="node3" href="struct_servo.html#aed94c74351c407e550a51ba40215c135" title="go to given position " alt="" coords="180,80,316,107"/>
-<area shape="rect" id="node4" href="struct_servo.html#af8a34733daf26ac3fe4bc6002931b7a8" title="get the current angle of the servo " alt="" coords="191,131,305,157"/>
+<area shape="rect" id="node2" href="class_robot_arm.html#abd7be4339ad5fe6c65b07b4930f52e69" title="emergency stop " alt="" coords="191,31,305,57"/>
+<area shape="rect" id="node5" href="struct_servo.html#aed94c74351c407e550a51ba40215c135" title="go to given position " alt="" coords="180,81,316,108"/>
+<area shape="rect" id="node6" href="struct_servo.html#af8a34733daf26ac3fe4bc6002931b7a8" title="get the current angle of the servo " alt="" coords="191,132,305,159"/>
+<area shape="rect" id="node3" href="class_robot_arm.html#a645e7400a9e29525385d07e0b9552eb4" title="stop robot " alt="" coords="364,5,479,32"/>
+<area shape="rect" id="node4" href="_robot___driver__server_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="396,56,447,83"/>
 </map>
 </div>
 </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a43213d6b68c48365cbe869097fd84a84"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned long RobotSerial::baud</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_robot-_serial_8hpp_source.html#l00037">37</a> of file <a class="el" href="_robot-_serial_8hpp_source.html">Robot-Serial.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a9341530abe93c48919dce7cd8cbc4312"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">serial::Serial* RobotSerial::my_serial</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_robot-_serial_8hpp_source.html#l00035">35</a> of file <a class="el" href="_robot-_serial_8hpp_source.html">Robot-Serial.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a6e9f213298488ef6699c3797f7d39a9d"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string RobotSerial::port</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_robot-_serial_8hpp_source.html#l00036">36</a> of file <a class="el" href="_robot-_serial_8hpp_source.html">Robot-Serial.hpp</a>.</p>
 
 </div>
 </div>

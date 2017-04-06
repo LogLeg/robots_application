@@ -7,7 +7,6 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "interface.hpp", "interface_8hpp.html", [
       [ "Interface", "class_interface.html", "class_interface" ]
     ] ],
-    [ "Matrix.hpp", "_matrix_8hpp.html", "_matrix_8hpp" ],
     [ "Point.hpp", "_point_8hpp.html", [
       [ "Point", "structrobot_point_1_1_point.html", "structrobot_point_1_1_point" ]
     ] ],

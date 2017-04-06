@@ -1,0 +1,9 @@
+<map id="Vision::detect_circle" name="Vision::detect_circle">
+<area shape="rect" id="node2" href="$class_vision.html#ac61f35fd2d78031d96986b8db8daf257" title="This function will find contours that meet the shape that has been given with the function..." alt="" coords="193,23,337,49"/>
+<area shape="rect" id="node3" href="$robotsrvtest_8cpp.html#a61036826079f5e42d38d450a43f26985" title="get_coordinates" alt="" coords="619,15,734,41"/>
+<area shape="rect" id="node6" href="$class_vision.html#a7c9c698f6da2af1773bd0b65ba4bfd34" title="This function will put numers on the objects that can be grabbed by the robotic arm. " alt="" coords="385,23,553,49"/>
+<area shape="rect" id="node7" href="$class_vision.html#aef09b275d4c09a766fc01e92a8e2e774" title="This function will search for a specific calibration square in the picture and will adjust the pixel ..." alt="" coords="601,66,752,107"/>
+<area shape="rect" id="node4" href="$robotsrvtest_8cpp.html#ad9d0e397081801b3c81f84aef014b9ca" title="fn" alt="" coords="837,17,876,44"/>
+<area shape="rect" id="node5" href="$robotsrvtest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="961,44,1012,71"/>
+<area shape="rect" id="node8" href="$class_vision.html#afc55887fac6cea0954963cff0429a705" title="This function will initialize the camera and will set additional parameters that depend on what the c..." alt="" coords="800,69,913,96"/>
+</map>

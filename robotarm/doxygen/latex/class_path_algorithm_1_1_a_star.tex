@@ -52,6 +52,21 @@ const \hyperlink{namespace_path_algorithm_a999fc5baea7d1f71e42570630a297029}{Ope
 \item 
 const \hyperlink{namespace_path_algorithm_ac8a52a9740a0bfa959810bd92e08d962}{Vertex\+Map} \& \hyperlink{class_path_algorithm_1_1_a_star_a021ff514f018ce9ec7db705578a210d4}{get\+PM} () const 
 \end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{namespace_path_algorithm_ac027c23e4b4c237b6eb96fc63d79266f}{Closed\+Set} \hyperlink{class_path_algorithm_1_1_a_star_ac30f7714d07594a6b75516daa0a26da7}{closed\+Set}
+\item 
+\hyperlink{namespace_path_algorithm_a999fc5baea7d1f71e42570630a297029}{Open\+Set} \hyperlink{class_path_algorithm_1_1_a_star_a51ac9d9ef516c2317c2c77a919b64532}{open\+Set}
+\item 
+\hyperlink{namespace_path_algorithm_ac8a52a9740a0bfa959810bd92e08d962}{Vertex\+Map} \hyperlink{class_path_algorithm_1_1_a_star_a0fb8d0d9ad9822987926c815c9d4353d}{predecessor\+Map}
+\item 
+std\+::recursive\+\_\+mutex \hyperlink{class_path_algorithm_1_1_a_star_a2352488a734c820b77410b1ed7914a49}{open\+Set\+Mutex}
+\item 
+std\+::recursive\+\_\+mutex \hyperlink{class_path_algorithm_1_1_a_star_a1c8d2da0af60b0857bfd0abd3fa057ac}{closed\+Set\+Mutex}
+\item 
+std\+::recursive\+\_\+mutex \hyperlink{class_path_algorithm_1_1_a_star_ac69b08a85dfe16b7571b33fb9231f9c1}{predecessor\+Map\+Mutex}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -515,6 +530,51 @@ Here is the caller graph for this function\+:\nopagebreak
 \end{center}
 \end{figure}
 
+
+
+
+\subsection{Member Data Documentation}
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!closed\+Set@{closed\+Set}}
+\index{closed\+Set@{closed\+Set}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{closed\+Set}{closedSet}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Closed\+Set} Path\+Algorithm\+::\+A\+Star\+::closed\+Set\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_path_algorithm_1_1_a_star_ac30f7714d07594a6b75516daa0a26da7}{}\label{class_path_algorithm_1_1_a_star_ac30f7714d07594a6b75516daa0a26da7}
+
+
+Definition at line 291 of file A\+Star.\+hpp.
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!closed\+Set\+Mutex@{closed\+Set\+Mutex}}
+\index{closed\+Set\+Mutex@{closed\+Set\+Mutex}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{closed\+Set\+Mutex}{closedSetMutex}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::recursive\+\_\+mutex Path\+Algorithm\+::\+A\+Star\+::closed\+Set\+Mutex\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}\hypertarget{class_path_algorithm_1_1_a_star_a1c8d2da0af60b0857bfd0abd3fa057ac}{}\label{class_path_algorithm_1_1_a_star_a1c8d2da0af60b0857bfd0abd3fa057ac}
+
+
+Definition at line 302 of file A\+Star.\+hpp.
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!open\+Set@{open\+Set}}
+\index{open\+Set@{open\+Set}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{open\+Set}{openSet}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Open\+Set} Path\+Algorithm\+::\+A\+Star\+::open\+Set\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_path_algorithm_1_1_a_star_a51ac9d9ef516c2317c2c77a919b64532}{}\label{class_path_algorithm_1_1_a_star_a51ac9d9ef516c2317c2c77a919b64532}
+
+
+Definition at line 295 of file A\+Star.\+hpp.
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!open\+Set\+Mutex@{open\+Set\+Mutex}}
+\index{open\+Set\+Mutex@{open\+Set\+Mutex}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{open\+Set\+Mutex}{openSetMutex}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::recursive\+\_\+mutex Path\+Algorithm\+::\+A\+Star\+::open\+Set\+Mutex\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}\hypertarget{class_path_algorithm_1_1_a_star_a2352488a734c820b77410b1ed7914a49}{}\label{class_path_algorithm_1_1_a_star_a2352488a734c820b77410b1ed7914a49}
+
+
+Definition at line 301 of file A\+Star.\+hpp.
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!predecessor\+Map@{predecessor\+Map}}
+\index{predecessor\+Map@{predecessor\+Map}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{predecessor\+Map}{predecessorMap}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Vertex\+Map} Path\+Algorithm\+::\+A\+Star\+::predecessor\+Map\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_path_algorithm_1_1_a_star_a0fb8d0d9ad9822987926c815c9d4353d}{}\label{class_path_algorithm_1_1_a_star_a0fb8d0d9ad9822987926c815c9d4353d}
+
+
+Definition at line 299 of file A\+Star.\+hpp.
+
+\index{Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}!predecessor\+Map\+Mutex@{predecessor\+Map\+Mutex}}
+\index{predecessor\+Map\+Mutex@{predecessor\+Map\+Mutex}!Path\+Algorithm\+::\+A\+Star@{Path\+Algorithm\+::\+A\+Star}}
+\subsubsection[{\texorpdfstring{predecessor\+Map\+Mutex}{predecessorMapMutex}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::recursive\+\_\+mutex Path\+Algorithm\+::\+A\+Star\+::predecessor\+Map\+Mutex\hspace{0.3cm}{\ttfamily [mutable]}, {\ttfamily [private]}}\hypertarget{class_path_algorithm_1_1_a_star_ac69b08a85dfe16b7571b33fb9231f9c1}{}\label{class_path_algorithm_1_1_a_star_ac69b08a85dfe16b7571b33fb9231f9c1}
+
+
+Definition at line 303 of file A\+Star.\+hpp.
 
 
 

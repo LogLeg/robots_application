@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['phi1',['phi1',['../struct_path_algorithm_1_1_vertex.html#a7ad47a3f8613026f8e0cd06e4d967bc1',1,'PathAlgorithm::Vertex']]],
-  ['phi2',['phi2',['../struct_path_algorithm_1_1_vertex.html#af6701fe63c91cea4bc7e25efb276df7c',1,'PathAlgorithm::Vertex']]]
+  ['name',['name',['../struct_colour.html#a4a7225c84050a0d8d9164643a0ccbbd2',1,'Colour']]],
+  ['no_5fcolour',['NO_COLOUR',['../constants_8hpp.html#a015cc256d73e660d40e342d8d0d47ae9',1,'constants.hpp']]],
+  ['no_5fshape',['NO_SHAPE',['../constants_8hpp.html#a633b1bec0c31c16058432b7987b268a3',1,'constants.hpp']]]
 ];

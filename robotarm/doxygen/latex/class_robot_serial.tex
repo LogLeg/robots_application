@@ -4,10 +4,19 @@
 
 {\ttfamily \#include $<$Robot-\/\+Serial.\+hpp$>$}
 
+
+
+Collaboration diagram for Robot\+Serial\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=148pt]{class_robot_serial__coll__graph}
+\end{center}
+\end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_robot_serial_a3304340db412d4a8e79258c39f908812}{Robot\+Serial} (std\+::string port, unsigned long baud)
+\hyperlink{class_robot_serial_a3304340db412d4a8e79258c39f908812}{Robot\+Serial} (std\+::string \hyperlink{class_robot_serial_a6e9f213298488ef6699c3797f7d39a9d}{port}, unsigned long \hyperlink{class_robot_serial_a43213d6b68c48365cbe869097fd84a84}{baud})
 \begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
 \hyperlink{class_robot_serial_a1a28818f2b86670f0d8591c5d2e80353}{$\sim$\+Robot\+Serial} ()
 \item 
@@ -15,6 +24,15 @@ void \hyperlink{class_robot_serial_a48929a3b47818cf3366b003b121ed539}{send} (std
 \begin{DoxyCompactList}\small\item\em send message to robot by serial \end{DoxyCompactList}\item 
 std\+::string \hyperlink{class_robot_serial_a2bfa4d4a724c81c8f8b06d47a3c747fb}{read} (uint32\+\_\+t length)
 \begin{DoxyCompactList}\small\item\em read message from robot \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+serial\+::\+Serial $\ast$ \hyperlink{class_robot_serial_a9341530abe93c48919dce7cd8cbc4312}{my\+\_\+serial}
+\item 
+std\+::string \hyperlink{class_robot_serial_a6e9f213298488ef6699c3797f7d39a9d}{port}
+\item 
+unsigned long \hyperlink{class_robot_serial_a43213d6b68c48365cbe869097fd84a84}{baud}
+\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -122,10 +140,34 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=313pt]{class_robot_serial_a48929a3b47818cf3366b003b121ed539_icgraph}
+\includegraphics[width=350pt]{class_robot_serial_a48929a3b47818cf3366b003b121ed539_icgraph}
 \end{center}
 \end{figure}
 
+
+
+
+\subsection{Member Data Documentation}
+\index{Robot\+Serial@{Robot\+Serial}!baud@{baud}}
+\index{baud@{baud}!Robot\+Serial@{Robot\+Serial}}
+\subsubsection[{\texorpdfstring{baud}{baud}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned long Robot\+Serial\+::baud\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_robot_serial_a43213d6b68c48365cbe869097fd84a84}{}\label{class_robot_serial_a43213d6b68c48365cbe869097fd84a84}
+
+
+Definition at line 37 of file Robot-\/\+Serial.\+hpp.
+
+\index{Robot\+Serial@{Robot\+Serial}!my\+\_\+serial@{my\+\_\+serial}}
+\index{my\+\_\+serial@{my\+\_\+serial}!Robot\+Serial@{Robot\+Serial}}
+\subsubsection[{\texorpdfstring{my\+\_\+serial}{my_serial}}]{\setlength{\rightskip}{0pt plus 5cm}serial\+::\+Serial$\ast$ Robot\+Serial\+::my\+\_\+serial\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_robot_serial_a9341530abe93c48919dce7cd8cbc4312}{}\label{class_robot_serial_a9341530abe93c48919dce7cd8cbc4312}
+
+
+Definition at line 35 of file Robot-\/\+Serial.\+hpp.
+
+\index{Robot\+Serial@{Robot\+Serial}!port@{port}}
+\index{port@{port}!Robot\+Serial@{Robot\+Serial}}
+\subsubsection[{\texorpdfstring{port}{port}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Robot\+Serial\+::port\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{class_robot_serial_a6e9f213298488ef6699c3797f7d39a9d}{}\label{class_robot_serial_a6e9f213298488ef6699c3797f7d39a9d}
+
+
+Definition at line 36 of file Robot-\/\+Serial.\+hpp.
 
 
 

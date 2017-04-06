@@ -108,6 +108,7 @@ $(document).ready(function(){initNavTree('struct_servo.html','');});
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_servo-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">Servo Class Reference</div>  </div>
@@ -115,10 +116,18 @@ $(document).ready(function(){initNavTree('struct_servo.html','');});
 <div class="contents">
 
 <p><code>#include &lt;<a class="el" href="_robotic_arm_8hpp_source.html">RoboticArm.hpp</a>&gt;</code></p>
+<div class="dynheader">
+Collaboration diagram for Servo:</div>
+<div class="dyncontent">
+<div class="center"><img src="struct_servo__coll__graph.png" border="0" usemap="#_servo_coll__map" alt="Collaboration graph"/></div>
+<map name="_servo_coll__map" id="_servo_coll__map">
+<area shape="rect" id="node2" href="class_robot_serial.html" title="RobotSerial" alt="" coords="5,95,96,121"/>
+</map>
+<center><span class="legend">[<a target="top" href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ab662ab5df0c5f665e7eb11508c39f1a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_servo.html#ab662ab5df0c5f665e7eb11508c39f1a7">Servo</a> (unsigned short minPwm, unsigned short pwmRange, unsigned char dRange, unsigned short servoNr, <a class="el" href="class_robot_serial.html">RobotSerial</a> *aRobotSerial, signed short abnormality=0, bool flip=false, signed short servoAbnormality=0)</td></tr>
+<tr class="memitem:ab662ab5df0c5f665e7eb11508c39f1a7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_servo.html#ab662ab5df0c5f665e7eb11508c39f1a7">Servo</a> (unsigned short <a class="el" href="struct_servo.html#a209ccc691c719c1442f77a0c0ee08fbb">minPwm</a>, unsigned short <a class="el" href="struct_servo.html#ad3b5b2cb998a334baeb520cecc24be48">pwmRange</a>, unsigned char <a class="el" href="struct_servo.html#a534d23b4cf1dcdd677dfa503101c50a0">dRange</a>, unsigned short <a class="el" href="struct_servo.html#a0795bd3f3c8d44e1818ffd653a7484d5">servoNr</a>, <a class="el" href="class_robot_serial.html">RobotSerial</a> *aRobotSerial, signed short <a class="el" href="struct_servo.html#a65a5e86b2f31ec2a9c115e818a1ea703">abnormality</a>=0, bool <a class="el" href="struct_servo.html#a4b94c914128a9965e264f0be608fb6a7">flip</a>=false, signed short <a class="el" href="struct_servo.html#a0876d7d53f6e32cd75fa8ead3c274ead">servoAbnormality</a>=0)</td></tr>
 <tr class="memdesc:ab662ab5df0c5f665e7eb11508c39f1a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">constructor  <a href="#ab662ab5df0c5f665e7eb11508c39f1a7">More...</a><br /></td></tr>
 <tr class="separator:ab662ab5df0c5f665e7eb11508c39f1a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aed94c74351c407e550a51ba40215c135"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_servo.html#aed94c74351c407e550a51ba40215c135">gotoPosition</a> (signed short degrees, unsigned short time)</td></tr>
@@ -142,6 +151,25 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a2fe3506ea048af600250b292275df6e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a20a1e16e912d613a6f7ee07072799f6d"><td class="memItemLeft" align="right" valign="top">signed short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_servo.html#a20a1e16e912d613a6f7ee07072799f6d">max</a></td></tr>
 <tr class="separator:a20a1e16e912d613a6f7ee07072799f6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a209ccc691c719c1442f77a0c0ee08fbb"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_servo.html#a209ccc691c719c1442f77a0c0ee08fbb">minPwm</a></td></tr>
+<tr class="separator:a209ccc691c719c1442f77a0c0ee08fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3b5b2cb998a334baeb520cecc24be48"><td class="memItemLeft" align="right" valign="top">unsigned short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_servo.html#ad3b5b2cb998a334baeb520cecc24be48">pwmRange</a></td></tr>
+<tr class="separator:ad3b5b2cb998a334baeb520cecc24be48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a534d23b4cf1dcdd677dfa503101c50a0"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_servo.html#a534d23b4cf1dcdd677dfa503101c50a0">dRange</a></td></tr>
+<tr class="separator:a534d23b4cf1dcdd677dfa503101c50a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0795bd3f3c8d44e1818ffd653a7484d5"><td class="memItemLeft" align="right" valign="top">unsigned char&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_servo.html#a0795bd3f3c8d44e1818ffd653a7484d5">servoNr</a></td></tr>
+<tr class="separator:a0795bd3f3c8d44e1818ffd653a7484d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65a5e86b2f31ec2a9c115e818a1ea703"><td class="memItemLeft" align="right" valign="top">signed short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_servo.html#a65a5e86b2f31ec2a9c115e818a1ea703">abnormality</a></td></tr>
+<tr class="separator:a65a5e86b2f31ec2a9c115e818a1ea703"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4b94c914128a9965e264f0be608fb6a7"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_servo.html#a4b94c914128a9965e264f0be608fb6a7">flip</a></td></tr>
+<tr class="separator:a4b94c914128a9965e264f0be608fb6a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0876d7d53f6e32cd75fa8ead3c274ead"><td class="memItemLeft" align="right" valign="top">signed short&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_servo.html#a0876d7d53f6e32cd75fa8ead3c274ead">servoAbnormality</a></td></tr>
+<tr class="separator:a0876d7d53f6e32cd75fa8ead3c274ead"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a07e75a2dc8f979d2d91308da2ae96053"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_robot_serial.html">RobotSerial</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_servo.html#a07e75a2dc8f979d2d91308da2ae96053">robotSerial</a></td></tr>
+<tr class="separator:a07e75a2dc8f979d2d91308da2ae96053"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
@@ -414,6 +442,72 @@ Here is the call graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a65a5e86b2f31ec2a9c115e818a1ea703"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">signed short Servo::abnormality</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_servo_8hpp_source.html#l00057">57</a> of file <a class="el" href="_servo_8hpp_source.html">Servo.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a534d23b4cf1dcdd677dfa503101c50a0"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char Servo::dRange</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_servo_8hpp_source.html#l00055">55</a> of file <a class="el" href="_servo_8hpp_source.html">Servo.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a4b94c914128a9965e264f0be608fb6a7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Servo::flip</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_servo_8hpp_source.html#l00058">58</a> of file <a class="el" href="_servo_8hpp_source.html">Servo.hpp</a>.</p>
+
+</div>
+</div>
 <a class="anchor" id="a20a1e16e912d613a6f7ee07072799f6d"></a>
 <div class="memitem">
 <div class="memproto">
@@ -439,6 +533,116 @@ Here is the call graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="_robotic_arm_8hpp_source.html#l00022">22</a> of file <a class="el" href="_robotic_arm_8hpp_source.html">RoboticArm.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a209ccc691c719c1442f77a0c0ee08fbb"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short Servo::minPwm</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_servo_8hpp_source.html#l00053">53</a> of file <a class="el" href="_servo_8hpp_source.html">Servo.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="ad3b5b2cb998a334baeb520cecc24be48"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned short Servo::pwmRange</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_servo_8hpp_source.html#l00054">54</a> of file <a class="el" href="_servo_8hpp_source.html">Servo.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a07e75a2dc8f979d2d91308da2ae96053"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_robot_serial.html">RobotSerial</a>* Servo::robotSerial</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_servo_8hpp_source.html#l00060">60</a> of file <a class="el" href="_servo_8hpp_source.html">Servo.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0876d7d53f6e32cd75fa8ead3c274ead"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">signed short Servo::servoAbnormality</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_servo_8hpp_source.html#l00059">59</a> of file <a class="el" href="_servo_8hpp_source.html">Servo.hpp</a>.</p>
+
+</div>
+</div>
+<a class="anchor" id="a0795bd3f3c8d44e1818ffd653a7484d5"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">unsigned char Servo::servoNr</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Definition at line <a class="el" href="_servo_8hpp_source.html#l00056">56</a> of file <a class="el" href="_servo_8hpp_source.html">Servo.hpp</a>.</p>
 
 </div>
 </div>

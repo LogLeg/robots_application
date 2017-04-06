@@ -1,3 +1,4 @@
 <map id="Interface::await_input" name="Interface::await_input">
 <area shape="rect" id="node2" href="$class_interface.html#a345faa7570aa36a31681ca850d1c283d" title="Function that will read the input and will then check if it is correct and translate the input to a p..." alt="" coords="200,5,317,32"/>
+<area shape="rect" id="node3" href="$class_interface.html#ab6e3210b017ae87be6ecf3b0fdd29d89" title="Function to wait and extract input data from user through the console. " alt="" coords="365,5,475,32"/>
 </map>

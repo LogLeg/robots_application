@@ -1,5 +1,12 @@
 <map id="PathAlgorithm::AStar::getOS" name="PathAlgorithm::AStar::getOS">
-<area shape="rect" id="node2" href="$class_path_algorithm_1_1_a_star.html#aee41b31ec44b02f6dc94889d228a3582" title="PathAlgorithm::AStar\l::search" alt="" coords="199,5,344,47"/>
-<area shape="rect" id="node4" href="$class_path_algorithm_1_1_a_star.html#ae419f2d019378d9b4435d862b70da72f" title="PathAlgorithm::AStar\l::getOpenSet" alt="" coords="199,71,344,112"/>
-<area shape="rect" id="node3" href="$class_robotic_arm.html#ad9add36d9fad6da469f30d1ffd867e63" title="move object to specified destination " alt="" coords="392,13,561,39"/>
+<area shape="rect" id="node2" href="$class_path_algorithm_1_1_a_star.html#aee41b31ec44b02f6dc94889d228a3582" title="PathAlgorithm::AStar\l::search" alt="" coords="199,49,344,90"/>
+<area shape="rect" id="node11" href="$class_path_algorithm_1_1_a_star.html#ae419f2d019378d9b4435d862b70da72f" title="PathAlgorithm::AStar\l::getOpenSet" alt="" coords="199,114,344,155"/>
+<area shape="rect" id="node3" href="$class_robotic_arm.html#ae925ea4c5ea53ca359399a07d0ef4f76" title="calculate a path of configurations " alt="" coords="392,56,571,83"/>
+<area shape="rect" id="node4" href="$class_robotic_arm.html#a5b15b0eb40028d3524bae3a52552bd85" title="set the size of the gripper " alt="" coords="619,5,811,32"/>
+<area shape="rect" id="node9" href="$class_robotic_arm.html#a24928c88b03f5d2e55ac980c019dadd8" title="set the angle of the gripper " alt="" coords="619,56,811,83"/>
+<area shape="rect" id="node10" href="$class_robotic_arm.html#a0d6a6dce0875c8540e5589c47aab5be3" title="go to xyz position and turn gripper " alt="" coords="640,107,789,133"/>
+<area shape="rect" id="node5" href="$class_robotic_arm.html#ad9add36d9fad6da469f30d1ffd867e63" title="move object to specified destination " alt="" coords="859,56,1028,83"/>
+<area shape="rect" id="node6" href="$robotsrvtest_8cpp.html#acd84dd8c07feb65438228cb762a437e7" title="move" alt="" coords="1076,56,1131,83"/>
+<area shape="rect" id="node7" href="$robotsrvtest_8cpp.html#ad9d0e397081801b3c81f84aef014b9ca" title="fn" alt="" coords="1179,56,1217,83"/>
+<area shape="rect" id="node8" href="$robotsrvtest_8cpp.html#a3c04138a5bfe5d72780bb7e82a18e627" title="main" alt="" coords="1265,56,1316,83"/>
 </map>
