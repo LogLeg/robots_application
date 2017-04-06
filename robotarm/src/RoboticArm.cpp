@@ -39,9 +39,9 @@ void RoboticArm::setPos(Position pos)
 bool RoboticArm::moveObject(signed long objectX, unsigned long objectY, signed short objectAngle, unsigned short objectWidth, signed long desX, unsigned long desY)
 {
 
-	const short hoverHeight = 80;
-	const short objectHeight = 0;
-	const long minMaxDistance[] = {100,320};
+	const unsigned short hoverHeight = 80;
+	const unsigned short objectHeight = 0;
+	const unsigned long minMaxDistance[] = {100,320};
 
 	std::pair<unsigned long, signed short> XAngle = convertToXAngle(objectX, objectY);
 	if (XAngle.first < minMaxDistance[0] || XAngle.first > minMaxDistance[1])
@@ -65,7 +65,7 @@ bool RoboticArm::moveObject(signed long objectX, unsigned long objectY, signed s
 
 	//(4) ga naar beneden & gripper dichtknijpen
 	armGoto(objectX, objectY, objectHeight, objectAngle);
-	setGripperValue(/*objectWidth - 5*/5); //TODO: knijpkracht afstellen
+	setGripperValue(objectWidth);
 
 	//(5) ga naar 2 cm boven grond
 	armGoto(objectX, objectY, hoverHeight, 0);
@@ -94,17 +94,12 @@ std::vector<std::vector<signed short>> RoboticArm::calculatePath(std::vector<
 	PathAlgorithm::AStar astar;
 
 	std::pair<double, double> currentPos = forwardKinematics(0, a, b, inputConf.at(1), c, inputConf.at(2));
-	//std::cout << "x: " << currentPos.first << std::endl;
-	//std::cout << "y: " << currentPos.second << std::endl;
 
-	PathAlgorithm::Path pad = astar.search(PathAlgorithm::Vertex(currentPos.first, currentPos.second, static_cast<int>(inputConf.at(1)), static_cast<int>(inputConf.at(2))), PathAlgorithm::Vertex(endPoint.x, endPoint.y + d, 0, 0), Widgets::Size(1, 1), (*this));
-
-	//std::cout << "pad: " << std::endl;
+	PathAlgorithm::Path pad = astar.search(PathAlgorithm::Vertex(static_cast<int>(currentPos.first), static_cast<int>(currentPos.second), static_cast<int>(inputConf.at(1)), static_cast<int>(inputConf.at(2))), PathAlgorithm::Vertex(endPoint.x, endPoint.y + d, 0, 0), (*this));
 
 	for (PathAlgorithm::Vertex &i : pad)
 	{
-		//std::cout << i << std::endl;
-		signed short newPhi3 = 180 - i.phi1 - i.phi2;
+		signed short newPhi3 = static_cast<unsigned short>(180 - i.phi1 - i.phi2);
 		newPhi3 = newPhi3 > s4.max ? s4.max : newPhi3;
 		newPhi3 = newPhi3 < s4.min ? s4.min : newPhi3;
 		confs.push_back(std::vector<signed short>
@@ -139,9 +134,8 @@ std::vector<std::vector<signed short>> RoboticArm::calculatePath(unsigned char p
 	{
 		for (unsigned short i = 0; i <= (endValue - editPhi); ++i)
 		{
-			//std::cout << i << std::endl;
 			std::vector<signed short> newConf = configuration;
-			newConf.at(phi) = editPhi + i;
+			newConf.at(phi) = static_cast<signed short>(editPhi + i);
 			confs.push_back(newConf);
 		}
 	}
@@ -149,9 +143,8 @@ std::vector<std::vector<signed short>> RoboticArm::calculatePath(unsigned char p
 	{
 		for (unsigned short i = 0; i <= (editPhi - endValue); ++i)
 		{
-			//std::cout << i << std::endl;
 			std::vector<signed short> newConf = configuration;
-			newConf.at(phi) = editPhi - i;
+			newConf.at(phi) = static_cast<signed short>(editPhi - i);
 			confs.push_back(newConf);
 		}
 	}
@@ -166,15 +159,13 @@ const std::vector<signed short>& RoboticArm::getConf() const
 void RoboticArm::setGripperValue(signed short width)
 {
 	std::vector<std::vector<signed short>> pad = calculatePath(5, width);
-	//printPath(pad);
 	followPath(pad);
 }
 
 void RoboticArm::setGripperAngle(signed short angle)
 {
-	angle = configuration.at(4) + angle + 0; //TODO: evt. + 90
+	angle = static_cast<signed short>(configuration.at(4) + angle + 0);
 	std::vector<std::vector<signed short>> pad = calculatePath(4, angle);
-	//printPath(pad);
 	followPath(pad);
 
 }
@@ -233,7 +224,7 @@ void RoboticArm::followPath(const std::vector<std::vector<signed short> >& path)
 
 std::pair<unsigned long, signed short> RoboticArm::convertToXAngle(signed long x, unsigned long y)
 {
-	unsigned long rX = sqrt(pow(x, 2) + pow(y, 2));
+	unsigned long rX = static_cast<unsigned long>(sqrt(pow(x, 2) + pow(y, 2)));
 	return std::pair<unsigned long, signed short>(rX, round(std::asin(double(x) / double(rX)) * 180.0 / M_PI));
 }
 
@@ -241,7 +232,7 @@ void RoboticArm::armGoto(signed long z, unsigned long x, unsigned long y, signed
 {
 	std::pair<unsigned long, signed short> XAngle = convertToXAngle(z, x);
 
-	std::vector<std::vector<signed short>> pad = calculatePath(configuration, robotPoint::Point(XAngle.first, y));
+	std::vector<std::vector<signed short>> pad = calculatePath(configuration, robotPoint::Point(static_cast<int>(XAngle.first), static_cast<int>(y)));
 	//printPath(pad);
 	configuration = pad.back();
 	//followPath(pad);
@@ -249,12 +240,11 @@ void RoboticArm::armGoto(signed long z, unsigned long x, unsigned long y, signed
 	//printPath(pad);
 	//followPath(pad);
 	configuration = pad.back();
-	signed short newGripperAngle = -XAngle.second + objectAngle;
-	if (-XAngle.second + objectAngle > 90) newGripperAngle = -XAngle.second + objectAngle - 180;
-	if (-XAngle.second + objectAngle < -90) newGripperAngle = -XAngle.second + objectAngle + 180;
+	signed short newGripperAngle = static_cast<signed short>(-XAngle.second + objectAngle);
+	if (-XAngle.second + objectAngle > 90) newGripperAngle = static_cast<signed short>(-XAngle.second + objectAngle - 180);
+	if (-XAngle.second + objectAngle < -90) newGripperAngle = static_cast<signed short>(-XAngle.second + objectAngle + 180);
 
-	pad = calculatePath(4, newGripperAngle); // TODO: evt. +90
-	//printPath(pad);
+	pad = calculatePath(4, newGripperAngle);
 	followPath(pad);
 
 }
@@ -288,4 +278,5 @@ bool RoboticArm::gotoPark()
 	{
 
 	}
+	return true;
 }

@@ -13,7 +13,7 @@
 #include <unistd.h>
 #endif
 
-void mySleep(unsigned long milliseconds)
+void mySleep(unsigned int milliseconds)
 {
 #ifdef _WIN32
 	Sleep(milliseconds); // 100 ms

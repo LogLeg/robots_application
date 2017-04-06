@@ -21,7 +21,7 @@ public:
 	 * @param flip angle is flipped if true
 	 * @param servoAbnormality center angle of servo(to correct for different robots
 	 */
-	Servo(unsigned short minPwm, unsigned short pwmRange, unsigned char dRange, unsigned short servoNr, RobotSerial* aRobotSerial, signed short abnormality = 0, bool flip = false, signed short servoAbnormality = 0);
+	Servo(unsigned short minPwm, unsigned short pwmRange, unsigned char dRange, unsigned char servoNr, RobotSerial* aRobotSerial, signed short abnormality = 0, bool flip = false, signed short servoAbnormality = 0);
 	/**
 	 * @brief go to given position
 	 * @param servo number of the servo
@@ -35,7 +35,7 @@ public:
 	 * @param servo number of the servo
 	 * @return servo angle in Pwm
 	 */
-	unsigned short degreesToPwm(signed short degrees, unsigned char servo);
+	unsigned short degreesToPwm(signed short degrees);
 	/**
 	 * @brief converts degrees to pwm
 	 * @param pwm angle of the servo in pwm

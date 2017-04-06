@@ -6,7 +6,7 @@ RobotSerial::RobotSerial(std::string aPort, unsigned long aBaud):
 			//my_serial(port, baud, serial::Timeout::simpleTimeout(1000))
 	
 {
-	my_serial = new serial::Serial(port, baud,serial::Timeout::simpleTimeout(1000));
+	my_serial = new serial::Serial(port, static_cast<uint32_t>(baud),serial::Timeout::simpleTimeout(1000));
 	my_serial->setTimeout(serial::Timeout::max(), 250, 0, 250, 0);
 	std::cout << "Is the serial port open?";
 	if(my_serial->isOpen())
@@ -27,7 +27,7 @@ RobotSerial::~RobotSerial()
 
 void RobotSerial::send(std::string Message)
 {
-	size_t bytes_wrote = my_serial->write(Message);
+	my_serial->write(Message);
 }
 
 

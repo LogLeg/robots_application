@@ -42,14 +42,6 @@ bool running = true;
 pair<Properties, Properties> get_coordinates();
 void fn();
 
-void mySleep(unsigned long milliseconds)
-{
-#ifdef _WIN32
-	Sleep(milliseconds); // 100 ms
-#else
-	usleep(milliseconds * 1000); // 100 ms
-#endif
-}
 
 int main(int argc, char **argv)
 {
@@ -73,18 +65,6 @@ int main(int argc, char **argv)
 		thread_b.join();
 
 
-
-
-		//(1) vind blokje positie&rotatie
-//		const int objectX = -83; 	//object X in mm
-//		const int objectY = 300;	//object Y in mm
-//		const int objectangle = 0;	//object angle in degrees
-//		const int objectwidth = 15;	//object windth in mm
-//		const int circelX = 160;	//circel center X
-//		const int circelY = 250;	//circel center Y
-
-
-
 	} catch (std::exception& e)
 	{
 		std::cerr << e.what() << std::endl;
@@ -94,10 +74,9 @@ int main(int argc, char **argv)
 
 void move(pair<Properties, Properties> robotworld)
 {
-	if (robotArm.moveObject(robotworld.first.center.x, robotworld.first.center.y,
-		robotworld.first.angle, robotworld.first.width, robotworld.second.center.x, robotworld.second.center.y))
+	if (robotArm.moveObject(static_cast<signed long>(robotworld.first.center.x), static_cast<unsigned long>(robotworld.first.center.y),
+			static_cast<signed short>(robotworld.first.angle), static_cast<unsigned short>(5), static_cast<signed long>(robotworld.second.center.x), static_cast<unsigned long>(robotworld.second.center.y)))
 	{
-
 	}else{
 		std::cerr << "\033[1;31mMove object failed\033[0m\n" << std::endl;
 	}

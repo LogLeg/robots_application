@@ -200,7 +200,7 @@ public:
 	/**
 	 *
 	 */
-	Path search(Vertex aStart, const Vertex& aGoal, const Size& aRobotSize, RoboticArm& robot);
+	Path search(Vertex aStart, const Vertex& aGoal, RoboticArm& robot);
 	/**
 	 *
 	 */

@@ -7,4 +7,4 @@ git clone https://github.com/ros-perception/vision_opencv
 git clone https://github.com/wjwwood/serial
 
 ##in catkin_ws/
-catkin_make
+catkin_make --force-cmake

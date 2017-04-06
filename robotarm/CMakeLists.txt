@@ -9,6 +9,7 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   std_msgs
   message_generation
+  genmsg
   OpenCV
 )
 
@@ -62,7 +63,6 @@ find_package(catkin REQUIRED COMPONENTS
    Robot_Set_Ready.srv
    Robot_Set_Straight.srv
    Robot_Set_Test.srv
-#   Service2.srv
  )
 
 ## Generate actions in the 'action' folder
@@ -112,6 +112,7 @@ catkin_package(
 #  LIBRARIES beginner_tutorials
 #  CATKIN_DEPENDS roscpp rospy std_msgs
 #  DEPENDS system_lib
+  LIBRARIES ptu46
   CATKIN_DEPENDS message_runtime
 )
 
@@ -140,14 +141,17 @@ add_definitions(-std=c++11)
 target_link_libraries(Robot_Driver_server ${catkin_LIBRARIES})
 add_dependencies(Robot_Driver_server serial)
 target_link_libraries(Robot_Driver_server serial)
+#add_dependencies(Robot_Driver_server robot_driver_server_cpp)
 
 
 add_executable(RobotArmBestuuring src/RobotArmBestuuring.cpp)
 target_link_libraries(RobotArmBestuuring ${catkin_LIBRARIES})
+#add_dependencies(RobotArmBestuuring robotarmbestuuring_cpp)
 
 add_executable(RobotSRVtest src/robotsrvtest.cpp src/RoboticArm.cpp src/AStar.cpp src/vision.cpp src/interface.cpp)
 add_definitions(-std=c++11 -Wall -Wextra -Wconversion)
 target_link_libraries(RobotSRVtest ${catkin_LIBRARIES} ${OpenCV_LIBS})
+#add_dependencies(RobotSRVtest robotsrvtest_cpp)
 
 ## Declare a C++ library
 # add_library(beginner_tutorials

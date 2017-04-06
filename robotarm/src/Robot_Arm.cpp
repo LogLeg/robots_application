@@ -50,7 +50,7 @@ RobotArm::~RobotArm()
 
 bool RobotArm::goTo(robotarm::Robot_GoTo::Request &req, robotarm::Robot_GoTo::Response &res)
 {
-	goTo(req.angle1, req.angle2, req.angle3, req.angle4, req.angle5, req.angle6, req.inTime);
+	goTo(static_cast<signed short>(req.angle1), static_cast<signed short>(req.angle2), static_cast<signed short>(req.angle3), static_cast<signed short>(req.angle4), static_cast<signed short>(req.angle5), static_cast<signed short>(req.angle6), static_cast<unsigned short>(req.inTime));
 
 	return true;
 }
@@ -75,7 +75,7 @@ bool RobotArm::stop(robotarm::Robot_Stop::Request &req, robotarm::Robot_Stop::Re
 	return true;
 }
 
-void RobotArm::goTo(double a1, double a2, double a3, double a4, double a5, double a6, double Time)
+void RobotArm::goTo(signed short a1, signed short a2, signed short a3, signed short a4, signed short a5, signed short a6, unsigned short Time)
 {
 	std::cout << "GOTO MESSAGE RECIVED!!!\n";
 	ServoList.at(0).gotoPosition(a1, Time);
@@ -84,10 +84,6 @@ void RobotArm::goTo(double a1, double a2, double a3, double a4, double a5, doubl
 	ServoList.at(3).gotoPosition(a4, Time);
 	ServoList.at(4).gotoPosition(a5, Time);
 	ServoList.at(5).gotoPosition(a6, Time);
-}
-std::string RobotArm::status()
-{
-
 }
 
 void RobotArm::stop()
@@ -98,7 +94,7 @@ void RobotArm::stop()
 	robotSerial.send(serialString);
 }
 
-void RobotArm::sleep(unsigned long milliseconds)
+void RobotArm::sleep(unsigned int milliseconds)
 {
 #ifdef _WIN32
 	Sleep(milliseconds); // 100 ms

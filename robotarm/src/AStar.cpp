@@ -44,7 +44,7 @@ Path ConstructPath(VertexMap& aPredecessorMap, const Vertex& aCurrentNode)
 /**
  *
  */
-std::vector<Vertex> GetNeighbours(const Vertex& aVertex, int aFreeRadius /*= 1*/, RoboticArm& robot)
+std::vector<Vertex> GetNeighbours(const Vertex& aVertex/*= 1*/, RoboticArm& robot)
 {
 	//std::cout << "input: " << aVertex << std::endl;
 
@@ -57,19 +57,16 @@ std::vector<Vertex> GetNeighbours(const Vertex& aVertex, int aFreeRadius /*= 1*/
 			double newPhi1 = aVertex.phi1 + p1;
 			double newPhi2 = aVertex.phi2 + p2;
 
-			double newPhi3 = 180 - round(newPhi1) - round(newPhi2);
+			double newPhi3 = 180 - newPhi1 - newPhi2;
 			newPhi3 = newPhi3 < robot.s4.min ? robot.s4.min : newPhi3;
 			newPhi3 = newPhi3 > robot.s4.max ? robot.s4.max : newPhi3;
-			std::pair<double, double> gripperXY = robot.forwardKinematics(0, robot.a, robot.b, newPhi1, robot.c, newPhi2, robot.d, newPhi3);
+			std::pair<double, double> gripperXY = robot.forwardKinematics(double(0), double(robot.a), double(robot.b), newPhi1, double(robot.c), newPhi2, double(robot.d), newPhi3);
 			if (gripperXY.second > 0)
 			{
 				if ((newPhi1 >= robot.s2.min && newPhi1 <= robot.s2.max) && (newPhi2 >= robot.s3.min && newPhi2 <= robot.s3.max))
 				{
-					Vertex nbVertex = Vertex(robot.forwardKinematics(0, robot.a, robot.b, newPhi1, robot.c, newPhi2).first, robot.forwardKinematics(0, robot.a, robot.b, newPhi1, robot.c, newPhi2).second, newPhi1, newPhi2);
-
-					//std::cout << nbVertex << std::endl;
+					Vertex nbVertex = Vertex(static_cast<int>(robot.forwardKinematics(double(0), double(robot.a), double(robot.b), newPhi1, double(robot.c), newPhi2).first), static_cast<int>(robot.forwardKinematics(double(0), double(robot.a), double(robot.b), newPhi1, double(robot.c), newPhi2).second), static_cast<int>(newPhi1), static_cast<int>(newPhi2));
 					neighbours.push_back(nbVertex);
-
 				}
 			}
 		}
@@ -81,11 +78,11 @@ std::vector<Vertex> GetNeighbours(const Vertex& aVertex, int aFreeRadius /*= 1*/
 /**
  *
  */
-std::vector<Edge> GetNeighbourConnections(const Vertex& aVertex, int aFreeRadius /*= 1*/, RoboticArm& robot)
+std::vector<Edge> GetNeighbourConnections(const Vertex& aVertex/*= 1*/, RoboticArm& robot)
 {
 	std::vector<Edge> connections;
 
-	const std::vector<Vertex>& neighbours = GetNeighbours(aVertex, aFreeRadius, robot);
+	const std::vector<Vertex>& neighbours = GetNeighbours(aVertex, robot);
 	for (const Vertex& vertex : neighbours)
 	{
 		connections.push_back(Edge(aVertex, vertex));
@@ -97,13 +94,11 @@ std::vector<Edge> GetNeighbourConnections(const Vertex& aVertex, int aFreeRadius
  *
  */
 
-Path AStar::search(Vertex aStart, const Vertex& aGoal, const Size& aRobotSize, RoboticArm& robot)
+Path AStar::search(Vertex aStart, const Vertex& aGoal, RoboticArm& robot)
 {
 	getOS().clear();
 	getCS().clear();
 	getPM().clear();
-
-	int radius = std::sqrt((aRobotSize.x / 2.0) * (aRobotSize.x / 2.0) + (aRobotSize.y / 2.0) * (aRobotSize.y / 2.0));
 
 	aStart.actualCost = 0.0; 	// Cost from aStart along the best known path.
 	aStart.heuristicCost = aStart.actualCost + HeuristicCost(aStart, aGoal); // Estimated total cost from aStart to aGoal through y.
@@ -125,7 +120,7 @@ Path AStar::search(Vertex aStart, const Vertex& aGoal, const Size& aRobotSize, R
 			addToClosedSet(current);
 			removeFirstFromOpenSet();
 
-			const std::vector<Edge>& connections = GetNeighbourConnections(current, radius, robot);
+			const std::vector<Edge>& connections = GetNeighbourConnections(current, robot);
 			for (const Edge& connection : connections)
 			{
 				Vertex neighbour = connection.otherSide(current);

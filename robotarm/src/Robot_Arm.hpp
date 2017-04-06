@@ -61,12 +61,7 @@ private:
 	 * @param a6 angle of 6st servo
 	 * @param Time time to arrive
 	 */
-	void goTo(double a1, double a2, double a3, double a4, double a5, double a6, double Time);
-	/**
-	 * @brief get the status of the robot
-	 * @return string with config angles
-	 */
-	std::string status();
+	void goTo(signed short a1, signed short a2, signed short a3, signed short a4, signed short a5, signed short a6, unsigned short Time);
 	/**
 	 * @brief emergency stop
 	 */
@@ -74,7 +69,7 @@ private:
 	RobotSerial robotSerial;
 	std::vector<Servo> ServoList;
 
-	void sleep(unsigned long milliseconds);
+	void sleep(unsigned int milliseconds);
 };
 
 #endif /* MATRIX_H_ */
