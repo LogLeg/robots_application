@@ -1,5 +1,5 @@
 <map id="PathAlgorithm::AStar::addToClosedSet" name="PathAlgorithm::AStar::addToClosedSet">
-<area shape="rect" id="node2" href="$class_path_algorithm_1_1_a_star.html#aee41b31ec44b02f6dc94889d228a3582" title="PathAlgorithm::AStar\l::search" alt="" coords="199,49,344,90"/>
+<area shape="rect" id="node2" href="$class_path_algorithm_1_1_a_star.html#a09778c7ec09ee48c3a8088402a653cca" title="PathAlgorithm::AStar\l::search" alt="" coords="199,49,344,90"/>
 <area shape="rect" id="node3" href="$class_robotic_arm.html#ae925ea4c5ea53ca359399a07d0ef4f76" title="calculate a path of configurations " alt="" coords="392,56,571,83"/>
 <area shape="rect" id="node4" href="$class_robotic_arm.html#a5b15b0eb40028d3524bae3a52552bd85" title="set the size of the gripper " alt="" coords="619,5,811,32"/>
 <area shape="rect" id="node9" href="$class_robotic_arm.html#a24928c88b03f5d2e55ac980c019dadd8" title="set the angle of the gripper " alt="" coords="619,56,811,83"/>

@@ -1,5 +1,5 @@
 <map id="PathAlgorithm::AStar::findInOpenSet" name="PathAlgorithm::AStar::findInOpenSet">
-<area shape="rect" id="node2" href="$class_path_algorithm_1_1_a_star.html#aee41b31ec44b02f6dc94889d228a3582" title="PathAlgorithm::AStar\l::search" alt="" coords="409,49,555,90"/>
+<area shape="rect" id="node2" href="$class_path_algorithm_1_1_a_star.html#a09778c7ec09ee48c3a8088402a653cca" title="PathAlgorithm::AStar\l::search" alt="" coords="409,49,555,90"/>
 <area shape="rect" id="node11" href="$class_path_algorithm_1_1_a_star.html#afcc23a676145d6e280d1c3430af5380a" title="PathAlgorithm::AStar\l::removeFromOpenSet" alt="" coords="203,78,357,119"/>
 <area shape="rect" id="node12" href="$class_path_algorithm_1_1_a_star.html#a657aaaf577ca25e68e6a5af57214e7d4" title="PathAlgorithm::AStar\l::findRemoveInOpenSet" alt="" coords="199,143,361,185"/>
 <area shape="rect" id="node3" href="$class_robotic_arm.html#ae925ea4c5ea53ca359399a07d0ef4f76" title="calculate a path of configurations " alt="" coords="603,56,781,83"/>

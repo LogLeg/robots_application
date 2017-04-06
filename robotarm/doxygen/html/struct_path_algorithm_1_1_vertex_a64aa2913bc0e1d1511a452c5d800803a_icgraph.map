@@ -1,7 +1,7 @@
 <map id="PathAlgorithm::Vertex::equalPoint" name="PathAlgorithm::Vertex::equalPoint">
 <area shape="rect" id="node2" href="$class_path_algorithm_1_1_a_star.html#ae78bfebdee31135fdfb2f302347f962f" title="PathAlgorithm::AStar\l::findInOpenSet" alt="" coords="223,78,368,119"/>
 <area shape="rect" id="node14" href="$struct_path_algorithm_1_1_vertex_equal_point_compare.html#a3e17720ca1b633beb65c6f353145765d" title="PathAlgorithm::VertexEqual\lPointCompare::operator()" alt="" coords="204,143,387,185"/>
-<area shape="rect" id="node3" href="$class_path_algorithm_1_1_a_star.html#aee41b31ec44b02f6dc94889d228a3582" title="PathAlgorithm::AStar\l::search" alt="" coords="645,49,791,90"/>
+<area shape="rect" id="node3" href="$class_path_algorithm_1_1_a_star.html#a09778c7ec09ee48c3a8088402a653cca" title="PathAlgorithm::AStar\l::search" alt="" coords="645,49,791,90"/>
 <area shape="rect" id="node12" href="$class_path_algorithm_1_1_a_star.html#afcc23a676145d6e280d1c3430af5380a" title="PathAlgorithm::AStar\l::removeFromOpenSet" alt="" coords="439,78,593,119"/>
 <area shape="rect" id="node13" href="$class_path_algorithm_1_1_a_star.html#a657aaaf577ca25e68e6a5af57214e7d4" title="PathAlgorithm::AStar\l::findRemoveInOpenSet" alt="" coords="435,143,597,185"/>
 <area shape="rect" id="node4" href="$class_robotic_arm.html#ae925ea4c5ea53ca359399a07d0ef4f76" title="calculate a path of configurations " alt="" coords="839,56,1017,83"/>

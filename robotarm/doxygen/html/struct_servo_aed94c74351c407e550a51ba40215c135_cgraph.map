@@ -1,4 +1,4 @@
 <map id="Servo::gotoPosition" name="Servo::gotoPosition">
-<area shape="rect" id="node2" href="$struct_servo.html#a0cfd9bbddac8bb91017569e0812f816a" title="converts degrees to pwm " alt="" coords="189,5,344,32"/>
+<area shape="rect" id="node2" href="$struct_servo.html#a83fca556e9f1749257a9691f0e5036a9" title="converts degrees to pwm " alt="" coords="189,5,344,32"/>
 <area shape="rect" id="node3" href="$class_robot_serial.html#a48929a3b47818cf3366b003b121ed539" title="send message to robot by serial " alt="" coords="203,56,330,83"/>
 </map>

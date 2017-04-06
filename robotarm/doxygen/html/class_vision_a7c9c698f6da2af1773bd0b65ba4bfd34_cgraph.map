@@ -1,8 +1,8 @@
 <map id="Vision::number_selection" name="Vision::number_selection">
-<area shape="rect" id="node2" href="$class_vision.html#ac61f35fd2d78031d96986b8db8daf257" title="This function will find contours that meet the shape that has been given with the function..." alt="" coords="221,56,365,83"/>
-<area shape="rect" id="node6" href="$class_vision.html#a41e694aef79da35cad92f9e57ecdea4e" title="This function will return the properties of a given contour. " alt="" coords="623,81,771,108"/>
-<area shape="rect" id="node7" href="$class_vision.html#a10439f626238ba3628534e55f80e59b1" title="This function will filter a colour out of the. " alt="" coords="227,157,360,184"/>
-<area shape="rect" id="node3" href="$class_vision.html#a2b78b716ed430b2f9d09ea918e752e6b" title="This function will check if the given contour actually contains corners with 90 degrees and after tha..." alt="" coords="413,5,575,32"/>
-<area shape="rect" id="node5" href="$class_vision.html#a72b289b68ecb074480f27733dff5eab0" title="This function detects circles. Only used to determine the target position of a shape. " alt="" coords="424,56,564,83"/>
-<area shape="rect" id="node4" href="$class_vision.html#a985c230f753e693678b1c808204c746b" title="Vision::angle" alt="" coords="648,5,745,32"/>
+<area shape="rect" id="node2" href="$class_vision.html#ac61f35fd2d78031d96986b8db8daf257" title="This function will find contours that meet the shape that has been given with the function..." alt="" coords="223,31,367,57"/>
+<area shape="rect" id="node6" href="$class_vision.html#a10439f626238ba3628534e55f80e59b1" title="This function will filter a colour out of the. " alt="" coords="229,81,362,108"/>
+<area shape="rect" id="node7" href="$class_vision.html#a41e694aef79da35cad92f9e57ecdea4e" title="This function will return the properties of a given contour. " alt="" coords="221,132,369,159"/>
+<area shape="rect" id="node3" href="$class_vision.html#a2b78b716ed430b2f9d09ea918e752e6b" title="This function will check if the given contour actually contains corners with 90 degrees and after tha..." alt="" coords="417,5,579,32"/>
+<area shape="rect" id="node5" href="$class_vision.html#a72b289b68ecb074480f27733dff5eab0" title="This function detects circles. Only used to determine the target position of a shape. " alt="" coords="428,56,568,83"/>
+<area shape="rect" id="node4" href="$class_vision.html#a985c230f753e693678b1c808204c746b" title="Vision::angle" alt="" coords="627,5,724,32"/>
 </map>

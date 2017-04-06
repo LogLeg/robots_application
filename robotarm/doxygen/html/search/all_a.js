@@ -9,5 +9,5 @@ var searchData=
   ['move',['move',['../robotsrvtest_8cpp.html#acd84dd8c07feb65438228cb762a437e7',1,'robotsrvtest.cpp']]],
   ['moveobject',['moveObject',['../class_robotic_arm.html#ad9add36d9fad6da469f30d1ffd867e63',1,'RoboticArm']]],
   ['my_5fserial',['my_serial',['../class_robot_serial.html#a9341530abe93c48919dce7cd8cbc4312',1,'RobotSerial']]],
-  ['mysleep',['mySleep',['../_robot_arm_bestuuring_8cpp.html#a75f289d8b6a2847c9036aa368b25b767',1,'mySleep(unsigned long milliseconds):&#160;RobotArmBestuuring.cpp'],['../robotsrvtest_8cpp.html#a75f289d8b6a2847c9036aa368b25b767',1,'mySleep(unsigned long milliseconds):&#160;robotsrvtest.cpp']]]
+  ['mysleep',['mySleep',['../_robot_arm_bestuuring_8cpp.html#a2fd68641f216e5a2452644841dc4443e',1,'RobotArmBestuuring.cpp']]]
 ];

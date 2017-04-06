@@ -5,7 +5,7 @@
 <area shape="rect" id="node4" href="$class_robotic_arm.html#ae925ea4c5ea53ca359399a07d0ef4f76" title="calculate a path of configurations " alt="" coords="473,107,651,133"/>
 <area shape="rect" id="node24" href="$class_robotic_arm.html#a976b1c8a1f85f64818182490073d4c5c" title="arm follow path " alt="" coords="482,56,642,83"/>
 <area shape="rect" id="node5" href="$class_robotic_arm.html#a549f24f349105a6b5130eb237d737132" title="forward kinematics, calculate X&amp;Y point for angles &amp; lengths for 2dof " alt="" coords="1393,107,1600,133"/>
-<area shape="rect" id="node6" href="$class_path_algorithm_1_1_a_star.html#aee41b31ec44b02f6dc94889d228a3582" title="PathAlgorithm::AStar\l::search" alt="" coords="709,554,855,595"/>
+<area shape="rect" id="node6" href="$class_path_algorithm_1_1_a_star.html#a09778c7ec09ee48c3a8088402a653cca" title="PathAlgorithm::AStar\l::search" alt="" coords="709,554,855,595"/>
 <area shape="rect" id="node7" href="$class_path_algorithm_1_1_a_star.html#a48e23107ffca02392bdf2439775baecf" title="PathAlgorithm::AStar\l::getOS" alt="" coords="928,457,1073,498"/>
 <area shape="rect" id="node8" href="$class_path_algorithm_1_1_a_star.html#a4cb2a6c928a01fcac02533500bd8ace5" title="PathAlgorithm::AStar\l::getCS" alt="" coords="928,522,1073,563"/>
 <area shape="rect" id="node9" href="$class_path_algorithm_1_1_a_star.html#a4bb6718fd07f503ff836c5cdccd74236" title="PathAlgorithm::AStar\l::getPM" alt="" coords="928,587,1073,629"/>
@@ -15,13 +15,13 @@
 <area shape="rect" id="node13" href="$namespace_path_algorithm.html#a1b72e8125a5f9fa31d3130c816f1a03f" title="PathAlgorithm::ConstructPath" alt="" coords="903,836,1099,863"/>
 <area shape="rect" id="node14" href="$class_path_algorithm_1_1_a_star.html#a53139e4b3cd3971a2bf85a430e83378f" title="PathAlgorithm::AStar\l::addToClosedSet" alt="" coords="928,887,1073,929"/>
 <area shape="rect" id="node15" href="$class_path_algorithm_1_1_a_star.html#a5bb18edbbd54833aac9eddfe63ba652d" title="PathAlgorithm::AStar\l::removeFirstFromOpenSet" alt="" coords="911,953,1091,994"/>
-<area shape="rect" id="node16" href="$namespace_path_algorithm.html#a8f0c4453fa932953ae67e31855f68197" title="PathAlgorithm::GetNeighbour\lConnections" alt="" coords="905,158,1097,199"/>
+<area shape="rect" id="node16" href="$namespace_path_algorithm.html#a97ee29e1c9bd0b3d157688d1fd0803b4" title="PathAlgorithm::GetNeighbour\lConnections" alt="" coords="905,158,1097,199"/>
 <area shape="rect" id="node18" href="$namespace_path_algorithm.html#a303daba8d3a083b341d1f4a799c3d5e4" title="PathAlgorithm::ActualCost" alt="" coords="912,224,1089,251"/>
 <area shape="rect" id="node19" href="$class_path_algorithm_1_1_a_star.html#ae78bfebdee31135fdfb2f302347f962f" title="PathAlgorithm::AStar\l::findInOpenSet" alt="" coords="1173,701,1319,742"/>
 <area shape="rect" id="node21" href="$class_path_algorithm_1_1_a_star.html#afcc23a676145d6e280d1c3430af5380a" title="PathAlgorithm::AStar\l::removeFromOpenSet" alt="" coords="923,391,1078,433"/>
 <area shape="rect" id="node22" href="$class_path_algorithm_1_1_a_star.html#a73d9639e838fd55bb392d01238fc967a" title="PathAlgorithm::AStar\l::findInClosedSet" alt="" coords="1173,297,1319,338"/>
 <area shape="rect" id="node23" href="$class_path_algorithm_1_1_a_star.html#a1b6971a9c5878e859cbdb3270dda93b4" title="PathAlgorithm::AStar\l::removeFromClosedSet" alt="" coords="919,326,1083,367"/>
-<area shape="rect" id="node17" href="$namespace_path_algorithm.html#ae4490c66af669f70064a693a8d7a889e" title="PathAlgorithm::GetNeighbours" alt="" coords="1147,161,1345,188"/>
+<area shape="rect" id="node17" href="$namespace_path_algorithm.html#aef18a6e79e7df17ce4923682c4a93fbd" title="PathAlgorithm::GetNeighbours" alt="" coords="1147,161,1345,188"/>
 <area shape="rect" id="node20" href="$struct_path_algorithm_1_1_vertex.html#a64aa2913bc0e1d1511a452c5d800803a" title="PathAlgorithm::Vertex\l::equalPoint" alt="" coords="1421,701,1572,742"/>
 <area shape="rect" id="node25" href="$class_robotic_arm.html#a18d2147e468f8026f301f1d96d040ea5" title="RoboticArm::getConf" alt="" coords="709,56,855,83"/>
 </map>

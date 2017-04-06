@@ -32,7 +32,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_a_star_8cpp.html",
-"struct_path_algorithm_1_1_edge.html"
+"struct_path_algorithm_1_1_edge.html#a204de7bc294af2cd5df73c29b2587345"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

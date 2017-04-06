@@ -16,11 +16,11 @@ Collaboration diagram for Servo\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{struct_servo_ab662ab5df0c5f665e7eb11508c39f1a7}{Servo} (unsigned short \hyperlink{struct_servo_a209ccc691c719c1442f77a0c0ee08fbb}{min\+Pwm}, unsigned short \hyperlink{struct_servo_ad3b5b2cb998a334baeb520cecc24be48}{pwm\+Range}, unsigned char \hyperlink{struct_servo_a534d23b4cf1dcdd677dfa503101c50a0}{d\+Range}, unsigned short \hyperlink{struct_servo_a0795bd3f3c8d44e1818ffd653a7484d5}{servo\+Nr}, \hyperlink{class_robot_serial}{Robot\+Serial} $\ast$a\+Robot\+Serial, signed short \hyperlink{struct_servo_a65a5e86b2f31ec2a9c115e818a1ea703}{abnormality}=0, bool \hyperlink{struct_servo_a4b94c914128a9965e264f0be608fb6a7}{flip}=false, signed short \hyperlink{struct_servo_a0876d7d53f6e32cd75fa8ead3c274ead}{servo\+Abnormality}=0)
+\hyperlink{struct_servo_abaa283d5f6f293cf1149ac9072e579c7}{Servo} (unsigned short \hyperlink{struct_servo_a209ccc691c719c1442f77a0c0ee08fbb}{min\+Pwm}, unsigned short \hyperlink{struct_servo_ad3b5b2cb998a334baeb520cecc24be48}{pwm\+Range}, unsigned char \hyperlink{struct_servo_a534d23b4cf1dcdd677dfa503101c50a0}{d\+Range}, unsigned char \hyperlink{struct_servo_a0795bd3f3c8d44e1818ffd653a7484d5}{servo\+Nr}, \hyperlink{class_robot_serial}{Robot\+Serial} $\ast$a\+Robot\+Serial, signed short \hyperlink{struct_servo_a65a5e86b2f31ec2a9c115e818a1ea703}{abnormality}=0, bool \hyperlink{struct_servo_a4b94c914128a9965e264f0be608fb6a7}{flip}=false, signed short \hyperlink{struct_servo_a0876d7d53f6e32cd75fa8ead3c274ead}{servo\+Abnormality}=0)
 \begin{DoxyCompactList}\small\item\em constructor \end{DoxyCompactList}\item 
 void \hyperlink{struct_servo_aed94c74351c407e550a51ba40215c135}{goto\+Position} (signed short degrees, unsigned short time)
 \begin{DoxyCompactList}\small\item\em go to given position \end{DoxyCompactList}\item 
-unsigned short \hyperlink{struct_servo_a0cfd9bbddac8bb91017569e0812f816a}{degrees\+To\+Pwm} (signed short degrees, unsigned char servo)
+unsigned short \hyperlink{struct_servo_a83fca556e9f1749257a9691f0e5036a9}{degrees\+To\+Pwm} (signed short degrees)
 \begin{DoxyCompactList}\small\item\em converts degrees to pwm \end{DoxyCompactList}\item 
 signed short \hyperlink{struct_servo_a293b3a36b2ab449f83d2c1152a6c5115}{pwm\+To\+Degrees} (unsigned short pwm, unsigned char servo)
 \begin{DoxyCompactList}\small\item\em converts degrees to pwm \end{DoxyCompactList}\item 
@@ -66,18 +66,18 @@ Definition at line 20 of file Robotic\+Arm.\+hpp.
 \subsection{Constructor \& Destructor Documentation}
 \index{Servo@{Servo}!Servo@{Servo}}
 \index{Servo@{Servo}!Servo@{Servo}}
-\subsubsection[{\texorpdfstring{Servo(unsigned short min\+Pwm, unsigned short pwm\+Range, unsigned char d\+Range, unsigned short servo\+Nr, Robot\+Serial $\ast$a\+Robot\+Serial, signed short abnormality=0, bool flip=false, signed short servo\+Abnormality=0)}{Servo(unsigned short minPwm, unsigned short pwmRange, unsigned char dRange, unsigned short servoNr, RobotSerial *aRobotSerial, signed short abnormality=0, bool flip=false, signed short servoAbnormality=0)}}]{\setlength{\rightskip}{0pt plus 5cm}Servo\+::\+Servo (
+\subsubsection[{\texorpdfstring{Servo(unsigned short min\+Pwm, unsigned short pwm\+Range, unsigned char d\+Range, unsigned char servo\+Nr, Robot\+Serial $\ast$a\+Robot\+Serial, signed short abnormality=0, bool flip=false, signed short servo\+Abnormality=0)}{Servo(unsigned short minPwm, unsigned short pwmRange, unsigned char dRange, unsigned char servoNr, RobotSerial *aRobotSerial, signed short abnormality=0, bool flip=false, signed short servoAbnormality=0)}}]{\setlength{\rightskip}{0pt plus 5cm}Servo\+::\+Servo (
 \begin{DoxyParamCaption}
 \item[{unsigned short}]{min\+Pwm, }
 \item[{unsigned short}]{pwm\+Range, }
 \item[{unsigned char}]{d\+Range, }
-\item[{unsigned short}]{servo\+Nr, }
+\item[{unsigned char}]{servo\+Nr, }
 \item[{{\bf Robot\+Serial} $\ast$}]{a\+Robot\+Serial, }
 \item[{signed short}]{abnormality = {\ttfamily 0}, }
 \item[{bool}]{flip = {\ttfamily false}, }
 \item[{signed short}]{servo\+Abnormality = {\ttfamily 0}}
 \end{DoxyParamCaption}
-)}\hypertarget{struct_servo_ab662ab5df0c5f665e7eb11508c39f1a7}{}\label{struct_servo_ab662ab5df0c5f665e7eb11508c39f1a7}
+)}\hypertarget{struct_servo_abaa283d5f6f293cf1149ac9072e579c7}{}\label{struct_servo_abaa283d5f6f293cf1149ac9072e579c7}
 
 
 constructor 
@@ -110,19 +110,18 @@ Definition at line 12 of file Servo.\+cpp.
 )\hspace{0.3cm}{\ttfamily [virtual]}}\hypertarget{struct_servo_acb51bf4d970b071741ba76349a431fb0}{}\label{struct_servo_acb51bf4d970b071741ba76349a431fb0}
 
 
-Definition at line 75 of file Servo.\+cpp.
+Definition at line 74 of file Servo.\+cpp.
 
 
 
 \subsection{Member Function Documentation}
 \index{Servo@{Servo}!degrees\+To\+Pwm@{degrees\+To\+Pwm}}
 \index{degrees\+To\+Pwm@{degrees\+To\+Pwm}!Servo@{Servo}}
-\subsubsection[{\texorpdfstring{degrees\+To\+Pwm(signed short degrees, unsigned char servo)}{degreesToPwm(signed short degrees, unsigned char servo)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short Servo\+::degrees\+To\+Pwm (
+\subsubsection[{\texorpdfstring{degrees\+To\+Pwm(signed short degrees)}{degreesToPwm(signed short degrees)}}]{\setlength{\rightskip}{0pt plus 5cm}unsigned short Servo\+::degrees\+To\+Pwm (
 \begin{DoxyParamCaption}
-\item[{signed short}]{degrees, }
-\item[{unsigned char}]{servo}
+\item[{signed short}]{degrees}
 \end{DoxyParamCaption}
-)}\hypertarget{struct_servo_a0cfd9bbddac8bb91017569e0812f816a}{}\label{struct_servo_a0cfd9bbddac8bb91017569e0812f816a}
+)}\hypertarget{struct_servo_a83fca556e9f1749257a9691f0e5036a9}{}\label{struct_servo_a83fca556e9f1749257a9691f0e5036a9}
 
 
 converts degrees to pwm 
@@ -143,11 +142,12 @@ Definition at line 26 of file Servo.\+cpp.
 
 
 
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=334pt]{struct_servo_a0cfd9bbddac8bb91017569e0812f816a_icgraph}
+\includegraphics[width=334pt]{struct_servo_a83fca556e9f1749257a9691f0e5036a9_icgraph}
 \end{center}
 \end{figure}
 
@@ -206,7 +206,8 @@ Definition at line 19 of file Servo.\+cpp.
 
 
 
-Here is the call graph for this function\+:\nopagebreak
+Here is the call graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
