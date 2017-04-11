@@ -74,6 +74,13 @@ int main(int argc, char **argv)
 
 void move(pair<Properties, Properties> robotworld)
 {
+	std::cout << "blokjeX: " << robotworld.first.center.x << std::endl;
+	std::cout << "blokjeY: " << robotworld.first.center.y << std::endl;
+	std::cout << "blokjeAngle: " << robotworld.first.angle << std::endl;
+	std::cout << "blokjeBreedte: " << robotworld.first.width << std::endl;
+	std::cout << "circelX: " << robotworld.second.center.x << std::endl;
+	std::cout << "circelY: " << robotworld.second.center.y << std::endl;
+
 	if (robotArm.moveObject(static_cast<signed long>(robotworld.first.center.x), static_cast<unsigned long>(robotworld.first.center.y),
 			static_cast<signed short>(robotworld.first.angle), static_cast<unsigned short>(5), static_cast<signed long>(robotworld.second.center.x), static_cast<unsigned long>(robotworld.second.center.y)))
 	{

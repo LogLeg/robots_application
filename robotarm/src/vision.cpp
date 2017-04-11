@@ -16,7 +16,7 @@ Vision::Vision() :
 		binairy_mat_final(Size(640, 480), CV_8UC1),
 		mm_per_pixel(0),
 		distance_to_robotbase_x(0),
-		distance_to_robotbase_y(187),
+		distance_to_robotbase_y(205), //205
 		max_grabbable_size(30)
 {
 	calibration_square_properties.center.x = 0;
